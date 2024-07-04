@@ -3,8 +3,7 @@
                 <ul class="menu-box">
                     <li >
                         <a class="logo"  href="/home">
-                            <img style="width: 75%;" class="effect-off" src="../../frontend/images/icon/ic_logo.png" />
-                            <img style="width: 75%;" class="effect-on" src="../../frontend/images/icon/ic_logo.png" />
+                            <img style="width: 75%;" src="../../frontend/images/icon/ic_logo.png" />
                         </a>
                     </li>
                     <li class="first-menu hidden-box>"><a href="/home">Home</a></li>
