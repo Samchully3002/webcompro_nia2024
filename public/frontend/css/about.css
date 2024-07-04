@@ -608,7 +608,7 @@ hr.rounded {
     display: flex;
     flex: 0 0 auto;
     flex-flow: row;
-    gap: 10px;
+    gap: 20px;
     height: 500px;
     overflow: visible;
     padding: 10px;
@@ -742,7 +742,7 @@ hr.rounded {
 .team-member .list .row .item .item-wrap .box {
     transform: rotateY(0deg);
     background-color: white;
-    padding: 20px;
+    /*padding: 20px;*/
     box-sizing: border-box;
 }
 
@@ -780,6 +780,7 @@ hr.rounded {
 
 .our-office .wrapper {
     place-content: flex-start;
+    width:100%;
     align-items: flex-start;
     display: flex;
     flex-flow: row;
@@ -952,9 +953,9 @@ hr.rounded {
     }
 
     .ceo_message {
-        padding: 20px;
+        padding: 40px 20px 20px;
         flex-direction: column;
-        gap: 32px;
+        gap:32px;
     }
 
     .ceo_message .text_wrapper {
@@ -1023,7 +1024,7 @@ hr.rounded {
         overflow: visible;
         padding: unset;
         flex-direction: column;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
     }
 
     .team-member .wrapper .title {
@@ -1035,9 +1036,9 @@ hr.rounded {
         white-space: unset;
     }
 
-    .team-member .list .row .item .item-wrap .box {
-        width: unset;
-    }
+    /*.team-member .list .row .item .item-wrap .box {*/
+    /*    width: unset;*/
+    /*}*/
 
     .our-office {
         padding: 20px;
@@ -1177,7 +1178,7 @@ hr.rounded {
     }
 
     .lbl-toggle .icon-right {
-        content: url("../../assets/images/icon/closed-icon-black-mini.png");
+        content: url("../images/icon/closed-icon-black-mini.png");
     }
 
     /* .lbl-toggle:hover {
@@ -1189,6 +1190,7 @@ hr.rounded {
         max-height: 0px;
         overflow: hidden;
         transition: max-height 0.25s ease-in-out;
+         border-radius: 0 0 20px 20px;
     }
 
     .toggle:checked + .lbl-toggle + .collapsible-content {
@@ -1203,7 +1205,7 @@ hr.rounded {
     }
 
     .toggle:checked + .lbl-toggle .icon-right {
-        content: url("../../assets/images/icon/open-icon-white-mini.png");
+        content: url("../images/icon/open-icon-white-mini.png");
     }
 
     .toggle:checked + .content {
