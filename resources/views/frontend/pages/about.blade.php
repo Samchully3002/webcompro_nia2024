@@ -47,12 +47,13 @@
                     <p>Our Stories</p>
                 </div>
 
+                
                 <div class="dekstop-history">
                     <div class="box">
                        <!-- Left Content -->
                        <div class="left-box">
                           <div class="container-imageyear">
-                             <img id="year_img" style="border-radius: 20px; box-shadow: 0px 5px 24px 0px rgba(0, 0, 0, 0.2);" src="{{asset('../frontend/images/story2024.png')}}"/>
+                             <img id="year_img" style="border-radius: 20px; box-shadow: 0px 5px 24px 0px rgba(0, 0, 0, 0.2);" src="{{asset('frontend/images/story2024.png')}}"/>
                              <h1 id="year_history" style="font-weight: 500; font-size: 40px;">2024</h1>
                           </div>
                        </div>
@@ -822,7 +823,7 @@
                             </div>
                             <div class="back">
                                 <div class="content">
-                                    <p>"There is no such a small success to be celebrated."</p>
+                                    <p>"Every difficulty is an opportunity to grow and learn."</p>
                                 </div>
                             </div>
                         </div>
@@ -875,29 +876,33 @@
             <div class="wrapper">
                 <section class="wrap-content">
                     <div class="marquee">
-                        <img src="../frontend/images/office_foto_1.svg"/>
-                        <img src="../frontend/images/office_foto_2.svg"/>
-                        <img src="../frontend/images/office_foto_3.svg"/>
-                        <img src="../frontend/images/office_foto_4.svg"/>
-                        <img src="../frontend/images/office_foto_5.svg"/>
+                        <img src="../frontend/images/office1.png"/>
+                        <img src="../frontend/images/office2.png"/>
+                        <img src="../frontend/images/office3.png"/>
+                        <img src="../frontend/images/office4.png"/>
+                        <img src="../frontend/images/office5.png"/>
+                        <img src="../frontend/images/office6.png"/>
 
-                        <img src="../frontend/images/office_foto_1.svg"/>
-                        <img src="../frontend/images/office_foto_2.svg"/>
-                        <img src="../frontend/images/office_foto_3.svg"/>
-                        <img src="../frontend/images/office_foto_4.svg"/>
-                        <img src="../frontend/images/office_foto_5.svg"/>
+                        <img src="../frontend/images/office1.png"/>
+                        <img src="../frontend/images/office2.png"/>
+                        <img src="../frontend/images/office3.png"/>
+                        <img src="../frontend/images/office4.png"/>
+                        <img src="../frontend/images/office5.png"/>
+                        <img src="../frontend/images/office6.png"/>
 
-                        <img src="../frontend/images/office_foto_1.svg"/>
-                        <img src="../frontend/images/office_foto_2.svg"/>
-                        <img src="../frontend/images/office_foto_3.svg"/>
-                        <img src="../frontend/images/office_foto_4.svg"/>
-                        <img src="../frontend/images/office_foto_5.svg"/>
+                        <img src="../frontend/images/office1.png"/>
+                        <img src="../frontend/images/office2.png"/>
+                        <img src="../frontend/images/office3.png"/>
+                        <img src="../frontend/images/office4.png"/>
+                        <img src="../frontend/images/office5.png"/>
+                        <img src="../frontend/images/office6.png"/>
 
-                        <img src="../frontend/images/office_foto_1.svg"/>
-                        <img src="../frontend/images/office_foto_2.svg"/>
-                        <img src="../frontend/images/office_foto_3.svg"/>
-                        <img src="../frontend/images/office_foto_4.svg"/>
-                        <img src="../frontend/images/office_foto_5.svg"/>
+                        <img src="../frontend/images/office1.png"/>
+                        <img src="../frontend/images/office2.png"/>
+                        <img src="../frontend/images/office3.png"/>
+                        <img src="../frontend/images/office4.png"/>
+                        <img src="../frontend/images/office5.png"/>
+                        <img src="../frontend/images/office6.png"/>
 
                     {{-- <marquee>
                     <ul class="list-content">
@@ -925,7 +930,7 @@
         <div class="office-maps">
             <div class="box">
                 <div class="img-wrapper">
-                    <img src="../frontend/images/office_loc_map.svg"/>
+                    <img src="../frontend/images/office_loc_map.png"/>
                 </div>
                 <div class="container-card-maps">
                         <div class="card-maps">
