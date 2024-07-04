@@ -1,5 +1,5 @@
 <div id="header-wrapper">
-            <div class="menu-wrapper">
+            <div id="nav-menu" class="menu-wrapper">
                 <ul class="menu-box">
                     <li >
                         <a class="logo"  href="/home">
@@ -32,7 +32,7 @@
 
                 <div class="content-right">
                     <a href="https://www.youtube.com/channel/UCk4YWCZF81paAh_rzwwiKxQ" class="btn_contact_us">Our Video&nbsp;&nbsp;&nbsp; <img style="width: 12%;" src="../../frontend/images/icon/polygon.png" ></a>
-                    <a href="/contact-us-us" class="btn_contact_us">Contact Us&nbsp;&nbsp;&nbsp; <img style="width: 12%;" src="../../frontend/images/icon/arrow.png" class="language_flag"></a>
+                    <a href="/contact-us" class="btn_contact_us">Contact Us&nbsp;&nbsp;&nbsp; <img style="width: 12%;" src="../../frontend/images/icon/arrow.png" class="language_flag"></a>
 
                     {{-- <div class="right-box language">
                         <div class="lang-box hidden-box bahasa">

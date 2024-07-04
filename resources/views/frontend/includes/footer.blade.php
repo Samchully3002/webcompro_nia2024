@@ -18,8 +18,9 @@
                         <div>
                             <h1>Our Company</h1>
                             <ul>
-                                <li><a href="/about">About Us</a></li>
-                                <li><a href="/news">News</a></li>
+                                <li><a href="/about-us">About Us</a></li>
+                                <li><a href="/community/news">News</a></li>
+                                <li><a href="/community/notice">Notice</a></li>
                                 <li><a href="https://www.youtube.com/@networksindonesiaaku4258" target="_blank" rel="noopener">Our Videos</a></li>
                                 <li><a href="/contact">Contact Us</a></li>
                             </ul>

@@ -32,7 +32,7 @@
                                 <h3>
                                     {{$post->title}}
                                 </h3>
-                                <span>{{$post->created_at}}</span>
+                                <span>{{date('Y.m.d', strtotime($post->created_at));}}</span>
                             </a>
                         </div>
                     </div>

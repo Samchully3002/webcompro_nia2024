@@ -22,6 +22,34 @@ Route::get('/our-business/digital-healthcare', [App\Http\Controllers\BusinessCon
 Route::get('/our-business/system-development-management', [App\Http\Controllers\BusinessController::class, 'management'])->name('system-development-management');
 Route::get('/our-business/export-voucher', [App\Http\Controllers\BusinessController::class, 'exportvoucher'])->name('export-voucher');
 
+Route::get('/privacy-policy', function () {
+   return  view('frontend/pages/privacy-policy');
+});
+Route::get('/about', function () {
+   return  view('frontend/pages/about');
+});
+Route::get('/news', function () {
+   return  view('frontend/pages/news');
+});
+Route::get('/notice', function () {
+   return  view('frontend/pages/notice');
+});
+Route::get('/contact', function () {
+   return  view('frontend/pages/contactus');
+});
+Route::get('/intellegent-integrated-logistic', function () {
+   return  view('frontend/pages/business/business_logistics');
+});
+Route::get('/digital-healthcare', function () {
+   return  view('frontend/pages/business/digital_healthcare');
+});
+Route::get('/system-development-management', function () {
+   return  view('frontend/pages/business/management');
+});
+Route::get('/export-voucher', function () {
+   return  view('frontend/pages/business/exportvoucher');
+});
+
 // END FRONTEND
 
 

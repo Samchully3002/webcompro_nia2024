@@ -32,7 +32,7 @@
             </div>
             <div class="text_wrapper">
 
-                <h1 class="muncul">CEO Greetings</h1><br>
+                <span class="muncul">CEO Greetings</span><br>
                 <p class="muncul">
                 As a subsidiary of Samchully Networks from South Korea, PT Networks Indonesia Aku was established in Jakarta, Indonesia in 2021 with a clear mission: "To become a leading IT company in Indonesia, emphasizing environmentally friendly products and services. We aim to create technology for the advancement of transportation and infrastructure, healthcare technology, education, logistics, smart factories, online payment systems, and their development." As specialists in the IT field, we offer a diverse range of services through information data and develop solutions through application/web platforms.<br><br>
                 NIA prioritizes 'integration' and 'innovation' as its core foundation. With the vision of "Focusing on innovation, high-quality services, and advanced technological solutions, we are determined to make a meaningful contribution to advancing the world of information technology. Through this commitment, we strive to build strong, long-term relationships with customers, becoming a reliable partner and continuing to be a leading provider of IT solutions." We are committed to continually building and maintaining trust, aligning with the rapid changes in technology trends.
@@ -47,12 +47,13 @@
                     <p>Our Stories</p>
                 </div>
 
+
                 <div class="dekstop-history">
                     <div class="box">
                        <!-- Left Content -->
                        <div class="left-box">
                           <div class="container-imageyear">
-                             <img id="year_img" style="border-radius: 20px; box-shadow: 0px 5px 24px 0px rgba(0, 0, 0, 0.2);" src="{{asset('../frontend/images/story2024.png')}}"/>
+                             <img id="year_img" style="border-radius: 20px; box-shadow: 0px 5px 24px 0px rgba(0, 0, 0, 0.2);" src="{{asset('frontend/images/story2024.png')}}"/>
                              <h1 id="year_history" style="font-weight: 500; font-size: 40px;">2024</h1>
                           </div>
                        </div>
@@ -779,7 +780,7 @@
                                 <div class="wrap">
                                     <div class="item">
                                         <div class="foto-box">
-                                            <img src="../frontend/images/tm_mr_son.svg">
+                                            <img src="../frontend/images/tm_mr_son.png">
                                         </div>
                                     </div>
                                     <div class="text-item">
@@ -807,7 +808,7 @@
                                 <div class="wrap">
                                     <div class="item">
                                         <div class="foto-box">
-                                            <img src="../frontend/images/tm_miss_kim.svg">
+                                            <img src="../frontend/images/tm_miss_kim.png">
                                         </div>
                                     </div>
                                     <div class="text-item">
@@ -822,7 +823,7 @@
                             </div>
                             <div class="back">
                                 <div class="content">
-                                    <p>"There is no such a small success to be celebrated."</p>
+                                    <p>"Every difficulty is an opportunity to grow and learn."</p>
                                 </div>
                             </div>
                         </div>
@@ -875,29 +876,33 @@
             <div class="wrapper">
                 <section class="wrap-content">
                     <div class="marquee">
-                        <img src="../frontend/images/office_foto_1.svg"/>
-                        <img src="../frontend/images/office_foto_2.svg"/>
-                        <img src="../frontend/images/office_foto_3.svg"/>
-                        <img src="../frontend/images/office_foto_4.svg"/>
-                        <img src="../frontend/images/office_foto_5.svg"/>
+                        <img src="../frontend/images/office1.png"/>
+                        <img src="../frontend/images/office2.png"/>
+                        <img src="../frontend/images/office3.png"/>
+                        <img src="../frontend/images/office4.png"/>
+                        <img src="../frontend/images/office5.png"/>
+                        <img src="../frontend/images/office6.png"/>
 
-                        <img src="../frontend/images/office_foto_1.svg"/>
-                        <img src="../frontend/images/office_foto_2.svg"/>
-                        <img src="../frontend/images/office_foto_3.svg"/>
-                        <img src="../frontend/images/office_foto_4.svg"/>
-                        <img src="../frontend/images/office_foto_5.svg"/>
+                        <img src="../frontend/images/office1.png"/>
+                        <img src="../frontend/images/office2.png"/>
+                        <img src="../frontend/images/office3.png"/>
+                        <img src="../frontend/images/office4.png"/>
+                        <img src="../frontend/images/office5.png"/>
+                        <img src="../frontend/images/office6.png"/>
 
-                        <img src="../frontend/images/office_foto_1.svg"/>
-                        <img src="../frontend/images/office_foto_2.svg"/>
-                        <img src="../frontend/images/office_foto_3.svg"/>
-                        <img src="../frontend/images/office_foto_4.svg"/>
-                        <img src="../frontend/images/office_foto_5.svg"/>
+                        <img src="../frontend/images/office1.png"/>
+                        <img src="../frontend/images/office2.png"/>
+                        <img src="../frontend/images/office3.png"/>
+                        <img src="../frontend/images/office4.png"/>
+                        <img src="../frontend/images/office5.png"/>
+                        <img src="../frontend/images/office6.png"/>
 
-                        <img src="../frontend/images/office_foto_1.svg"/>
-                        <img src="../frontend/images/office_foto_2.svg"/>
-                        <img src="../frontend/images/office_foto_3.svg"/>
-                        <img src="../frontend/images/office_foto_4.svg"/>
-                        <img src="../frontend/images/office_foto_5.svg"/>
+                        <img src="../frontend/images/office1.png"/>
+                        <img src="../frontend/images/office2.png"/>
+                        <img src="../frontend/images/office3.png"/>
+                        <img src="../frontend/images/office4.png"/>
+                        <img src="../frontend/images/office5.png"/>
+                        <img src="../frontend/images/office6.png"/>
 
                     {{-- <marquee>
                     <ul class="list-content">
@@ -925,7 +930,7 @@
         <div class="office-maps">
             <div class="box">
                 <div class="img-wrapper">
-                    <img src="../frontend/images/office_loc_map.svg"/>
+                    <img src="../frontend/images/office_loc_map.png"/>
                 </div>
                 <div class="container-card-maps">
                         <div class="card-maps">
