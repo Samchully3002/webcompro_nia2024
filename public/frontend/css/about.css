@@ -1,0 +1,1270 @@
+/* introduction.html css start */
+@property --hue {
+    syntax: "<angle>";
+    initial-value: 0turn;
+    inherits: false;
+}
+
+@keyframes hue-cycle {
+    to {
+        --hue: 1turn;
+    }
+}
+
+.bg-wrapper {
+    padding: 50px 0px 50px 0px;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #68708c 0%, #aac7e8 100%);
+    color: #f0f0f0;
+}
+
+/* BANNER CONTENT ABOUT */
+.banner-wrapper {
+    overflow: visible;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(
+        270deg,
+        rgb(170, 199, 232) 0%,
+        rgb(64, 69, 92) 100%
+    );
+    color: #f0f0f0;
+    place-content: center;
+    align-items: center;
+    display: flex;
+    flex-flow: column;
+}
+
+.banner-wrapper .box {
+    place-content: center;
+    align-items: center;
+    padding: 0px 100px;
+    gap: 100px;
+    height: 723px;
+    position: relative;
+    display: flex;
+    flex: auto;
+    width: 100%;
+    flex-flow: row;
+    overflow: visible;
+}
+
+.banner-wrapper .box .left-content {
+    place-content: center flex-start;
+    align-items: center;
+    position: relative;
+    flex-flow: column;
+    flex: 1 0 0px;
+    gap: 27px;
+    display: flex;
+    opacity: 0; /* Mulai dengan opacity 0 */
+    will-change: transform; /* Optimize for performance */
+    transform: scale(0.9); /* Ubah nilai scale agar lebih halus */
+    transition: opacity 0.5s ease, transform 0.2s ease;
+}
+
+.banner-wrapper .box .left-content.appear {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.5s ease, transform 1s ease; /* Ubah durasi transform ke 0.2s ease saat appear */
+}
+
+.banner-wrapper .box .left-content img {
+    padding: 20px;
+}
+
+.banner-wrapper .box .left-content span {
+    display: flex;
+    justify-content: center;
+    font-size: 32px;
+}
+
+.banner-wrapper .box .right-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    height: auto;
+    position: relative;
+    flex: 1 0 0px;
+    opacity: 1;
+    transform: none;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.banner-wrapper .box .right-content.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.banner-wrapper .box .right-content span {
+    font-size: 36px;
+    line-height: 120%;
+    text-align: left;
+    letter-spacing: 0px;
+}
+
+/* BANNER CONTENT ABOUT */
+
+/* CEO Message */
+.ceo_message {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background: #454a65;
+    align-items: center;
+    place-content: center space-evenly;
+    padding: 50px;
+    overflow: visible;
+}
+
+.ceo_message .img_wrapper {
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    display: inline-block;
+}
+
+.ceo_message .img_wrapper img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    object-position: center;
+    object-fit: cover;
+    image-rendering: auto;
+    transition: transform 0.3s ease;
+}
+
+.ceo_message .img_wrapper img:hover {
+    transform: scale(1.1);
+}
+
+.tooltip {
+    position: fixed;
+    padding: 10px 16px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.25);
+    color: #444;
+    display: none;
+    pointer-events: none;
+    transition: transform 0.2s ease; /* Transisi untuk animasi smooth */
+    transform: translate(-50%, -50%) scale(1); /* Awalnya skala 1 */
+}
+
+.ceo_message .text_wrapper {
+    width: 504px;
+    font-size: 16px;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+.muncul {
+    opacity: 0;
+    transform: scale(0.9); /* Ubah nilai scale agar lebih halus */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.muncul.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.muncul:nth-child(1) {
+    transition: opacity 0.5s ease, transform 0.8s ease;
+}
+
+.muncul:nth-child(2) {
+    transition: opacity 0.6s ease, transform 0.8s ease;
+}
+
+.muncul:nth-child(3) {
+    transition: opacity 0.5s ease, transform 0.8s ease;
+}
+
+.muncul:nth-child(4) {
+    transition: opacity 0.6s ease, transform 0.8s ease;
+}
+
+.muncul:nth-child(5) {
+    transition: opacity 0.5s ease, transform 0.8s ease;
+}
+
+.muncul:nth-child(6) {
+    transition: opacity 0.6s ease, transform 0.8s ease;
+}
+
+.muncul:nth-child(7) {
+    transition: opacity 0.6s ease, transform 0.8s ease;
+}
+/* CEO Message */
+
+/* Our History */
+.our-history {
+    place-content: center;
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: column;
+    gap: 100px;
+    overflow: visible;
+    padding: 150px 50px 90px;
+    position: relative;
+    width: 100%;
+}
+
+.our-history .title {
+    display: flex;
+    width: auto;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    opacity: 1;
+    transform: none;
+}
+
+.our-history .title p {
+    font-size: 56px;
+    font-weight: bold;
+    line-height: 30px;
+}
+
+.our-history .box {
+    place-content: flex-start space-evenly;
+    align-items: flex-start;
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: row;
+    height: min-content;
+    overflow: visible;
+    padding: 0px;
+    position: relative;
+    width: 100%;
+}
+
+.our-history .box .left-box {
+    flex: 0 0 auto;
+    height: 257px;
+    position: sticky;
+    top: 280px;
+    width: 512px;
+    will-change: transform;
+    z-index: 1;
+}
+
+.our-history .box .left-box .container-imageyear {
+    place-content: flex-start;
+    align-items: center;
+    display: flex;
+    flex-flow: row;
+    gap: 30px;
+    height: 240px;
+    padding: 0px;
+    position: relative;
+    margin: 20px;
+    width: 512px;
+    transition: opacity 0.5s ease;
+}
+
+.right-box .wrapper ul {
+    opacity: 0.2; /* Set opacity to 0.2 when not at scrollPosition */
+    transition: opacity 0.3s ease; /* Tambahkan transisi agar perubahan opacity halus */
+}
+
+.right-box .wrapper ul.active {
+    opacity: 1; /* Set opacity to 1 when at scrollPosition */
+}
+
+.our-history .box .right-box {
+    place-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: column;
+    gap: 50px;
+    height: min-content;
+    overflow: visible;
+    padding: 100px 0px;
+    position: relative;
+    width: 529px;
+}
+
+.our-history .box .right-box .wrapper {
+    place-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: column;
+    gap: 100px;
+    height: min-content;
+    overflow: visible;
+    padding: 0px;
+    position: relative;
+    width: 100%;
+}
+
+.our-history .box .right-box .wrapper ul {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.our-history .box .right-box .wrapper .row {
+    place-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: column;
+    gap: 12px;
+    height: min-content;
+    overflow: visible;
+    padding: 0px;
+    position: relative;
+    width: 100%;
+}
+
+.our-history .box .right-box .wrapper .row_month {
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    transform: none;
+    flex: 0 0 auto;
+    height: auto;
+    position: relative;
+    white-space: pre;
+    width: auto;
+}
+
+.our-history .box .right-box .wrapper .row_month p {
+    font-size: 32px;
+    font-weight: medium;
+    text-align: start;
+}
+
+.our-history .box .right-box .wrapper .row_history {
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    transform: none;
+    gap: 12px;
+}
+
+.our-history .box .right-box .wrapper .row_history p {
+    font-weight: 400;
+}
+
+hr.rounded {
+    border-top: 1px solid #bbb;
+    border-radius: 5px;
+    width: inherit;
+}
+
+.core {
+    place-content: center;
+    align-items: center;
+    background: radial-gradient(
+        50% 50% at 50% 50%,
+        rgb(95, 106, 158) 0%,
+        rgb(66, 72, 99) 100%
+    );
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: column;
+    gap: 20px;
+    height: 723px;
+    overflow: visible;
+    padding: 100px 50px 120px;
+    position: relative;
+    width: 100%;
+}
+
+.core .core-title {
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    transform: none;
+    flex: 0 0 auto;
+    height: auto;
+    position: relative;
+    white-space: pre-wrap;
+    width: 100%;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.core .core-title p {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 42px;
+    color: white;
+    line-height: normal;
+}
+
+.core .core-text {
+    place-content: center;
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: row;
+    gap: 10px;
+    height: min-content;
+    overflow: hidden;
+    padding: 20px;
+    position: relative;
+    width: min-content;
+    z-index: 1;
+}
+
+.core .core-text .core-img {
+    border-radius: 999px;
+    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.3);
+    flex: 0 0 auto;
+    height: 80px;
+    width: 80px;
+    position: relative;
+}
+
+.core .full-text {
+    place-content: center;
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: column;
+    gap: 20px;
+    height: min-content;
+    overflow: visible;
+    padding: 0px;
+    position: relative;
+    width: min-content;
+    z-index: 1;
+}
+
+.core .full-text .wrapper {
+    place-content: center;
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: row;
+    gap: 10px;
+    height: 82px;
+    overflow: visible;
+    padding: 0px;
+    position: relative;
+    width: min-content;
+}
+
+.core .full-text .wrapper .item {
+    --border-bottom-width: 1px;
+    --border-color: #a9b6c4;
+    --border-left-width: 1px;
+    --border-right-width: 1px;
+    --border-style: solid;
+    --border-top-width: 1px;
+    place-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 100px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 10px 0px;
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: row;
+    gap: 16px;
+    height: min-content;
+    overflow: visible;
+    padding: 30px 50px;
+    position: relative;
+    width: min-content;
+}
+
+.core .full-text .wrapper .item p {
+    font-size: 36px;
+    text-align: center;
+}
+
+.core .subtitle {
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    transform: none;
+    flex: 0 0 auto;
+    height: auto;
+    position: relative;
+    width: 50%;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.core .subtitle p {
+    font-size: 24px;
+    margin-top: 42px;
+    color: white;
+    text-align: center;
+    line-height: 120%;
+}
+/* Core Value End */
+
+/* Team Member Start */
+.team-member {
+    place-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: column;
+    gap: 50px;
+    height: min-content;
+    overflow: visible;
+    padding: 100px 50px;
+    position: relative;
+    width: 100%;
+}
+
+.team-member .wrapper {
+    place-content: center;
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: column;
+    gap: 20px;
+    height: min-content;
+    padding: 0px;
+    position: relative;
+    width: 100%;
+}
+
+.team-member .wrapper .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    opacity: 1;
+    transform: none;
+    flex: 0 0 auto;
+    height: 67px;
+    position: relative;
+    white-space: pre;
+    width: auto;
+    font-size: 56px;
+    font-weight: bold;
+}
+
+.team-member .wrapper .subtitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    opacity: 1;
+    transform: none;
+    flex: 0 0 auto;
+    height: auto;
+    position: relative;
+    white-space: pre-wrap;
+    width: 100%;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    font-size: 24px;
+    text-align: center;
+}
+
+.team-member .wrapper .subtitle p {
+    font-size: 24px;
+    line-height: 150%;
+    text-align: center;
+}
+
+.team-member .list {
+    place-content: center;
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: column;
+    gap: 0px;
+    height: min-content;
+    overflow: visible;
+    padding: 0px;
+    position: relative;
+    width: 100%;
+}
+
+.team-member .list .row {
+    place-content: center;
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: row;
+    gap: 10px;
+    height: 500px;
+    overflow: visible;
+    padding: 10px;
+    position: relative;
+    width: min-content;
+}
+
+.team-member .list .row .item {
+    display: block;
+    flex: 0 0 auto;
+    height: 433px;
+    position: relative;
+    width: 360px;
+    perspective: 2000px;
+}
+
+.team-member .list .row .item .item-wrap {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    user-select: none;
+    transform-style: preserve-3d;
+    transition: transform 1s ease-in-out;
+    will-change: transform;
+}
+
+.team-member .list .row .item .item-wrap .box .wrap {
+    width: 100%;
+    opacity: 1;
+    place-content: center flex-start;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+    height: min-content;
+    overflow: visible;
+    padding: 20px;
+    position: relative;
+}
+
+.team-member .list .row .item .item-wrap .box .wrap .item {
+    place-content: center flex-start;
+    align-items: center;
+    border-radius: 15px;
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: row;
+    gap: 10px;
+    height: 308px;
+    overflow: visible;
+    padding: 0px;
+    position: relative;
+    width: 308px;
+}
+
+.team-member .list .row .item .item-wrap .box .wrap .item .foto-box {
+    position: absolute;
+    border-radius: inherit;
+    inset: 0px;
+}
+
+.team-member .list .row .item .item-wrap .box .wrap .item .foto-box img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    object-position: center;
+    object-fit: fill;
+}
+
+.team-member .list .row .item .item-wrap .box .wrap .text-item {
+    place-content: center flex-start;
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: column;
+    gap: 5px;
+    height: min-content;
+    overflow: visible;
+    padding: 0px;
+    position: relative;
+}
+
+.team-member .list .row .item .item-wrap .box .wrap .text-item .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.team-member .list .row .item .item-wrap .box .wrap .text-item .subtitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+.team-member .list .row .item .item-wrap {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: transform 1s ease;
+    transform-style: preserve-3d;
+    cursor: default;
+    backface-visibility: hidden; /* Pastikan backface-visibility diatur dengan benar */
+}
+
+.team-member .list .row .item .item-wrap:hover {
+    transform: rotateY(180deg); /* Ubah nilai rotateY ke -180deg */
+    -webkit-transform: rotateY(180deg); /* Vendor prefix untuk WebKit */
+    pointer-events: auto;
+}
+
+.team-member .list .row .item .item-wrap .box,
+.team-member .list .row .item .item-wrap .back {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px 0px;
+}
+
+.team-member .list .row .item .item-wrap .box {
+    transform: rotateY(0deg);
+    background-color: white;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.team-member .list .row .item .item-wrap .back {
+    transform: rotateY(180deg);
+    background: radial-gradient(
+        50% 50% at 50% 50%,
+        rgb(109, 114, 133) 0%,
+        rgb(71, 78, 102) 100%
+    );
+    color: white;
+    box-sizing: border-box;
+    font-size: 24px;
+    font-weight: 300;
+    pointer-events: none; /* Menonaktifkan interaksi pointer */
+}
+
+.team-member .list .row .item .item-wrap .content {
+    max-width: 80%;
+}
+
+.our-office {
+    place-content: center;
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: column;
+    gap: 20px;
+    height: min-content;
+    overflow: visible;
+    padding: 50px;
+    position: relative;
+    width: 100%;
+}
+
+.our-office .wrapper {
+    place-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    flex-flow: row;
+    gap: 40px;
+    height: min-content;
+    overflow: visible;
+    padding: 0px;
+    position: relative;
+}
+
+.our-office .wrapper .wrap-content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    place-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0px;
+    /* padding: 10px; */
+    list-style-type: none;
+    opacity: 1;
+    mask-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0) 0%,
+        rgb(0, 0, 0) 12.5%,
+        rgb(0, 0, 0) 87.5%,
+        rgba(0, 0, 0, 0) 100%
+    );
+}
+
+.marquee {
+    display: flex;
+    gap: 25px;
+    animation: marquee 40s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-20% * 18));
+        /* transform: translateX(-50%); */
+    }
+}
+
+.office-maps {
+    place-content: center;
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: row;
+    gap: 10px;
+    height: min-content;
+    overflow: hidden;
+    padding: 50px;
+    position: relative;
+    width: 100%;
+}
+
+.office-maps .box {
+    place-content: center flex-start;
+    align-items: center;
+    background-color: rgb(243, 248, 250);
+    border-radius: 20px;
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: column;
+    gap: 50px;
+    height: min-content;
+    overflow: hidden;
+    padding: 30px;
+    position: relative;
+    width: 100%;
+    will-change: var(--framer-will-change-override, transform);
+}
+
+.office-maps .box .img-wrapper {
+    aspect-ratio: 1.99625 / 1;
+    flex: 0 0 auto;
+    position: relative;
+    width: 100%;
+    border-radius: inherit;
+}
+
+.office-maps .box .img-wrapper img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    object-position: center center;
+    object-fit: cover;
+    image-rendering: auto;
+}
+
+.container-card-maps {
+    place-content: flex-start center;
+    align-items: flex-start;
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: row;
+    gap: 20px;
+    height: 234px;
+    overflow: visible;
+    padding: 0px;
+    position: relative;
+    width: 100%;
+}
+
+.card-maps {
+    place-content: flex-start space-between;
+    align-items: flex-start;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    display: flex;
+    flex: 1 0 0px;
+    flex-flow: column;
+    height: 100%;
+    overflow: visible;
+    padding: 30px;
+    position: relative;
+}
+
+.content-card-maps {
+    place-content: flex-start space-between;
+    align-items: flex-start;
+    display: flex;
+    flex: 1 0 0px;
+    flex-flow: column;
+    overflow: visible;
+    padding: 0px;
+    position: relative;
+    width: 100%;
+}
+
+.content-card-maps h1 {
+    font-size: 28px;
+    font-weight: unset;
+}
+
+.content-card-maps p {
+    color: #7f8499;
+    font-weight: 300;
+}
+
+@media screen and (max-width: 1140px) {
+    .banner-wrapper .box {
+        gap: 50px;
+        width: 70%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        height: unset;
+        padding: unset;
+        flex: unset;
+    }
+
+    .banner-wrapper .box .right-content span {
+        font-size: 20px;
+        line-height: 120%;
+        text-align: center;
+        letter-spacing: 0px;
+    }
+
+    .banner-wrapper .box .left-content span {
+        font-size: 24px;
+        font-weight: 500;
+    }
+
+    .ceo_message {
+        padding: 20px;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .ceo_message .text_wrapper {
+        width: 100%;
+    }
+
+    .ceo_message .img_wrapper::after {
+        content: "Mr. Son Dong-kwon";
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        padding: 10px 16px;
+        border-radius: 12px;
+        background-color: white;
+        box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.25); /* Efek bayangan */
+        color: #444;
+    }
+
+    .our-history .title p {
+        font-size: 32px;
+        font-weight: 500;
+    }
+
+    .core {
+        height: unset;
+        padding: 100px 20px 100px;
+    }
+
+    .core .subtitle {
+        width: 100%;
+    }
+
+    .core .core-text .core-img {
+        height: 40px;
+        width: 40px;
+    }
+
+    .core .full-text {
+        gap: 10px;
+    }
+
+    .core .core-title p {
+        font-size: 32px;
+        font-weight: 500;
+    }
+
+    .core .full-text .wrapper .item p {
+        font-size: 32px;
+    }
+
+    .core .full-text .wrapper {
+        height: unset;
+        flex-direction: column;
+    }
+
+    .core .full-text .wrapper .item {
+        padding: 28px 32px;
+    }
+
+    .team-member {
+        padding: 50px 20px;
+    }
+
+    .team-member .list .row {
+        height: unset;
+        overflow: visible;
+        padding: unset;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    .team-member .wrapper .title {
+        font-size: 32px;
+        font-weight: 500;
+    }
+
+    .team-member .wrapper .subtitle {
+        white-space: unset;
+    }
+
+    .team-member .list .row .item .item-wrap .box {
+        width: unset;
+    }
+
+    .our-office {
+        padding: 20px;
+    }
+
+    .container-card-maps {
+        height: unset;
+        flex-direction: column;
+    }
+
+    .card-maps {
+        width: 100%;
+    }
+
+    .office-maps {
+        padding: 20px;
+    }
+
+    .office-maps .box {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+}
+
+@media screen and (max-width: 767px) {
+}
+
+/* ini css ngambil dari business.css */
+
+.product-wrapper {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.product-wrapper .collapsible {
+    place-content: center space-between;
+    display: flex;
+    align-items: center;
+    background-color: #40455c;
+    color: white;
+    cursor: pointer;
+    padding: 50px 30px;
+    height: min-content;
+    flex-flow: row;
+    border-radius: 20px 20px 0 0;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    pointer-events: none;
+}
+
+.product-wrapper .content {
+    padding: 50px 0px 30px 0px;
+    background-color: rgb(248, 249, 252);
+    overflow: hidden;
+    border-radius: 0 0 20px 20px;
+    transition: max-height 0.2s ease-out;
+}
+
+.product-wrapper .content .img-box {
+    place-content: flex-start center;
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: row;
+    gap: 24px;
+    margin-bottom: 20px;
+    overflow: visible;
+    position: relative;
+}
+
+.dekstop-history {
+    display: block;
+}
+
+.mobile-history {
+    display: none;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 1140px) {
+    .our-history {
+        gap: 50px;
+        padding: 50px 20px;
+    }
+
+    .dekstop-history {
+        display: none;
+    }
+
+    .mobile-history {
+        display: block;
+    }
+
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    .wrap-collabsible {
+        margin: 1.2rem 0;
+    }
+
+    .lbl-toggle {
+        place-content: center space-between;
+        display: flex;
+        align-items: center;
+        background-color: rgb(248, 249, 252);
+        color: rgb(64, 69, 92);
+        cursor: pointer;
+        padding: 20px;
+        height: min-content;
+        border-radius: 20px 20px 20px 20px;
+        width: 100%;
+        cursor: pointer;
+        transition: all 0.25s ease-out;
+    }
+
+    .lbl-toggle span {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .lbl-toggle .icon-right {
+        content: url("../../assets/images/icon/closed-icon-black-mini.png");
+    }
+
+    /* .lbl-toggle:hover {
+        color: #FFF;
+        background-color: rgb(64, 69, 92);
+    } */
+
+    .collapsible-content {
+        max-height: 0px;
+        overflow: hidden;
+        transition: max-height 0.25s ease-in-out;
+    }
+
+    .toggle:checked + .lbl-toggle + .collapsible-content {
+        max-height: max-content;
+    }
+
+    .toggle:checked + .lbl-toggle {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        color: #fff;
+        background-color: rgb(64, 69, 92);
+    }
+
+    .toggle:checked + .lbl-toggle .icon-right {
+        content: url("../../assets/images/icon/open-icon-white-mini.png");
+    }
+
+    .toggle:checked + .content {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        color: #fff;
+        background-color: rgb(64, 69, 92);
+    }
+
+    .collapsible-content .content {
+        padding: 50px 0px 30px 0px;
+        background-color: rgb(248, 249, 252);
+        overflow: hidden;
+        border-radius: 0 0 20px 20px;
+    }
+
+    .product-wrapper {
+        gap: unset;
+    }
+
+    .product-wrapper .collapsible span {
+        font-size: 24px;
+    }
+
+    .collapsible:after {
+        content: url(../../assets/images/icon/open-icon-white-mini.png);
+        border-radius: 0px 0px 20px 20px;
+        /* color: white; */
+        font-weight: bold;
+        float: right;
+    }
+
+    .product-wrapper .collapsible {
+        padding: 20px;
+    }
+
+    .product-wrapper .content {
+        padding: 20px 0px 20px 0px;
+        border-radius: 0 0 20px 20px;
+    }
+
+    .product-wrapper .content .text-wrapper {
+        gap: 20px;
+        display: flex;
+        padding: 20px;
+        flex-direction: column;
+    }
+
+    .product-wrapper .content .text-wrapper h1 {
+        font-size: 28px;
+        font-weight: 400;
+    }
+
+    .product-wrapper .content .img-box {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .collapsible-content {
+        padding: unset;
+    }
+}
