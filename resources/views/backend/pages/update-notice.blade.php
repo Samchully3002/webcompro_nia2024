@@ -17,19 +17,19 @@
               <label class="col-sm-2 col-form-label" for="basic-default-name">Title</label>
               <div class="col-sm-10">
                 <input type="text" name="title" class="form-control" id="title" placeholder="" require="" value="{{$notice->title}}">
-                <input type="hidden" name="id" id="id" placeholder="">
+                <input type="hidden" name="id" id="id" placeholder="" value="{{$notice->id}}">
               </div>
             </div>
             <div class="row mb-3">
               <label class="col-sm-2 col-form-label" for="basic-default-name">Image</label>
               <div class="col-sm-10">
-                <input type="file" name="image" class="form-control" id="image" placeholder="" value="">
+                <input type="file" name="image" class="form-control" id="image" placeholder="">
               </div>
             </div>
             <div class="row mb-3">
               <label class="col-sm-2 col-form-label" for="basic-default-message">Content</label>
               <div class="col-sm-10">
-                <textarea id="content" name="content" class="form-control" placeholder="" aria-label="">{{$notice->content}}</textarea>
+                <textarea id="content"  rows="9" name="content" class="form-control" placeholder="" aria-label="" >{{$notice->content}}</textarea>
               </div>
             </div>
             <div class="row mb-3" style="margin-top:60px;">
@@ -48,12 +48,11 @@
       </div>
     </div>
   </div>
-  <script>
+  <!-- <script>
           // ==== custom editor ===//
-    //   const quill = new Quill('#content', {
-    //       theme: 'snow'
-    //   });
-
-    //   quill.setContents('{"ops":[{"insert":"Headline"},{"attributes":{"headline":true},"insert":"\n"},{"insert":"\n\ncontent"},{"attributes":{"content":true},"insert":"\n"}]}')
-    </script>
+      const quill = new Quill('#content', {
+          theme: 'snow',
+          text : "{{$notice->content}}"
+      });
+    </script> -->
     @stop

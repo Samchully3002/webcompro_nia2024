@@ -3,10 +3,7 @@
     <div class="row gy-3">
                 <div class="col-md-6 col-lg-4">
                   <div class="demo-inline-spacing">
-                    <h4 class="py-3 mb-4"><span class="text-muted fw-light">Media /</span> News Report</h4>
-                        <a  class="btn btn-primary" href="{{url('dashboard/post-news')}}">
-                          <span class="tf-icons bx bx-plus-circle me-1"></span>Create
-                        </a>
+                    <h4 class="py-3 mb-4"><span class="text-muted fw-light">Customer & Support /</span> List Message</h4>
                       </div>  
                 </div>
               </div>
@@ -18,17 +15,17 @@
                     <div class="card-body">
                     <div class="table-responsive">
                     <div class="table">
-                    <table class="table table-striped news-table">
+                    <table class="table table-striped message-table">
                       <thead>
                         <tr>
                           <th>No</th>
-                          <th>Title</th>
-                          <th>Source</th>
-                          <th>Images</th>
+                          <th>Sender</th>
+                          <th>Email</th>
+                          <th>Content</th>
                           <th>Actions</th>
                         </tr>
                       </thead>
-                      <tbody class="">
+                      <tbody class="table-border-bottom-0">
 
                       </tbody>
                     </table>
@@ -39,5 +36,4 @@
                 <!--/ Striped Rows -->
   
                 <hr class="my-5">
-                
     @stop

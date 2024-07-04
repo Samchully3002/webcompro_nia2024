@@ -37,16 +37,9 @@ Route::group([
     ],
     function () {
         // Dashboard Routes
-        Route::get('/', function () {
-           return  view('backend/pages/dashboard');
-        // Our Business Routes
-        });
-        Route::get('/list-business', function () {
-            return  view('backend/pages/list-business');
-         });
-        Route::get('/post-business', function () {
-            return  view('backend/pages/post-business');
-         });
+        Route::get('/', [App\Http\Controllers\backend\DashboardController::class, 'index'])->name('dashboard');
+        Route::get('/info', [App\Http\Controllers\backend\DashboardController::class, 'index'])->name('dashboard.info');
+        Route::get('/list-message', [App\Http\Controllers\backend\DashboardController::class, 'display_message'])->name('list.message');
 
          // Media News Routes
          Route::get('/list-news', [App\Http\Controllers\backend\MediaNewsController::class, 'index'])->name('list.news');
