@@ -16,7 +16,7 @@
           <div class="avatar me-2">
             <span class="avatar-initial rounded bg-label-primary"><i class="bx bxs-user"></i></span>
           </div>
-          <h4 class="ms-1 mb-0">20</h4>
+          <h4 class="ms-1 mb-0">{{$countEmp}}</h4>
         </div>
         <p class="mb-1">Our Employee</p>
       </div>
@@ -29,7 +29,7 @@
           <div class="avatar me-2">
             <span class="avatar-initial rounded bg-label-warning"><i class="bx bx-error"></i></span>
           </div>
-          <h4 class="ms-1 mb-0">8</h4>
+          <h4 class="ms-1 mb-0">{{$countNews}}</h4>
         </div>
         <p class="mb-1">Total News</p>
       </div>
@@ -42,7 +42,7 @@
           <div class="avatar me-2">
             <span class="avatar-initial rounded bg-label-danger"><i class="bx bx-git-repo-forked"></i></span>
           </div>
-          <h4 class="ms-1 mb-0">27</h4>
+          <h4 class="ms-1 mb-0">{{$countNotice}}</h4>
         </div>
         <p class="mb-1">Total Notice</p>
       </div>
@@ -55,9 +55,9 @@
           <div class="avatar me-2">
             <span class="avatar-initial rounded bg-label-info"><i class="bx bx-time-five"></i></span>
           </div>
-          <h4 class="ms-1 mb-0">13</h4>
+          <h4 class="ms-1 mb-0">{{$countMess}}</h4>
         </div>
-        <p class="mb-1">Total Mail</p>
+        <p class="mb-1">Total New Mail</p>
       </div>
     </div>
   </div>

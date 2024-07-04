@@ -15,7 +15,8 @@
   
                 <!-- Striped Rows -->
                 <div class="card">
-                  <div class="table-responsive text-left">
+                    <div class="card-body">
+                    <div class="table-responsive">
                     <div class="table">
                     <table class="table table-striped notice-table">
                       <thead>
@@ -34,6 +35,7 @@
                     </table>
                     </div>
                   </div>
+                    </div>
                 </div>
                 <!--/ Striped Rows -->
   

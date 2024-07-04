@@ -146,7 +146,7 @@ $.ajax({
     dataType: 'json',
     success: function(response) {
       dispNotif('Deleting Data Success', response.message, 'success');
-      tableTeam.ajax.reload();
+      tableNotice.ajax.reload();
     },
     error: function(xhr, status, error) {
       dispNotif('', 'error saving data', 'error');
@@ -303,6 +303,22 @@ Swal.fire("Changes are not saved", "", "info");
       })
 
       // TEAM END
+
+
+      // MESSAGE 
+      tableMessage = $('.message-table').DataTable({
+          fixedColumns: true,
+          processing: true,
+          serverSide: true,
+          ajax: "{{ route('dashboard.list.message') }}",
+          columns: [
+              {data: 'id', name: 'id'},
+              {data: 'sender', name:'sender'},
+              {data: 'email', name:'email'},
+              {data: 'message', name:'message'},
+              {data: 'action', name: 'action', orderable: false, searchable: false},
+          ]
+      });
 
       // NEWS
       $("#btn_form_news").click(function(e) {

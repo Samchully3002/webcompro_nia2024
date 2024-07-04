@@ -17,7 +17,11 @@
               <label class="col-sm-2 col-form-label" for="basic-default-name">News Title</label>
               <div class="col-sm-10">
                 <input type="text" value="{{$news->title}}" class="form-control" id="basic-default-name" placeholder="" id="title" name="title">
+<<<<<<< HEAD
+                <input type="hidden" name="id" id="id" placeholder="" value="{{$news->id}}">
+=======
                 <input type="hidden" name="id" id="id" value="{{$news->id}}"/>
+>>>>>>> 82e31a9d0af80d1fb6d97234f28c0b33345ac9b5
               </div>
             </div>
             <div class="row mb-3">
