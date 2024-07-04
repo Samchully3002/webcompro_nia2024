@@ -9,7 +9,7 @@
     </script>
 
     <meta charset="utf-8">
-    <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=2, minimum-scale=1, width=device-width" />
+     <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=2, minimum-scale=1, width=device-width" /> 
     <title>Networks Indonesia Aku</title>
     <link rel="shortcut icon" href="{{asset('frontend/images/icon/favicon.ico')}}">
     <!-- {{asset('frontend/css/outline.css')}} -->
