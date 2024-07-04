@@ -168,29 +168,29 @@
 
 
                 
-    //             $("#btn_form_message").click(function(e) {
-    //                 e.preventDefault();
-    //                 let form = $('#form_message')[0];
-    //                 let data = new FormData(form);
+                $("#btn_form_message").click(function(e) {
+                    e.preventDefault();
+                    let form = $('#form_message')[0];
+                    let data = new FormData(form);
                     
-    //                 $.ajax({
-    //                     url: "{{ route('contact-us-submit') }}",
-    //                     type: "POST",
-    //       data: data,
-    //       dataType: "JSON",
-    //       processData: false,
-    //       contentType: false,
-    //       success: function(response) {
-    //         $('#form_message')[0].reset();
-    //         dispNotif('Saving Data Success', response.message, 'success');
-    //     },
-    //     error: function(xhr, status, error) {
-    //       dispNotif('', 'error saving data', 'error');
-    //       }
+        $.ajax({
+          url: "{{ route('contact-us-submit') }}",
+          type: "POST",
+          data: data,
+          dataType: "JSON",
+          processData: false,
+          contentType: false,
+          success: function(response) {
+            $('#form_message')[0].reset();
+            dispNotif('Saving Data Success', response.message, 'success');
+        },
+        error: function(xhr, status, error) {
+          dispNotif('', 'error saving data', 'error');
+          }
 
-    //     });
+        });
 
-    //   })
+      })
                 
                 
             });
