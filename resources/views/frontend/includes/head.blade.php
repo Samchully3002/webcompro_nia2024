@@ -27,7 +27,7 @@
     <script type="text/javascript">
           $(document).ready(function(){
             let url = $(location).attr('href');
-            console.log(url.substring(url.lastIndexOf('/') + 1));
+            // console.log(url.substring(url.lastIndexOf('/') + 1));
           
           });
     </script> 
