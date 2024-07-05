@@ -34,6 +34,27 @@
                     </div>
                 </div>
                 <!--/ Striped Rows -->
-  
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasEnd" aria-labelledby="offcanvasEndLabel">
+                          <div class="offcanvas-header">
+                            <h5 id="offcanvasEndLabel" class="offcanvas-title">New Message </h5>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                          </div>
+                          <div class="offcanvas-body my-auto mx-0 flex-grow-0">
+                          <div class="mb-3">
+                        <label for="defaultFormControlInput" class="form-label"> Name</label>
+                        <input type="text" class="form-control" id="sender" placeholder="John Doe" aria-describedby="defaultFormControlHelp" disabled>
+                      </div>
+                      <div class="mb-3">
+                        <label for="defaultFormControlInput" class="form-label"> Email</label>
+                        <input type="text" class="form-control" id="email" placeholder="John Doe" aria-describedby="defaultFormControlHelp" disabled>
+                      </div>
+                      <div class="mb-3">
+                      <label for="defaultFormControlInput" class="form-label"> Message</label>
+                      <p class="text-justify" id="content-message">
+
+                      </p>
+                      </div>
+
+                        </div>
                 <hr class="my-5">
     @stop

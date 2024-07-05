@@ -65,9 +65,10 @@ Route::group([
     ],
     function () {
         // Dashboard Routes
-        Route::get('/', [App\Http\Controllers\backend\DashboardController::class, 'index'])->name('dashboard');
-        Route::get('/info', [App\Http\Controllers\backend\DashboardController::class, 'index'])->name('dashboard.info');
-        Route::get('/list-message', [App\Http\Controllers\backend\DashboardController::class, 'display_message'])->name('list.message');
+         Route::get('/', [App\Http\Controllers\backend\DashboardController::class, 'index'])->name('dashboard');
+         Route::get('/info', [App\Http\Controllers\backend\DashboardController::class, 'index'])->name('dashboard.info');
+         Route::get('/list-message', [App\Http\Controllers\backend\DashboardController::class, 'display_message'])->name('list.message');
+         Route::get('/show-message', [App\Http\Controllers\backend\DashboardController::class, 'message_by_id'])->name('show.message');
 
          // Media News Routes
          Route::get('/list-news', [App\Http\Controllers\backend\MediaNewsController::class, 'index'])->name('list.news');

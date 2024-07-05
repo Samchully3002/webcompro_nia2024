@@ -43,8 +43,8 @@ class DashboardController extends Controller
         
      }
 
-         /**
-     * index
+    /**
+     * display_message [ajax]
      *
      * @return void
      */
@@ -59,9 +59,9 @@ class DashboardController extends Controller
                     ->addIndexColumn()
                     ->addColumn('action', function($row){
                            if($row->read==1){
-                              $btn = '<a href="javascript.void(0)" class="edit btn btn-primary btn-sm">View</a>';
+                              $btn = '<button onclick="showMessage('.$row->id.')" class="edit btn btn-primary btn-sm" data-bs-toggle="offcanvas" data-bs-target="#offcanvasEnd" aria-controls="offcanvasEnd">View</button>';
                            }else{
-                              $btn = '<a href="javascript.void(0)" class="edit btn btn-success btn-sm">Read</a>';
+                              $btn = '<button onclick="showMessage('.$row->id.')" class="edit btn btn-success btn-sm" data-bs-toggle="offcanvas" data-bs-target="#offcanvasEnd" aria-controls="offcanvasEnd">Read</a>';
                            }
                            
       
@@ -74,4 +74,23 @@ class DashboardController extends Controller
         //return view with data
         return  view('backend/pages/list-message');
     }
+
+    /**
+     * message_by_id [ajax,id]
+     *
+     * @return void
+     */
+
+     public function message_by_id(Request $request){
+        $message = ContactUs::findOrFail($request->id);
+
+        if($message->read == 0){
+            $message->update([
+                'read'      =>1
+            ]);
+        }
+
+        //render view with product
+        return response()->json(['message' => $message]);
+     }
 }
