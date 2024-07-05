@@ -59,6 +59,7 @@
     var tableTeam;
     var tableNotice;
     var tableNews;
+    var tableMess;
 
       //==== display notif ==== //
       function dispNotif(title, message, status){
@@ -91,7 +92,7 @@
         });
       }
 
-      //== Show Team By Id == //
+      //== Delete Team By Id == //
       function deleteTeam(id){
 
         Swal.fire({
@@ -127,7 +128,7 @@
 
 
       
-      //== Show Team By Id == //
+      //== Delete Notice By Id == //
       function deleteNotice(id){
 
 Swal.fire({
@@ -162,7 +163,7 @@ Swal.fire("Changes are not saved", "", "info");
 }
 
       
-      //== Show Team By Id == //
+      //== Delete News By Id == //
       function deleteNews(id){
 
 Swal.fire({
@@ -195,6 +196,27 @@ Swal.fire("Changes are not saved", "", "info");
 
 });
 }
+
+      //== Show Message By Id == //
+      function showMessage(id){
+        $.ajax({
+            url: '{{ route('dashboard.show.message') }}',
+            type: 'GET',
+            data: {id:id},
+            dataType: 'json',
+            success: function(response) {
+                var mess = response.message;
+                $("#sender").val(mess.sender);
+                $("#email").val(mess.email);
+                $("#content-message").html(mess.message);
+                tableMess.ajax.reload();
+
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+        });
+      }
       //==============TEAM=================//
 
       //===============NEWS================//
@@ -306,7 +328,7 @@ Swal.fire("Changes are not saved", "", "info");
 
 
       // MESSAGE 
-      tableMessage = $('.message-table').DataTable({
+      tableMess = $('.message-table').DataTable({
           fixedColumns: true,
           processing: true,
           serverSide: true,
