@@ -9,22 +9,22 @@
 }
 
 .bisnis1 {
-    background-image: url(../../frontend/images/IIL.jpg);
+    background-image: url(../images/IIL.jpg);
     height: 100vh;
 }
 
 .bisnis2 {
-    background-image: url(../../frontend/images/DHC.jpg);
+    background-image: url(../images/DHC.jpg);
     height: 100vh;
 }
 
 .bisnis3 {
-    background-image: url(../../frontend/images/SDM.jpg);
+    background-image: url(../images/SDM.jpg);
     height: 100vh;
 }
 
 .bisnis4 {
-    background-image: url(../../frontend/images/EV.jpg);
+    background-image: url(../images/EV.jpg);
     height: 100vh;
 }
 
@@ -79,7 +79,6 @@
     display: flex;
     flex: 0 0 auto;
     flex-flow: column;
-    gap: 50px;
     height: min-content;
     overflow: visible;
     padding: 100px 50px;
@@ -132,7 +131,7 @@ input[type="checkbox"] {
 
 .lbl-toggle span {
     font-size: 48px;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .lbl-toggle:hover {
@@ -141,7 +140,7 @@ input[type="checkbox"] {
 }
 
 .lbl-toggle .icon-right:hover {
-    content: url("../../frontend/images/icon/closed-icon-white.png");
+    content: url("../images/icon/closed-icon-white.png");
 }
 
 .collapsible-content {
@@ -169,11 +168,11 @@ input[type="checkbox"] {
 }
 
 .lbl-toggle .icon-right {
-    content: url("../../frontend/images/icon/closed-icon-black.png");
+    content: url("../images/icon/closed-icon-black.png");
 }
 
 .toggle:checked + .lbl-toggle .icon-right {
-    content: url("../../frontend/images/icon/open-icon-white.png");
+    content: url("../images/icon/open-icon-white.png");
 }
 
 .product-wrapper .content {
@@ -342,11 +341,11 @@ input[type="checkbox"] {
     }
 
     .lbl-toggle .icon-right {
-        content: url("../../frontend/images/icon/closed-icon-black-mini.png");
+        content: url("../images/icon/closed-icon-black-mini.png");
     }
 
     .toggle:checked + .lbl-toggle .icon-right {
-        content: url("../../frontend/images/icon/open-icon-white-mini.png");
+        content: url("../images/icon/open-icon-white-mini.png");
     }
 
     .product-wrapper .content .card-wrapper {
@@ -362,7 +361,7 @@ input[type="checkbox"] {
     }
 
     /* .collapsible:after {
-        content: url(../../frontend/images/icon/open-icon-white-mini.png);
+        content: url(../images/icon/open-icon-white-mini.png);
         border-radius: 20px 20px 0px 0px;
         color: white;
         font-weight: bold;
@@ -449,7 +448,7 @@ input[type="checkbox"] {
     }
 
     .lbl-toggle .icon-right:hover {
-        content: url("../../frontend/images/icon/closed-icon-black-mini.png");
+        content: url("../images/icon/closed-icon-black-mini.png");
     }
 
     .lbl-toggle {
