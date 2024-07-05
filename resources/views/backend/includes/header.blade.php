@@ -64,7 +64,7 @@
                 <ul class="menu-sub">
                   <li class="menu-item">
                     <a href="{{url('dashboard/list-news')}}" class="menu-link">
-                      <div data-i18n="Without menu">Report</div>
+                      <div data-i18n="Without menu">News</div>
                     </a>
                   </li>
                   <li class="menu-item">
@@ -112,7 +112,7 @@
                 <div data-i18n="our-business">Meta Tags</div>
               </a>
             </li>  
-            <li class="menu-header small text-uppercase"><span class="menu-header-text">Customer &amp; Service</span></li>
+            <li class="menu-header small text-uppercase"><span class="menu-header-text">Contact Us</span></li>
             <li class="menu-item">
               <a
                 href="{{url('dashboard/list-message')}}"

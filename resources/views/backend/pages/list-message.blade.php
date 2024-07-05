@@ -3,7 +3,7 @@
     <div class="row gy-3">
                 <div class="col-md-6 col-lg-4">
                   <div class="demo-inline-spacing">
-                    <h4 class="py-3 mb-4"><span class="text-muted fw-light">Customer & Support /</span> List Message</h4>
+                    <h4 class="py-3 mb-4"><span class="text-muted fw-light">Contact Us / </span> List Message</h4>
                       </div>  
                 </div>
               </div>
