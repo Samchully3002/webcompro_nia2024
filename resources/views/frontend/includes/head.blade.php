@@ -28,6 +28,11 @@
           $(document).ready(function(){
             let url = $(location).attr('href');
             // console.log(url.substring(url.lastIndexOf('/') + 1));
+
+            $.getJSON("https://ipinfo.io",
+            function (response) {
+                console.log(response.ip);
+            }, "jsonp");
           
           });
     </script> 
