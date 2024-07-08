@@ -15,7 +15,7 @@ class MetaTags extends Model
      *
      * @var array
      */
-    protected $table = 'head_tags';
+    protected $table = 'metatags';
     protected $fillable = [
         'title',
         'desc',
