@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
    return redirect('/home');
 });
+
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('homepage');
 Route::get('/about-us', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
 Route::get('/community/news', [App\Http\Controllers\HomeController::class, 'news'])->name('news');
@@ -65,16 +67,10 @@ Route::group([
     ],
     function () {
         // Dashboard Routes
-        Route::get('/', function () {
-           return  view('backend/pages/dashboard');
-        // Our Business Routes
-        });
-        Route::get('/list-business', function () {
-            return  view('backend/pages/list-business');
-         });
-        Route::get('/post-business', function () {
-            return  view('backend/pages/post-business');
-         });
+        Route::get('/', [App\Http\Controllers\backend\DashboardController::class, 'index'])->name('dashboard');
+         Route::get('/info', [App\Http\Controllers\backend\DashboardController::class, 'index'])->name('dashboard.info');
+         Route::get('/list-message', [App\Http\Controllers\backend\DashboardController::class, 'display_message'])->name('list.message');
+         Route::get('/show-message', [App\Http\Controllers\backend\DashboardController::class, 'message_by_id'])->name('show.message');
 
          // Media News Routes
          Route::get('/list-news', [App\Http\Controllers\backend\MediaNewsController::class, 'index'])->name('list.news');
@@ -102,7 +98,13 @@ Route::group([
          Route::get('/delete-team', [App\Http\Controllers\backend\OurTeamController::class, 'destroy'])->name('delete.team');
          Route::post('/post-team', [App\Http\Controllers\backend\OurTeamController::class, 'store'])->name('post.team');
 
-    }
+         //Meta Tags
+         Route::get('/list-tags', [App\Http\Controllers\backend\MetaController::class, 'index'])->name('list.tags');
+         Route::post('/post-tags', [App\Http\Controllers\backend\MetaController::class, 'store'])->name('post.tags');
+         Route::get('/delete-tags', [App\Http\Controllers\backend\MetaController::class, 'destroy'])->name('delete.tags');
+         Route::get('/show-tags', [App\Http\Controllers\backend\MetaController::class, 'show'])->name('show.tags');
+
+      }
 )->middleware(['auth', 'verified'])->name('dashboard');
 
 require __DIR__.'/auth.php';

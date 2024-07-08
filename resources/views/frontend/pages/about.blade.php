@@ -32,7 +32,7 @@
             </div>
             <div class="text_wrapper">
 
-                <h1 class="muncul">CEO Greetings</h1><br>
+                <span class="muncul">CEO Greetings</span><br>
                 <p class="muncul">
                 As a subsidiary of Samchully Networks from South Korea, PT Networks Indonesia Aku was established in Jakarta, Indonesia in 2021 with a clear mission: "To become a leading IT company in Indonesia, emphasizing environmentally friendly products and services. We aim to create technology for the advancement of transportation and infrastructure, healthcare technology, education, logistics, smart factories, online payment systems, and their development." As specialists in the IT field, we offer a diverse range of services through information data and develop solutions through application/web platforms.<br><br>
                 NIA prioritizes 'integration' and 'innovation' as its core foundation. With the vision of "Focusing on innovation, high-quality services, and advanced technological solutions, we are determined to make a meaningful contribution to advancing the world of information technology. Through this commitment, we strive to build strong, long-term relationships with customers, becoming a reliable partner and continuing to be a leading provider of IT solutions." We are committed to continually building and maintaining trust, aligning with the rapid changes in technology trends.
@@ -47,7 +47,7 @@
                     <p>Our Stories</p>
                 </div>
 
-                
+
                 <div class="dekstop-history">
                     <div class="box">
                        <!-- Left Content -->
