@@ -22,7 +22,7 @@
 
           <ul class="menu-inner py-1">
             <!-- Dashboards -->
-            <li class="menu-item active">
+            <li class="{{  Request::segment(2) == null ? 'menu-item active' : 'menu-item' }}">
               <a href="{{url('/dashboard/')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Dashboards">Dashboards</div>
@@ -55,7 +55,7 @@
               </a>
             </li> -->
             
-            <li class="menu-item">
+            <li class="{{ str_contains( Request::segment(2), 'news') || str_contains( Request::segment(2), 'notice') ? 'menu-item active' : 'menu-item' }}">
                 <a
                 href="javascript:void(0);" class="menu-link menu-toggle">
                   <i class="menu-icon tf-icons bx bx-movie-play"></i>
@@ -79,7 +79,7 @@
                   </li> -->
                 </ul>
               </li>   
-              <li class="menu-item">
+              <li class="{{ str_contains( Request::segment(2), 'team') ? 'menu-item active' : 'menu-item' }}">
               <a
                 href="{{url('dashboard/list-team')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-group"></i>
@@ -105,7 +105,7 @@
               <span class="menu-header-text">SEO Area</span>
             </li>
 
-            <li class="menu-item">
+            <li class="{{ str_contains( Request::segment(2), 'tag') ? 'menu-item active' : 'menu-item' }}">
               <a
                 href="{{url('dashboard/list-tags')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-purchase-tag"></i>
@@ -113,7 +113,7 @@
               </a>
             </li>  
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Contact Us</span></li>
-            <li class="menu-item">
+            <li class="{{ str_contains( Request::segment(2), 'message') ? 'menu-item active' : 'menu-item' }}">
               <a
                 href="{{url('dashboard/list-message')}}"
                 class="menu-link">
