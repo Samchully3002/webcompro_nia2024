@@ -36,8 +36,8 @@
                             <div class="ic-bisnis">
                             <img src="../../frontend/images/icon/ic_cube.svg">
                             </div><br>
-                            <p >Intelligent Integrated Logistics</p><br>
-                            <span>Utilizing our unique transportation system and advanced technology, we offer solutions merging big data and AI. Our platforms enable efficient demand prediction and risk management.</span><br>
+                            <p >{{ __('iil') }}</p><br>
+                            <span>{{ __('iil-content') }}</span><br>
                             <div class="btn-more">More&nbsp;&nbsp;&nbsp;
                                 <img src="../../frontend/images/icon/arrow.png">
                             </div>

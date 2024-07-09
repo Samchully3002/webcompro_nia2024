@@ -19,4 +19,16 @@ class LanguageController extends Controller
         Session::put('locale', $lang);
         return redirect()->back();
     }
+
+    public function ganti($id)
+
+    {
+        // $lang = $request->input('lang');
+        if (!in_array($id, ['id', 'en', 'kr'])) {
+            abort(400);
+        }
+
+        Session::put('locale', $id);
+        return redirect()->back();
+    }
 }

@@ -12,62 +12,50 @@
                         <a class="btn_business">{{ __('navbar-business') }}&nbsp;&nbsp;&nbsp;
                         <img src="../../frontend/images/icon/arrow-down.png" class="language_caret"/></a>
                         <ul class="hidden-menu" style="width: 305px;">
-                            <li><a href="/our-business/intellegent-integrated-logistic"><em>Intelligent Integrated Logistics</em></a></li>
-                            <li><a href="/our-business/digital-healthcare"><em>Digital Healthcare</em></a></li>
-                            <li><a href="/our-business/system-development-management"><em>System Development & Management</em></a></li>
-                            <li><a href="/our-business/export-voucher"><em>Export Voucher</em></a></li>
+                            <li><a href="/our-business/intellegent-integrated-logistic"><em>{{ __('iil') }}</em></a></li>
+                            <li><a href="/our-business/digital-healthcare"><em>{{ __('dh') }}</em></a></li>
+                            <li><a href="/our-business/system-development-management"><em>{{ __('sdm') }}</em></a></li>
+                            <li><a href="/our-business/export-voucher"><em>{{ __('navbar-home') }}</em></a></li>
                         </ul>
                     </li>
-                    <li class="first-menu hidden-box"><a href="/about-us">About</a>
+                    <li class="first-menu hidden-box"><a href="/about-us">{{ __('navbar-about') }}</a>
                     </li>
                     <li class="first-menu hidden-box business">
-                        <a class="btn_business">Community&nbsp;&nbsp;&nbsp;
+                        <a class="btn_business">{{ __('navbar-community') }}&nbsp;&nbsp;&nbsp;
                         <img src="../../frontend/images/icon/arrow-down.png" class="language_caret"/></a>
                         <ul class="hidden-menu" style="width: 150px">
-                            <li><a href="/community/notice"><em>Notice</em></a></li>
-                            <li><a href="/community/news"><em>News</em></a></li>
+                            <li><a href="/community/notice"><em>{{ __('navbar-notice') }}</em></a></li>
+                            <li><a href="/community/news"><em>{{ __('navbar-news') }}</em></a></li>
                         </ul>
                     </li>
                 </ul>
 
                 <div class="content-right">
-                    <a href="https://www.youtube.com/channel/UCk4YWCZF81paAh_rzwwiKxQ" class="btn_contact_us">Our Video&nbsp;&nbsp;&nbsp; <img style="width: 12%;" src="../../frontend/images/icon/polygon.png" ></a>
-                    <a href="/contact-us" class="btn_contact_us">Contact Us&nbsp;&nbsp;&nbsp; <img style="width: 12%;" src="../../frontend/images/icon/arrow.png" class="language_flag"></a>
+                    <a href="https://www.youtube.com/channel/UCk4YWCZF81paAh_rzwwiKxQ" class="btn_contact_us">{{ __('navbar-video') }}&nbsp;&nbsp;&nbsp; <img src="../../frontend/images/icon/polygon.png" ></a>
+                    <a href="/contact-us" class="btn_contact_us">{{ __('navbar-contact') }}&nbsp;&nbsp;&nbsp; <img src="../../frontend/images/icon/arrow.png" class="language_flag"></a>
 
                     <div class="right-box language">
                         <div class="lang-box hidden-box bahasa">
-                        @foreach($available_locales as $locale_name => $available_locale)
+                            @foreach($available_locales as $locale_name => $available_locale)
                             @if($available_locale === $current_locale)
                             <a class="lang-btn">
-                                <img style="width: 14%;" src="../../frontend/images/icon/language.png" class="language_flag"/>
+                                <img src="../../frontend/images/icon/language.png" class="language_flag"/>
                                 <span>{{ $locale_name }}</span>
                                 <img src="../../frontend/images/icon/arrow-down.png" class="language_caret"/>
                             </a>
                             @else
                             <ul class="lang-menu hidden-menu">
-                                {{-- <li><a href="language/{{ $available_locale }}"><img src="../../frontend/images/icon/flag-indo.png"/> {{ $locale_name }} {{ $available_locale }}</a></li> --}}
-                                <li><a href="{{ $available_locale }}"><img src="../../frontend/images/icon/flag-indo.png"/> {{ $locale_name }} {{ $available_locale }}</a></li>
+                                @foreach($available_locales as $locale_name => $available_locale)
+                                @if($available_locale === $current_locale)
+                                @else
+                                <li><a href="/{{ $available_locale }}"><img src="../../frontend/images/icon/{{( $available_locale)}}.png"/> {{ $locale_name }}</a></li>
+                                @endif
+                                @endforeach
                             </ul>
                             @endif
                             @endforeach
                         </div>
                     </div>
-
-                    <div class="right-box language">
-                        <form id="langform" action="" method="get">
-                            <div class="lang-box hidden-box bahasa">
-                                <select class="lang-btn" name="lang" id="lang" onchange="this.form.submit()">
-
-                                    <option  disabled> Language</option>
-                                    <option  value="id" @if (Session::get('locale', 'id') == 'id') selected @endif> Indonesia</option>
-                                    <option value="en" @if (session('locale') == 'en') selected @endif> English</option>
-                                    <option value="kr" @if (session('locale') == 'kr') selected @endif> Korea</option>
-
-                                </select>
-                            </div>
-                        </form>
-                    </div>
-
                     <div class="nav-mobile">
                         <div class="nav-wrapper">
                             <a class="logo" href="#">
@@ -172,21 +160,21 @@
         }
     });
 
-    $(document).ready(function(){
+    // $(document).ready(function(){
 
-        $(window).scroll(function(){
-            var scroll = $(window).scrollTop();
-            if (scroll > 100) {
-                $(".menu-wrapper").css("background-image", "linear-gradient(rgba(255, 255, 255, 0.907), rgb(255, 255, 255))");
-                // $(".menu-box a").css("color", "black");
-            }
+    //     $(window).scroll(function(){
+    //         var scroll = $(window).scrollTop();
+    //         if (scroll > 100) {
+    //             $(".menu-wrapper").css("background-image", "linear-gradient(rgba(255, 255, 255, 0.907), rgb(255, 255, 255))");
+    //             // $(".menu-box a").css("color", "black");
+    //         }
 
-            else{
-                $(".menu-wrapper").css("background-image" , "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0))");
-                // $(".menu-box a").css("color", "white");
-            }
-        })
-    })
+    //         else{
+    //             $(".menu-wrapper").css("background-image" , "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0))");
+    //             // $(".menu-box a").css("color", "white");
+    //         }
+    //     })
+    // })
 
     /* hambuger menu event */
     $('.pc-ham').on('click' , function(){

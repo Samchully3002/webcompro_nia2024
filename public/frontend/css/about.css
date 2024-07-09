@@ -832,7 +832,7 @@ hr.rounded {
 }
 
 .marquee img {
-    width:;
+    height: 500px;
 }
 
 @keyframes marquee {

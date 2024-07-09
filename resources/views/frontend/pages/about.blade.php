@@ -878,29 +878,7 @@
                     <div class="marquee">
                         <img src="../frontend/images/office1.png"/>
                         <img src="../frontend/images/office2.png"/>
-
-
-                        <img src="../frontend/images/office1.png"/>
-                        <img src="../frontend/images/office2.png"/>
-                        <img src="../frontend/images/office1.png"/>
-                        <img src="../frontend/images/office2.png"/>
-                        <img src="../frontend/images/office1.png"/>
-                        <img src="../frontend/images/office2.png"/>
-                        <img src="../frontend/images/office1.png"/>
-                        <img src="../frontend/images/office2.png"/>
-                        <img src="../frontend/images/office1.png"/>
-                        <img src="../frontend/images/office2.png"/>
-                        <img src="../frontend/images/office1.png"/>
-                        <img src="../frontend/images/office2.png"/>
-                        <img src="../frontend/images/office1.png"/>
-                        <img src="../frontend/images/office2.png"/>
-                        <img src="../frontend/images/office1.png"/>
-                        <img src="../frontend/images/office2.png"/>
-                        <img src="../frontend/images/office1.png"/>
-                        <img src="../frontend/images/office2.png"/>
-                        <img src="../frontend/images/office1.png"/>
-                        <img src="../frontend/images/office2.png"/>
-                        {{-- <img src="../frontend/images/office3.png"/>
+                        <img src="../frontend/images/office3.png"/>
                         <img src="../frontend/images/office4.png"/>
                         <img src="../frontend/images/office5.png"/>
                         <img src="../frontend/images/office6.png"/>
@@ -924,7 +902,7 @@
                         <img src="../frontend/images/office3.png"/>
                         <img src="../frontend/images/office4.png"/>
                         <img src="../frontend/images/office5.png"/>
-                        <img src="../frontend/images/office6.png"/> --}}
+                        <img src="../frontend/images/office6.png"/>
 
                     {{-- <marquee>
                     <ul class="list-content">

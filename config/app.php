@@ -125,7 +125,8 @@ return [
 
     'available_locales' => [
         'English' => 'en',
-        'Indonesia' => 'id'
+        'Indonesia' => 'id',
+        'Korea' => 'kr'
     ],
 
     'fallback_locales' => 'en'
