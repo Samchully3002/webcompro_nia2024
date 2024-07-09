@@ -6,7 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class MetaTags extends Model
+class Monitoring extends Model
 {
     use HasFactory;
 
@@ -15,12 +15,9 @@ class MetaTags extends Model
      *
      * @var array
      */
-    protected $table = 'metatags';
+    protected $table = 'monitorings';
     protected $fillable = [
-        'title',
-        'desc',
-        'keyword',
-        'pages',
-        'url'
+        'visited',
+        'ip'
     ];
 }

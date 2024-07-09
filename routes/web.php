@@ -52,6 +52,8 @@ Route::get('/export-voucher', function () {
    return  view('frontend/pages/business/exportvoucher');
 });
 
+Route::post('/visitor-record', [App\Http\Controllers\HomeController::class, 'postmonitor'])->name('visitor.record');
+
 // END FRONTEND
 
 
