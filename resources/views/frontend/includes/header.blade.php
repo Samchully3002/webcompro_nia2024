@@ -3,8 +3,7 @@
                 <ul class="menu-box">
                     <li >
                         <a class="logo"  href="/home">
-                            <img style="width: 75%;" class="effect-off" src="../../frontend/images/icon/ic_logo.png" />
-                            <img style="width: 75%;" class="effect-on" src="../../frontend/images/icon/ic_logo.png" />
+                            <img style="width: 75%;" src="../../frontend/images/icon/ic_logo.png" />
                         </a>
                     </li>
                     <li class="first-menu hidden-box>"><a href="/home">Home</a></li>
@@ -32,7 +31,7 @@
 
                 <div class="content-right">
                     <a href="https://www.youtube.com/channel/UCk4YWCZF81paAh_rzwwiKxQ" class="btn_contact_us">Our Video&nbsp;&nbsp;&nbsp; <img style="width: 12%;" src="../../frontend/images/icon/polygon.png" ></a>
-                    <a href="/contact-us-us" class="btn_contact_us">Contact Us&nbsp;&nbsp;&nbsp; <img style="width: 12%;" src="../../frontend/images/icon/arrow.png" class="language_flag"></a>
+                    <a href="/contact-us" class="btn_contact_us">Contact Us&nbsp;&nbsp;&nbsp; <img style="width: 12%;" src="../../frontend/images/icon/arrow.png" class="language_flag"></a>
 
                     {{-- <div class="right-box language">
                         <div class="lang-box hidden-box bahasa">

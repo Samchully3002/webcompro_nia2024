@@ -9,7 +9,7 @@
     </script>
 
     <meta charset="utf-8">
-    <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=2, minimum-scale=1, width=device-width" />
+     <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=2, minimum-scale=1, width=device-width" /> 
     <title>Networks Indonesia Aku</title>
     <link rel="shortcut icon" href="{{asset('frontend/images/icon/favicon.ico')}}">
     <!-- {{asset('frontend/css/outline.css')}} -->
@@ -23,7 +23,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <script type="text/javascript" src="{{asset('frontend/js/owl.carousel.min.js')}}"></script> 
+    <script type="text/javascript" src="{{asset('frontend/js/owl.carousel.min.js')}}"></script>
+    <script type="text/javascript">
+          $(document).ready(function(){
+            let url = $(location).attr('href');
+            // console.log(url.substring(url.lastIndexOf('/') + 1));
+
+            $.getJSON("https://ipinfo.io",
+            function (response) {
+                console.log(response.ip);
+            }, "jsonp");
+          
+          });
+    </script> 
 
 
 

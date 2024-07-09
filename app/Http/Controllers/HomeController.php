@@ -109,7 +109,7 @@ class HomeController extends Controller
                 'sender'     => $request->sender, 
                 'email'     => $request->email,
                 'message'    => $request->message,
-                'read'      => false
+                'read'      => 0
             ]);
 
             //return response

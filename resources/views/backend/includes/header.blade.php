@@ -28,13 +28,13 @@
                 <div data-i18n="Dashboards">Dashboards</div>
               </a>
             </li>
-            <li class="menu-item">
+            <!-- <li class="menu-item">
               <a
                 href="{{url('dashboard/list-business')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-buildings"></i>
                 <div data-i18n="our-business">Our Business</div>
               </a>
-            </li>   
+            </li>    -->
 
             <li class="menu-header small text-uppercase">
               <span class="menu-header-text">Front Pages</span>
@@ -64,7 +64,7 @@
                 <ul class="menu-sub">
                   <li class="menu-item">
                     <a href="{{url('dashboard/list-news')}}" class="menu-link">
-                      <div data-i18n="Without menu">Report</div>
+                      <div data-i18n="Without menu">News</div>
                     </a>
                   </li>
                   <li class="menu-item">
@@ -101,17 +101,27 @@
                 </ul>
               </li>    -->
             <!-- Misc -->
-            <li class="menu-header small text-uppercase"><span class="menu-header-text">Document &amp; Support</span></li>
+            <li class="menu-header small text-uppercase">
+              <span class="menu-header-text">SEO Area</span>
+            </li>
+
             <li class="menu-item">
               <a
-                href="https://#election/sneat-html-dashboard-template-free/issues"
-                target="_blank"
+                href="{{url('dashboard/list-tags')}}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-purchase-tag"></i>
+                <div data-i18n="our-business">Meta Tags</div>
+              </a>
+            </li>  
+            <li class="menu-header small text-uppercase"><span class="menu-header-text">Contact Us</span></li>
+            <li class="menu-item">
+              <a
+                href="{{url('dashboard/list-message')}}"
                 class="menu-link">
-                <i class="menu-icon tf-icons bx bx-support"></i>
-                <div data-i18n="Support">Support</div>
+                <i class="menu-icon tf-icons bx bx-envelope"></i>
+                <div data-i18n="Support">Message</div>
               </a>
             </li>
-            <li class="menu-item">
+            <!-- <li class="menu-item">
               <a
                 href="https://#tion.com/sneat-bootstrap-html-dashboard-template/documentation/"
                 target="_blank"
@@ -119,7 +129,7 @@
                 <i class="menu-icon tf-icons bx bx-file"></i>
                 <div data-i18n="Documentation">Documentation</div>
               </a>
-            </li>
+            </li> -->
           </ul>
         </aside>
         <!-- / Menu -->

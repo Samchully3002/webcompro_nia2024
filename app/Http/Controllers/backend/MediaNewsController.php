@@ -29,7 +29,7 @@ class MediaNewsController extends Controller
                     ->addIndexColumn()
                     ->addColumn('action', function($row){
        
-                            $btn = '<a href="update-news/'.$row->id.'" class="edit btn btn-primary btn-sm">View</a> <a href="javascript:void(0)" class="delete btn btn-danger btn-sm " onclick="deleteNews('.$row->id.')">Delete</a>';
+                            $btn = '<a href="update-news/'.$row->id.'" class="edit btn btn-primary btn-sm">View</a><br/><a href="javascript:void(0)" class="delete btn btn-danger btn-sm " onclick="deleteNews('.$row->id.')">Delete</a>';
       
                             return $btn;
                     })

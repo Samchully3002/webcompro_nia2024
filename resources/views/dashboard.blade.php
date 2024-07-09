@@ -59,6 +59,8 @@
     var tableTeam;
     var tableNotice;
     var tableNews;
+    var tableMess;
+    var tableTag;
 
       //==== display notif ==== //
       function dispNotif(title, message, status){
@@ -91,7 +93,7 @@
         });
       }
 
-      //== Show Team By Id == //
+      //== Delete Team By Id == //
       function deleteTeam(id){
 
         Swal.fire({
@@ -127,7 +129,7 @@
 
 
       
-      //== Show Team By Id == //
+      //== Delete Notice By Id == //
       function deleteNotice(id){
 
 Swal.fire({
@@ -146,7 +148,7 @@ $.ajax({
     dataType: 'json',
     success: function(response) {
       dispNotif('Deleting Data Success', response.message, 'success');
-      tableTeam.ajax.reload();
+      tableNotice.ajax.reload();
     },
     error: function(xhr, status, error) {
       dispNotif('', 'error saving data', 'error');
@@ -162,7 +164,7 @@ Swal.fire("Changes are not saved", "", "info");
 }
 
       
-      //== Show Team By Id == //
+      //== Delete News By Id == //
       function deleteNews(id){
 
 Swal.fire({
@@ -182,6 +184,82 @@ $.ajax({
     success: function(response) {
       dispNotif('Deleting Data Success', response.message, 'success');
       tableNews.ajax.reload();
+    },
+    error: function(xhr, status, error) {
+      dispNotif('', 'error saving data', 'error');
+    }
+});
+  } else if (result.isDenied) {
+Swal.fire("Changes are not saved", "", "info");
+}
+
+
+
+});
+}
+
+      //== Show Message By Id == //
+      function showMessage(id){
+        $.ajax({
+            url: '{{ route('dashboard.show.message') }}',
+            type: 'GET',
+            data: {id:id},
+            dataType: 'json',
+            success: function(response) {
+                var mess = response.message;
+                $("#sender").val(mess.sender);
+                $("#email").val(mess.email);
+                $("#content-message").html(mess.message);
+                tableMess.ajax.reload();
+
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+        });
+      }
+
+      function showTagById(id){
+        $.ajax({
+            url: '{{ route('dashboard.show.tags') }}',
+            type: 'GET',
+            data: {id:id},
+            dataType: 'json',
+            success: function(response) {
+                var tag = response.tags;
+                $("#id").val(tag.id);
+                $("#pages").val(tag.pages);
+                $("#url").val(tag.url);
+                $("#title").val(tag.title);
+                $("#desc").val(tag.desc);
+                $("#keyword").val(tag.keyword);
+
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+        });
+      }
+
+      function deleteTag(id){
+
+Swal.fire({
+text: "You will delete tags data",
+showCancelButton: true,
+confirmButtonText: "Delete",
+}).then((result) => {
+  /* Read more about isConfirmed, isDenied below */
+if (result.isConfirmed) {
+
+
+$.ajax({
+    url: "{{ route('dashboard.delete.tags')}}",
+    type: 'GET',
+    data: {id:id},
+    dataType: 'json',
+    success: function(response) {
+      dispNotif('Deleting Data Success', response.message, 'success');
+      tableTag.ajax.reload();
     },
     error: function(xhr, status, error) {
       dispNotif('', 'error saving data', 'error');
@@ -304,6 +382,67 @@ Swal.fire("Changes are not saved", "", "info");
 
       // TEAM END
 
+
+      // MESSAGE 
+      tableMess = $('.message-table').DataTable({
+          fixedColumns: true,
+          processing: true,
+          serverSide: true,
+          ajax: "{{ route('dashboard.list.message') }}",
+          columns: [
+              {data: 'id', name: 'id'},
+              {data: 'sender', name:'sender'},
+              {data: 'email', name:'email'},
+              {data: 'message', name:'message'},
+              {data: 'action', name: 'action', orderable: false, searchable: false},
+          ]
+      });
+
+
+      // TAG 
+      tableTag = $('.tags-table').DataTable({
+          fixedColumns: true,
+          processing: true,
+          serverSide: true,
+          ajax: "{{ route('dashboard.list.tags') }}",
+          columns: [
+              {data: 'id', name: 'id'},
+              {data: 'pages', name:'pages'},
+              {data: 'url', name:'url'},
+              {data: 'title', name:'title'},
+              {data: 'desc', name:'desc'},
+              {data: 'keyword', name:'keyword'},
+              {data: 'action', name: 'action', orderable: false, searchable: false},
+          ]
+      });
+
+      $("#btn_form_tag").click(function(e) {
+        e.preventDefault();
+        let form = $('#form_tags')[0];
+        let data = new FormData(form);
+
+        $.ajax({
+          url: "{{ route('dashboard.post.tags') }}",
+          type: "POST",
+          data: data,
+          dataType: "JSON",
+          processData: false,
+          contentType: false,
+          success: function(response) {
+            dispNotif('Saving Data Success', response.message, 'success');
+            tableTag.ajax.reload();
+            $('#form_tags')[0].reset();
+            
+        },
+          error: function() {
+            dispNotif('', 'error updating tags data', 'error');
+            console.log('error fetch data')
+          }
+
+        });
+
+      });
+
       // NEWS
       $("#btn_form_news").click(function(e) {
         e.preventDefault();
@@ -329,7 +468,7 @@ Swal.fire("Changes are not saved", "", "info");
 
         });
 
-      })
+      });
 
 
         

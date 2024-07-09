@@ -67,63 +67,99 @@
     justify-content: flex-start;
 }
 
-.flex-box .box_right {
-    width: 65%;
-    padding: 100px 100px 100px 100px;
-    margin: 0px 0px 200px 200px;
-    display: grid;
-    border-radius: 20px 0px 0px 20px;
-    background: #ffffff;
-    box-shadow: 5px 5px 10px rgba(0, 0.3, 0, 0.3);
-    align-content: center;
-    justify-content: center;
+.image-container {
+    position: relative;
+    margin: 100px 50px;
+    height: 75vh; /* Tinggi gambar 75% dari tinggi viewport */
+    overflow: hidden; /* Mengatur agar gradient hanya muncul di area gambar */
+    border-radius: 20px;
+}
+
+.image-container a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none; /* Menghapus garis bawah default dari tautan */
+}
+
+.image-container img {
+    width: 100%; /* Gambar mengisi lebar container */
+    height: 100vh; /* Mengikuti proporsi asli */
+    display: block; /* Memastikan tampilan sebagai block element */
+    object-position: center center;
+    object-fit: cover;
+    image-rendering: auto;
+    bottom: 120px;
+}
+
+.image-overlay {
+    position: absolute; /* Menempatkan overlay di atas gambar */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.02)); /* Gradient dari kiri ke kanan */
+    color: #fff; /* Warna teks di atas gradient */
+    display: flex;
     flex-direction: column;
-}
-
-.flex-box .box_right .icon_right {
-    width: 120px;
-    margin-bottom: 50px;
-}
-
-.flex-box .img_right {
-    width: 45%;
-    border-radius: 0px 20px 20px 0px;
-    margin: 0px 200px 200px 0px;
-}
-
-.flex-box .box_right label {
-    font-size: 28px;
-    font-weight: bold;
-}
-
-/* Left-Box */
-.flex-box .box_left {
-    width: 65%;
-    padding: 100px 100px 100px 100px;
-    margin: 0px 200px 200px 0px;
-    display: grid;
-    border-radius: 0px 20px 20px 0px;
-    background: #ffffff;
-    box-shadow: 5px 5px 10px rgba(0, 0.3, 0, 0.3);
-    align-content: center;
     justify-content: center;
-    flex-direction: column;
+    padding: 0 500px 0 70px; /* Padding untuk menyesuaikan teks */
 }
 
-.flex-box .box_left .icon_left {
-    width: 120px;
-    margin-bottom: 50px;
+.image-overlay h1 {
+    font-size: 2.4em; /* Ukuran font teks */
+    margin: 0; /* Menghapus margin default */
+    line-height: normal;
 }
 
-.flex-box .img_left {
-    width: 45%;
-    border-radius: 20px 0px 0px 20px;
-    margin: 0px 0px 200px 200px;
+.image-overlay span {
+    font-size: 20px;
 }
 
-.flex-box .box_left label {
-    font-size: 28px;
-    font-weight: bold;
+.btn-more {
+    padding: 8px 20px;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    border: white solid 1px;
+    border-radius: 40px;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-duration: 0.5s;
+}
+
+.btn-more img {
+    width: 24%;
+    font-size: unset;
+    height: unset;
+    display: unset;
+    object-position: unset;
+    object-fit: unset;
+    image-rendering: unset;
+    bottom: unset;
+}
+
+.ic-bisnis {
+    filter: brightness(0) invert(1);
+    width: 60%;
+}
+
+.image-overlay p {
+    font-size: 36px;
+    font-weight: 600;
+    /* line-height: 120%; */
+}
+
+.ic-bisnis img {
+    width: 24%;
+    font-size: unset;
+    height: unset;
+    display: unset;
+    object-position: unset;
+    object-fit: unset;
+    image-rendering: unset;
+    bottom: unset;
 }
 
 .client_text {
@@ -276,7 +312,7 @@
 
 .tagline .flex-box .text-box span {
     font-size: 9.2em;
-    font-weight: bold;
+    font-weight: 500;
     color: #f0f0f0;
     position: absolute;
     left: 334px;

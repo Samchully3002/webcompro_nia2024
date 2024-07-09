@@ -168,6 +168,15 @@
     justify-content: center;
 }
 
+.ceo_message .text_wrapper span {
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.ceo_message .text_wrapper p {
+    margin: 20px 0 0 0;
+}
+
 .muncul {
     opacity: 0;
     transform: scale(0.9); /* Ubah nilai scale agar lebih halus */
@@ -234,8 +243,9 @@
 
 .our-history .title p {
     font-size: 56px;
-    font-weight: bold;
+    font-weight: 500;
     line-height: 30px;
+    color: rgb(64, 66, 80);
 }
 
 .our-history .box {
@@ -256,6 +266,7 @@
     height: 257px;
     position: sticky;
     top: 280px;
+    margin: 0 30px 0 0;
     width: 512px;
     will-change: transform;
     z-index: 1;
@@ -350,6 +361,7 @@
     font-size: 32px;
     font-weight: medium;
     text-align: start;
+    color: rgb(64, 66, 80);
 }
 
 .our-history .box .right-box .wrapper .row_history {
@@ -364,6 +376,7 @@
 
 .our-history .box .right-box .wrapper .row_history p {
     font-weight: 400;
+    color: rgb(64, 66, 80);
 }
 
 hr.rounded {
@@ -527,7 +540,6 @@ hr.rounded {
     display: flex;
     flex: 0 0 auto;
     flex-flow: column;
-    gap: 50px;
     height: min-content;
     overflow: visible;
     padding: 100px 50px;
@@ -561,7 +573,7 @@ hr.rounded {
     white-space: pre;
     width: auto;
     font-size: 56px;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 .team-member .wrapper .subtitle {
@@ -698,7 +710,7 @@ hr.rounded {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 32px;
 }
 
@@ -975,7 +987,7 @@ hr.rounded {
 
     .our-history .title p {
         font-size: 32px;
-        font-weight: 500;
+        font-weight: 400;
     }
 
     .core {
@@ -1173,11 +1185,11 @@ hr.rounded {
 
     .lbl-toggle span {
         font-size: 24px;
-        font-weight: bold;
+        font-weight: 500;
     }
 
     .lbl-toggle .icon-right {
-        content: url("../../assets/images/icon/closed-icon-black-mini.png");
+        content: url("../images/icon/closed-icon-black-mini.png");
     }
 
     /* .lbl-toggle:hover {
@@ -1203,7 +1215,7 @@ hr.rounded {
     }
 
     .toggle:checked + .lbl-toggle .icon-right {
-        content: url("../../assets/images/icon/open-icon-white-mini.png");
+        content: url("../images/icon/open-icon-white-mini.png");
     }
 
     .toggle:checked + .content {

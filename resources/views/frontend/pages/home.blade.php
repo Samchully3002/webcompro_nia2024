@@ -36,7 +36,7 @@
                             <div class="ic-bisnis">
                             <img src="../../frontend/images/icon/ic_cube.svg">
                             </div><br>
-                            <h1 >Intelligent Integrated Logistics</h1><br>
+                            <p >Intelligent Integrated Logistics</p><br>
                             <span>Utilizing our unique transportation system and advanced technology, we offer solutions merging big data and AI. Our platforms enable efficient demand prediction and risk management.</span><br>
                             <div class="btn-more">More&nbsp;&nbsp;&nbsp;
                                 <img src="../../frontend/images/icon/arrow.png">
@@ -53,7 +53,7 @@
                         <div class="ic-bisnis">
                             <img src="../../frontend/images/icon/ic_medical.svg">
                             </div><br>
-                            <h1 >Digital Health Care</h1><br>
+                            <p >Digital Health Care</p><br>
                             <span>We offer reliable health solutions through optimized customer-tailored consultations by healthcare professionals, integrating AI-based big data analysis considering customer preferences, health status, underlying conditions, and medications.</span><br>
                             <div class="btn-more">More&nbsp;&nbsp;&nbsp;
                                 <img src="../../frontend/images/icon/arrow.png">
@@ -70,7 +70,7 @@
                         <div class="ic-bisnis">
                             <img src="../../frontend/images/icon/ic_code.svg">
                             </div><br>
-                            <h1 >System development and management</h1><br>
+                            <p >System development and management</p><br>
                             <span>From planning to maintenance, we offer innovative solutions with unique expertise for domestic and global clients.</span><br>
                             <div class="btn-more">More&nbsp;&nbsp;&nbsp;
                                 <img src="../../frontend/images/icon/arrow.png">
@@ -87,7 +87,7 @@
                         <div class="ic-bisnis">
                             <img src="../../frontend/images/icon/ic_building.svg">
                             </div><br>
-                            <h1 >Export Voucher</h1><br>
+                            <p >Export Voucher</p><br>
                             <span>We assist in every step for successful business execution, from analysis to document services and translation for global expansion.</span><br>
                             <div class="btn-more">More&nbsp;&nbsp;&nbsp;
                                 <img src="../../frontend/images/icon/arrow.png">
@@ -188,7 +188,7 @@
                   <a href="{{$post->source}}">
                   <img src="{{asset('backend/images/news/'.$post->image)}}"/>
                   <label>{{$post->title}}</label>
-                  <label style="font-size:16px;color:white;">{{$post->created_at}}</label>
+                  <label style="font-size:16px;color:white;">{{date('Y.m.d', strtotime($post->created_at));}}</label>
                   </a>
                </div>
                @endforeach
