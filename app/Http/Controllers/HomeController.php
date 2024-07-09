@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\MediaReport;
 use App\Models\OurTeam;
 use App\Models\Notice;
-
 use App\Models\ContactUs;
+use App\Models\Monitoring;
 
 class HomeController extends Controller
 {
@@ -83,8 +83,8 @@ class HomeController extends Controller
         return view('frontend/pages/contactus');
     }
 
-        /**
-     * Display about news.
+    /**
+     * Submit Contact Us Message
      */
     public function contactsubmit(Request $request)
     {
@@ -145,6 +145,42 @@ class HomeController extends Controller
 
 
         return view('frontend/pages/notice_detail', compact('notice','prev','next'));
+    }
+
+    /**
+     * Submit Contact Us Message
+     */
+    public function postmonitor(Request $request)
+    {
+
+        if($request->ajax()){
+
+            //define validation rules
+             $validator = Validator::make($request->all(), [
+                'visited'     => 'required',
+                'ip'     => 'required'
+            ]);
+
+            //check if validation fails
+            if ($validator->fails()) {
+                return response()->json($validator->errors(), 422);
+            }
+
+
+            //inser media news data
+            $mon = Monitoring::create([
+                'visited'     => $request->visited, 
+                'ip'     => $request->ip
+            ]);
+
+            //return response
+            return response()->json([
+                'success' => true,
+                'message' => 'recording success!'  
+            ]);
+
+        }
+        
     }
 
 

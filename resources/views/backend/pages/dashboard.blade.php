@@ -156,7 +156,7 @@
       <div class="card-header d-flex align-items-center justify-content-between">
         <div class="card-title mb-0">
           <h5 class="m-0 me-2">Visitor statistics</h5>
-          <small class="text-muted">Total number of visitors 23.8k</small>
+          <small class="text-muted">Total number of visitors 25.8k</small>
         </div>
         <div class="dropdown">
           <button type="button" class="btn btn-label-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">January</button>
