@@ -27,8 +27,30 @@
     <script type="text/javascript">
           $(document).ready(function(){
             let url = $(location).attr('href');
-            // console.log(url.substring(url.lastIndexOf('/') + 1));
-          
+            const visited = url.substring(url.lastIndexOf('/') + 1);
+            $.getJSON("https://ipinfo.io",
+            function (response) {
+                let ip = response.ip;
+                $("#visited").val(visited);
+                $("#ip").val(ip);
+
+                let form = $('#form_visitor')[0];
+                let data = new FormData(form);
+                    $.ajax({
+                        url: "{{route('visitor.record') }}",
+                        type: "POST",
+                        data: data,
+                        dataType: "JSON",
+                        processData: false,
+                        contentType: false,
+                        success: function(response) {
+                            // console.log('success record data');
+                        },
+                        error: function() {
+                            // console.log('error record data');
+                        }
+                    });
+            }, "jsonp");         
           });
     </script> 
 

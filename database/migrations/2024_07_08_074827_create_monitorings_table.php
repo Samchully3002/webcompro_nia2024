@@ -11,23 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('head_tags', function (Blueprint $table) {
-        $table->id();
-        $table->timestamps();
-        $table->string('title');
-        $table->string('desc');
-        $table->string('keyword');
-        $table->string('pages');
-        $table->string('url');
-    });
+        Schema::create('monitorings', function (Blueprint $table) {
+            $table->id();
+            $table->string('visited');
+            $table->string('ip');
+            $table->timestamps();
+        });
     }
-    
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('head_tags');
+        Schema::dropIfExists('monitorings');
     }
 };

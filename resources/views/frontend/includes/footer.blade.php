@@ -72,7 +72,13 @@
                     <!-- <li><a>Cookies</a></li> -->
                 </ul>
             </div>
-
+            <!-- recording visitor -->
+             <form id="form_visitor" name="form_visitor" method="POST" onsubmit="return false">
+                @csrf
+                <input type="hidden" id="visited" name="visited" />
+                <input type="hidden" id="ip" name="ip" />
+             </form>
+            <!-- recording visitor -->
         <!-- </div> -->
     </div>
 </div>
