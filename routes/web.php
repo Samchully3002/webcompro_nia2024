@@ -52,6 +52,16 @@ Route::get('/export-voucher', function () {
    return  view('frontend/pages/business/exportvoucher');
 });
 
+Route::get('/lang',[App\Http\Controllers\LanguageController::class , 'change'])->name('user.lang');
+
+// Route::get('language/{locale?}', function ($locale = null) {
+//     if (isset($locale) && in_array($locale, config('app.available_locales'))) {
+//         app()->setLocale($locale);
+//     }
+
+//     return redirect()g->back();
+// });
+
 // END FRONTEND
 
 
@@ -80,7 +90,7 @@ Route::group([
          Route::post('/store-news', [App\Http\Controllers\backend\MediaNewsController::class, 'store_ajax'])->name('store.news');
          Route::get('/update-news/{id}', [App\Http\Controllers\backend\MediaNewsController::class, 'update'])->name('update.news');
          Route::get('/delete-news', [App\Http\Controllers\backend\MediaNewsController::class, 'destroy'])->name('delete.news');
-         
+
          // Media Video Routes
          Route::get('/list-videos', [App\Http\Controllers\backend\MediaVideosController::class, 'index'])->name('list.videos');
          Route::get('/post-videos', function () {
