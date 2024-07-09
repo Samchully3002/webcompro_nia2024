@@ -13,8 +13,8 @@
             <!-- bg-wrapper start -->
             <div class="bg-wrapper bisnis1">
                 <div class="text-box">
-                    <h1 class="appear">Intelligent Integrated Logistics</h1>
-                    <p class="appear">Utilizing differentiated information and communication technologies, along with our intelligent transportation system, we integrate big data and AI innovations. This includes an intelligent integrated logistics platform and a demand response mobility platform, enabling efficient transportation solutions with effective risk management and response capabilities.</p>
+                    <h1 class="appear">{{ __('iil') }}</h1>
+                    <p class="appear">{{ __('iil-head') }}</p>
                 </div>
             </div>
             <!-- bg-wrapper end -->
@@ -30,13 +30,13 @@
                         <input id="collapsible" class="toggle" type="checkbox" checked="checked">
                         <label for="collapsible" class="lbl-toggle">
                             <span>01</span>
-                            <span>Samchullypay</span>
+                            <span>{{ __('samchullypay') }}</span>
                             <span class="icon-right">&nbsp;</span>
                         </label>
                         <div class="collapsible-content">
                             <div class="content">
                                 <div class="text-wrapper">
-                                    <p>Through an intelligent integrated logistics platform, we track logistics in real-time to locate positions, dispatch, movement status, shortest distances, and costs. With our proprietary solution enabling demand prediction and risk management through big data, we are building a leading record in the transportation platform industry.</p>
+                                    <p>{{ __('samchullypay-content') }}</p>
                                 </div>
                                 <div class="img-box">
                                     <img src="../frontend/images/bs-samchulypay1.svg"/>
@@ -55,23 +55,20 @@
                                 <div class="card-wrapper">
                                     <div class="card">
                                         <img width="18%" src="../frontend/images/icon/ic_samchulypay1.svg"/>
-                                        <span>Notification Dispatch</span>
-                                        <p>
-                                            Work dispatch with mobile push function. With just one mobile device , we build a transparent dispatch platform, breaking away from the existing radio dispatch.
+                                        <span>{{ __('samchullypay1') }}</span>
+                                        <p> {{ __('samchullypay1-content') }}
                                         </p>
                                     </div>
                                     <div class="card">
                                         <img width="18%" src="../frontend/images/icon/ic_samchulypay2.svg"/>
-                                        <span>Location Detector</span>
-                                        <p>
-                                            We provide location information of the dispatched driver to reduce waiting times without knowing when the driver will arrive. Drivers no longer need to contact you upon departure.
+                                        <span>{{ __('samchullypay2') }}</span>
+                                        <p> {{ __('samchullypay2-content') }}
                                         </p>
                                     </div>
                                     <div class="card">
                                         <img width="18%" src="../frontend/images/icon/ic_samchulypay3.svg"/>
-                                        <span>Work Log</span>
-                                        <p>
-                                            Our Platform offers real-time tracking, optimizing dispatch, monitoring, and managing costs through advanced big data analytics for demand prediction and risk management.
+                                        <span>{{ __('samchullypay3') }}</span>
+                                        <p> {{ __('samchullypay2-content') }}
                                         </p>
                                     </div>
                                 </div>
@@ -85,13 +82,13 @@
                         <input id="collapsible1" class="toggle" type="checkbox">
                         <label for="collapsible1" class="lbl-toggle">
                             <span>02</span>
-                            <span>Olligo</span>
+                            <span>{{ __('olligo') }}</span>
                             <span class="icon-right">&nbsp;</span>
                         </label>
                         <div class="collapsible-content">
                             <div class="content">
                                 <div class="text-wrapper">
-                                    <p>Through our community for transportation professionals, we offer a one-stop social network for industry news, regulatory updates, and more. Start groups and meetings based on various search criteria like location, vehicle type, and topics.</p>
+                                    <p>{{ __('olligo-content') }}</p>
                                 </div>
                                 <div class="img-box">
                                     <img src="../frontend/images/bs-olligo1.svg"/>
@@ -110,23 +107,23 @@
                                 <div class="card-wrapper">
                                     <div class="card">
                                         <img width="18%" src="../frontend/images/icon/ic_olligo1.svg"/>
-                                        <span>Group Dispatch</span>
+                                        <span>{{ __('olligo1') }}</span>
                                         <p>
-                                            If you register tasks within your assigned group, dispatch will only be conducted within that group, ensuring that tasks are performed by drivers verified within the group.
+                                            {{ __('olligo1-content') }}
                                         </p>
                                     </div>
                                     <div class="card">
                                         <img width="18%" src="../frontend/images/icon/ic_olligo2.svg"/>
-                                        <span>Rank Distribution</span>
+                                        <span>{{ __('olligo2') }}</span>
                                         <p>
-                                            The dispatch order is determined based on the task registration ranking within the group. Tasks shared will receive priority in dispatch according to their ranking.
+                                            {{ __('olligo2-content') }}
                                         </p>
                                     </div>
                                     <div class="card">
                                         <img width="18%" src="../frontend/images/icon/ic_olligo3.svg"/>
-                                        <span>Basic Document</span>
+                                        <span>{{ __('olligo3') }}</span>
                                         <p>
-                                            Do you spend time searching for documents every time you have a task? Try our Basic Document feature, where you can save documents once and have them readily available for task dispatch.
+                                            {{ __('olligo3-content') }}
                                         </p>
                                     </div>
                                 </div>
@@ -140,13 +137,13 @@
                         <input id="collapsible2" class="toggle" type="checkbox">
                         <label for="collapsible2" class="lbl-toggle">
                             <span>03</span>
-                            <span>Chaonda</span>
+                            <span>{{ __('chaonda') }}</span>
                             <span class="icon-right">&nbsp;</span>
                         </label>
                         <div class="collapsible-content">
                             <div class="content">
                                 <div class="text-wrapper">
-                                    <p>Based on accumulated transportation-related big data, we are creating a new transportation ecosystem that supports various demands for metropolitan travel, including congestion relief in major urban areas and achieving RE100 through carbon emission reduction effects. We enhance accessibility to public transportation in rural areas, benefiting transportation-disadvantaged individuals.</p>
+                                    <p>{{ __('chaonda-content') }}</p>
                                 </div>
                                 <div class="img-box">
                                     <img src="../frontend/images/bs-chaonda1.svg"/>
@@ -174,13 +171,13 @@
                         <input id="collapsible3" class="toggle" type="checkbox">
                         <label for="collapsible3" class="lbl-toggle">
                             <span>04</span>
-                            <span>Commuter Bus</span>
+                            <span>{{ __('commuterbus') }}</span>
                             <span class="icon-right">&nbsp;</span>
                         </label>
                         <div class="collapsible-content">
                             <div class="content">
                                 <div class="text-wrapper">
-                                    <p>We provide a unique ticketing and reservation system for commuter bus systems, incorporating accumulated transportation and information communication technologies from Samchully Networks.</p>
+                                    <p>{{ __('commuterbus-content') }}</p>
                                 </div>
                                 <div class="img-box">
                                     <img src="../frontend/images/bs-commuter1.svg"/>

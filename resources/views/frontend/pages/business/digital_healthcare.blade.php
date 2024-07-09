@@ -13,8 +13,8 @@
             <!-- bg-wrapper start -->
             <div class="bg-wrapper bisnis2">
                 <div class="text-box">
-                    <h1 class="appear">Digital Healthcare</h1>
-                    <p class="appear">We provide reliable health solutions through optimized customer-personalized counseling by health care professionals that considers customer preferences, health conditions, underlying diseases, and medications being taken, as well as health care plan design using artificial intelligence (AI)-based big data.</p>
+                    <h1 class="appear">{{ __('dh') }}</h1>
+                    <p class="appear">{{ __('dh-head') }}</p>
                 </div>
             </div>
             <!-- bg-wrapper end -->
@@ -27,13 +27,13 @@
                             <input id="collapsible2" class="toggle" type="checkbox" checked="">
                                 <label for="collapsible2" class="lbl-toggle">
                                     <span>01</span>
-                                    <span>Healthyhada</span>
+                                    <span>{{ __('healthyhada') }}</span>
                                     <span class="icon-right">&nbsp;</span>
                                 </label>
                             <div class="collapsible-content">
                                 <div class="content">
                                     <div class="text-wrapper">
-                                        <p>We provide trustworthy health solutions through optimized customer-tailored consultations by healthcare professionals considering customer preferences, health status, underlying conditions, and medications, along with AI-based big data utilization for designing health functional food plans.</p>
+                                        <p>{{ __('healthyhada-content') }}</p>
                                     </div>
                                     <div class="img-box1">
                                         <img src="../frontend/images/bs-healthada1.svg"/>
@@ -42,23 +42,23 @@
                                     <div class="card-wrapper">
                                         <div class="card">
                                             <img width="18%" src="../frontend/images/icon/ic_samchulypay1.svg"/>
-                                            <span>Tailored Consultation</span>
+                                            <span>{{ __('healthyhada1') }}</span>
                                             <p>
-                                                Personalized Nutritional Counseling Consult with experts on your specific nutritional needs and improve your health with the right nutrition!
+                                                {{ __('healthyhada1-content') }}
                                             </p>
                                         </div>
                                         <div class="card">
                                             <img width="18%" src="../frontend/images/icon/ic_samchulypay2.svg"/>
-                                            <span>Big Data</span>
+                                            <span>{{ __('healthyhada2') }}</span>
                                             <p>
-                                                AI trained on survey data from over 4,000 experts. Customized recommendations tailored to our customers.
+                                                {{ __('healthyhada2-content') }}
                                             </p>
                                         </div>
                                         <div class="card">
                                             <img width="18%" src="../frontend/images/icon/ic_samchulypay3.svg"/>
-                                            <span>Experts</span>
+                                            <span>{{ __('healthyhada3') }}</span>
                                             <p>
-                                                Consult with Pharmacists, Dietitians, and Exercise Prescribers. Experience monthly changes with our health experts!
+                                                {{ __('healthyhada3-content') }}
                                             </p>
                                         </div>
                                     </div>

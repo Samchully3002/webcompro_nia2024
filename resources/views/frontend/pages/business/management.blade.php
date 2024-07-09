@@ -13,8 +13,8 @@
             <!-- bg-wrapper start -->
             <div class="bg-wrapper bisnis3">
                 <div class="text-box">
-                    <h1 class="appear">System Development & Management</h1>
-                    <p class="appear">We undertake all stages of system development and platform planning, design, development, SQA, and maintenance with differentiated technical expertise and accumulated know-how, providing new technologies to meet the requirements of both domestic and global customers.</p>
+                    <h1 class="appear">{{ __('sdm') }}</h1>
+                    <p class="appear">{{ __('sdm-head') }}</p>
                 </div>
             </div>
             <!-- bg-wrapper end -->
@@ -28,13 +28,13 @@
                         <input id="collapsible" class="toggle" type="checkbox" checked="checked">
                         <label for="collapsible" class="lbl-toggle">
                             <span>01</span>
-                            <span>Ticketing & Reservation</span>
+                            <span>{{ __('tnr') }}</span>
                             <span class="icon-right">&nbsp;</span>
                         </label>
                         <div class="collapsible-content">
                             <div class="content">
                                 <div class="text-wrapper">
-                                    <p>We provide optimized solutions tailored to various device environments such as PC, mobile, and kiosks, as well as diverse business contexts including transportation, events, exhibitions, restaurants, culture, and arts. Experience our one-stop solution for differentiated reservation, cancellation, payment, and ticketing.</p>
+                                    <p>{{ __('tnr-content') }}</p>
                                 </div>
                                 <div class="img-box1">
                                     <img src="../frontend/images/bs-ticketing1.svg"/>
@@ -55,23 +55,23 @@
                                 <div class="card-wrapper">
                                     <div class="card">
                                         <img width="18%" src="../frontend/images/icon/ic_samchulypay1.svg"/>
-                                        <span>Reservation</span>
+                                        <span>{{ __('tnr1') }}</span>
                                         <p>
-                                            Easy bus reservation no matter how far the distance is. Reservations can be made online through our ticketing.
+                                            {{ __('tnr1-content') }}
                                         </p>
                                     </div>
                                     <div class="card">
                                         <img width="18%" src="../frontend/images/icon/ic_samchulypay2.svg"/>
-                                        <span>Kiosk Ticketing</span>
+                                        <span>{{ __('tnr2') }}</span>
                                         <p>
-                                            Maximize the operational efficiency of ticket issuance, such as purchasing tickets and printing advance tickets.
+                                            {{ __('tnr2-content') }}
                                         </p>
                                     </div>
                                     <div class="card">
                                         <img width="18%" src="../frontend/images/icon/ic_samchulypay3.svg"/>
-                                        <span>Settlement Service</span>
+                                        <span>{{ __('tnr3') }}</span>
                                         <p>
-                                            Settlement reports compiled every hour can be checked anywhere as long as you have an online device.
+                                            {{ __('tnr3-content') }}
                                         </p>
                                     </div>
                                 </div>
@@ -85,13 +85,13 @@
                         <input id="collapsible2" class="toggle" type="checkbox">
                         <label for="collapsible2" class="lbl-toggle">
                             <span>02</span>
-                            <span>Payment Integration System</span>
+                            <span>{{ __('pis') }}</span>
                             <span class="icon-right">&nbsp;</span>
                         </label>
                         <div class="collapsible-content">
                             <div class="content">
                                 <div class="text-wrapper">
-                                    <p>We support various payment methods including credit cards, QR codes, and mobile payments, offering flexible options for both online and offline transactions, as well as kiosk payments. With our robust and reliable management system, you can easily and quickly process orders, approvals, cancellations, changes, and settlements, while also receiving high-quality settlement reports.</p>
+                                    <p>{{ __('pis-content') }}</p>
                                 </div>
                                 <div class="img-box1">
                                     <img src="../frontend/images/bs-payment1.svg"/>
