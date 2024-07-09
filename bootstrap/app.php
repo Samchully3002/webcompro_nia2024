@@ -17,10 +17,9 @@ return Application::configure(basePath: dirname(__DIR__))
             Localization::class,
 
         ]);
+        //
+       'visitor-record';
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
     })->create();
-    // ->withMiddleware(function (App\Http\Middleware\Localization $middleware) {
-    //     $middleware->append(Localization::class);
-    // })

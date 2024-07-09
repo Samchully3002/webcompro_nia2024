@@ -188,7 +188,7 @@
                   <a href="{{$post->source}}">
                   <img src="{{asset('backend/images/news/'.$post->image)}}"/>
                   <label>{{$post->title}}</label>
-                  <label style="font-size:16px;color:white;">{{$post->created_at}}</label>
+                  <label style="font-size:16px;color:white;">{{date('Y.m.d', strtotime($post->created_at));}}</label>
                   </a>
                </div>
                @endforeach
