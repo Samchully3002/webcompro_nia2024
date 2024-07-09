@@ -831,6 +831,10 @@ hr.rounded {
     animation: marquee 50s linear infinite;
 }
 
+.marquee img {
+    width:;
+}
+
 @keyframes marquee {
     0% {
         transform: translateX(0);
