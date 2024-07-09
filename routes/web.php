@@ -70,18 +70,18 @@ Route::post('/visitor-record', [App\Http\Controllers\HomeController::class, 'pos
 
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+   Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+   Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+   Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 Route::group([
-    'prefix'=>'/dashboard',
-    'as' => 'dashboard.',
-    ],
-    function () {
+      'prefix'=>'/dashboard',
+      'as' => 'dashboard.',
+      ],
+      function () {
         // Dashboard Routes
-        Route::get('/', [App\Http\Controllers\backend\DashboardController::class, 'index'])->name('dashboard');
+         Route::get('/', [App\Http\Controllers\backend\DashboardController::class, 'index'])->name('dashboard');
          Route::get('/info', [App\Http\Controllers\backend\DashboardController::class, 'index'])->name('dashboard.info');
          Route::get('/list-message', [App\Http\Controllers\backend\DashboardController::class, 'display_message'])->name('list.message');
          Route::get('/show-message', [App\Http\Controllers\backend\DashboardController::class, 'message_by_id'])->name('show.message');

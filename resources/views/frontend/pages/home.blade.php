@@ -38,7 +38,7 @@
                             </div><br>
                             <p >{{ __('iil') }}</p><br>
                             <span>{{ __('iil-content') }}</span><br>
-                            <div class="btn-more">More&nbsp;&nbsp;&nbsp;
+                            <div class="btn-more">{{ __('btn-more') }}&nbsp;&nbsp;&nbsp;
                                 <img src="../../frontend/images/icon/arrow.png">
                             </div>
                         </div>
@@ -53,9 +53,9 @@
                         <div class="ic-bisnis">
                             <img src="../../frontend/images/icon/ic_medical.svg">
                             </div><br>
-                            <p >Digital Health Care</p><br>
-                            <span>We offer reliable health solutions through optimized customer-tailored consultations by healthcare professionals, integrating AI-based big data analysis considering customer preferences, health status, underlying conditions, and medications.</span><br>
-                            <div class="btn-more">More&nbsp;&nbsp;&nbsp;
+                            <p >{{ __('dh') }}</p><br>
+                            <span>{{ __('dh-content') }}</span><br>
+                            <div class="btn-more">{{ __('btn-more') }}&nbsp;&nbsp;&nbsp;
                                 <img src="../../frontend/images/icon/arrow.png">
                             </div>
                         </div>
@@ -70,9 +70,9 @@
                         <div class="ic-bisnis">
                             <img src="../../frontend/images/icon/ic_code.svg">
                             </div><br>
-                            <p >System development and management</p><br>
-                            <span>From planning to maintenance, we offer innovative solutions with unique expertise for domestic and global clients.</span><br>
-                            <div class="btn-more">More&nbsp;&nbsp;&nbsp;
+                            <p >{{ __('sdm') }}</p><br>
+                            <span>{{ __('sdm-content') }}</span><br>
+                            <div class="btn-more">{{ __('btn-more') }}&nbsp;&nbsp;&nbsp;
                                 <img src="../../frontend/images/icon/arrow.png">
                             </div>
                         </div>
@@ -87,9 +87,9 @@
                         <div class="ic-bisnis">
                             <img src="../../frontend/images/icon/ic_building.svg">
                             </div><br>
-                            <p >Export Voucher</p><br>
-                            <span>We assist in every step for successful business execution, from analysis to document services and translation for global expansion.</span><br>
-                            <div class="btn-more">More&nbsp;&nbsp;&nbsp;
+                            <p >{{ __('ev') }}</p><br>
+                            <span>{{ __('ev-content') }}</span><br>
+                            <div class="btn-more">{{ __('btn-more') }}&nbsp;&nbsp;&nbsp;
                                 <img src="../../frontend/images/icon/arrow.png">
                             </div>
                         </div>
@@ -132,7 +132,7 @@
 
         <div class="clientSection">
             <div class="client_text">
-                <p>Collaborating seamlessly to create value and drive success for our clients.</p>
+                <p>{{ __('title-client') }}</p>
             </div>
                 <!-- <marquee behavior="scroll" direction="left">
                     <img src="../../frontend/images/icon/korea.png"/>
@@ -181,7 +181,7 @@
         </div>
 
         <div class="news_box">
-            <label>Latest News</label>
+            <label>{{ __('latest-news') }}</label>
             <div class="news_wrapper">
                @foreach($posts as $post)
                <div class="news_content">
@@ -194,7 +194,7 @@
                @endforeach
             </div>
             <div class="news_footer">
-               <button onMouseOver="this.style.background='#40455C'" onMouseOut="this.style.background='transparent'" type="button" onclick="location.href='/community/news'">More</button>
+               <button onMouseOver="this.style.background='#40455C'" onMouseOut="this.style.background='transparent'" type="button" onclick="location.href='/community/news'">{{ __('btn-more') }}</button>
             </div>
         </div>
 
