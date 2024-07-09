@@ -266,7 +266,7 @@ width: 12px;
 }
 
 #header-wrapper .business .hidden-menu {
-    width: 370px;
+    width: fit-content;
     font-weight: 400;
 }
 

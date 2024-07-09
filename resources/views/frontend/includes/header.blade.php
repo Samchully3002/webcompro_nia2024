@@ -23,7 +23,7 @@
                     <li class="first-menu hidden-box business">
                         <a class="btn_business">{{ __('navbar-community') }}&nbsp;&nbsp;&nbsp;
                         <img src="../../frontend/images/icon/arrow-down.png" class="language_caret"/></a>
-                        <ul class="hidden-menu" style="width: 150px">
+                        <ul class="hidden-menu">
                             <li><a href="/community/notice"><em>{{ __('navbar-notice') }}</em></a></li>
                             <li><a href="/community/news"><em>{{ __('navbar-news') }}</em></a></li>
                         </ul>
