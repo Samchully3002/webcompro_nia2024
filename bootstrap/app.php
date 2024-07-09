@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\Localization;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -12,8 +13,11 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         //
-       'visitor-record';
+    'visitor-record';
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
     })->create();
+    // ->withMiddleware(function (App\Http\Middleware\Localization $middleware) {
+    //     $middleware->append(Localization::class);
+    // })
