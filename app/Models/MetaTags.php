@@ -22,6 +22,5 @@ class MetaTags extends Model
         'keyword',
         'pages',
         'url'
-
     ];
 }
