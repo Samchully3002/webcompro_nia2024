@@ -11,11 +11,11 @@
                     <li class="first-menu hidden-box business">
                         <a class="btn_business">{{ __('navbar-business') }}&nbsp;&nbsp;&nbsp;
                         <img src="../../frontend/images/icon/arrow-down.png" class="language_caret"/></a>
-                        <ul class="hidden-menu" style="width: 305px;">
+                        <ul class="hidden-menu">
                             <li><a href="/our-business/intellegent-integrated-logistic"><em>{{ __('iil') }}</em></a></li>
                             <li><a href="/our-business/digital-healthcare"><em>{{ __('dh') }}</em></a></li>
                             <li><a href="/our-business/system-development-management"><em>{{ __('sdm') }}</em></a></li>
-                            <li><a href="/our-business/export-voucher"><em>{{ __('navbar-home') }}</em></a></li>
+                            <li><a href="/our-business/export-voucher"><em>{{ __('ev') }}</em></a></li>
                         </ul>
                     </li>
                     <li class="first-menu hidden-box"><a href="/about-us">{{ __('navbar-about') }}</a>
