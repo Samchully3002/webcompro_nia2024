@@ -2,12 +2,12 @@
             <div id="nav-menu" class="menu-wrapper">
                 <ul class="menu-box">
                     <li >
-                        <a class="logo"  href="/home">
+                        <a class="logo"  href="/">
                             <img style="width: 75%;" class="effect-off" src="../../frontend/images/icon/ic_logo.png" />
                             <img style="width: 75%;" class="effect-on" src="../../frontend/images/icon/logo_ftr.svg" />
                         </a>
                     </li>
-                    <li class="first-menu hidden-box>"><a href="/home">{{ __('navbar-home') }}</a></li>
+                    <li class="first-menu hidden-box>"><a href="/">{{ __('navbar-home') }}</a></li>
                     <li class="first-menu hidden-box business">
                         <a class="btn_business">{{ __('navbar-business') }}&nbsp;&nbsp;&nbsp;
                         <img src="../../frontend/images/icon/arrow-down.png" class="language_caret"/></a>

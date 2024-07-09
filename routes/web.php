@@ -6,12 +6,12 @@ use Illuminate\Support\Facades\Route;
 
 // FRONTEND //
 
-Route::get('/', function () {
-   return redirect('/home');
-});
+// Route::get('/', function () {
+//    return redirect('/home');
+// });
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('homepage');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('homepage');
 Route::get('/about-us', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
 Route::get('/community/news', [App\Http\Controllers\HomeController::class, 'news'])->name('news');
 Route::get('/community/notice', [App\Http\Controllers\HomeController::class, 'notice'])->name('notice');
@@ -55,7 +55,7 @@ Route::get('/export-voucher', function () {
 
 Route::get('/lang',[LanguageController::class , 'change'])->name('user.lang');
 
-Route::get('/{id}',[LanguageController::class , 'ganti'])->name('user.lang');
+// Route::get('/{id}',[LanguageController::class , 'ganti'])->name('user.lang');
 
 // Route::get('language/{locale?}', function ($locale = null) {
 //     if (isset($locale) && in_array($locale, config('app.available_locales'))) {

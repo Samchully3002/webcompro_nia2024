@@ -17,10 +17,7 @@ return Application::configure(basePath: dirname(__DIR__))
             Localization::class,
 
         ]);
-        //
-       'visitor-record';
-        //
-    'visitor-record';
+
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
