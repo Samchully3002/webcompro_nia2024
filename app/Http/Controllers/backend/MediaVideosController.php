@@ -18,24 +18,7 @@ class MediaVideosController extends Controller
      */
     public function index(Request $request)
     {
-        //get all videos from Models
-        // if ($request->ajax()) {
 
-        //     $data = Media_videos::query();
-
-        //     return Datatables::of($data)
-        //             ->addIndexColumn()
-        //             ->addColumn('action', function($row){
-       
-        //                     $btn = '<a href="javascript:void(0)" class="edit btn btn-primary btn-sm">View</a>';
-      
-        //                     return $btn;
-        //             })
-        //             ->rawColumns(['action'])
-        //             ->make(true);
-        // }
-
-        //return view with data
         return  view('backend/pages/list-video');
     }
 

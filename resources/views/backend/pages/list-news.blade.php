@@ -15,7 +15,8 @@
   
                 <!-- Striped Rows -->
                 <div class="card">
-                  <div class="table-responsive text-nowrap text-center">
+                    <div class="card-body">
+                    <div class="table-responsive">
                     <div class="table">
                     <table class="table table-striped news-table">
                       <thead>
@@ -27,14 +28,16 @@
                           <th>Actions</th>
                         </tr>
                       </thead>
-                      <tbody class="table-border-bottom-0">
+                      <tbody class="">
 
                       </tbody>
                     </table>
                     </div>
                   </div>
+                    </div>
                 </div>
                 <!--/ Striped Rows -->
   
                 <hr class="my-5">
+                
     @stop

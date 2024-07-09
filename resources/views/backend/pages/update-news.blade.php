@@ -1,7 +1,7 @@
 @extends('dashboard')
     @section('content')
     <h4 class="py-3 mb-4"><span class="text-muted fw-light">News /</span> Post News</h4>
-  
+
   <!-- Form Post New Business -->
   <div class="row">
     <!-- Form Element -->
@@ -17,7 +17,7 @@
               <label class="col-sm-2 col-form-label" for="basic-default-name">News Title</label>
               <div class="col-sm-10">
                 <input type="text" value="{{$news->title}}" class="form-control" id="basic-default-name" placeholder="" id="title" name="title">
-                <input type="hidden" name="id" id="id" value="{{$news->id}}"/>
+                <input type="hidden" name="id" id="id" placeholder="" value="{{$news->id}}">
               </div>
             </div>
             <div class="row mb-3">
@@ -30,7 +30,7 @@
               <label for="formFile" class="col-sm-2 col-form-label">Images</label>
               <div class="col-sm-10">
                   <input class="form-control" type="file" id="image" name="image">
-              </div> 
+              </div>
             </div>
             <div class="row justify-content-end">
               <div class="col-sm-10">

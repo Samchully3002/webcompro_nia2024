@@ -123,4 +123,12 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    'available_locales' => [
+        'English' => 'en',
+        'Indonesia' => 'id',
+        'Korea' => 'kr'
+    ],
+
+    'fallback_locales' => 'en'
+
 ];

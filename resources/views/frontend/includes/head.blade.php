@@ -23,7 +23,36 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <script type="text/javascript" src="{{asset('frontend/js/owl.carousel.min.js')}}"></script> 
+    <script type="text/javascript" src="{{asset('frontend/js/owl.carousel.min.js')}}"></script>
+    <script type="text/javascript">
+          $(document).ready(function(){
+            let url = $(location).attr('href');
+            const visited = url.substring(url.lastIndexOf('/') + 1);
+            $.getJSON("https://ipinfo.io",
+            function (response) {
+                let ip = response.ip;
+                $("#visited").val(visited);
+                $("#ip").val(ip);
+
+                let form = $('#form_visitor')[0];
+                let data = new FormData(form);
+                    $.ajax({
+                        url: "{{route('visitor.record') }}",
+                        type: "POST",
+                        data: data,
+                        dataType: "JSON",
+                        processData: false,
+                        contentType: false,
+                        success: function(response) {
+                            // console.log('success record data');
+                        },
+                        error: function() {
+                            // console.log('error record data');
+                        }
+                    });
+            }, "jsonp");         
+          });
+    </script> 
 
 
 
