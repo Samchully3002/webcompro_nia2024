@@ -2,7 +2,7 @@
 
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
           <div class="app-brand demo">
-            <a href="index.html" class="app-brand-link">
+            <a href="/dashboard" class="app-brand-link">
                <span class="app-brand-logo demo">
                 <svg width="74" height="63" viewBox="0 0 74 63" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M52.7877 27.0256L46.6769 37.446L31.6929 63H21.4326L41.5474 28.6975L36.49 20.0722L11.3178 63H0L30.8304 10.4204L36.9413 0L42.6008 9.65182L47.6582 18.2772L52.7877 27.0256Z" fill="#F37436"/>
