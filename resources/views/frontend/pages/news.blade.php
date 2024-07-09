@@ -11,8 +11,8 @@
             <!-- bg-wrapper start -->
             <div class="bg-wrapper bg-img">
                 <div class="text-box">
-                    <h1 class="appear">News</h1>
-                    <p class="appear">Explore the latest updates from our company, uncovering innovations and successes shaping the IT landscape. Stay informed with our insightful articles on industry trends and advancements.</p>
+                    <h1 class="appear">{{__ ('news')}}</h1>
+                    <p class="appear">{{__ ('news-content')}}</p>
                 </div>
             </div>
             <!-- bg-wrapper end -->
@@ -38,12 +38,12 @@
                     </div>
                     @endforeach
                 </div>
-              
+
 
                 @if($posts->hasPages())
             <div class="imx">
                     <div class="pagination">
-                       
+
                         <a href="{{$posts->previousPageUrl()}}" class="arrow">&laquo;</a>
                         <a href="{{$posts->nextPageUrl()}}" class="arrow">&raquo;</a>
                     </div>
@@ -53,7 +53,7 @@
             </div>
         </div>
 
-       
+
                <!-- <div data-include="component/footer"></div> -->
                @include('frontend.includes.footer')
 
@@ -100,6 +100,6 @@
             });
         </script>
 
-        
+
     </body>
 </html>

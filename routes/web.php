@@ -53,9 +53,9 @@ Route::get('/export-voucher', function () {
    return  view('frontend/pages/business/exportvoucher');
 });
 
-Route::get('/lang',[LanguageController::class , 'change'])->name('user.lang');
+// Route::get('/lang',[LanguageController::class , 'change'])->name('user.lang');
 
-// Route::get('/{id}',[LanguageController::class , 'ganti'])->name('user.lang');
+Route::get('/{id}',[LanguageController::class , 'ganti'])->name('user.lang');
 
 // Route::get('language/{locale?}', function ($locale = null) {
 //     if (isset($locale) && in_array($locale, config('app.available_locales'))) {

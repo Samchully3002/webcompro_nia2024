@@ -34,7 +34,7 @@
                     <a href="https://www.youtube.com/channel/UCk4YWCZF81paAh_rzwwiKxQ" class="btn_contact_us">{{ __('navbar-video') }}&nbsp;&nbsp;&nbsp; <img src="../../frontend/images/icon/polygon.png" ></a>
                     <a href="/contact-us" class="btn_contact_us">{{ __('navbar-contact') }}&nbsp;&nbsp;&nbsp; <img src="../../frontend/images/icon/arrow.png" class="language_flag"></a>
 
-                    <div class="right-box language">
+                    {{-- <div class="right-box language">
                         <div class="lang-box hidden-box bahasa">
                             @foreach($available_locales as $locale_name => $available_locale)
                             @if($available_locale === $current_locale)
@@ -55,7 +55,7 @@
                             @endif
                             @endforeach
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="nav-mobile">
                         <div class="nav-wrapper">
                             <a class="logo" href="#">
