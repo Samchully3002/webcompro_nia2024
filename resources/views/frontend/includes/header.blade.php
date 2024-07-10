@@ -86,40 +86,40 @@
                 </a>
                 <ul>
                     <li>
-                        <a class="first-menu" href="/">HOME</a>
+                        <a class="first-menu" href="/">{{ __('navbar-home') }}</a>
                     </li>
 
                     <li>
-                        <a class="first-menu">BUSINESS</a>
+                        <a class="first-menu">{{ __('navbar-business') }}</a>
                         <div class="second-menu">
-                            <a href="/our-business/intellegent-integrated-logistic">Intelligent Integrated Logistics</a>
+                            <a href="/our-business/intellegent-integrated-logistic">{{ __('iil') }}</a>
                             <br />
-                            <a href="/our-business/digital-healthcare">Digital Healthcare</a>
+                            <a href="/our-business/digital-healthcare">{{ __('dh') }}</a>
                             <br />
-                            <a href="/our-business/system-development-management">System Development & Management</a>
+                            <a href="/our-business/system-development-management">{{ __('sdm') }}</a>
                             <br />
-                            <a href="/our-business/export-voucher">Export Voucher</a>
+                            <a href="/our-business/export-voucher">{{ __('ev') }}</a>
                         </div>
                     </li>
 
                     <li>
-                        <a class="first-menu" href="/about-us">ABOUT</a>
+                        <a class="first-menu" href="/about-us">{{ __('navbar-about') }}</a>
                     </li>
 
                     <li>
-                        <a class="first-menu">COMMUNITY</a>
+                        <a class="first-menu">{{ __('navbar-community') }}</a>
                         <div class="second-menu">
-                            <a href="/community/notice">Notice</a>
+                            <a href="/community/notice">{{ __('navbar-notice') }}</a>
                             <br>
-                            <a href="/community/news">News</a>
+                            <a href="/community/news">{{ __('navbar-news') }}</a>
                         </div>
                     </li>
 
                     <li>
-                        <a href="/contact-us" class="first-menu">CONTACT US</a>
+                        <a href="/contact-us" class="first-menu">{{ __('navbar-contact') }}</a>
                     </li>
                     <li>
-                        <a href="https://www.youtube.com/channel/UCk4YWCZF81paAh_rzwwiKxQ" class="first-menu">OUR VIDEO</a>
+                        <a href="https://www.youtube.com/channel/UCk4YWCZF81paAh_rzwwiKxQ" class="first-menu">{{ __('navbar-video') }}</a>
                     </li>
                     <li>
                         <a class="first-menu">LANGUAGE</a>
