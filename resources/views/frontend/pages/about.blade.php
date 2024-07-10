@@ -188,10 +188,10 @@
                              <hr class="rounded">
                              <li class="row">
                                 <div class="row_month">
-                                   <p>{{__ ('february') }}</p>
+                                   <p>{{__ ('march') }}</p>
                                 </div>
                                 <div class="row_history">
-                                   <p>{{__ ('2021feb') }}</p>
+                                   <p>{{__ ('2021mar') }}</p>
                                 </div>
                              </li>
                             </ul>
@@ -226,10 +226,10 @@
                              <hr class="rounded">
                              <li class="row">
                                 <div class="row_month">
-                                   <p>{{__ ('august') }}</p>
+                                   <p>{{__ ('march') }}</p>
                                 </div>
                                 <div class="row_history">
-                                   <p>{{__ ('2020aug') }}</p>
+                                   <p>{{__ ('2020mar') }}</p>
                                 </div>
                              </li>
                             </ul>
@@ -420,12 +420,12 @@
                                         </div>
                                         <div class="text-wrapper">
                                             <h1 >{{__ ('july') }}</h1>
-                                            <p>{{__ ('2023jul')}}</p>
-                                            <div class="text-wrapper">
+                                            <p>{{__ ('2023jul')}}</p>  
+                                        </div>
+                                        <div class="text-wrapper">
                                                 <h1 >{{__ ('january') }}</h1>
                                                 <p>{{__ ('2023jan')}}</p>
                                             </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -481,8 +481,8 @@
                                             <p>{{__ ('2021may')}}</p>
                                         </div>
                                         <div class="text-wrapper">
-                                            <h1 >{{__ ('february') }}</h1>
-                                            <p>{{__ ('2021feb')}}</p>
+                                            <h1 >{{__ ('march') }}</h1>
+                                            <p>{{__ ('2021mar')}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -514,8 +514,8 @@
                                             <p>{{__ ('2020may')}}</p>
                                         </div>
                                         <div class="text-wrapper">
-                                            <h1 >{{__ ('august') }}</h1>
-                                            <p>{{__ ('2020aug')}}</p>
+                                            <h1 >{{__ ('march') }}</h1>
+                                            <p>{{__ ('2020mar')}}</p>
                                         </div>
                                     </div>
                                 </div>
