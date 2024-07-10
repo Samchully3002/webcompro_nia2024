@@ -1059,6 +1059,9 @@ hr.rounded {
     .our-office {
         padding: 20px;
     }
+    .marquee img {
+        height: 300px;
+    }
 
     .container-card-maps {
         height: unset;

@@ -122,7 +122,7 @@
                         <a href="https://www.youtube.com/channel/UCk4YWCZF81paAh_rzwwiKxQ" class="first-menu">{{ __('navbar-video') }}</a>
                     </li>
                     <li>
-                        <a class="first-menu">LANGUAGE</a>
+                        <a class="first-menu">{{__ ('navbar-lang') }}</a>
                         <div class="second-menu">
                             @foreach($available_locales as $locale_name => $available_locale)
                                 @if($available_locale != $current_locale)
