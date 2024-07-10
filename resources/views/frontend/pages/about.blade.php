@@ -941,7 +941,7 @@
                         <div class="card-maps">
                             <div class="content-card-maps">
                                 <h1>{{__ ('indo') }}</h1>
-                                <p>{{__ ('in-address1') }} <br> {{__ ('in-address1') }} <br> {{__ ('in-address') }} <br> {{__ ('in-address3') }} <br> {{__ ('in-address4') }}</p>
+                                <p>{{__ ('in-address1') }} <br> {{__ ('in-address2') }} <br> {{__ ('in-address3') }} <br> {{__ ('in-address4') }} <br> {{__ ('in-address5') }}</p>
                             </div>
                         </div>
                         <div class="card-maps">
