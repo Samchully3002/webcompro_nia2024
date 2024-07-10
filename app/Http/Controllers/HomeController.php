@@ -38,11 +38,11 @@ class HomeController extends Controller
                     ->orderBy('sequence', 'asc')
                     ->where('landing',1)
                     ->get();
-        
 
-        $roles = ['Accounting Assistant', 'Business Assistant', 'Content Creator', 'IT Developer', 'IT Support', 'Videographer & Editor','UI/UX Designer', 'Driver'];
-        
-        
+
+        $roles = ['Accounting/HR', 'Business Support', 'Marketing (Public Relations)', 'IT Developer', 'IT Support', 'Marketing (Editor)','UI/UX Designer', 'Driver', 'Business Support (Translator)' ];
+
+
         foreach($users as $list){
             $list->role = $roles[$list->role-1];
         }
@@ -52,10 +52,10 @@ class HomeController extends Controller
         foreach($users as $item){
             array_push($list, $item);
         }
-        
+
         $list = array_chunk($list,3);
 
-  
+
 
         return view('frontend/pages/about')->with([
             'list' => $list
@@ -106,7 +106,7 @@ class HomeController extends Controller
 
             //inser media news data
             $mess = ContactUs::create([
-                'sender'     => $request->sender, 
+                'sender'     => $request->sender,
                 'email'     => $request->email,
                 'message'    => $request->message,
                 'read'      => 0
@@ -116,11 +116,11 @@ class HomeController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => 'Success sending message!',
-                'data'    => $mess  
+                'data'    => $mess
             ]);
 
         }
-        
+
     }
 
     /**
@@ -169,18 +169,18 @@ class HomeController extends Controller
 
             //inser media news data
             $mon = Monitoring::create([
-                'visited'     => $request->visited, 
+                'visited'     => $request->visited,
                 'ip'     => $request->ip
             ]);
 
             //return response
             return response()->json([
                 'success' => true,
-                'message' => 'recording success!'  
+                'message' => 'recording success!'
             ]);
 
         }
-        
+
     }
 
 
