@@ -620,7 +620,7 @@ hr.rounded {
     display: flex;
     flex: 0 0 auto;
     flex-flow: row;
-    gap: 10px;
+    gap: 20px;
     height: 500px;
     overflow: visible;
     padding: 10px;
@@ -633,7 +633,7 @@ hr.rounded {
     flex: 0 0 auto;
     height: 433px;
     position: relative;
-    width: 360px;
+    width: 350px;
     perspective: 2000px;
 }
 
@@ -1040,7 +1040,7 @@ hr.rounded {
         overflow: visible;
         padding: unset;
         flex-direction: column;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
     }
 
     .team-member .wrapper .title {
@@ -1049,11 +1049,11 @@ hr.rounded {
     }
 
     .team-member .wrapper .subtitle {
-        white-space: unset;
+        /* white-space: unset; */
     }
 
     .team-member .list .row .item .item-wrap .box {
-        width: unset;
+        /* width: unset; */
     }
 
     .our-office {
@@ -1277,6 +1277,10 @@ hr.rounded {
     .product-wrapper .content .img-box {
         flex-direction: column;
         padding: 0 20px;
+    }
+
+    .content-card-maps {
+        gap: 20px;
     }
 }
 
