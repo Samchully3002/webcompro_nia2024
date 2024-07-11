@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use App\Models\MetaTags;
 
 
 class BusinessController extends Controller
@@ -18,9 +19,10 @@ class BusinessController extends Controller
      */
     public function businesslog(Request $request): View
     {
+        $curentURL = $request->path();
+        $meta = MetaTags::where('url', 'LIKE', '%'.$curentURL.'%')->first();
 
-
-        return view('frontend/pages/business/business_logistics');
+        return view('frontend/pages/business/business_logistics',compact(['meta']));
     }
 
     /**
@@ -28,9 +30,10 @@ class BusinessController extends Controller
      */
     public function healthcare(Request $request): View
     {
+        $curentURL = $request->path();
+        $meta = MetaTags::where('url', 'LIKE', '%'.$curentURL.'%')->first();
 
-
-        return view('frontend/pages/business/digital_healthcare');
+        return view('frontend/pages/business/digital_healthcare', compact(['meta']));
     }
 
     /**
@@ -39,8 +42,9 @@ class BusinessController extends Controller
     public function management(Request $request): View
     {
 
-
-        return view('frontend/pages/business/management');
+        $curentURL = $request->path();
+        $meta = MetaTags::where('url', 'LIKE', '%'.$curentURL.'%')->first();
+        return view('frontend/pages/business/management', compact(['meta']));
     }
 
 
@@ -49,9 +53,10 @@ class BusinessController extends Controller
      */
     public function exportvoucher(Request $request): View
     {
+        $curentURL = $request->path();
+        $meta = MetaTags::where('url', 'LIKE', '%'.$curentURL.'%')->first();
 
-
-        return view('frontend/pages/business/exportvoucher');
+        return view('frontend/pages/business/exportvoucher',compact(['meta']));
     }
 
 }
