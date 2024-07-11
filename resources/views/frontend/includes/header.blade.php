@@ -62,8 +62,8 @@
                                 <img style="width: 75%;" src="../../frontend/images/icon/ic_logo.png" />
                             </a>
                             <div class="right-mobile">
-                                <a href="https://www.youtube.com/channel/UCk4YWCZF81paAh_rzwwiKxQ" class="btn-video-mobile">Our Video&nbsp;&nbsp;&nbsp;
-                                    <img style="width: 12%;" src="../../frontend/images/icon/polygon.png" >
+                                <a href="https://www.youtube.com/channel/UCk4YWCZF81paAh_rzwwiKxQ" class="btn-video-mobile">{{ __('navbar-video') }}&nbsp;&nbsp;&nbsp;
+                                    <img style="width: 12px;" src="../../frontend/images/icon/polygon.png" >
                                 </a>
                             </div>
                         </div>
