@@ -11,11 +11,11 @@
                     <li class="first-menu hidden-box business">
                         <a class="btn_business">{{ __('navbar-business') }}&nbsp;&nbsp;&nbsp;
                         <img src="../../frontend/images/icon/arrow-down.png" class="language_caret"/></a>
-                        <ul class="hidden-menu" style="width: 305px;">
+                        <ul class="hidden-menu">
                             <li><a href="/our-business/intellegent-integrated-logistic"><em>{{ __('iil') }}</em></a></li>
                             <li><a href="/our-business/digital-healthcare"><em>{{ __('dh') }}</em></a></li>
                             <li><a href="/our-business/system-development-management"><em>{{ __('sdm') }}</em></a></li>
-                            <li><a href="/our-business/export-voucher"><em>{{ __('navbar-home') }}</em></a></li>
+                            <li><a href="/our-business/export-voucher"><em>{{ __('ev') }}</em></a></li>
                         </ul>
                     </li>
                     <li class="first-menu hidden-box"><a href="/about-us">{{ __('navbar-about') }}</a>
@@ -86,51 +86,51 @@
                 </a>
                 <ul>
                     <li>
-                        <a class="first-menu" href="/">HOME</a>
+                        <a class="first-menu" href="/">{{ __('navbar-home') }}</a>
                     </li>
 
                     <li>
-                        <a class="first-menu">BUSINESS</a>
+                        <a class="first-menu">{{ __('navbar-business') }}</a>
                         <div class="second-menu">
-                            <a href="/our-business/intellegent-integrated-logistic">Intelligent Integrated Logistics</a>
+                            <a href="/our-business/intellegent-integrated-logistic">{{ __('iil') }}</a>
                             <br />
-                            <a href="/our-business/digital-healthcare">Digital Healthcare</a>
+                            <a href="/our-business/digital-healthcare">{{ __('dh') }}</a>
                             <br />
-                            <a href="/our-business/system-development-management">System Development & Management</a>
+                            <a href="/our-business/system-development-management">{{ __('sdm') }}</a>
                             <br />
-                            <a href="/our-business/export-voucher">Export Voucher</a>
+                            <a href="/our-business/export-voucher">{{ __('ev') }}</a>
                         </div>
                     </li>
 
                     <li>
-                        <a class="first-menu" href="/about-us">ABOUT</a>
+                        <a class="first-menu" href="/about-us">{{ __('navbar-about') }}</a>
                     </li>
 
                     <li>
-                        <a class="first-menu">COMMUNITY</a>
+                        <a class="first-menu">{{ __('navbar-community') }}</a>
                         <div class="second-menu">
-                            <a href="/community/notice">Notice</a>
+                            <a href="/community/notice">{{ __('navbar-notice') }}</a>
                             <br>
-                            <a href="/community/news">News</a>
+                            <a href="/community/news">{{ __('navbar-news') }}</a>
                         </div>
                     </li>
 
                     <li>
-                        <a href="/contact-us" class="first-menu">CONTACT US</a>
+                        <a href="/contact-us" class="first-menu">{{ __('navbar-contact') }}</a>
                     </li>
                     <li>
-                        <a href="https://www.youtube.com/channel/UCk4YWCZF81paAh_rzwwiKxQ" class="first-menu">OUR VIDEO</a>
+                        <a href="https://www.youtube.com/channel/UCk4YWCZF81paAh_rzwwiKxQ" class="first-menu">{{ __('navbar-video') }}</a>
                     </li>
-                    {{-- <li>
-                        <a class="first-menu">LANGUAGE</a>
+                    <li>
+                        <a class="first-menu">{{__ ('navbar-lang') }}</a>
                         <div class="second-menu">
-                            <a href="/"><img src="../../frontend/images/icon/flag-english.png"/> English</a>
-                            <br>
-                            <a href="/kr"><img src="../../frontend/images/icon/flag-korea.png"/> Korea</a>
-                            <br>
-                            <a href="/in"><img src="../../frontend/images/icon/flag-indo.png"/> Indonesia</a>
+                            @foreach($available_locales as $locale_name => $available_locale)
+                                @if($available_locale != $current_locale)
+                                    <a href="/{{ $available_locale }}"><img src="../../frontend/images/icon/{{( $available_locale)}}.png"/> {{ $locale_name }}</a>
+                                @endif
+                            @endforeach
                         </div>
-                    </li> --}}
+                    </li>
                 </ul>
             </div>
         </div>

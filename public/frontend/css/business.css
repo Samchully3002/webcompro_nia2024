@@ -335,7 +335,7 @@ input[type="checkbox"] {
     }
 
     .lbl-toggle span {
-        font-size: 20px;
+        font-size: 16px;
         word-wrap: balance;
         text-align: center;
     }
@@ -399,6 +399,7 @@ input[type="checkbox"] {
         margin-bottom: 50px;
         overflow: visible;
         position: relative;
+        justify-content: center;
     }
 
     .product-wrapper .content .img-box-mobile img {
@@ -416,10 +417,12 @@ input[type="checkbox"] {
         cursor: pointer;
         margin: 0 -20px 0 0;
         z-index: 2;
-        font-size: 50px;
-        padding: 0 5px 0 5px;
+        font-size: 32px;
+        padding: 0 16px 4px 16px;
+        position: absolute;
+        left: 4px;
         color: white;
-        border-radius: 50px;
+        border-radius: 99px;
         pointer-events: auto;
         transform: none;
     }
@@ -434,8 +437,10 @@ input[type="checkbox"] {
         cursor: pointer;
         margin: 0 0 0 -20px;
         z-index: 2;
-        font-size: 50px;
-        padding: 0 5px 0 5px;
+        font-size: 32px;
+        padding: 0 16px 4px 16px;
+        position: absolute;
+        right: 4px;
         color: white;
         border-radius: 50px;
         pointer-events: auto;
@@ -457,6 +462,19 @@ input[type="checkbox"] {
 
     .product-wrapper .content .card-wrapper .card {
         margin: 0;
+    }
+
+    .product-wrapper .content .card-wrapper .card span {
+        font-size: 20px;
+    }
+
+    .product-wrapper .content .card-wrapper .card,
+    .product-wrapper .content .card-wrapper .card-grey span {
+        font-size: 20px;
+    }
+
+    .product-wrapper .content .card-wrapper .card-grey .span-title {
+        font-size: 40px;
     }
 }
 

@@ -10,10 +10,10 @@
         <div class="page page-in">
             <div class="notice-wrapper">
                 <div class="notice-title">
-                    <p class="appear">Notice</p>
+                    <p class="appear">{{__ ('notice') }}</p>
                 </div>
                 @foreach($notice as $note)
-                
+
                 <a class="notice-list" href="/community/notice-detail/{{$note->id}}">
                     <div class="notice-content">
                         <p>{{$note->title;}}</p>
@@ -29,7 +29,7 @@
             @if($notice->hasPages())
             <div class="imx">
                     <div class="pagination">
-                       
+
                         <a href="{{$notice->previousPageUrl()}}" class="arrow">&laquo;</a>
                         <a href="{{$notice->nextPageUrl()}}" class="arrow">&raquo;</a>
                     </div>

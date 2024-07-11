@@ -14,11 +14,11 @@
             <div class="box">
                 <div class="left-content">
                     <img src="../frontend/images/icon_10_about.svg">
-                    <span >Years of  Proven Experience</span>
+                    <span >{{__ ('10years') }}</span>
                 </div>
                 <div class="right-content">
                     <span>
-                        With a decade worth of experience and excellent infrastructure, NIA is your reliable partner.
+                        {{__ ('10years-content') }}
                     </span>
                 </div>
             </div>
@@ -32,10 +32,10 @@
             </div>
             <div class="text_wrapper">
 
-                <span class="muncul">CEO Greetings</span><br>
+                <span class="muncul">{{__ ('ceo') }}</span><br>
                 <p class="muncul">
-                As a subsidiary of Samchully Networks from South Korea, PT Networks Indonesia Aku was established in Jakarta, Indonesia in 2021 with a clear mission: "To become a leading IT company in Indonesia, emphasizing environmentally friendly products and services. We aim to create technology for the advancement of transportation and infrastructure, healthcare technology, education, logistics, smart factories, online payment systems, and their development." As specialists in the IT field, we offer a diverse range of services through information data and develop solutions through application/web platforms.<br><br>
-                NIA prioritizes 'integration' and 'innovation' as its core foundation. With the vision of "Focusing on innovation, high-quality services, and advanced technological solutions, we are determined to make a meaningful contribution to advancing the world of information technology. Through this commitment, we strive to build strong, long-term relationships with customers, becoming a reliable partner and continuing to be a leading provider of IT solutions." We are committed to continually building and maintaining trust, aligning with the rapid changes in technology trends.
+                    {{__ ('ceo-msg1') }}
+                    {{__ ('ceo-msg2') }}
                 </p>
             </div>
         </div>
@@ -44,7 +44,7 @@
         <!-- Our History Start -->
             <div class="our-history ">
                 <div class="title">
-                    <p>Our Stories</p>
+                    <p>{{__ ('story') }}</p>
                 </div>
 
 
@@ -63,296 +63,296 @@
                             <ul class="hist_2024">
                                 <li class="row">
                                     <div class="row_month">
-                                    <p>April</p>
+                                    <p>{{__ ('april') }}</p>
                                     </div>
                                     <div class="row_history">
-                                    <p>Samchully Networks was selected as partner for the Voucher Export project led by Korea SMEs &amp; Startups Agency (KOSME) and Korea Trade Investment Promotion Agency (KONTRA) and PT NIA as project executor.</p>
+                                    <p>{{__ ('2024apr') }}</p>
                                     </div>
                                 </li>
                                 <hr class="rounded">
                                 <li class="row">
                                     <div class="row_month">
-                                    <p>February</p>
+                                    <p>{{__ ('february') }}</p>
                                     </div>
                                     <div class="row_history">
-                                    <p>Selected as Demonstration Agency for Indonesian Test Bed Support Project Agricultural Machinery Verification Management and Operation Service (Korea Agricultural Technology Promotion Agency/KOAT).</p>
-                                    <p>Patent Application for Optimal Route Operation Techniques for Demand Responsive Transport (DRT).</p>
+                                    <p>{{__ ('2024feb-1') }}</p>
+                                    <p>{{__ ('2024feb-2') }}</p>
                                     </div>
                                 </li>
                                 <hr class="rounded">
                                 <li class="row">
                                     <div class="row_month">
-                                    <p>January</p>
+                                    <p>{{__ ('january') }}</p>
                                     </div>
                                     <div class="row_history">
-                                    <p>Development of Demand Response Transportation Platform "Chaonda"</p>
-                                    <p>The Leuwipanjang terminal, Bandung, which was developed by PT NIA, was inaugurated by the President of Indonesia, Mr. Ir. Joko Widodo.</p>
-                                    <p>Registered as a Design Specialty Company (Multimedia Design) at The Korea Institute of Design Promotion.</p>
+                                    <p>{{__ ('2024jan-1') }}</p>
+                                    <p>{{__ ('2024jan-2') }}</p>
+                                    <p>{{__ ('2024jan-3') }}</p>
                                     </div>
                                 </li>
                             </ul>
                             <ul class="hist_2023">
                                 <li class="row">
                                     <div class="row_month">
-                                    <p>November</p>
+                                    <p>{{__ ('november') }}</p>
                                     </div>
                                     <div class="row_history">
-                                    <p>Awarded for Best ODA Implementer at Development Cooperation Day - Prime Minister Awards (Son Dong-kwon, Vice President Samchully Networks Co., Ltd.)</p>
+                                    <p>{{__ ('2023nov') }}</p>
                                     </div>
                                 </li>
                                 <hr class="rounded">
                                 <li class="row">
                                     <div class="row_month">
-                                    <p>October</p>
+                                    <p>{{__ ('october') }}</p>
                                     </div>
                                     <div class="row_history">
-                                    <p>Completion of the 'Master Plan and Pilot Operation for the Bus Terminal Improvement and ITS(Intelligent Transport System) Implementation in the Republic of Indonesia'</p>
+                                    <p>{{__ ('2023oct') }}</p>
                                     </div>
                                 </li>
                                 <hr class="rounded">
                                 <li class="row">
                                     <div class="row_month">
-                                    <p>August</p>
+                                    <p>{{__ ('august') }}</p>
                                     </div>
                                     <div class="row_history">
-                                    <p>Relocation of Indonesia's Corporate (AIA Central Building)</p>
+                                    <p>{{__ ('2023aug') }}</p>
                                     </div>
                                 </li>
                                 <hr class="rounded">
                                 <li class="row">
                                     <div class="row_month">
-                                    <p>July</p>
+                                    <p>{{__ ('july') }}</p>
                                     </div>
                                     <div class="row_history">
-                                    <p>Proceeded the 2nd Invitational Training in Korea for Civil Servants from the Ministry of Transport and Directorate General of Land Transportation in Indonesia</p>
+                                    <p>{{__ ('2023jul') }}</p>
                                     </div>
                                 </li>
                                 <hr class="rounded">
                                 <li class="row">
                                     <div class="row_month">
-                                    <p>January</p>
+                                    <p>{{__ ('january') }}</p>
                                     </div>
                                     <div class="row_history">
-                                    <p>Acquired Certificate from the Small and Medium Business Technology Innovation Association (Inno-Biz)</p>
+                                    <p>{{__ ('2023jan') }}</p>
                                     </div>
                                 </li>
                             </ul>
                             <ul class="hist_2022">
                              <li class="row">
                                 <div class="row_month">
-                                   <p>November</p>
+                                   <p>{{__ ('november') }}</p>
                                 </div>
                                 <div class="row_history">
-                                   <p>Proceeded the 1st Invitational Training in Korea for Civil Servants from the Ministry of Transport and Directorate General of Land Transportation in Indonesia</p>
+                                   <p>{{__ ('2022nov') }}</p>
                                 </div>
                              </li>
                              <hr class="rounded">
                              <li class="row">
                                 <div class="row_month">
-                                   <p>October</p>
+                                   <p>{{__ ('october') }}</p>
                                 </div>
                                 <div class="row_history">
-                                   <p>Completed the 2nd Year of 'Master Plan and Pilot Operation for the Bus Terminal Improvement and ITS(Intelligent Transport System) Implementation in the Republic of Indonesia</p>
+                                   <p>{{__ ('2022oct') }}</p>
                                 </div>
                              </li>
                             </ul>
                             <ul class="hist_2021">
                              <li class="row">
                                 <div class="row_month">
-                                   <p>December</p>
+                                   <p>{{__ ('december') }}</p>
                                 </div>
                                 <div class="row_history">
-                                   <p>Completed the 1st Year of 'Master Plan and Pilot Operation for the Bus Terminal Improvement and ITS(Intelligent Transport System) Implementation in the Republic of Indonesia</p>
-                                   <p>Establishment of the Local Corporation in Indonesia (PT Networks Indonesia Aku)</p>
-                                   <p>Selected as Host Company for 'Master Plan and Pilot Operation for the Bus Terminal Improvement and ITS(Intelligent Transport System) Implementation in the Republic of Indonesia' Project (ODA, MOLIT)</p>
+                                   <p>{{__ ('2021dec-1') }}</p>
+                                   <p>{{__ ('2021dec-2') }}</p>
+                                   <p>{{__ ('2021dec-3') }}</p>
                                 </div>
                              </li>
                              <hr class="rounded">
                              <li class="row">
                                 <div class="row_month">
-                                   <p>July</p>
+                                   <p>{{__ ('july') }}</p>
                                 </div>
                                 <div class="row_history">
-                                   <p>Reacquired Certification from Korea Management Innovation Small and Medium Business Association (Main Biz)</p>
+                                   <p>{{__ ('2021jul') }}</p>
                                 </div>
                              </li>
                              <hr class="rounded">
                              <li class="row">
                                 <div class="row_month">
-                                   <p>May</p>
+                                   <p>{{__ ('may') }}</p>
                                 </div>
                                 <div class="row_history">
-                                   <p>Developed the Healthcare Platform "Healthyhada"</p>
+                                   <p>{{__ ('2021may') }}</p>
                                 </div>
                              </li>
                              <hr class="rounded">
                              <li class="row">
                                 <div class="row_month">
-                                   <p>February</p>
+                                   <p>{{__ ('march') }}</p>
                                 </div>
                                 <div class="row_history">
-                                   <p>Launched ‘Olligo’, a transportation platform in the construction sector</p>
+                                   <p>{{__ ('2021mar') }}</p>
                                 </div>
                              </li>
                             </ul>
                             <ul class="hist_2020">
                              <li class="row">
                                 <div class="row_month">
-                                   <p>December</p>
+                                   <p>{{__ ('december') }}</p>
                                 </div>
                                 <div class="row_history">
-                                   <p>Selected as "Small Strong Company in Seoul" by Ministry of Employment and Labor</p>
+                                   <p>{{__ ('2020dec') }}</p>
                                 </div>
                              </li>
                              <hr class="rounded">
                              <li class="row">
                                 <div class="row_month">
-                                   <p>November</p>
+                                   <p>{{__ ('november') }}</p>
                                 </div>
                                 <div class="row_history">
-                                   <p>Developed the Contruction Transport Platform "Olligo"</p>
-                                   <p>Launched the “24 Hour Environment”, a Garbage Vehicle Tracking Transportation System for Construction</p>
+                                   <p>{{__ ('2020nov-1') }}</p>
+                                   <p>{{__ ('2020nov-2') }}</p>
                                 </div>
                              </li>
                              <hr class="rounded">
                              <li class="row">
                                 <div class="row_month">
-                                   <p>May</p>
+                                   <p>{{__ ('may') }}</p>
                                 </div>
                                 <div class="row_history">
-                                   <p>Acquired Overseas (Cambodia, Phnom Penh) Construction Business (Construction Engineering/ Information Communication Construction Business)</p>
+                                   <p>{{__ ('2020may') }}</p>
                                 </div>
                              </li>
                              <hr class="rounded">
                              <li class="row">
                                 <div class="row_month">
-                                   <p>August</p>
+                                   <p>{{__ ('march') }}</p>
                                 </div>
                                 <div class="row_history">
-                                   <p>Opened the Jeju Branch</p>
+                                   <p>{{__ ('2020mar') }}</p>
                                 </div>
                              </li>
                             </ul>
                             <ul class="hist_2019">
                              <li class="row">
                                 <div class="row_month">
-                                   <p>July</p>
+                                   <p>{{__ ('july') }}</p>
                                 </div>
                                 <div class="row_history">
-                                   <p>KOVA Venture Business Registration (No. 20190729-42348).</p>
+                                   <p>{{__ ('2019jul') }}</p>
                                 </div>
                              </li>
                              <hr class="rounded">
                              <li class="row">
                                 <div class="row_month">
-                                   <p>June</p>
+                                   <p>{{__ ('june') }}</p>
                                 </div>
                                 <div class="row_history">
-                                   <p>Acquired Certification from the Korea Management Innovation Small and Medium Business Association (Main Biz)</p>
+                                   <p>{{__ ('2019jun') }}</p>
                                 </div>
                              </li>
                              <hr class="rounded">
                              <li class="row">
                                 <div class="row_month">
-                                   <p>May</p>
+                                   <p>{{__ ('may') }}</p>
                                 </div>
                                 <div class="row_history">
-                                   <p>Patent Acquisition: Automatic Vehicle Dispatching System (Patent No. 10-2038795)</p>
+                                   <p>{{__ ('2019may') }}</p>
                                 </div>
                              </li>
                              <hr class="rounded">
                              <li class="row">
                                 <div class="row_month">
-                                   <p>February</p>
+                                   <p>{{__ ('february') }}</p>
                                 </div>
                                 <div class="row_history">
-                                   <p>Developed & Launched the Special Transportation Vehicle Intermediary Platform "Samchully PAY"</p>
+                                   <p>{{__ ('2019feb') }}</p>
                                 </div>
                              </li>
                             </ul>
                             <ul class="hist_2018">
                              <li class="row">
                                 <div class="row_month">
-                                   <p>September</p>
+                                   <p>{{__ ('september') }}</p>
                                 </div>
                                 <div class="row_history">
-                                   <p>Establishment of a Corporate Research Institute (Institute of Technology No. 2018113469)</p>
+                                   <p>{{__ ('2018sep') }}</p>
                                 </div>
                              </li>
                              <hr class="rounded">
                              <li class="row">
                                 <div class="row_month">
-                                   <p>June</p>
+                                   <p>{{__ ('june') }}</p>
                                 </div>
                                 <div class="row_history">
-                                   <p>Acquired Quality Management System Certification ISO9001:2015 (No. 21-A-3486 Rev. 0)</p>
+                                   <p>{{__ ('2018jun') }}</p>
                                 </div>
                              </li>
                              <hr class="rounded">
                              <li class="row">
                                 <div class="row_month">
-                                   <p>March</p>
+                                   <p>{{__ ('march') }}</p>
                                 </div>
                                 <div class="row_history">
-                                   <p>Designed & Developed Ticketing System based on Cloud</p>
+                                   <p>{{__ ('2018mar') }}</p>
                                 </div>
                              </li>
                             </ul>
                             <ul class="hist_2017">
                                 <li class="row">
                                 <div class="row_month">
-                                   <p>January</p>
+                                   <p>{{__ ('january') }}</p>
                                 </div>
                                 <div class="row_history">
-                                   <p>Establishment of 25 Transport Platform Branches & Agencies All Across the Republic of Korea</p>
+                                   <p>{{__ ('2017jan') }}</p>
                                 </div>
                              </li>
                             </ul>
                             <ul class="hist_2016">
                              <li class="row">
                                 <div class="row_month">
-                                   <p>October</p>
+                                   <p>{{__ ('october') }}</p>
                                 </div>
                                 <div class="row_history">
-                                   <p>Developed and Maintenance Ticketing System for Guided Cruise for the National Cruise Association</p>
+                                   <p>{{__ ('2016oct') }}</p>
                                 </div>
                              </li>
                              <hr class="rounded">
                              <li class="row">
                                 <div class="row_month">
-                                   <p>June</p>
+                                   <p>{{__ ('june') }}</p>
                                 </div>
                                 <div class="row_history">
-                                   <p>Developed and Launced of an Integrated Intelligent Transportation Platform (Commercialization)</p>
+                                   <p>{{__ ('2016jun') }}</p>
                                 </div>
                              </li>
                             </ul>
                             <ul class="hist_2015">
                              <li class="row">
                                 <div class="row_month">
-                                   <p>May</p>
+                                   <p>{{__ ('may') }}</p>
                                 </div>
                                 <div class="row_history">
-                                   <p>Designed & Developed Mobile Wireless Telecommunication Relay Service (TRS) Solution (KT, KT Powertell, etc.)</p>
+                                   <p>{{__ ('2015may') }}</p>
                                 </div>
                              </li>
                              <hr class="rounded">
                              <li class="row">
                                 <div class="row_month">
-                                   <p>February</p>
+                                   <p>{{__ ('february') }}</p>
                                 </div>
                                 <div class="row_history">
-                                   <p>Opened and Operated Integrated Transport Call Center</p>
+                                   <p>{{__ ('2015feb') }}</p>
                                 </div>
                              </li>
                             </ul>
                             <ul class="hist_2014">
                              <li class="row">
                                 <div class="row_month">
-                                   <p>October</p>
+                                   <p>{{__ ('october') }}</p>
                                 </div>
                                 <div class="row_history">
-                                   <p>Established Samchully Networks Co., Ltd. (Head Office, in Seoul, Korea)</p>
+                                   <p>{{__ ('2014oct') }}</p>
                                 </div>
                              </li>
                           </ul>
@@ -376,22 +376,19 @@
                                             <img src="../frontend/images/story2024.png"/>
                                         </div>
                                         <div class="text-wrapper">
-                                            <h1 >April</h1>
-                                            <p>Samchully Networks was selected as partner for the Voucher Export project led by Korea SMEs & Startups Agency (KOSME) and Korea Trade Investment Promotion Agency (KONTRA) and PT NIA as project executor.</p>
+                                            <h1 >{{__ ('april') }}</h1>
+                                            <p>{{__ ('2024apr')}}</p>
                                         </div>
                                         <div class="text-wrapper">
-                                            <h1 >Maret</h1>
-                                            <p>Registered as a Design Specialty Company (Multimedia Design) at The Korea Institute of Design Promotion</p>
-                                            <p>Patent Application for Optimal Route Operation Techniques for Demand Responsive Transport (DRT)</p>
-                                            <p>Development of Demand Response Transportation Platform "Cha-onda"</p>
+                                            <h1 >{{__ ('february') }}</h1>
+                                            <p>{{__ ('2024feb-1')}}</p>
+                                            <p>{{__ ('2024feb-2')}}</p>
                                         </div>
                                         <div class="text-wrapper">
-                                            <h1 >February</h1>
-                                            <p>Selected as Demonstration Agency for Indonesian Test Bed Support Project Agricultural Machinery Verification Management and Operation Service (Korea Agricultural Technology Promotion Agency/KOAT)</p>
-                                        </div>
-                                        <div class="text-wrapper">
-                                            <h1 >January</h1>
-                                            <p>The Leuwipanjang terminal, Bandung, which was developed by PT NIA, was inaugurated by the President of Indonesia, Mr. Ir. Joko Widodo</p>
+                                            <h1 >{{__ ('january') }}</h1>
+                                            <p>{{__ ('2024jan-1')}}</p>
+                                            <p>{{__ ('2024jan-2')}}</p>
+                                            <p>{{__ ('2024jan-3')}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -410,22 +407,25 @@
                                             <img src="../frontend/images/story2023.png"/>
                                         </div>
                                         <div class="text-wrapper">
-                                            <h1 >December</h1>
-                                            <p>Acquired Certificate from the Small and Medium Business Technology Innovation Association (Inno-Biz)</p>
+                                            <h1 >{{__ ('november') }}</h1>
+                                            <p>{{__ ('2023nov')}}</p>
                                         </div>
                                         <div class="text-wrapper">
-                                            <h1 >November</h1>
-                                            <p>Awarded for Best ODA Implementer at Development Cooperation Day - Prime Minister Awards (Son Dong-kwon, Vice President Samchully Networks Co., Ltd.)</p>
+                                            <h1 >{{__ ('october') }}</h1>
+                                            <p>{{__ ('2023oct')}}</p>
                                         </div>
                                         <div class="text-wrapper">
-                                            <h1 >October</h1>
-                                            <p>Relocation of Indonesia's Corporate (AIA Central Building)</p>
-                                            <p>Completion of the 'Master Plan and Pilot Operation for the Bus Terminal Improvement and ITS(Intelligent Transport System) Implementation in the Republic of Indonesia</p>
+                                            <h1 >{{__ ('august') }}</h1>
+                                            <p>{{__ ('2023aug')}}</p>
                                         </div>
                                         <div class="text-wrapper">
-                                            <h1 >July</h1>
-                                            <p>Proceeded the 2nd Invitational Training in Korea for Civil Servants from the Ministry of Transport and Directorate General of Land Transportation in Indonesia</p>
+                                            <h1 >{{__ ('july') }}</h1>
+                                            <p>{{__ ('2023jul')}}</p>  
                                         </div>
+                                        <div class="text-wrapper">
+                                                <h1 >{{__ ('january') }}</h1>
+                                                <p>{{__ ('2023jan')}}</p>
+                                            </div>
                                     </div>
                                 </div>
                             </div>
@@ -443,12 +443,12 @@
                                             <img src="../frontend/images/story2022.png"/>
                                         </div>
                                         <div class="text-wrapper">
-                                            <h1 >November</h1>
-                                            <p>Proceeded the 1st Invitational Training in Korea for Civil Servants from the Ministry of Transport and Directorate General of Land Transportation in Indonesia</p>
+                                            <h1 >{{__ ('november') }}</h1>
+                                            <p>{{__ ('2022nov')}}</p>
                                         </div>
                                         <div class="text-wrapper">
-                                            <h1 >October</h1>
-                                            <p>Completed the 2nd Year of 'Master Plan and Pilot Operation for the Bus Terminal Improvement and ITS(Intelligent Transport System) Implementation in the Republic of Indonesia</p>
+                                            <h1 >{{__ ('october') }}</h1>
+                                            <p>{{__ ('2022oct')}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -467,22 +467,22 @@
                                             <img src="../frontend/images/story2021.png"/>
                                         </div>
                                         <div class="text-wrapper">
-                                            <h1 >December</h1>
-                                            <p>Completed the 1st Year of 'Master Plan and Pilot Operation for the Bus Terminal Improvement and ITS(Intelligent Transport System) Implementation in the Republic of Indonesia</p>
-                                            <p>Establishment of the Local Corporation in Indonesia (PT Networks Indonesia Aku)</p>
-                                            <p>Selected as Host Company for 'Master Plan and Pilot Operation for the Bus Terminal Improvement and ITS(Intelligent Transport System) Implementation in the Republic of Indonesia' Project (ODA, MOLIT)</p>
+                                            <h1 >{{__ ('december') }}</h1>
+                                            <p>{{__ ('2021dec-1')}}</p>
+                                            <p>{{__ ('2021dec-2')}}</p>
+                                            <p>{{__ ('2021dec-3')}}</p>
                                         </div>
                                         <div class="text-wrapper">
-                                            <h1 >August</h1>
-                                            <p>Developed the Healthcare Platform "Healthyhada"</p>
+                                            <h1 >{{__ ('july') }}</h1>
+                                            <p>{{__ ('2021jul')}}</p>
                                         </div>
                                         <div class="text-wrapper">
-                                            <h1 >July</h1>
-                                            <p>Reacquired Certification from Korea Management Innovation Small and Medium Business Association (Main Biz)</p>
+                                            <h1 >{{__ ('may') }}</h1>
+                                            <p>{{__ ('2021may')}}</p>
                                         </div>
                                         <div class="text-wrapper">
-                                            <h1 >February</h1>
-                                            <p>Launched ‘Olligo’, a transportation platform in the construction sector</p>
+                                            <h1 >{{__ ('march') }}</h1>
+                                            <p>{{__ ('2021mar')}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -501,21 +501,21 @@
                                             <img src="../frontend/images/story2020.png"/>
                                         </div>
                                         <div class="text-wrapper">
-                                            <h1 >December</h1>
-                                            <p>Selected as "Small Strong Company in Seoul" by Ministry of Employment and Labor</p>
+                                            <h1 >{{__ ('december') }}</h1>
+                                            <p>{{__ ('2020dec')}}</p>
                                         </div>
                                         <div class="text-wrapper">
-                                            <h1 >November</h1>
-                                            <p>Developed the Contruction Transport Platform "Olligo"</p>
-                                            <p>Launched the “24 Hour Environment”, a Garbage Vehicle Tracking Transportation System for Construction</p>
+                                            <h1 >{{__ ('november') }}</h1>
+                                            <p>{{__ ('2020nov-1')}}</p>
+                                            <p>{{__ ('2020nov-2')}}</p>
                                         </div>
                                         <div class="text-wrapper">
-                                            <h1 >August</h1>
-                                            <p>Opened the Jeju Branch</p>
+                                            <h1 >{{__ ('may') }}</h1>
+                                            <p>{{__ ('2020may')}}</p>
                                         </div>
                                         <div class="text-wrapper">
-                                            <h1 >May</h1>
-                                            <p>Acquired Overseas (Cambodia, Phnom Penh) Construction Business (Construction Engineering/ Information Communication Construction Business)</p>
+                                            <h1 >{{__ ('march') }}</h1>
+                                            <p>{{__ ('2020mar')}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -534,16 +534,20 @@
                                             <img src="../frontend/images/story2019.png"/>
                                         </div>
                                         <div class="text-wrapper">
-                                            <h1 >December</h1>
-                                            <p>Acquired Certification from the Korea Management Innovation Small and Medium Business Association (Main Biz)</p>
+                                            <h1 >{{__ ('july') }}</h1>
+                                            <p>{{__ ('2019jul')}}</p>
                                         </div>
                                         <div class="text-wrapper">
-                                            <h1 >November</h1>
-                                            <p>Patent Acquisition: Automatic Vehicle Dispatching System (Patent No. 10-2038795)</p>
+                                            <h1 >{{__ ('june') }}</h1>
+                                            <p>{{__ ('2019jun')}}</p>
                                         </div>
                                         <div class="text-wrapper">
-                                            <h1 >February</h1>
-                                            <p>Developed & Launched the Special Transportation Vehicle Intermediary Platform "Samchully PAY"</p>
+                                            <h1 >{{__ ('may') }}</h1>
+                                            <p>{{__ ('2019may')}}</p>
+                                        </div>
+                                        <div class="text-wrapper">
+                                            <h1 >{{__ ('february') }}</h1>
+                                            <p>{{__ ('2019feb')}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -562,16 +566,16 @@
                                             <img src="../frontend/images/story2018.png"/>
                                         </div>
                                         <div class="text-wrapper">
-                                            <h1 >December</h1>
-                                            <p>Establishment of a Corporate Research Institute (Institute of Technology No. 2018113469)</p>
+                                            <h1 >{{__ ('september') }}</h1>
+                                            <p>{{__ ('2018sep')}}</p>
                                         </div>
                                         <div class="text-wrapper">
-                                            <h1 >May</h1>
-                                            <p>Acquired Quality Management System Certification ISO9001:2015 (No. 21-A-3486 Rev. 0)</p>
+                                            <h1 >{{__ ('june') }}</h1>
+                                            <p>{{__ ('2018jun')}}</p>
                                         </div>
                                         <div class="text-wrapper">
-                                            <h1 >March</h1>
-                                            <p>Designed & Developed Ticketing System based on Cloud</p>
+                                            <h1 >{{__ ('march') }}</h1>
+                                            <p>{{__ ('2018mar')}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -590,8 +594,8 @@
                                             <img src="../frontend/images/story2017.png"/>
                                         </div>
                                         <div class="text-wrapper">
-                                            <h1 >March</h1>
-                                            <p>Establishment of 25 Transport Platform Branches & Agencies All Across the Republic of Korea</p>
+                                            <h1 >{{__ ('january') }}</h1>
+                                            <p>{{__ ('2017jan')}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -610,12 +614,12 @@
                                             <img src="../frontend/images/story2016.png"/>
                                         </div>
                                         <div class="text-wrapper">
-                                            <h1 >December</h1>
-                                            <p>Developed and Maintenance Ticketing System for Guided Cruise for the National Cruise Association</p>
+                                            <h1 >{{__ ('october') }}</h1>
+                                            <p>{{__ ('2016oct')}}</p>
                                         </div>
                                         <div class="text-wrapper">
-                                            <h1 >August</h1>
-                                            <p>Developed and Launced of an Integrated Intelligent Transportation Platform (Commercialization)</p>
+                                            <h1 >{{__ ('june') }}</h1>
+                                            <p>{{__ ('2016jun')}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -634,12 +638,12 @@
                                             <img src="../frontend/images/story2015.png"/>
                                         </div>
                                         <div class="text-wrapper">
-                                            <h1 >October</h1>
-                                            <p>Designed & Developed Mobile Wireless Telecommunication Relay Service (TRS) Solution (KT, KT Powertell, etc.)</p>
+                                            <h1 >{{__ ('may') }}</h1>
+                                            <p>{{__ ('2015may')}}</p>
                                         </div>
                                         <div class="text-wrapper">
-                                            <h1 >Juni</h1>
-                                            <p>Opened and Operated Integrated Transport Call Center</p>
+                                            <h1 >{{__ ('february') }}</h1>
+                                            <p>{{__ ('2015feb')}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -658,8 +662,8 @@
                                             <img src="../frontend/images/story2014.png"/>
                                         </div>
                                         <div class="text-wrapper">
-                                            <h1 >December</h1>
-                                            <p>Established Samchully Networks Co., Ltd. (Head Office, in Seoul, Korea)</p>
+                                            <h1 >{{__ ('october') }}</h1>
+                                            <p>{{__ ('2014oct')}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -675,7 +679,7 @@
         <div class="core">
             <!-- Title Text -->
             <div class="core-title">
-                <p class="muncul">Core Values Guide Us to Excellence</p>
+                <p class="muncul">{{__ ('core') }}</p>
             </div>
             <!-- Title Text -->
             <!-- Core Text -->
@@ -751,8 +755,7 @@
             <!-- subtitle Core Value -->
             <div class="subtitle">
                 <p>
-                Expanding our commitment to integrity, innovation, collaboration,
-                and continuous improvement.
+                {{__ ('core-sub')}}
                 </p>
             </div>
         </div>
@@ -763,10 +766,10 @@
             <!-- Title Line -->
             <div class="wrapper">
                 <div class="title">
-                    <p>Team Member</p>
+                    <p>{{__ ('team') }}</p>
                 </div>
                 <div class="subtitle">
-                    <p">Collaboration fuels our success, turning shared visions into remarkable achievements.</p>
+                    <p">{{__ ('team-sub') }}</p>
                 </div>
             </div>
             <!-- Title Line -->
@@ -935,20 +938,20 @@
                 <div class="container-card-maps">
                         <div class="card-maps">
                             <div class="content-card-maps">
-                                <h1>Korea</h1>
-                                <p>JH Jangheung Building  4th Floor, <br> Magokjungang 6-ro, <br> Gangseo-gu, <br> Seoul 07802</p>
+                                <h1>{{__ ('korea') }}</h1>
+                                <p>{{__ ('kr-address1') }} <br> {{__ ('kr-address2') }} <br> {{__ ('kr-address3') }} <br> {{__ ('kr-address4') }}</p>
                             </div>
                         </div>
                         <div class="card-maps">
                             <div class="content-card-maps">
-                                <h1>Indonesia</h1>
-                                <p>AIA CENTRAL 21 st Floor. <br> Jenderal Sudirman Street, <br> Number Kav. 48A, Karet Semanggi, <br> Setiabudi, South Jakarta City, <br> DKI Jakarta 12930</p>
+                                <h1>{{__ ('indo') }}</h1>
+                                <p>{{__ ('in-address1') }} <br> {{__ ('in-address2') }} <br> {{__ ('in-address3') }} <br> {{__ ('in-address4') }} <br> {{__ ('in-address5') }}</p>
                             </div>
                         </div>
                         <div class="card-maps">
                             <div class="content-card-maps">
-                                <h1>Malaysia</h1>
-                                <p>126, MY Negeri Sembilan Seremban Seremban, 67, <br> Pusat Komersial Saujana 3 Street, <br> Pusat Komersial Saujana 70300</p>
+                                <h1>{{__ ('malay') }}</h1>
+                                <p>{{__ ('my-address1') }} <br>{{__ ('my-address2') }} <br> {{__ ('my-address3') }} <br> {{__ ('my-address4') }}</p>
                             </div>
                         </div>
                 </div>

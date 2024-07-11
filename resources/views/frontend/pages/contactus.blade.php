@@ -16,30 +16,30 @@
                     <div class="left-content">
                     <div class="text-box">
                     <div class="appear">
-                        <span>Contact Us</span>
+                        <span>{{__ ('contact') }}</span>
                     </div>
 
-                        
+
                         <div class="appear">
-                            <h3>PT. Networks Indonesia Aku</h3>
-                            <p>AIA CENTRAL 21st Floor.</p>
-                            <p>Jenderal Sudirman Street, Number Kav. 48A,</p>
-                            <p>Karet Semanggi, Kecamatan Setiabudi,</p>
-                            <p>South Jakarta City, DKI Jakarta 12930</p>
+                            <h3>{{__ ('address') }}</h3>
+                            <p>{{__ ('address1') }}</p>
+                            <p>{{__ ('address2') }}</p>
+                            <p>{{__ ('address3') }}</p>
+                            <p>{{__ ('address4') }}</p>
                         </div>
                         <div class="appear">
-                            <h3>Samchully Networks (South Korea HQ)</h3>
+                            <h3>{{__ ('hq') }}</h3>
                             <p><a href="https://www.sclnetworks.co.kr" target="_blank" rel="noopener">https://www.sclnetworks.co.kr</a></p>
                         </div>
                         <div class="appear">
-                            <h3>Email</h3>
-                            <p><a href="mailto:networksindonesiaku@gmail.com" target="_blank" rel="noopener">info@nia.co.id</a></p>
+                            <h3>{{__ ('email1') }}</h3>
+                            <p><a href="mailto:info@nia.co.id" target="_blank" rel="noopener">{{__ ('email2') }}</a></p>
                         </div>
                         <div class="appear">
                             <a href="https://instagram.com/networksindonesiaaku" target="_blank"><img src='../../frontend/images/icon/ig.png' /></a>
                             <a href="https://www.tiktok.com/@networksindonesiaaku" target="_blank"><img src='../../frontend/images/icon/tk.png' /></a>
                             <a href="https://www.facebook.com/profile.php?id=100086498050992" target="_blank"><img src='../../frontend/images/icon/fb.png' /></a>
-                            <a href="https://www.youtube.com/@networksindonesiaaku4258?themeRefresh=1" target="_blank"><img src='../../frontend/images/icon/yt.png' /></a>            
+                            <a href="https://www.youtube.com/@networksindonesiaaku4258?themeRefresh=1" target="_blank"><img src='../../frontend/images/icon/yt.png' /></a>
                         </div>
                     </div>
                     </div>
@@ -56,7 +56,7 @@
                                                     id="sender"
                                                     name="sender"
                                                     type="text"
-                                                    placeholder="Name"
+                                                    placeholder="{{__ ('form-name') }}"
                                                 />
                                             </label>
 
@@ -65,7 +65,7 @@
                                                     id="email"
                                                     name="email"
                                                     type="text"
-                                                    placeholder="Email"
+                                                    placeholder="{{__ ('form-email') }}"
                                                 />
                                             </label>
 
@@ -73,7 +73,7 @@
                                                 <textarea
                                                     id="message"
                                                     name="message"
-                                                    placeholder="Message"
+                                                    placeholder="{{__ ('form-msg') }}"
                                                 ></textarea>
                                             </label>
 
@@ -88,7 +88,7 @@
                                                 >
                                             </label> -->
 
-                                            <button type="button" id="btn_form_message">Submit</button>
+                                            <button type="button" id="btn_form_message">{{__ ('btn-submit') }}</button>
                                         </form>
                                         <iframe
                                             id="iframe1"
@@ -109,7 +109,7 @@
             <div class="map-wrapper">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3456496281106!2d106.8144257745311!3d-6.218068060901542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f15549fa3d23%3A0x6e35f06585ecba5f!2sAIA%20Central!5e0!3m2!1sid!2sid!4v1701683012463!5m2!1sid!2sid"
-                       
+
                         ></iframe>
             </div>
             <!-- map-wrapper end -->
@@ -117,7 +117,7 @@
             {{-- </div> --}}
 
             @include('frontend.includes.footer')
-        
+
         <script type="text/javascript">
                   function dispNotif(title, message, status){
                     Swal.fire({
@@ -167,12 +167,12 @@
                 appearOnScroll();
 
 
-                
+
                 $("#btn_form_message").click(function(e) {
                     e.preventDefault();
                     let form = $('#form_message')[0];
                     let data = new FormData(form);
-                    
+
         $.ajax({
           url: "{{ route('contact-us-submit') }}",
           type: "POST",
@@ -191,8 +191,8 @@
         });
 
       })
-                
-                
+
+
             });
         </script>
 
