@@ -38,7 +38,8 @@
                             </div><br>
                             <p >{{ __('iil') }}</p><br>
                             <span>{{ __('iil-content') }}</span><br>
-                            <div class="btn-more">{{ __('btn-more') }}&nbsp;&nbsp;&nbsp;
+                            <div class="btn-more">
+                                <span>{{ __('btn-more') }}</span>&nbsp;&nbsp;&nbsp;
                                 <img src="../../frontend/images/icon/arrow.png">
                             </div>
                         </div>
