@@ -7,12 +7,12 @@
 
         gtag('config', 'G-Z49W0Z4LVG');
     </script>
-
+    <title>{{ $meta->title ? $meta->title : 'Networks Indonesia Aku' }}</title>
+    <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=2, minimum-scale=1, width=device-width" />
     <meta charset="utf-8">
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index">  
     <meta name="bingbot" content="follow">
-    <title>{{ $meta->title ? $meta->title : 'Networks Indonesia Aku' }}</title>
     <meta name="description" content="{{ $meta->desc ? $meta->desc : '' }}"></meta>
     <meta name="keyword" content="{{ $meta->keyword ? $meta->keyword : '' }}"></meta>
     <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=2, minimum-scale=1, width=device-width" /> 
@@ -20,16 +20,13 @@
     <link rel="shortcut icon" href="{{asset('frontend/images/icon/favicon.ico')}}">
     <!-- {{asset('frontend/css/outline.css')}} -->
     <link rel="stylesheet" href="{{asset('frontend/css/default.css')}}"/>
-    <link rel="stylesheet" href="{{asset('frontend/css/outline.css')}}"/> 
+    <link rel="stylesheet" href="{{asset('frontend/css/outline.css')}}"/>
     <link rel="stylesheet" href="{{asset('frontend/css/page.css')}}"/>
-    <link rel="stylesheet" href="{{asset('frontend/css/owl.carousel.min.css')}}"  />
-    <link rel="stylesheet" href="{{asset('frontend/css/owl.theme.default.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('frontend/css/animate.css')}}" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <script type="text/javascript" src="{{asset('frontend/js/owl.carousel.min.js')}}"></script>
     <script type="text/javascript">
           $(document).ready(function(){
             let url = $(location).attr('href');
@@ -56,8 +53,9 @@
                             // console.log('error record data');
                         }
                     });
-            }, "jsonp");         
+            }, "jsonp");
           });
+<<<<<<< HEAD
     </script> 
     <script type="application/ld+json">
     {
@@ -77,6 +75,35 @@
     }
   </script>
 
+=======
+
+          function changeFontFamily() {
+            var currentLang = $current_locale;
+            console.log(currentLang);
+            var selectedLanguage = selectElement.value;
+            var bodyElement = document.body;
+
+            switch (currentLang) {
+                case 'kr':
+                    bodyElement.classList.add('krLang');
+                    break;
+                case 'id':
+                    bodyElement.classList.add('localLang');
+                    break;
+                    case 'en':
+                    bodyElement.classList.add('localLang');
+                    break;
+                // Add cases for other languages
+            default:
+                bodyElement.classList.add('localLang'); // Default to English
+                break;
+            }
+          }
+        document.getElementById('choseLang').addEventListener('change', changeFontFamily);
+        // changeFontFamily();
+
+    </script>
+>>>>>>> c3a53c30eb98c4a96041c38b55d23b642f6e1353
 
 
 

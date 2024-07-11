@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
 
 * {
 	margin: 0px;
@@ -10,11 +8,19 @@
 	box-sizing: border-box;
 	-webkit-tap-highlight-color: transparent !important;
 }
+body {
+    font-family: 'Rubik', 'sans-serif';
+    line-height: 160%;
+}
 
-body {title
-	font-size: 14px;
-	font-family: 'Lato', sans-serif;
-	color: #333;
+body .localLang{
+    font-family:'Rubik', 'sans-serif';
+    line-height:160%;
+}
+body .krLang {
+	font-family: 'krFont';
+	font-display: swap;
+    src: url(../font/Pretendard-Regular.woff2);
 }
 
 img {
@@ -30,7 +36,6 @@ button {
 }
 
 a {
-	font-family: 'Rubik', sans-serif;
 	text-decoration: none;
 	color: inherit;
 	cursor: pointer;
@@ -182,8 +187,8 @@ textarea {
 }
 
 .korean-lang div,
-.korean-lang a, 
-.korean-lang p, 
+.korean-lang a,
+.korean-lang p,
 .korean-lang span,
 .korean-lang th,
 .korean-lang select,

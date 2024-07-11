@@ -38,7 +38,7 @@
                         <div class="lang-box hidden-box bahasa">
                             @foreach($available_locales as $locale_name => $available_locale)
                             @if($available_locale === $current_locale)
-                            <a class="lang-btn">
+                            <a id="choseLang" class="lang-btn">
                                 <img src="../../frontend/images/icon/language.png" class="language_flag"/>
                                 <span>{{ $locale_name }}</span>
                                 <img src="../../frontend/images/icon/arrow-down.png" class="language_caret"/>
@@ -62,8 +62,8 @@
                                 <img style="width: 75%;" src="../../frontend/images/icon/ic_logo.png" />
                             </a>
                             <div class="right-mobile">
-                                <a href="https://www.youtube.com/channel/UCk4YWCZF81paAh_rzwwiKxQ" class="btn-video-mobile">Our Video&nbsp;&nbsp;&nbsp;
-                                    <img style="width: 12%;" src="../../frontend/images/icon/polygon.png" >
+                                <a href="https://www.youtube.com/channel/UCk4YWCZF81paAh_rzwwiKxQ" class="btn-video-mobile">{{ __('navbar-video') }}&nbsp;&nbsp;&nbsp;
+                                    <img style="width: 12px;" src="../../frontend/images/icon/polygon.png" >
                                 </a>
                             </div>
                         </div>
@@ -123,7 +123,7 @@
                     </li>
                     <li>
                         <a class="first-menu">{{__ ('navbar-lang') }}</a>
-                        <div class="second-menu">
+                        <div id="choseLang1" class="second-menu">
                             @foreach($available_locales as $locale_name => $available_locale)
                                 @if($available_locale != $current_locale)
                                     <a href="/{{ $available_locale }}"><img src="../../frontend/images/icon/{{( $available_locale)}}.png"/> {{ $locale_name }}</a>
@@ -159,22 +159,6 @@
             $("#header-wrapper").removeClass("color-effect");
         }
     });
-
-    // $(document).ready(function(){
-
-    //     $(window).scroll(function(){
-    //         var scroll = $(window).scrollTop();
-    //         if (scroll > 100) {
-    //             $(".menu-wrapper").css("background-image", "linear-gradient(rgba(255, 255, 255, 0.907), rgb(255, 255, 255))");
-    //             // $(".menu-box a").css("color", "black");
-    //         }
-
-    //         else{
-    //             $(".menu-wrapper").css("background-image" , "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0))");
-    //             // $(".menu-box a").css("color", "white");
-    //         }
-    //     })
-    // })
 
     /* hambuger menu event */
     $('.pc-ham').on('click' , function(){
