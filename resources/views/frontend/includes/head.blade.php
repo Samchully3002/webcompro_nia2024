@@ -7,12 +7,12 @@
 
         gtag('config', 'G-Z49W0Z4LVG');
     </script>
-
+    <title>{{ $meta->title ? $meta->title : 'Networks Indonesia Aku' }}</title>
+    <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=2, minimum-scale=1, width=device-width" />
     <meta charset="utf-8">
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index">  
     <meta name="bingbot" content="follow">
-    <title>{{ $meta->title ? $meta->title : 'Networks Indonesia Aku' }}</title>
     <meta name="description" content="{{ $meta->desc ? $meta->desc : '' }}"></meta>
     <meta name="keyword" content="{{ $meta->keyword ? $meta->keyword : '' }}"></meta>
     <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=2, minimum-scale=1, width=device-width" /> 
@@ -20,16 +20,13 @@
     <link rel="shortcut icon" href="{{asset('frontend/images/icon/favicon.ico')}}">
     <!-- {{asset('frontend/css/outline.css')}} -->
     <link rel="stylesheet" href="{{asset('frontend/css/default.css')}}"/>
-    <link rel="stylesheet" href="{{asset('frontend/css/outline.css')}}"/> 
+    <link rel="stylesheet" href="{{asset('frontend/css/outline.css')}}"/>
     <link rel="stylesheet" href="{{asset('frontend/css/page.css')}}"/>
-    <link rel="stylesheet" href="{{asset('frontend/css/owl.carousel.min.css')}}"  />
-    <link rel="stylesheet" href="{{asset('frontend/css/owl.theme.default.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('frontend/css/animate.css')}}" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <script type="text/javascript" src="{{asset('frontend/js/owl.carousel.min.js')}}"></script>
     <script type="text/javascript">
           $(document).ready(function(){
             let url = $(location).attr('href');
@@ -56,9 +53,27 @@
                             // console.log('error record data');
                         }
                     });
-            }, "jsonp");         
+            }, "jsonp");
           });
     </script> 
+    <script type="application/ld+json">
+    {
+      "@context" : "https://nia.co.id",
+      "@type" : "WebSite",
+      "name" : "Networks Indonesia Aku",
+      "alternateName" : "EC",
+      "url" : "https://nia.co.id/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://query.google.com/search?q={network indonesia aku}"
+        },
+        "query-input": "required name=networks indonesia aku"
+      }
+    }
+  </script>
+
 
 
 
