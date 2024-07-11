@@ -55,7 +55,6 @@
                     });
             }, "jsonp");
           });
-<<<<<<< HEAD
     </script> 
     <script type="application/ld+json">
     {
@@ -75,35 +74,6 @@
     }
   </script>
 
-=======
-
-          function changeFontFamily() {
-            var currentLang = $current_locale;
-            console.log(currentLang);
-            var selectedLanguage = selectElement.value;
-            var bodyElement = document.body;
-
-            switch (currentLang) {
-                case 'kr':
-                    bodyElement.classList.add('krLang');
-                    break;
-                case 'id':
-                    bodyElement.classList.add('localLang');
-                    break;
-                    case 'en':
-                    bodyElement.classList.add('localLang');
-                    break;
-                // Add cases for other languages
-            default:
-                bodyElement.classList.add('localLang'); // Default to English
-                break;
-            }
-          }
-        document.getElementById('choseLang').addEventListener('change', changeFontFamily);
-        // changeFontFamily();
-
-    </script>
->>>>>>> c3a53c30eb98c4a96041c38b55d23b642f6e1353
 
 
 
