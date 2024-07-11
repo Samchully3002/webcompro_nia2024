@@ -48,7 +48,7 @@
                                 @foreach($available_locales as $locale_name => $available_locale)
                                 @if($available_locale === $current_locale)
                                 @else
-                                <li><a href="/{{ $available_locale }}"><img src="../../frontend/images/icon/{{( $available_locale)}}.png"/> {{ $locale_name }}</a></li>
+                                <li><a href="/lang/{{ $available_locale }}"><img src="../../frontend/images/icon/{{( $available_locale)}}.png"/> {{ $locale_name }}</a></li>
                                 @endif
                                 @endforeach
                             </ul>
