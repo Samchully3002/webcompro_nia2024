@@ -60,14 +60,14 @@
     {
       "@context" : "https://nia.co.id",
       "@type" : "WebSite",
-      "name" : "Networks Indonesia Aku",
-      "alternateName" : "EC",
+      "name" : "nia.co.id",
+      "alternateName" : ["NIA", "pt nia", "nia"],
       "url" : "https://nia.co.id/",
       "potentialAction": {
         "@type": "SearchAction",
         "target": {
           "@type": "EntryPoint",
-          "urlTemplate": "https://query.google.com/search?q={network indonesia aku}"
+          "urlTemplate": "https://query.google.com/search?q={'networks indonesia aku'}"
         },
         "query-input": "required name=networks indonesia aku"
       }
