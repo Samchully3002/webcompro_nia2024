@@ -58,9 +58,9 @@
     </script> 
     <script type="application/ld+json">
     {
-      "@context" : "https://nia.co.id",
+      "@context" : "https://schema.org",
       "@type" : "WebSite",
-      "name" : "nia.co.id",
+      "name" : "Networks Indonesia Aku",
       "alternateName" : ["NIA", "pt nia", "nia"],
       "url" : "https://nia.co.id/",
       "potentialAction": {
