@@ -59,6 +59,24 @@
             }, "jsonp");         
           });
     </script> 
+    <script type="application/ld+json">
+    {
+      "@context" : "https://nia.co.id",
+      "@type" : "WebSite",
+      "name" : "Networks Indonesia Aku",
+      "alternateName" : "EC",
+      "url" : "https://nia.co.id/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://query.google.com/search?q={network indonesia aku}"
+        },
+        "query-input": "required name=networks indonesia aku"
+      }
+    }
+  </script>
+
 
 
 
