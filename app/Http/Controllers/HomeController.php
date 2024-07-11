@@ -146,10 +146,18 @@ class HomeController extends Controller
         $prev = Notice::where('id', '<', $id)->orderBy('id','desc')->first();
 
         $next = Notice::where('id', '>', $id)->orderBy('id','desc')->first();
+        $meta = MetaTags::where('url', 'LIKE', '%'.'notice'.'%')->first();
+        
 
 
+        return view('frontend/pages/notice_detail', compact('notice','prev','next','meta'));
+    }
 
-        return view('frontend/pages/notice_detail', compact('notice','prev','next'));
+    public function privacy()
+    {
+
+        $meta = MetaTags::where('url', 'LIKE', '%'.'about-us'.'%')->first();
+        return  view('frontend/pages/privacy-policy', compact(['meta']));
     }
 
     /**

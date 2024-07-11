@@ -4,11 +4,6 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LanguageController;
 use Illuminate\Support\Facades\Route;
 
-// FRONTEND //
-
-// Route::get('/', function () {
-//    return redirect('/home');
-// });
 
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('homepage');
@@ -25,32 +20,40 @@ Route::get('/our-business/digital-healthcare', [App\Http\Controllers\BusinessCon
 Route::get('/our-business/system-development-management', [App\Http\Controllers\BusinessController::class, 'management'])->name('system-development-management');
 Route::get('/our-business/export-voucher', [App\Http\Controllers\BusinessController::class, 'exportvoucher'])->name('export-voucher');
 
-Route::get('/privacy-policy', function () {
-   return  view('frontend/pages/privacy-policy');
-});
+Route::get('/privacy-policy', [App\Http\Controllers\HomeController::class, 'privacy'])->name('privacy');
+
 Route::get('/about', function () {
    return  view('frontend/pages/about');
 });
+
+Route::get('/id', function () {
+   return redirect('/');
+});
+
+Route::get('/id/aboutus', function () {
+   return redirect('/about-us');
+});
+
 Route::get('/news', function () {
-   return  view('frontend/pages/news');
+   return redirect('/community/news');
 });
 Route::get('/notice', function () {
-   return  view('frontend/pages/notice');
+   return redirect('/community/notice');
 });
 Route::get('/contact', function () {
-   return  view('frontend/pages/contactus');
+   return redirect('/contact-us');
 });
 Route::get('/intellegent-integrated-logistic', function () {
-   return  view('frontend/pages/business/business_logistics');
+   return redirect('/our-business/intellegent-integrated-logistic');
 });
 Route::get('/digital-healthcare', function () {
-   return  view('frontend/pages/business/digital_healthcare');
+   return redirect('/our-business/digital-healthcare');
 });
 Route::get('/system-development-management', function () {
-   return  view('frontend/pages/business/management');
+   return redirect('/our-business/system-development-management');
 });
 Route::get('/export-voucher', function () {
-   return  view('frontend/pages/business/exportvoucher');
+   return redirect('/our-business/export-voucher');
 });
 
 // Route::get('/lang',[LanguageController::class , 'change'])->name('user.lang');
