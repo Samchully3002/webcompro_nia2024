@@ -23,7 +23,7 @@
             </div>
             <!-- Video end -->
             <div class="container_text">
-                <div id="vision_txt" class="vision_text">
+                <div id="visi_txt" class="vision_text">
                     <label>ONE - STOP</label><label style="color:#40455C;">&nbsp;IT SOLUTION FOR YOUR BUSINESS</label>
                 </div>
             </div>
@@ -299,7 +299,7 @@
 
     <script>
         // Mendapatkan elemen vision_text
-        const visionText = document.getElementById('vision_txt');
+        const visionText = document.getElementById('visi_txt');
 
         // Mendeteksi saat pengguna melakukan scroll
         window.addEventListener('scroll', () => {
