@@ -15,6 +15,7 @@ use App\Models\OurTeam;
 use App\Models\Notice;
 use App\Models\ContactUs;
 use App\Models\Monitoring;
+use App\Models\MetaTags;
 
 class HomeController extends Controller
 {
@@ -24,9 +25,12 @@ class HomeController extends Controller
     public function index(Request $request): View
     {
         //get posts
+        $curentURL = $request->path();
+        $curentURL ? $curentURL :'/';
+        $meta = MetaTags::where('url', 'LIKE', '%'.$curentURL.'%')->first();
         $posts = MediaReport::latest()->take(4)->get();
 
-        return view('frontend/pages/home', compact('posts'));
+        return view('frontend/pages/home', compact('posts','meta'));
     }
 
     /**
@@ -34,14 +38,14 @@ class HomeController extends Controller
      */
     public function about(Request $request): View
     {
+        $curentURL = $request->path();
+        $meta = MetaTags::where('url', 'LIKE', '%'.$curentURL.'%')->first();
         $users = OurTeam::query()
                     ->orderBy('sequence', 'asc')
                     ->where('landing',1)
                     ->get();
 
-
         $roles = ['Accounting/HR', 'Business Support', 'Marketing (Public Relations)', 'IT Developer', 'IT Support', 'Marketing (Editor)','UI/UX Designer', 'Driver', 'Business Support (Translator)' ];
-
 
         foreach($users as $list){
             $list->role = $roles[$list->role-1];
@@ -52,13 +56,11 @@ class HomeController extends Controller
         foreach($users as $item){
             array_push($list, $item);
         }
-
         $list = array_chunk($list,3);
 
-
-
         return view('frontend/pages/about')->with([
-            'list' => $list
+            'list' => $list,
+            'meta' => $meta
         ]);
     }
 
@@ -67,10 +69,11 @@ class HomeController extends Controller
      */
     public function news(Request $request): View
     {
-
+        $curentURL = $request->path();
+        $meta = MetaTags::where('url', 'LIKE', '%'.$curentURL.'%')->first();
         $posts = MediaReport::latest()->paginate(12);
 
-        return view('frontend/pages/news', compact('posts'));
+        return view('frontend/pages/news', compact('posts','meta'));
     }
 
     /**
@@ -79,8 +82,9 @@ class HomeController extends Controller
     public function contactus(Request $request): View
     {
 
-
-        return view('frontend/pages/contactus');
+        $curentURL = $request->path();
+        $meta = MetaTags::where('url', 'LIKE', '%'.$curentURL.'%')->first();
+        return view('frontend/pages/contactus',compact(['meta']));
     }
 
     /**
@@ -130,8 +134,9 @@ class HomeController extends Controller
     {
         $notice = Notice::latest()->paginate(5);
 
-
-        return view('frontend/pages/notice', compact('notice'));
+        $curentURL = $request->path();
+        $meta = MetaTags::where('url', 'LIKE', '%'.$curentURL.'%')->first();
+        return view('frontend/pages/notice', compact('notice','meta'));
     }
 
     public function noticedetail($id)

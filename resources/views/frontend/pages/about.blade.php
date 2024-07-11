@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    @include('frontend.includes.head')
+    @include('frontend.includes.head', ['meta'=>$meta])
     <link rel="stylesheet" href="{{asset('frontend/css/about.css')}}"/>
 </head>
 <body>

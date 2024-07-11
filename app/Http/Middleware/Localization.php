@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
 
+
     class Localization
 {
     /**
@@ -23,5 +24,6 @@ use Illuminate\Support\Facades\Session;
             App::setLocale(Session::get('locale'));
         }
         return $next($request);
+       
     }
 }
