@@ -7,12 +7,12 @@
 
         gtag('config', 'G-Z49W0Z4LVG');
     </script>
-
+    <title>{{ $meta->title ? $meta->title : 'Networks Indonesia Aku' }}</title>
+    <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=2, minimum-scale=1, width=device-width" />
     <meta charset="utf-8">
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index">
     <meta name="bingbot" content="follow">
-    <title>{{ $meta->title ? $meta->title : 'Networks Indonesia Aku' }}</title>
     <meta name="description" content="{{ $meta->desc ? $meta->desc : '' }}"></meta>
     <meta name="keyword" content="{{ $meta->keyword ? $meta->keyword : '' }}"></meta>
     <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=2, minimum-scale=1, width=device-width" />
@@ -65,6 +65,24 @@
             }, "jsonp");
           });
     </script>
+    <script type="application/ld+json">
+    {
+      "@context" : "https://schema.org",
+      "@type" : "WebSite",
+      "name" : "Networks Indonesia Aku",
+      "alternateName" : ["NIA", "pt nia", "nia"],
+      "url" : "https://nia.co.id/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://query.google.com/search?q={'networks indonesia aku'}"
+        },
+        "query-input": "required name=networks indonesia aku"
+      }
+    }
+  </script>
+
 
 
 
