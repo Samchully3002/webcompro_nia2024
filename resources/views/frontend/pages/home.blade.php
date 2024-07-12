@@ -31,16 +31,16 @@
         <div class="item">
             <div class="image-container">
                 <a href="/intellegent-integrated-logistic">
-                    <img src="../../frontend/images/IIL.jpg">
+                    <img src="../../frontend/images/IIL.jpg" alt="intellegent integrated logistic image banner">
                         <div class="image-overlay">
                             <div class="ic-bisnis">
-                            <img src="../../frontend/images/icon/ic_cube.svg">
+                            <img src="../../frontend/images/icon/ic_cube.svg" alt="icon arrow">
                             </div><br>
                             <p >{{ __('iil') }}</p><br>
                             <span>{{ __('iil-content') }}</span><br>
                             <div class="btn-more">
                                 <span>{{ __('btn-more') }}</span>&nbsp;&nbsp;&nbsp;
-                                <img src="../../frontend/images/icon/arrow.png">
+                                <img src="../../frontend/images/icon/arrow.png" alt="icon arrow">
                             </div>
                         </div>
                 </a>
@@ -49,15 +49,15 @@
         <div class="item">
             <div class="image-container">
                 <a href="/digital-healthcare">
-                    <img src="../../frontend/images/DHC.jpg">
+                    <img src="../../frontend/images/DHC.jpg" alt="digital healthcare image banner">
                         <div class="image-overlay">
                         <div class="ic-bisnis">
-                            <img src="../../frontend/images/icon/ic_medical.svg">
+                            <img src="../../frontend/images/icon/ic_medical.svg" alt="icon arrow">
                             </div><br>
                             <p >{{ __('dh') }}</p><br>
                             <span>{{ __('dh-content') }}</span><br>
                             <div class="btn-more">{{ __('btn-more') }}&nbsp;&nbsp;&nbsp;
-                                <img src="../../frontend/images/icon/arrow.png">
+                                <img src="../../frontend/images/icon/arrow.png" alt="icon arrow">
                             </div>
                         </div>
                 </a>
@@ -66,15 +66,15 @@
         <div class="item">
             <div class="image-container">
                 <a href="/system-development-management">
-                    <img src="../../frontend/images/SDM.jpg">
+                    <img src="../../frontend/images/SDM.jpg" alt="system developement and management image banner">
                         <div class="image-overlay">
                         <div class="ic-bisnis">
-                            <img src="../../frontend/images/icon/ic_code.svg">
+                            <img src="../../frontend/images/icon/ic_code.svg" alt="icon arrow">
                             </div><br>
                             <p >{{ __('sdm') }}</p><br>
                             <span>{{ __('sdm-content') }}</span><br>
                             <div class="btn-more">{{ __('btn-more') }}&nbsp;&nbsp;&nbsp;
-                                <img src="../../frontend/images/icon/arrow.png">
+                                <img src="../../frontend/images/icon/arrow.png" alt="icon arrow">
                             </div>
                         </div>
                 </a>
@@ -83,66 +83,26 @@
         <div class="item">
             <div class="image-container">
                 <a href="/export-voucher">
-                    <img src="../../frontend/images/EV.jpg">
+                    <img src="../../frontend/images/EV.jpg" alt="export voucher image banner">
                         <div class="image-overlay">
                         <div class="ic-bisnis">
-                            <img src="../../frontend/images/icon/ic_building.svg">
+                            <img src="../../frontend/images/icon/ic_building.svg" alt="icon arrow">
                             </div><br>
                             <p >{{ __('ev') }}</p><br>
                             <span>{{ __('ev-content') }}</span><br>
                             <div class="btn-more">{{ __('btn-more') }}&nbsp;&nbsp;&nbsp;
-                                <img src="../../frontend/images/icon/arrow.png">
+                                <img src="../../frontend/images/icon/arrow.png" alt="icon arrow">
                             </div>
                         </div>
                 </a>
             </div>
         </div>
 
-        <!-- <div class="flex-box">
-            <div class="box_right">
-                <img class="icon_right" src="../../frontend/images/icon/ic_cube.svg"/>
-                <label>Intelligent Integrated Logistics</label><br>
-                <span style="font-size:22px;">Utilizing our unique transportation system and advanced technology, we offer solutions merging big data and AI. Our platforms enable efficient demand prediction and risk management.</span>
-            </div>
-            <img class="img_right" src="../../frontend/images/home1.svg"/>
-        </div>
-        <div class="flex-box">
-            <img class="img_left" src="../../frontend/images/home2.svg"/>
-            <div class="box_left">
-                <img class="icon_left" src="../../frontend/images/icon/ic_medical.svg"/>
-                <label>Digital Health Care</label><br>
-                <span style="font-size:22px;">We offer reliable health solutions through optimized customer-tailored consultations by healthcare professionals, integrating AI-based big data analysis considering customer preferences, health status, underlying conditions, and medications.</span>
-            </div>
-        </div>
-        <div class="flex-box">
-            <div class="box_right">
-                <img class="icon_right" src="../../frontend/images/icon/ic_code.svg"/>
-                <label>System development and management</label><br>
-                <span style="font-size:22px;">From planning to maintenance, we offer innovative solutions with unique expertise for domestic and global clients.</span>
-            </div>
-            <img class="img_right" src="../../frontend/images/home3.svg"/>
-        </div>
-        <div class="flex-box">
-            <img class="img_left" src="../../frontend/images/home4.svg"/>
-            <div class="box_left">
-                <img class="icon_left" src="../../frontend/images/icon/ic_building.svg"/>
-                <label style="font-size:28px;font-weight:bold;">Global Business</label><br>
-                <span style="font-size:22px;">We assist in every step for successful business execution, from analysis to document services and translation for global expansion.</span>
-            </div>
-        </div> -->
 
         <div class="clientSection">
             <div class="client_text">
                 <p>{{ __('title-client') }}</p>
             </div>
-                <!-- <marquee behavior="scroll" direction="left">
-                    <img src="../../frontend/images/icon/korea.png"/>
-                    <img src="../../frontend/images/icon/ditjen.png"/>
-                    <img src="../../frontend/images/icon/bni.png"/>
-                    <img src="../../frontend/images/icon/jayaraya.png"/>
-                    <img src="../../frontend/images/icon/ovo.png"/>
-                    <img src="../../frontend/images/icon/dishub.png"/>
-                </marquee> -->
 
                 <div class="marquee-container">
                     <div class="marquee">
@@ -187,7 +147,7 @@
                @foreach($posts as $post)
                <div class="news_content">
                   <a href="{{$post->source}}">
-                  <img src="{{asset('backend/images/news/'.$post->image)}}"/>
+                  <img src="{{asset('backend/images/news/'.$post->image)}}" alt="news post images {{$post->title}}"/>
                   <label>{{$post->title}}</label>
                   <label style="font-size:16px;color:white;">{{date('Y.m.d', strtotime($post->created_at));}}</label>
                   </a>
@@ -199,35 +159,8 @@
             </div>
         </div>
 
-        <!-- Contact Us COntent -->
-        <!-- <div style="
-            padding: 100px 100px 100px 100px;
-            margin: 100px 100px 100px 100px;
-            border-radius: 20px 20px 20px 20px;
-            background: #40455C;
-            display: flex;
-                justify-content: center;
-                align-items: center;">
-            <div style="
-                display:grid;
-                flex-direction: column;">
-                <label style="font-size:70px;color:white;font-weight:bold;">Elevate Your<br>Business Now</label><br>
-                <p style="width:40%;font-size:16px;color:white;">We offer standout IT consulting, management, and development services, providing unmatched solutions that drive transformative growth and spark innovation for your business.</p>
-            </div>
-            <button style="
-                height:fit-content;
-                padding:15px 30px 15px 30px;
-                font-size:22px;
-                color:black;
-                border-radius: 50px;">
-                <label style="margin-right:30px;">Contact Us</label>
-                <img src="../../frontend/images/icon/ic_arrow_miring.svg"/>
-            </button>
-        </div> -->
-
     {{-- </div> --}}
 
-    <!-- <div data-include="in/component/footer"></div> -->
 
     @include('frontend.includes.footer')
 
