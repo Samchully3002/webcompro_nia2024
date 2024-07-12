@@ -76,9 +76,9 @@
         "@type": "SearchAction",
         "target": {
           "@type": "EntryPoint",
-          "urlTemplate": "https://query.google.com/search?q={'networks indonesia aku'}"
+          "urlTemplate": "https://www.google.com/search?q=networks+indonesia+aku"
         },
-        "query-input": "required name=networks indonesia aku"
+        "query-input": "required name=networks+indonesia+aku"
       }
     }
   </script>
