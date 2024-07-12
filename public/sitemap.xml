@@ -1,54 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Home Pages -->
   <url>
     <loc>https://nia.co.id/</loc>
     <lastmod>2024-07-12</lastmod>
     <priority>1.0</priority>
   </url>
+  <!-- About Us -->
   <url>
     <loc>https://nia.co.id/about-us</loc>
     <loc>2024-07-12</loc>
     <priority>0.8</priority>
   </url>
+  <!-- Inteligent Integrated Logistics -->
   <url>
     <loc>https://nia.co.id/our-business/intellegent-integrated-logistic</loc>
     <lastmod>2024-07-12</lastmod>
     <priority>0.5</priority>
   </url>
-    <url>
+  <!-- System Developement Management  -->
+  <url>
     <loc>https://nia.co.id/our-business/system-development-management</loc>
     <lastmod>2024-07-12</lastmod>
     <priority>0.5</priority>
   </url>
-    <url>
+  <!-- Digital Healthcare -->
+  <url>
     <loc>https://nia.co.id/our-business/digital-healthcare</loc>
     <lastmod>2024-07-12</lastmod>
     <priority>0.5</priority>
   </url>
-    <url>
-    <loc>https://nia.co.id/our-business/intellegent-integrated-logistic</loc>
-    <lastmod>2024-07-12</lastmod>
-    <priority>0.5</priority>
-  </url>
-    <url>
+  <!-- Export Voucher -->
+  <url>
     <loc>https://nia.co.id/our-business/export-voucher</loc>
     <lastmod>2024-07-12</lastmod>
     <priority>0.5</priority>
   </url>
-    <url>
+  <!-- Notice -->
+  <url>
     <loc>https://nia.co.id/community/notice</loc>
     <lastmod>2024-07-12</lastmod>
     <priority>0.5</priority>
   </url>
-      <url>
+  <!-- News -->
+  <url>
     <loc>https://nia.co.id/community/news</loc>
     <lastmod>2024-07-12</lastmod>
     <priority>0.5</priority>
   </url>
-    </url>
-      <url>
+  <!-- Privacy Policy  -->
+  <url>
     <loc>https://nia.co.id/privacy-policy</loc>
     <lastmod>2024-07-12</lastmod>
     <priority>0.5</priority>
   </url>
+  
 </urlset>
