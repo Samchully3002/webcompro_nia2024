@@ -1,4 +1,10 @@
 
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 400;
+	font-display: swap;
+    src: url(../font/Pretendard-Regular.woff2);
+}
 * {
 	margin: 0px;
 	padding: 0px;
@@ -11,16 +17,6 @@
 body {
     font-family: 'Rubik', 'sans-serif';
     line-height: 160%;
-}
-
-body .localLang{
-    font-family:'Rubik', 'sans-serif';
-    line-height:160%;
-}
-body .krLang {
-	font-family: 'krFont';
-	font-display: swap;
-    src: url(../font/Pretendard-Regular.woff2);
 }
 
 img {
