@@ -14,8 +14,8 @@
     <meta name="googlebot" content="index">
     <meta name="bingbot" content="follow">
     <meta name="description" content="{{ $meta->desc ? $meta->desc : '' }}"></meta>
-    <meta name="keyword" content="{{ $meta->keyword ? $meta->keyword : '' }}"></meta>
-    <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=2, minimum-scale=1, width=device-width" />
+    <meta name="keywords" content="{{ $meta->keyword ? $meta->keyword : '' }}"></meta>
+    <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=2, minimum-scale=1, width=device-width" /> 
     <meta name="google-site-verification" content="3qoJgp8b08_UcEGyt5AuOh2HfQJl1J-_XdhLz_cDstg" />
     <link rel="shortcut icon" href="{{asset('frontend/images/icon/favicon.ico')}}">
     <!-- {{asset('frontend/css/outline.css')}} -->
