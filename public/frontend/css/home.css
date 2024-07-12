@@ -41,6 +41,7 @@
 }
 
 .vision_text {
+    font-family: 'Rubik', 'sans-serif' !important;
     color: #454a65;
     font-size: 42px;
     text-align: center;

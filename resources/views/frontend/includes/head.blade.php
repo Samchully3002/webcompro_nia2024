@@ -11,7 +11,7 @@
     <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=2, minimum-scale=1, width=device-width" />
     <meta charset="utf-8">
     <meta name="robots" content="index, follow">
-    <meta name="googlebot" content="index">  
+    <meta name="googlebot" content="index">
     <meta name="bingbot" content="follow">
     <meta name="description" content="{{ $meta->desc ? $meta->desc : '' }}"></meta>
     <meta name="keywords" content="{{ $meta->keyword ? $meta->keyword : '' }}"></meta>
@@ -29,6 +29,15 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script type="text/javascript">
           $(document).ready(function(){
+            let locLang = "{{Request::session()->get('locale');}}"
+            if(locLang === 'kr'){
+                document.getElementsByTagName("body")[0].style.fontFamily = 'Pretendard';
+            //   alert('korea');
+        }
+            var currentLang = "{{ app()->getLocale() }}";
+            var tex = document.getelementById('tes');
+            tex.textContent = "currentLang";
+            console.log(currentLang);
             let url = $(location).attr('href');
             const visited = url.substring(url.lastIndexOf('/') + 1);
             $.getJSON("https://ipinfo.io",
@@ -55,7 +64,7 @@
                     });
             }, "jsonp");
           });
-    </script> 
+    </script>
     <script type="application/ld+json">
     {
       "@context" : "https://schema.org",
