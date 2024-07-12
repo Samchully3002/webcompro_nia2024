@@ -3,8 +3,8 @@
                 <ul class="menu-box">
                     <li >
                         <a class="logo"  href="/">
-                            <img style="width: 75%;" class="effect-off" src="../../frontend/images/icon/ic_logo.png" />
-                            <img style="width: 75%;" class="effect-on" src="../../frontend/images/icon/logo_ftr.svg" />
+                            <img style="width: 75%;" class="effect-off" src="../../frontend/images/icon/logo_ftr.svg" />
+                            <img style="width: 75%;" class="effect-on" src="../../frontend/images/icon/ic_logo.png" />
                         </a>
                     </li>
                     <li class="first-menu hidden-box>"><a href="/">{{ __('navbar-home') }}</a></li>
@@ -62,8 +62,8 @@
                                 <img style="width: 75%;" src="../../frontend/images/icon/ic_logo.png" />
                             </a>
                             <div class="right-mobile">
-                                <a href="https://www.youtube.com/channel/UCk4YWCZF81paAh_rzwwiKxQ" class="btn-video-mobile">{{ __('navbar-video') }}&nbsp;&nbsp;&nbsp;
-                                    <img style="width: 12px;" src="../../frontend/images/icon/polygon.png" >
+                                <a href="https://www.youtube.com/channel/UCk4YWCZF81paAh_rzwwiKxQ" class="btn-video-mobile">Our Video&nbsp;&nbsp;&nbsp;
+                                    <img style="width: 12%;" src="../../frontend/images/icon/polygon.png" >
                                 </a>
                             </div>
                         </div>
@@ -123,10 +123,10 @@
                     </li>
                     <li>
                         <a class="first-menu">{{__ ('navbar-lang') }}</a>
-                        <div id="choseLang1" class="second-menu">
+                        <div class="second-menu">
                             @foreach($available_locales as $locale_name => $available_locale)
                                 @if($available_locale != $current_locale)
-                                    <a href="/{{ $available_locale }}"><img src="../../frontend/images/icon/{{( $available_locale)}}.png"/> {{ $locale_name }}</a>
+                                    <a href="/lang/{{ $available_locale }}"><img src="../../frontend/images/icon/{{( $available_locale)}}.png"/> {{ $locale_name }}</a>
                                 @endif
                             @endforeach
                         </div>
@@ -153,7 +153,7 @@
 
     /* header-wrapper scroll event */
     $(window).scroll(function(){
-        if($(document).scrollTop() > 100){
+        if($(document).scrollTop() > 200){
             $("#header-wrapper").addClass("color-effect");
         } else{
             $("#header-wrapper").removeClass("color-effect");
