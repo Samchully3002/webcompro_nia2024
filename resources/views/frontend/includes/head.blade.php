@@ -34,10 +34,10 @@
                 document.getElementsByTagName("body")[0].style.fontFamily = 'Pretendard';
             //   alert('korea');
         }
-            var currentLang = "{{ app()->getLocale() }}";
-            var tex = document.getelementById('tes');
-            tex.textContent = "currentLang";
-            console.log(currentLang);
+            // var currentLang = "{{ app()->getLocale() }}";
+            // var tex = document.getelementById('tes');
+            // tex.textContent = "currentLang";
+           
             let url = $(location).attr('href');
             const visited = url.substring(url.lastIndexOf('/') + 1);
             $.getJSON("https://ipinfo.io",

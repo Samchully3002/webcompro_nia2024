@@ -2,7 +2,10 @@
 <html lang="en">
 
 @include('frontend.includes.head',['meta'=>$meta])
-<link rel="stylesheet" href="{{asset('frontend/css/home.css')}}"/>
+<!-- dev -->
+<!-- <link rel="stylesheet" href="{{asset('frontend/css/home.css')}}"/> -->
+ <!-- production -->
+<link rel="stylesheet" href="{{asset('frontend/css/minify/home.min.css')}}"/> 
 </head>
 <body>
 <!-- <div data-include="component/header"></div> -->
@@ -206,8 +209,6 @@
         videoM.style.transform = `scale(${scaleValue})`;
     });
 </script>
-
-
     <script>
             document.addEventListener("DOMContentLoaded", function() {
                 const elements = document.querySelectorAll('.item');
@@ -230,7 +231,6 @@
                 checkVisibility();
             });
     </script>
-
     <script>
         // Mendapatkan elemen vision_text
         const visionText = document.getElementById('visi_txt');
