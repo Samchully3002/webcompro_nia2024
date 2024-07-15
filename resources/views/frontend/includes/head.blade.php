@@ -65,7 +65,7 @@
             }, "jsonp");
           });
     </script>
-    <script type="application/ld+json">
+    <!-- <script type="application/ld+json">
     {
    
       "@context": "https://schema.org",
@@ -78,15 +78,15 @@
    
       "@type": "SearchAction",
    
-      "target": "https://www.nia.co.id/search?q={networks+indonesia+aku}",
+      "target": "https://query.nia.co.id/search?q={search_term_string}",
    
-      "query-input": "required name=networks+indonesia+aku"
+      "query-input": "required name=search_term_string"
    
      }
    
    }
    
-</script>
+</script> -->
 
 
 
