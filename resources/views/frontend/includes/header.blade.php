@@ -9,7 +9,7 @@
                     </li>
                     <li class="first-menu hidden-box>"><a href="/">{{ __('navbar-home') }}</a></li>
                     <li class="first-menu hidden-box business">
-                        <a class="btn_business">{{ __('navbar-business') }}&nbsp;&nbsp;&nbsp;
+                        <a class="btn_business" href="javascript:void(0)">{{ __('navbar-business') }}&nbsp;&nbsp;&nbsp;
                         <img src="../../frontend/images/icon/arrow-down.png" class="language_caret" alt="language caret"/></a>
                         <ul class="hidden-menu">
                             <li><a href="/our-business/intellegent-integrated-logistic"><em>{{ __('iil') }}</em></a></li>
@@ -21,7 +21,7 @@
                     <li class="first-menu hidden-box"><a href="/about-us">{{ __('navbar-about') }}</a>
                     </li>
                     <li class="first-menu hidden-box business">
-                        <a class="btn_business">{{ __('navbar-community') }}&nbsp;&nbsp;&nbsp;
+                        <a class="btn_business" href="javascript:void(0)">{{ __('navbar-community') }}&nbsp;&nbsp;&nbsp;
                         <img src="../../frontend/images/icon/arrow-down.png" class="language_caret" alt="language caret"/></a>
                         <ul class="hidden-menu">
                             <li><a href="/community/notice"><em>{{ __('navbar-notice') }}</em></a></li>
@@ -69,7 +69,7 @@
                         </div>
                     </div>
                     <div class="ham-wrapper">
-                        <a class="mobile-ham hambuger-menu">
+                        <a class="mobile-ham hambuger-menu" href="javascript:void(0)">
                             <span></span>
                             <span></span>
                             <span></span>
