@@ -67,21 +67,26 @@
     </script>
     <script type="application/ld+json">
     {
-      "@context" : "https://schema.org",
-      "@type" : "WebSite",
-      "name" : "Networks Indonesia Aku",
-      "alternateName" : ["NIA", "pt nia", "nia"],
-      "url" : "https://nia.co.id/",
+   
+      "@context": "https://schema.org",
+   
+      "@type": "WebSite",
+   
+      "url": "https://www.nia.co.id/",
+   
       "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://www.google.com/search?q=networks_indonesia_aku"
-        },
-        "query-input": "required name=networks_indonesia_aku"
-      }
-    }
-  </script>
+   
+      "@type": "SearchAction",
+   
+      "target": "https://www.nia.co.id/search?q={networks+indonesia+aku}",
+   
+      "query-input": "required name=networks+indonesia+aku"
+   
+     }
+   
+   }
+   
+</script>
 
 
 
