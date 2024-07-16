@@ -36,26 +36,26 @@
                                         <p>{{ __('healthyhada-content') }}</p>
                                     </div>
                                     <div class="img-box1">
-                                        <img src="../frontend/images/bs-healthada1.svg"/>
-                                        <img src="../frontend/images/bs-healthada2.svg"/>
+                                        <img src="../frontend/images/bs-healthada1.svg" alt="image healthada"/>
+                                        <img src="../frontend/images/bs-healthada2.svg" alt="image healthada"/>
                                     </div>
                                     <div class="card-wrapper">
                                         <div class="card">
-                                            <img width="18%" src="../frontend/images/icon/ic_samchulypay1.svg"/>
+                                            <img width="18%" src="../frontend/images/icon/ic_samchulypay1.svg" alt="image healthada"/>
                                             <span>{{ __('healthyhada1') }}</span>
                                             <p>
                                                 {{ __('healthyhada1-content') }}
                                             </p>
                                         </div>
                                         <div class="card">
-                                            <img width="18%" src="../frontend/images/icon/ic_samchulypay2.svg"/>
+                                            <img width="18%" src="../frontend/images/icon/ic_samchulypay2.svg" alt="image healthada"/>
                                             <span>{{ __('healthyhada2') }}</span>
                                             <p>
                                                 {{ __('healthyhada2-content') }}
                                             </p>
                                         </div>
                                         <div class="card">
-                                            <img width="18%" src="../frontend/images/icon/ic_samchulypay3.svg"/>
+                                            <img width="18%" src="../frontend/images/icon/ic_samchulypay3.svg" alt="image healthada"/>
                                             <span>{{ __('healthyhada3') }}</span>
                                             <p>
                                                 {{ __('healthyhada3-content') }}

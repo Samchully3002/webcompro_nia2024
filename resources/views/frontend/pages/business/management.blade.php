@@ -37,38 +37,38 @@
                                     <p>{{ __('tnr-content') }}</p>
                                 </div>
                                 <div class="img-box1">
-                                    <img src="../frontend/images/bs-ticketing1.svg"/>
-                                    <img src="../frontend/images/bs-ticketing2.svg"/>
-                                    <img src="../frontend/images/bs-ticketing3.svg"/>
+                                    <img src="../frontend/images/bs-ticketing1.svg" alt="image ticketing"/>
+                                    <img src="../frontend/images/bs-ticketing2.svg" alt="image ticketing"/>
+                                    <img src="../frontend/images/bs-ticketing3.svg" alt="image ticketing"/>
                                 </div>
                                 <div class="img-box-mobile">
 
                                     <button class="btn_prev_img" onclick="plusDivs(-1)">&#8249;</button>
 
-                                    <img class="mySlides" src="../frontend/images/bs-ticketing1.svg"/>
-                                    <img class="mySlides" src="../frontend/images/bs-ticketing2.svg"/>
-                                    <img class="mySlides" src="../frontend/images/bs-ticketing3.svg"/>
+                                    <img class="mySlides" src="../frontend/images/bs-ticketing1.svg" alt="image ticketing"/>
+                                    <img class="mySlides" src="../frontend/images/bs-ticketing2.svg" alt="image ticketing"/>
+                                    <img class="mySlides" src="../frontend/images/bs-ticketing3.svg" alt="image ticketing"/>
 
                                     <button class="btn_next_img" onclick="plusDivs(1)">&#8250;</button>
 
                                 </div>
                                 <div class="card-wrapper">
                                     <div class="card">
-                                        <img width="18%" src="../frontend/images/icon/ic_samchulypay1.svg"/>
+                                        <img width="18%" src="../frontend/images/icon/ic_samchulypay1.svg" alt="image samchully pay"/>
                                         <span>{{ __('tnr1') }}</span>
                                         <p>
                                             {{ __('tnr1-content') }}
                                         </p>
                                     </div>
                                     <div class="card">
-                                        <img width="18%" src="../frontend/images/icon/ic_samchulypay2.svg"/>
+                                        <img width="18%" src="../frontend/images/icon/ic_samchulypay2.svg" alt="image samchully pay"/>
                                         <span>{{ __('tnr2') }}</span>
                                         <p>
                                             {{ __('tnr2-content') }}
                                         </p>
                                     </div>
                                     <div class="card">
-                                        <img width="18%" src="../frontend/images/icon/ic_samchulypay3.svg"/>
+                                        <img width="18%" src="../frontend/images/icon/ic_samchulypay3.svg" alt="image samchully pay"/>
                                         <span>{{ __('tnr3') }}</span>
                                         <p>
                                             {{ __('tnr3-content') }}
@@ -94,8 +94,8 @@
                                     <p>{{ __('pis-content') }}</p>
                                 </div>
                                 <div class="img-box1">
-                                    <img src="../frontend/images/bs-payment1.svg"/>
-                                    <img src="../frontend/images/bs-payment2.svg"/>
+                                    <img src="../frontend/images/bs-payment1.svg" alt="image bs payment"/>
+                                    <img src="../frontend/images/bs-payment2.svg" alt="image bs payment"/>
                                 </div>
                             </div>
                         </div>
