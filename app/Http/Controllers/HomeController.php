@@ -99,7 +99,8 @@ class HomeController extends Controller
              $validator = Validator::make($request->all(), [
                 'sender'     => 'required',
                 'email'     => 'required',
-                'message'    => 'required'
+                'message'    => 'required',
+                'g-recaptcha-response' => 'required|recaptchav3:register,0.5'
             ]);
 
             //check if validation fails
@@ -147,7 +148,7 @@ class HomeController extends Controller
 
         $next = Notice::where('id', '>', $id)->orderBy('id','desc')->first();
         $meta = MetaTags::where('url', 'LIKE', '%'.'notice'.'%')->first();
-        
+
 
 
         return view('frontend/pages/notice_detail', compact('notice','prev','next','meta'));
