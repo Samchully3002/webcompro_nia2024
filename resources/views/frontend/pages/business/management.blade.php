@@ -36,7 +36,7 @@
                                 <div class="text-wrapper">
                                     <p>{{ __('tnr-content') }}</p>
                                 </div>
-                                <div class="img-box1">
+                                <div class="img-box">
                                     <img src="../frontend/images/bs-ticketing1.svg"/>
                                     <img src="../frontend/images/bs-ticketing2.svg"/>
                                     <img src="../frontend/images/bs-ticketing3.svg"/>
