@@ -17,6 +17,8 @@ use App\Models\ContactUs;
 use App\Models\Monitoring;
 use App\Models\MetaTags;
 
+use App\Rules\RecaptchaV3Rule;
+
 class HomeController extends Controller
 {
     /**
@@ -99,7 +101,9 @@ class HomeController extends Controller
              $validator = Validator::make($request->all(), [
                 'sender'     => 'required',
                 'email'     => 'required',
-                'message'    => 'required'
+                'message'    => 'required',
+                // Add custom validation rule for reCAPTCHA
+                'g-recaptcha-response' => 'required|recaptchav3'
             ]);
 
             //check if validation fails

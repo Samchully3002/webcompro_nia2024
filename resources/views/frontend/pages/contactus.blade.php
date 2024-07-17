@@ -3,6 +3,9 @@
    @include('frontend.includes.head')
    <link rel="stylesheet" href="{{asset('frontend/css/contact.css')}}"/>
    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   <script src="https://www.google.com/recaptcha/api.js?render={{env('RECAPTCHA_SITE_KEY')}}"></script>
+
+
    </head>
    <body>
       <!-- <div data-include="component/header"></div> -->
@@ -87,7 +90,9 @@
                                                     penggunaan informasi pribadi.</em
                                                 >
                                             </label> -->
-
+                                           
+                                            <div class="g-recaptcha" name="g-recaptcha" id="g-recaptcha"  data-sitekey="{{env('RECAPTCHA_SITE_KEY')}}"></div>
+                                            <br/>
                                             <button type="button" id="btn_form_message">{{__ ('btn-submit') }}</button>
                                         </form>
                                         <iframe
@@ -173,26 +178,24 @@
                     let form = $('#form_message')[0];
                     let data = new FormData(form);
 
-        $.ajax({
-          url: "{{ route('contact-us-submit') }}",
-          type: "POST",
-          data: data,
-          dataType: "JSON",
-          processData: false,
-          contentType: false,
-          success: function(response) {
-            $('#form_message')[0].reset();
-            dispNotif('Saving Data Success', response.message, 'success');
-        },
-        error: function(xhr, status, error) {
-          dispNotif('', 'error saving data', 'error');
-          }
+                    $.ajax({
+                        url: "{{ route('contact-us-submit') }}",
+                        type: "POST",
+                        data: data,
+                        dataType: "JSON",
+                        processData: false,
+                        contentType: false,
+                            success: function(response) {
+                                $('#form_message')[0].reset();
+                                dispNotif('Saving Data Success', response.message, 'success');
+                            },
+                            error: function(xhr, status, error) {
+                                dispNotif('', 'error saving data', 'error');
+                            }
 
-        });
+                        });
 
-      })
-
-
+                    })
             });
         </script>
 
