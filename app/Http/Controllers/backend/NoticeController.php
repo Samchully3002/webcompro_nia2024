@@ -135,6 +135,10 @@ class NoticeController extends Controller
                     $note->update([
                         'title'      => $request->title,
                         'content'    => $request->content,
+                        'title_kr'      => $request->title_kr,
+                        'content_kr'    => $request->content_kr,
+                        'title_id'      => $request->title_id,
+                        'content_id'    => $request->content_id,
                         'date'       => $request->date,
                         'image'      => $imageName,
                         'display'    => 1
@@ -146,6 +150,10 @@ class NoticeController extends Controller
                         $note->update([
                             'title'      => $request->title,
                             'content'    => $request->content,
+                            'title_kr'      => $request->title_kr,
+                            'content_kr'    => $request->content_kr,
+                            'title_id'      => $request->title_id,
+                            'content_id'    => $request->content_id,
                             'date'       => $request->date,
                             'display'    => 1
                         ]);
@@ -165,6 +173,10 @@ class NoticeController extends Controller
                    $note = Notice::create([
                         'title'      => $request->title,
                         'content'    => $request->content,
+                        'title_kr'      => $request->title_kr,
+                        'content_kr'    => $request->content_kr,
+                        'title_id'      => $request->title_id,
+                        'content_id'    => $request->content_id,
                         'date'       => $request->date,
                         'image'      => $imageName,
                         'display'    => 1
