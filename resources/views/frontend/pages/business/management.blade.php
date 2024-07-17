@@ -114,6 +114,7 @@
                             <div class="content">
                                 <div class="text-wrapper">
                                     <p>{{ __('iba-content') }}</p>
+                                    <button><span>PDF</span>&nbsp;&nbsp; <img src="../../frontend/images/icon/download.svg" ></button>
                                 </div>
                                 <div class="img-box" style="gap: 0px !important;">
                                     <img class="iba" src="../frontend/images/iba1.png"/>
