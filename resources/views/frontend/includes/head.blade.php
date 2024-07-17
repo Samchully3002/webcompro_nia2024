@@ -15,7 +15,7 @@
     <meta name="bingbot" content="nofollow">
     <meta name="description" content="{{ $meta->desc ? $meta->desc : '' }}"></meta>
     <meta name="keywords" content="{{ $meta->keyword ? $meta->keyword : '' }}"></meta>
-    <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=2, minimum-scale=1, width=device-width" /> 
+    <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=2, minimum-scale=1, width=device-width" />
     <meta name="google-site-verification" content="3qoJgp8b08_UcEGyt5AuOh2HfQJl1J-_XdhLz_cDstg" />
     <link rel="shortcut icon" href="{{asset('frontend/images/icon/favicon.ico')}}">
     <!-- {{asset('frontend/css/outline.css')}} -->
@@ -34,10 +34,6 @@
                 document.getElementsByTagName("body")[0].style.fontFamily = 'Pretendard';
             //   alert('korea');
         }
-            var currentLang = "{{ app()->getLocale() }}";
-            var tex = document.getelementById('tes');
-            tex.textContent = "currentLang";
-            console.log(currentLang);
             let url = $(location).attr('href');
             const visited = url.substring(url.lastIndexOf('/') + 1);
             $.getJSON("https://ipinfo.io",
