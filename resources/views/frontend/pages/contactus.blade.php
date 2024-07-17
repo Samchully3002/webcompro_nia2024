@@ -89,7 +89,7 @@
                                                 >
                                             </label> -->
                                            
-                                            <div class="g-recaptcha" name="g-recaptcha" id="g-recaptcha"  data-sitekey="{{env('RECAPTCHA_SITE_KEY')}}"></div>
+                                            <!-- <div class="g-recaptcha" data-sitekey="{{env('RECAPTCHA_SITE_KEY')}}"></div> -->
                                             <br/>
                                             <button type="button" id="btn_form_message">{{__ ('btn-submit') }}</button>
                                         </form>
