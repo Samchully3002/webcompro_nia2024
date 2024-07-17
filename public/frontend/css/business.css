@@ -207,6 +207,10 @@ input[type="checkbox"] {
     position: relative;
 }
 
+.product-wrapper .content .img-box .iba {
+    width: 250px !important;
+}
+
 .product-wrapper .content .img-box1 {
     place-content: flex-start center;
     display: flex;
@@ -381,7 +385,7 @@ input[type="checkbox"] {
         padding-bottom: 20px;
     }
 
-    .product-wrapper .content .img-box {
+    .product-wrapper .content .img-box, .product-wrapper .content .img-box2 {
         /* flex-direction: column; */
         display: none !important;
     }
@@ -407,6 +411,11 @@ input[type="checkbox"] {
         height: 500px;
     }
 
+    .product-wrapper .content .img-box-mobile .mySlides2 {
+        height: 400px;
+        left: 3px;
+    }
+
     .img-box-mobile .btn_prev_img {
         border: none;
         display: block;
@@ -415,12 +424,11 @@ input[type="checkbox"] {
         overflow: hidden;
         background: rgba(0, 0, 0, 0.2);
         cursor: pointer;
-        margin: 0 -20px 0 0;
         z-index: 2;
         font-size: 32px;
         padding: 0 16px 4px 16px;
         position: absolute;
-        left: 4px;
+        left: 0px;
         color: white;
         border-radius: 99px;
         pointer-events: auto;
@@ -435,12 +443,11 @@ input[type="checkbox"] {
         overflow: hidden;
         background: rgba(0, 0, 0, 0.2);
         cursor: pointer;
-        margin: 0 0 0 -20px;
         z-index: 2;
         font-size: 32px;
         padding: 0 16px 4px 16px;
         position: absolute;
-        right: 4px;
+        right: 0px;
         color: white;
         border-radius: 50px;
         pointer-events: auto;

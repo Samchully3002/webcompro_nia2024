@@ -3,6 +3,7 @@
    @include('frontend.includes.head')
    <link rel="stylesheet" href="{{asset('frontend/css/contact.css')}}"/>
    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   <script src="https://google.com/recaptcha/enterprise.js" async defer></script>
    </head>
    <body>
       <!-- <div data-include="component/header"></div> -->
@@ -75,6 +76,10 @@
                                                     name="message"
                                                     placeholder="{{__ ('form-msg') }}"
                                                 ></textarea>
+                                            </label>
+                                            <label>
+                                                Google Recaptcha
+                                                <div class="g-recaptcha" data-sitekey="6Lc4BhEqAAAAACVcTeYp0Nh6UiXzJGz9vw9UO9cS"></div>
                                             </label>
 
                                             <!-- <label class="check-box">
@@ -181,13 +186,16 @@
           processData: false,
           contentType: false,
           success: function(response) {
-            $('#form_message')[0].reset();
-            dispNotif('Saving Data Success', response.message, 'success');
-        },
-        error: function(xhr, status, error) {
-          dispNotif('', 'error saving data', 'error');
+            if (response.success == true){
+                $('#form_message')[0].reset();
+                dispNotif('Saving Data Success', response.message, 'success');
+            }else if (response.success == false){
+                dispNotif('', response.message, 'error');
+            }
+          },
+          error: function(xhr, status, error) {
+            dispNotif('', response.message, 'error');
           }
-
         });
 
       })
