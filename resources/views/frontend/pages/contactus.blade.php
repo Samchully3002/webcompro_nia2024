@@ -3,7 +3,8 @@
    @include('frontend.includes.head')
    <link rel="stylesheet" href="{{asset('frontend/css/contact.css')}}"/>
    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-   <script src="https://google.com/recaptcha/enterprise.js" async defer></script>
+   <script src="https://www.google.com/recaptcha/api.js?render={{ env('RECAPTCHA_SITE_KEY') }}"></script>
+
    </head>
    <body>
       <!-- <div data-include="component/header"></div> -->
@@ -37,10 +38,10 @@
                             <p><a href="mailto:info@nia.co.id" target="_blank" rel="noopener">{{__ ('email2') }}</a></p>
                         </div>
                         <div class="appear">
-                            <a href="https://instagram.com/networksindonesiaaku" target="_blank"><img src='../../frontend/images/icon/ig.png' /></a>
-                            <a href="https://www.tiktok.com/@networksindonesiaaku" target="_blank"><img src='../../frontend/images/icon/tk.png' /></a>
-                            <a href="https://www.facebook.com/profile.php?id=100086498050992" target="_blank"><img src='../../frontend/images/icon/fb.png' /></a>
-                            <a href="https://www.youtube.com/@networksindonesiaaku4258?themeRefresh=1" target="_blank"><img src='../../frontend/images/icon/yt.png' /></a>
+                            <a href="https://instagram.com/networksindonesiaaku" target="_blank"><img src='../../frontend/images/icon/ig.png' alt="image icon" /></a>
+                            <a href="https://www.tiktok.com/@networksindonesiaaku" target="_blank"><img src='../../frontend/images/icon/tk.png' alt="image icon" /></a>
+                            <a href="https://www.facebook.com/profile.php?id=100086498050992" target="_blank"><img src='../../frontend/images/icon/fb.png' alt="image icon"/></a>
+                            <a href="https://www.youtube.com/@networksindonesiaaku4258?themeRefresh=1" target="_blank"><img src='../../frontend/images/icon/yt.png' alt="image icon"/></a>
                         </div>
                     </div>
                     </div>
@@ -93,6 +94,7 @@
                                                 >
                                             </label> -->
 
+                                            <br/>
                                             <button type="button" id="btn_form_message">{{__ ('btn-submit') }}</button>
                                         </form>
                                         <iframe
@@ -176,30 +178,30 @@
                 $("#btn_form_message").click(function(e) {
                     e.preventDefault();
                     let form = $('#form_message')[0];
-                    let data = new FormData(form);
 
-        $.ajax({
-          url: "{{ route('contact-us-submit') }}",
-          type: "POST",
-          data: data,
-          dataType: "JSON",
-          processData: false,
-          contentType: false,
-          success: function(response) {
-            if (response.success == true){
-                $('#form_message')[0].reset();
-                dispNotif('Saving Data Success', response.message, 'success');
-            }else if (response.success == false){
-                dispNotif('', response.message, 'error');
-            }
-          },
-          error: function(xhr, status, error) {
-            dispNotif('', response.message, 'error');
-          }
-        });
+                    grecaptcha.execute("{{ env('RECAPTCHA_SITE_KEY') }}", {action: '/contactus/submit'}).then(function(token) {
+                        $('#form_message').prepend('<input type="hidden" name="gresponse" id="gresponse" value="' + token + '">');
+                        let data = new FormData(form);
 
-      })
+                        $.ajax({
+                            url: "{{ route('contactussubmit') }}",
+                            type: "POST",
+                            data: data,
+                            dataType: "JSON",
+                            processData: false,
+                            contentType: false,
+                            success: function(response) {
+                                $('#form_message')[0].reset();
+                                dispNotif('sending message success', response.message, 'success');
+                            },
+                            error: function(xhr, status, error) {
+                                dispNotif('', 'error sending message', 'error');
+                            }
 
+                        });
+
+                    })
+                    });
 
             });
         </script>
