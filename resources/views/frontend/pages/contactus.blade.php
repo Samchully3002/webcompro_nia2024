@@ -57,6 +57,7 @@
                                                     id="sender"
                                                     name="sender"
                                                     type="text"
+                                                    onblur="validate()"
                                                     placeholder="{{__ ('form-name') }}"
                                                 />
                                             </label>
@@ -66,6 +67,7 @@
                                                     id="email"
                                                     name="email"
                                                     type="text"
+                                                    onblur="validate()"
                                                     placeholder="{{__ ('form-email') }}"
                                                 />
                                             </label>
@@ -74,13 +76,14 @@
                                                 <textarea
                                                     id="message"
                                                     name="message"
+                                                    onblur="validate()"
                                                     placeholder="{{__ ('form-msg') }}"
                                                 ></textarea>
                                             </label>
-                                            <label>
+                                            {{-- <label>
                                                 Google Recaptcha
-                                                <div class="g-recaptcha" data-sitekey="6Lc4BhEqAAAAACVcTeYp0Nh6UiXzJGz9vw9UO9cS"></div>
-                                            </label>
+                                                <div id="chapta" class="g-recaptcha" data-sitekey="6Lc4BhEqAAAAACVcTeYp0Nh6UiXzJGz9vw9UO9cS"></div>
+                                            </label> --}}
 
                                             <!-- <label class="check-box">
                                                 <input
@@ -93,7 +96,7 @@
                                                 >
                                             </label> -->
 
-                                            <button type="button" id="btn_form_message">{{__ ('btn-submit') }}</button>
+                                            <button type="button" id="btn_form_message" disabled>{{__ ('btn-submit') }}</button>
                                         </form>
                                         <iframe
                                             id="iframe1"
@@ -123,14 +126,76 @@
 
             @include('frontend.includes.footer')
 
-        <script type="text/javascript">
-                  function dispNotif(title, message, status){
-                    Swal.fire({
-                    title: '',
-                    text: message,
-                    icon: status
-                    });
+        <script>
+            function validate() {
+
+                let valid = true;
+                valid = checkEmpty($("#sender"));
+                valid = valid && checkEmail($("#email"));
+                valid = checkEmpty($("#message"));
+                // document.getElementById("btn_form_message").disabled = true;
+                $("#btn_form_message").attr("disabled",true);
+
+                if(valid) {
+                    // document.getElementById("btn_form_message").disabled = false;
+                    $("#btn_form_message")
+                        .css("cursor","pointer")
+                        .css("background","rgb(18, 165, 229)")
+                        .attr("disabled",false);
+                }else{
+                    $("#btn_form_message")
+                        .css("cursor","not-allowed")
+                        .css("background","rgb(131, 131, 131)")
+                        .attr("disabled",true);
                 }
+            }
+            function checkEmpty(obj) {
+                var name = $(obj).attr("name");
+                $("."+name+"-validation").html("");
+                $(obj).css("border","");
+                if($(obj).val() == "") {
+                    $(obj).css("border","#FF0000 1px solid");
+                    $("."+name+"-validation").html("Required");
+                    return false;
+                }
+
+                return true;
+            }
+            function checkEmail(obj) {
+                var result = true;
+
+                var name = $(obj).attr("name");
+                $("."+name+"-validation").html("");
+                $(obj).css("border","");
+
+                result = checkEmpty(obj);
+
+                if(!result) {
+                    $(obj).css("border","#FF0000 1px solid");
+                    $("."+name+"-validation").html("Required");
+                    return false;
+                }
+
+                var email_regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,3})+$/;
+                result = email_regex.test($(obj).val());
+
+                if(!result) {
+                    $(obj).css("border","#FF0000 1px solid");
+                    $("."+name+"-validation").html("Invalid");
+                    return false;
+                }
+
+                return result;
+            }
+
+            function dispNotif(title, message, status){
+                Swal.fire({
+                title: '',
+                text: message,
+                icon: status
+                });
+            }
+
             document.addEventListener('DOMContentLoaded', function() {
                 const appearElements = document.querySelectorAll('.appear');
 
@@ -171,36 +236,33 @@
                 // Panggil sekali ketika halaman dimuat (jika elemen sudah ada di viewport pada awalnya)
                 appearOnScroll();
 
-
-
                 $("#btn_form_message").click(function(e) {
                     e.preventDefault();
                     let form = $('#form_message')[0];
                     let data = new FormData(form);
+                    let respon = grecaptcha.getResponse();
+                    console.log("isi token : " + respon);
 
-        $.ajax({
-          url: "{{ route('contact-us-submit') }}",
-          type: "POST",
-          data: data,
-          dataType: "JSON",
-          processData: false,
-          contentType: false,
-          success: function(response) {
-            if (response.success == 'true'){
-                $('#form_message')[0].reset();
-                dispNotif('Saving Data Success', response.message, 'success');
-            }else if (response.success == 'false'){
-                dispNotif('', response.message, 'error');
-            }
-          },
-          error: function(xhr, status, error) {
-            dispNotif('', response.message, 'error');
-          }
-        });
-
-      })
-
-
+                    $.ajax({
+                    url: "{{ route('contact-us-submit') }}",
+                    type: "POST",
+                    data: data,
+                    dataType: "JSON",
+                    processData: false,
+                    contentType: false,
+                    success: function(response) {
+                        if (response.success == 'true'){
+                            $('#form_message')[0].reset();
+                            dispNotif('Saving Data Success', response.message, 'success');
+                        }else if (response.success == 'false'){
+                            dispNotif('', response.message, 'error');
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        dispNotif('', response.message, 'error');
+                    }
+                    });
+                })
             });
         </script>
 

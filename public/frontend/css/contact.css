@@ -201,7 +201,7 @@
     color: #fff;
     border: none;
     outline: none;
-    background: rgb(64, 69, 92);
+    background: rgb(131, 131, 131);
     display: block;
     width: 100%;
     padding: 15px;
@@ -210,11 +210,13 @@
     border-radius: 8px;
     font-size: 16px;
     margin-bottom: 16px;
+    cursor:not-allowed;
+
 }
 
-.contact-wrapper .form-box button:hover {
+/* .contact-wrapper .form-box button:hover {
     opacity: 0.8;
-}
+} */
 
 .map-wrapper {
     display: flex;

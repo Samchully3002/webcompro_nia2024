@@ -77,9 +77,8 @@ class HomeController extends Controller
     /**
      * Display about news.
      */
-    public function contactus(Request $request): View
+    public function contactus(Request $request)
     {
-
         $curentURL = $request->path();
         $meta = MetaTags::where('url', 'LIKE', '%'.$curentURL.'%')->first();
         return view('frontend/pages/contactus',compact(['meta']));
@@ -90,67 +89,37 @@ class HomeController extends Controller
      */
     public function contactsubmit(Request $request)
     {
-
         if($request->ajax()){
 
-            $recaptcha_response = $request->input('g-recaptcha-response');
+            //define validation rules
+             $validator = Validator::make($request->all(), [
+                'sender'     => 'required',
+                'email'     => 'required',
+                'message'    => 'required',
+                // Add custom validation rule for reCAPTCHA
+                'gresponse' => 'required'
+            ]);
 
-            if (is_null($recaptcha_response)) {
-                return response()->json([
-                    'success' => 'false',
-                    'message' => 'Please Complete the Recaptcha to proceed',
-                    'data'    => ''
-                ]);
+            //check if validation fails
+            if ($validator->fails()) {
+                return response()->json($validator->errors(), 422);
             }
 
-            $url = "https://www.google.com/recaptcha/api/siteverify";
 
-            $body = [
-                'secret' => config('services.recaptcha.secret'),
-                'response' => $recaptcha_response,
-                'remoteip' => IpUtils::anonymize($request->ip()) //anonymize the ip to be GDPR compliant. Otherwise just pass the default ip address
-            ];
+            //inser media news data
+            $mess = ContactUs::create([
+                'sender'     => $request->sender,
+                'email'     => $request->email,
+                'message'    => $request->message,
+                'read'      => 0
+            ]);
 
-            $response = Http::asForm()->post($url, $body);
-            $result = json_decode($response);
-
-            if ($response->successful() && $result->success == true) {
-
-                //define validation rules
-                $validator = Validator::make($request->all(), [
-                    'sender'     => 'required',
-                    'email'     => 'required',
-                    'message'    => 'required',
-                ]);
-
-                //check if validation fails
-                if ($validator->fails()) {
-                    return response()->json($validator->errors(), 422);
-                }
-
-                //inser media news data
-                $mess = ContactUs::create([
-                    'sender'     => $request->sender,
-                    'email'     => $request->email,
-                    'message'    => $request->message,
-                    'read'      => 0
-                ]);
-
-                //return response
-                return response()->json([
-                    'success' => 'true',
-                    'message' => $result->success,
-                    'data'    => $mess
-                ]);
-
-            } else {
-
-                return response()->json([
-                    'success' => 'false',
-                    'message' => $result->success,
-                    'data'    => ''
-                ]);
-            }
+            //return response
+            return response()->json([
+                'success' => true,
+                'message' => 'Success sending message!',
+                'data'    => $mess
+            ]);
 
         }
 
