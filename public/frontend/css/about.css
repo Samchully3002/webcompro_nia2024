@@ -146,10 +146,6 @@
     transition: transform 0.3s ease;
 }
 
-.ceo_message .img_wrapper img:hover {
-    transform: scale(1.1);
-}
-
 .tooltip {
     position: fixed;
     padding: 10px 16px;
@@ -945,6 +941,12 @@ hr.rounded {
 .content-card-maps p {
     color: #7f8499;
     font-weight: 300;
+}
+
+@media (min-width: 1141px) {
+    .ceo_message .img_wrapper img:hover {
+        transform: scale(1.1);
+    }
 }
 
 @media screen and (max-width: 1140px) {

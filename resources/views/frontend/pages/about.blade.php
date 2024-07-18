@@ -736,7 +736,7 @@
                     </div>
                     <div class="item muncul">
                         <p>
-                        <span style="font-weight:bold;color:rgb(49, 107, 27);">E</span>enviroment
+                        <span style="font-weight:bold;color:rgb(49, 107, 27);">E</span>nvironment
                         </p>
                     </div>
                     <div class="item muncul">

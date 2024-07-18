@@ -114,7 +114,8 @@
                             <div class="content">
                                 <div class="text-wrapper">
                                     <p>{{ __('iba-content') }}</p>
-                                    <button><span>PDF</span>&nbsp;&nbsp; <img src="../../frontend/images/icon/download.svg" ></button>
+                                    <button id="downloadButton"><span>PDF</span>&nbsp;&nbsp; <img src="../../frontend/images/icon/download.svg" ></button>
+                                    <a id="downloadLink" href="{{asset('frontend/INABUSAPPS.pdf')}}" download style="display: none;"></a>
                                 </div>
                                 <div class="img-box" style="gap: 0px !important;">
                                     <img class="iba" src="../frontend/images/iba1.png"/>
@@ -254,6 +255,11 @@
             }
             x2[slideIndex-1].style.display = "block";
             }
+
+
+            document.getElementById('downloadButton').addEventListener('click', function() {
+            document.getElementById('downloadLink').click();
+        });
         </script>
 
     </body>
