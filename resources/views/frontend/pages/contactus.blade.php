@@ -3,6 +3,7 @@
    @include('frontend.includes.head')
    <link rel="stylesheet" href="{{asset('frontend/css/contact.css')}}"/>
    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   <script src="https://www.google.com/recaptcha/api.js?render={{ env('RECAPTCHA_SITE_KEY') }}"></script>
 
    </head>
    <body>
@@ -37,10 +38,10 @@
                             <p><a href="mailto:info@nia.co.id" target="_blank" rel="noopener">{{__ ('email2') }}</a></p>
                         </div>
                         <div class="appear">
-                            <a href="https://instagram.com/networksindonesiaaku" target="_blank"><img src='../../frontend/images/icon/ig.png' /></a>
-                            <a href="https://www.tiktok.com/@networksindonesiaaku" target="_blank"><img src='../../frontend/images/icon/tk.png' /></a>
-                            <a href="https://www.facebook.com/profile.php?id=100086498050992" target="_blank"><img src='../../frontend/images/icon/fb.png' /></a>
-                            <a href="https://www.youtube.com/@networksindonesiaaku4258?themeRefresh=1" target="_blank"><img src='../../frontend/images/icon/yt.png' /></a>
+                            <a href="https://instagram.com/networksindonesiaaku" target="_blank"><img src='../../frontend/images/icon/ig.png' alt="image icon" /></a>
+                            <a href="https://www.tiktok.com/@networksindonesiaaku" target="_blank"><img src='../../frontend/images/icon/tk.png' alt="image icon" /></a>
+                            <a href="https://www.facebook.com/profile.php?id=100086498050992" target="_blank"><img src='../../frontend/images/icon/fb.png' alt="image icon"/></a>
+                            <a href="https://www.youtube.com/@networksindonesiaaku4258?themeRefresh=1" target="_blank"><img src='../../frontend/images/icon/yt.png' alt="image icon"/></a>
                         </div>
                     </div>
                     </div>
@@ -187,10 +188,10 @@
                             contentType: false,
                             success: function(response) {
                                 $('#form_message')[0].reset();
-                                dispNotif('Saving Data Success', response.message, 'success');
+                                dispNotif('sending message success', response.message, 'success');
                             },
                             error: function(xhr, status, error) {
-                                dispNotif('', 'error saving data', 'error');
+                                dispNotif('', 'error sending message', 'error');
                             }
 
                         });

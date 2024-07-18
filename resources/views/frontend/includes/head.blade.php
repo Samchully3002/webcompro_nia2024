@@ -65,7 +65,6 @@
             }, "jsonp");
           });
     </script>
-    <script src="https://www.google.com/recaptcha/api.js?render={{ env('RECAPTCHA_SITE_KEY') }}"></script>
     <!-- <script type="application/ld+json">
     {
    
