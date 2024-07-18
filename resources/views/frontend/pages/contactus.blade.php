@@ -88,8 +88,7 @@
                                                     penggunaan informasi pribadi.</em
                                                 >
                                             </label> -->
-                                           
-                                            <!-- <div class="g-recaptcha" data-sitekey="{{env('RECAPTCHA_SITE_KEY')}}"></div> -->
+                                            
                                             <br/>
                                             <button type="button" id="btn_form_message">{{__ ('btn-submit') }}</button>
                                         </form>
@@ -174,12 +173,13 @@
                 $("#btn_form_message").click(function(e) {
                     e.preventDefault();
                     let form = $('#form_message')[0];
-                    let data = new FormData(form);
-                    grecaptcha.enterprise.ready(async () => {
-                        const token = await grecaptcha.enterprise.execute('env("RECAPTCHA_SITE_KEY")', {action: "{{ route('contact-us-submit') }}"});
-                        data.gresponse = token;
+                    
+                    grecaptcha.execute("{{ env('RECAPTCHA_SITE_KEY') }}", {action: '/contactus/submit'}).then(function(token) {
+                        $('#form_message').prepend('<input type="hidden" name="gresponse" id="gresponse" value="' + token + '">');
+                        let data = new FormData(form);
+                        
                         $.ajax({
-                            url: "{{ route('contact-us-submit') }}",
+                            url: "{{ route('contactussubmit') }}",
                             type: "POST",
                             data: data,
                             dataType: "JSON",

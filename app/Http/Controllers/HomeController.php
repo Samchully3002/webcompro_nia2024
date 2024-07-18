@@ -103,7 +103,7 @@ class HomeController extends Controller
                 'email'     => 'required',
                 'message'    => 'required',
                 // Add custom validation rule for reCAPTCHA
-                'gresponse' => 'required|recaptchav3'
+                'gresponse' => 'required'
             ]);
 
             //check if validation fails
