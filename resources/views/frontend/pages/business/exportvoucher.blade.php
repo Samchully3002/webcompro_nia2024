@@ -208,7 +208,7 @@
                                         </p>
                                     </div>
                                     <div class="card-grey">
-                                        <img width="18%" src="../frontend/images/icon/ic_exportvoucher01-D.svg"/>
+                                        <img width="18%" src="../frontend/images/icon/ic_exportvoucher04-D.svg"/>
                                         <span>{{ __('its4') }}</span>
                                         <p>
                                             {{ __('its4-content') }}

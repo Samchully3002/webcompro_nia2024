@@ -54,21 +54,21 @@
                                 </div>
                                 <div class="card-wrapper">
                                     <div class="card">
-                                        <img width="18%" src="../frontend/images/icon/ic_samchulypay1.svg" alt="image samchully pay"/>
+                                        <img width="18%" src="../frontend/images/icon/reserv.svg" alt="image samchully pay"/>
                                         <span>{{ __('tnr1') }}</span>
                                         <p>
                                             {{ __('tnr1-content') }}
                                         </p>
                                     </div>
                                     <div class="card">
-                                        <img width="18%" src="../frontend/images/icon/ic_samchulypay2.svg" alt="image samchully pay"/>
+                                        <img width="18%" src="../frontend/images/icon/kiosk.svg" alt="image samchully pay"/>
                                         <span>{{ __('tnr2') }}</span>
                                         <p>
                                             {{ __('tnr2-content') }}
                                         </p>
                                     </div>
                                     <div class="card">
-                                        <img width="18%" src="../frontend/images/icon/ic_samchulypay3.svg" alt="image samchully pay"/>
+                                        <img width="18%" src="../frontend/images/icon/settlement.svg" alt="image samchully pay"/>
                                         <span>{{ __('tnr3') }}</span>
                                         <p>
                                             {{ __('tnr3-content') }}
