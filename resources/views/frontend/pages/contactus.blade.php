@@ -119,90 +119,85 @@
 
                         ></iframe>
             </div>
-            <!-- map-wrapper end -->
-
-            {{-- </div> --}}
 
             @include('frontend.includes.footer')
 
         <script type="text/javascript">
-                  function dispNotif(title, message, status){
-                    Swal.fire({
-                    title: '',
-                    text: message,
-                    icon: status
-                    });
-                }
-            document.addEventListener('DOMContentLoaded', function() {
-                const appearElements = document.querySelectorAll('.appear');
+        function dispNotif(title, message, status){
+            Swal.fire({
+            title: '',
+            text: message,
+            icon: status
+            });
+        }
 
-                function appearOnScroll() {
-                    appearElements.forEach((element, index) => {
-                        // Jika elemen sudah memiliki class 'active', abaikan
-                        if (element.classList.contains('active')) {
-                            return;
+        document.addEventListener('DOMContentLoaded', function() {
+            const appearElements = document.querySelectorAll('.appear');
+
+            function appearOnScroll() {
+                appearElements.forEach((element, index) => {
+                    // Jika elemen sudah memiliki class 'active', abaikan
+                    if (element.classList.contains('active')) {
+                        return;
+                    }
+
+                    if (isElementInViewport(element)) {
+                        setTimeout(() => {
+                            element.classList.add('active');
+                        }, index * 200); // Delay munculnya setiap elemen
+                    } else {
+                        // Hapus class 'active' saat elemen keluar dari viewport
+                        element.classList.remove('active');
+                    }
+                });
+            }
+
+            function isElementInViewport(el) {
+                const rect = el.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+
+            // Handler untuk event scroll
+            window.addEventListener('scroll', appearOnScroll);
+
+            // Handler untuk event resize (jika ada perubahan ukuran viewport)
+            window.addEventListener('resize', appearOnScroll);
+
+            // Panggil sekali ketika halaman dimuat (jika elemen sudah ada di viewport pada awalnya)
+            appearOnScroll();
+
+            $("#btn_form_message").click(function(e) {
+                e.preventDefault();
+                let form = $('#form_message')[0];
+
+                grecaptcha.execute("{{ env('RECAPTCHA_SITE_KEY') }}", {action: '/contactus/submit'}).then(function(token) {
+                    $('#form_message').prepend('<input type="hidden" name="gresponse" id="gresponse" value="' + token + '">');
+                    let data = new FormData(form);
+
+                    $.ajax({
+                        url: "{{ route('contactussubmit') }}",
+                        type: "POST",
+                        data: data,
+                        dataType: "JSON",
+                        processData: false,
+                        contentType: false,
+                        success: function(response) {
+                            $('#form_message')[0].reset();
+                            dispNotif('sending message success', response.message, 'success');
+                        },
+                        error: function(xhr, status, error) {
+                            dispNotif('', 'error sending message', 'error');
                         }
 
-                        if (isElementInViewport(element)) {
-                            setTimeout(() => {
-                                element.classList.add('active');
-                            }, index * 200); // Delay munculnya setiap elemen
-                        } else {
-                            // Hapus class 'active' saat elemen keluar dari viewport
-                            element.classList.remove('active');
-                        }
-                    });
-                }
-
-                function isElementInViewport(el) {
-                    const rect = el.getBoundingClientRect();
-                    return (
-                        rect.top >= 0 &&
-                        rect.left >= 0 &&
-                        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-                    );
-                }
-
-                // Handler untuk event scroll
-                window.addEventListener('scroll', appearOnScroll);
-
-                // Handler untuk event resize (jika ada perubahan ukuran viewport)
-                window.addEventListener('resize', appearOnScroll);
-
-                // Panggil sekali ketika halaman dimuat (jika elemen sudah ada di viewport pada awalnya)
-                appearOnScroll();
-
-
-
-                $("#btn_form_message").click(function(e) {
-                    e.preventDefault();
-                    let form = $('#form_message')[0];
-
-                    grecaptcha.execute("{{ env('RECAPTCHA_SITE_KEY') }}", {action: '/contactus/submit'}).then(function(token) {
-                        $('#form_message').prepend('<input type="hidden" name="gresponse" id="gresponse" value="' + token + '">');
-                        let data = new FormData(form);
-
-                        $.ajax({
-                            url: "{{ route('contactussubmit') }}",
-                            type: "POST",
-                            data: data,
-                            dataType: "JSON",
-                            processData: false,
-                            contentType: false,
-                            success: function(response) {
-                                $('#form_message')[0].reset();
-                                dispNotif('sending message success', response.message, 'success');
-                            },
-                            error: function(xhr, status, error) {
-                                dispNotif('', 'error sending message', 'error');
-                            }
-
-                        });
-
-                    })
                     });
 
+                })
+                });
             });
         </script>
 

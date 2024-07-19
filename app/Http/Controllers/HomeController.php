@@ -114,7 +114,6 @@ class HomeController extends Controller
             ];
 
             $response = Http::asForm()->post($url, $body);
-
             $result = json_decode($response);
 
             //define validation rules
