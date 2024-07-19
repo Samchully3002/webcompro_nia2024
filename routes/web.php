@@ -30,7 +30,7 @@ Route::get('/community/notice', [App\Http\Controllers\HomeController::class, 'no
 Route::get('/community/notice-detail/{id}', [App\Http\Controllers\HomeController::class, 'noticedetail'])->name('notice-detail/{id}');
 
 Route::get('/contact-us', [App\Http\Controllers\HomeController::class, 'contactus'])->name('contact-us');
-Route::post('/contact-us/submit', [App\Http\Controllers\HomeController::class, 'contactsubmit'])->name('contact-us-submit');
+Route::post('/contact-us/submit', [App\Http\Controllers\HomeController::class, 'contactsubmit'])->name('contactussubmit');
 
 Route::get('/our-business/intellegent-integrated-logistic', [App\Http\Controllers\BusinessController::class, 'businesslog'])->name('intelligent-integrated-logistic');
 Route::get('/our-business/digital-healthcare', [App\Http\Controllers\BusinessController::class, 'healthcare'])->name('digital-healthcare');

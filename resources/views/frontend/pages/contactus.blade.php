@@ -3,7 +3,7 @@
    @include('frontend.includes.head')
    <link rel="stylesheet" href="{{asset('frontend/css/contact.css')}}"/>
    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-   <script src="https://google.com/recaptcha/enterprise.js" async defer></script>
+   <script src="https://www.google.com/recaptcha/api.js?render={{ env('RECAPTCHA_SITE_KEY') }}"></script>
    </head>
    <body>
       <!-- <div data-include="component/header"></div> -->
@@ -80,23 +80,8 @@
                                                     placeholder="{{__ ('form-msg') }}"
                                                 ></textarea>
                                             </label>
-                                            {{-- <label>
-                                                Google Recaptcha
-                                                <div id="chapta" class="g-recaptcha" data-sitekey="6Lc4BhEqAAAAACVcTeYp0Nh6UiXzJGz9vw9UO9cS"></div>
-                                            </label> --}}
 
-                                            <!-- <label class="check-box">
-                                                <input
-                                                    type="checkbox"
-                                                    class="checkbox-type1"
-                                                />
-                                                <em
-                                                    >Saya menyetujui pengumpulan dan
-                                                    penggunaan informasi pribadi.</em
-                                                >
-                                            </label> -->
-
-                                            <button type="button" id="btn_form_message" disabled>{{__ ('btn-submit') }}</button>
+                                            <button type="submit" id="btn_form_message" disabled>{{__ ('btn-submit') }}</button>
                                         </form>
                                         <iframe
                                             id="iframe1"
@@ -129,14 +114,14 @@
         <script>
             function validate() {
 
-                let valid = true;
-                valid = checkEmpty($("#sender"));
-                valid = valid && checkEmail($("#email"));
-                valid = checkEmpty($("#message"));
+                // let valid = true;
+                let valid1 = checkEmpty($("#message"));
+                let valid2 = checkEmpty($("#sender"));
+                let valid3 = checkEmail($("#email"));
                 // document.getElementById("btn_form_message").disabled = true;
-                $("#btn_form_message").attr("disabled",true);
+                $("#btn_form_message").attr("disabled", true);
 
-                if(valid) {
+                if((valid1) && (valid2) && (valid3)){
                     // document.getElementById("btn_form_message").disabled = false;
                     $("#btn_form_message")
                         .css("cursor","pointer")
@@ -161,6 +146,7 @@
 
                 return true;
             }
+
             function checkEmail(obj) {
                 var result = true;
 
@@ -237,32 +223,36 @@
                 appearOnScroll();
 
                 $("#btn_form_message").click(function(e) {
-                    e.preventDefault();
-                    let form = $('#form_message')[0];
+                e.preventDefault();
+                let form = $('#form_message')[0];
+
+                grecaptcha.execute("{{ env('RECAPTCHA_SITE_KEY') }}", {action: '/contactus/submit'}).then(function(token) {
+                    $('#form_message').prepend('<input type="hidden" name="gresponse" id="gresponse" value="' + token + '">');
                     let data = new FormData(form);
-                    let respon = grecaptcha.getResponse();
-                    console.log("isi token : " + respon);
 
                     $.ajax({
-                    url: "{{ route('contact-us-submit') }}",
-                    type: "POST",
-                    data: data,
-                    dataType: "JSON",
-                    processData: false,
-                    contentType: false,
-                    success: function(response) {
-                        if (response.success == 'true'){
+                        url: "{{ route('contactussubmit') }}",
+                        type: "POST",
+                        data: data,
+                        dataType: "JSON",
+                        processData: false,
+                        contentType: false,
+                        success: function(response) {
+                            dispNotif('sending message success', response.message, 'success');
                             $('#form_message')[0].reset();
-                            dispNotif('Saving Data Success', response.message, 'success');
-                        }else if (response.success == 'false'){
-                            dispNotif('', response.message, 'error');
+                            $("#btn_form_message")
+                            .css("cursor","not-allowed")
+                            .css("background","rgb(131, 131, 131)")
+                            .attr("disabled",true);
+                        },
+                        error: function(xhr, status, error) {
+                            dispNotif('', 'error sending message', 'error');
                         }
-                    },
-                    error: function(xhr, status, error) {
-                        dispNotif('', response.message, 'error');
-                    }
+
                     });
+
                 })
+                });
             });
         </script>
 
