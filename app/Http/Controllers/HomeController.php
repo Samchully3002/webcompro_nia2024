@@ -15,6 +15,8 @@ use App\Models\ContactUs;
 use App\Models\Monitoring;
 use App\Models\MetaTags;
 
+use App\Rules\RecaptchaV3Rule;
+
 class HomeController extends Controller
 {
     /**
@@ -91,6 +93,27 @@ class HomeController extends Controller
     {
         if($request->ajax()){
 
+            $recaptcha_response = $request->input('g-recaptcha-response');
+
+            if (is_null($recaptcha_response)) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Please Complete the Recaptcha to proceed',
+                    'data'    => ''
+                ]);
+            }
+
+            $url = "https://www.google.com/recaptcha/api/siteverify";
+
+            $body = [
+                'secret' => config('services.recaptcha.secret'),
+                'response' => $recaptcha_response,
+                'remoteip' => IpUtils::anonymize($request->ip()) //anonymize the ip to be GDPR compliant. Otherwise just pass the default ip address
+            ];
+
+            $response = Http::asForm()->post($url, $body);
+            $result = json_decode($response);
+
             //define validation rules
              $validator = Validator::make($request->all(), [
                 'sender'     => 'required',
@@ -105,21 +128,31 @@ class HomeController extends Controller
                 return response()->json($validator->errors(), 422);
             }
 
+            if ($response->successful() && $result->success == true) {
 
-            //inser media news data
-            $mess = ContactUs::create([
-                'sender'     => $request->sender,
-                'email'     => $request->email,
-                'message'    => $request->message,
-                'read'      => 0
-            ]);
+                //inser media news data
+                $mess = ContactUs::create([
+                    'sender'     => $request->sender,
+                    'email'     => $request->email,
+                    'message'    => $request->message,
+                    'read'      => 0
+                ]);
 
-            //return response
-            return response()->json([
-                'success' => true,
-                'message' => 'Success sending message!',
-                'data'    => $mess
-            ]);
+                //return response
+                return response()->json([
+                    'success' => true,
+                    'message' => 'Success sending message!',
+                    'data'    => $mess
+                ]);
+
+            } else {
+
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Please Complete the Recaptcha Again to proceed',
+                    'data'    => ''
+                ]);
+            }
 
         }
 
@@ -137,13 +170,39 @@ class HomeController extends Controller
         return view('frontend/pages/notice', compact('notice','meta'));
     }
 
-    public function noticedetail($id)
+    public function noticedetail($id, Request $request)
     {
         $notice = Notice::find($id);
 
+
+
+        $locale = $request->session()->get('locale');
+
+        if($locale==null){
+            $locale='en';
+        }
+
+        switch ($locale) {
+            case 'id':
+                $notice->title = $notice->title_id ? $notice->title_id : $notice->title;
+                $notice->content = $notice->content_id ? $notice->content_id : $notice->content;
+              break;
+            case 'en':
+                $notice->title = $notice->title;
+                $notice->content = $notice->content;
+              break;
+            case 'kr':
+                $notice->title = $notice->title_kr ? $notice->title_kr : $notice->title;
+                $notice->content = $notice->content_kr ? $notice->content_kr : $notice->content;
+              break;
+            default:
+              $notice->title = $notice->title;
+              $notice->content = $notice->content;
+          }
+
         $prev = Notice::where('id', '<', $id)->orderBy('id','desc')->first();
 
-        $next = Notice::where('id', '>', $id)->orderBy('id','desc')->first();
+        $next = Notice::where('id', '>', $id)->first();
         $meta = MetaTags::where('url', 'LIKE', '%'.'notice'.'%')->first();
 
 

@@ -7,7 +7,7 @@
 
                 <div class="footer3blok">
                     <div class="blok">
-                        <img src="{{asset('frontend/images/icon/logo_ftr.svg')}}" alt="PT. Networks Indonesia Aku" class="logo-footer">
+                        <img src="{{asset('frontend/images/icon/logo_ftr.svg')}}" alt="PT. Networks Indonesia Aku" class="logo-footer" alt="logo footer">
                         <div class="location clear">
                             <div class="address">
                                 <span class="title">{{ __ ('footer-tagline')}}</span>
@@ -52,10 +52,10 @@
                             <p><a href="mailto:info@nia.co.id" target="_blank" rel="noopener">{{ __ ('footer-email2')}}</a></p>
                         </div>
                         <div class="gapDiantara">
-                            <a href="https://instagram.com/networksindonesiaaku" target="_blank"><img src='{{asset("frontend/images/icon/ig.png")}}' /></a>
-                            <a href="https://www.tiktok.com/@networksindonesiaaku" target="_blank"><img src='{{asset("frontend/images/icon/tk.png")}}' /></a>
-                            <a href="https://www.facebook.com/profile.php?id=100086498050992" target="_blank"><img src='{{asset("frontend/images/icon/fb.png")}}' /></a>
-                            <a href="https://www.youtube.com/@networksindonesiaaku4258?themeRefresh=1" target="_blank"><img src='{{asset("frontend/images/icon/yt.png")}}' /></a>
+                            <a href="https://instagram.com/networksindonesiaaku" target="_blank"><img src='{{asset("frontend/images/icon/ig.png")}}'  alt="instagram icon"/></a>
+                            <a href="https://www.tiktok.com/@networksindonesiaaku" target="_blank"><img src='{{asset("frontend/images/icon/tk.png")}}' alt="tiktok icon"/></a>
+                            <a href="https://www.facebook.com/profile.php?id=100086498050992" target="_blank"><img src='{{asset("frontend/images/icon/fb.png")}}' alt="facebook icon"/></a>
+                            <a href="https://www.youtube.com/@networksindonesiaaku4258?themeRefresh=1" target="_blank"><img src='{{asset("frontend/images/icon/yt.png")}}' alt="youtube icon"/></a>
                         </div>
                     </div>
                 </div>

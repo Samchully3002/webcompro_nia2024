@@ -20,7 +20,7 @@
                     </div>
                     <div class="notice-date">
                         <span>{{date('Y.m.d', strtotime($note->date));}}</span>
-                        <img src="../../frontend/images/icon/arrow-black.svg" class="language_flag">
+                        <img src="../../frontend/images/icon/arrow-black.svg" class="language_flag" alt="icon arrow"/>
                     </div>
                 </a>
 

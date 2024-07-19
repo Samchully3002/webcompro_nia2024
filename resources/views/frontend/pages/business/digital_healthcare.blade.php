@@ -36,8 +36,8 @@
                                         <p>{{ __('healthyhada-content') }}</p>
                                     </div>
                                     <div class="img-box1">
-                                        <img src="../frontend/images/bs-healthada1.svg"/>
-                                        <img src="../frontend/images/bs-healthada2.svg"/>
+                                        <img src="../frontend/images/bs-healthada1.svg" alt="image healthada"/>
+                                        <img src="../frontend/images/bs-healthada2.svg" alt="image healthada"/>
                                     </div>
                                     <div class="card-wrapper">
                                         <div class="card">

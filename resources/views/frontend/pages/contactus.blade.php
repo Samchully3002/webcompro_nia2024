@@ -37,10 +37,10 @@
                             <p><a href="mailto:info@nia.co.id" target="_blank" rel="noopener">{{__ ('email2') }}</a></p>
                         </div>
                         <div class="appear">
-                            <a href="https://instagram.com/networksindonesiaaku" target="_blank"><img src='../../frontend/images/icon/ig.png' /></a>
-                            <a href="https://www.tiktok.com/@networksindonesiaaku" target="_blank"><img src='../../frontend/images/icon/tk.png' /></a>
-                            <a href="https://www.facebook.com/profile.php?id=100086498050992" target="_blank"><img src='../../frontend/images/icon/fb.png' /></a>
-                            <a href="https://www.youtube.com/@networksindonesiaaku4258?themeRefresh=1" target="_blank"><img src='../../frontend/images/icon/yt.png' /></a>
+                            <a href="https://instagram.com/networksindonesiaaku" target="_blank"><img src='../../frontend/images/icon/ig.png' alt="image icon" /></a>
+                            <a href="https://www.tiktok.com/@networksindonesiaaku" target="_blank"><img src='../../frontend/images/icon/tk.png' alt="image icon" /></a>
+                            <a href="https://www.facebook.com/profile.php?id=100086498050992" target="_blank"><img src='../../frontend/images/icon/fb.png' alt="image icon"/></a>
+                            <a href="https://www.youtube.com/@networksindonesiaaku4258?themeRefresh=1" target="_blank"><img src='../../frontend/images/icon/yt.png' alt="image icon"/></a>
                         </div>
                     </div>
                     </div>
@@ -80,7 +80,10 @@
                                                     placeholder="{{__ ('form-msg') }}"
                                                 ></textarea>
                                             </label>
-
+                                            <label>
+                                                Google Recaptcha
+                                                <div class="g-recaptcha" data-sitekey="6Lc4BhEqAAAAACVcTeYp0Nh6UiXzJGz9vw9UO9cS"></div>
+                                            </label>
                                             <button type="submit" id="btn_form_message" disabled>{{__ ('btn-submit') }}</button>
                                         </form>
                                         <iframe
@@ -105,9 +108,6 @@
 
                         ></iframe>
             </div>
-            <!-- map-wrapper end -->
-
-            {{-- </div> --}}
 
             @include('frontend.includes.footer')
 
@@ -223,6 +223,7 @@
                 appearOnScroll();
 
                 $("#btn_form_message").click(function(e) {
+
                 e.preventDefault();
                 let form = $('#form_message')[0];
 
@@ -244,6 +245,7 @@
                             .css("cursor","not-allowed")
                             .css("background","rgb(131, 131, 131)")
                             .attr("disabled",true);
+
                         },
                         error: function(xhr, status, error) {
                             dispNotif('', 'error sending message', 'error');
