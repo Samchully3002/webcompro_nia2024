@@ -41,7 +41,7 @@
 }
 
 .vision_text {
-    font-family: 'Rubik', 'sans-serif' !important;
+    font-family: "Rubik", "sans-serif" !important;
     color: #454a65;
     font-size: 42px;
     text-align: center;
@@ -481,5 +481,22 @@
 
     .news_box label {
         font-size: 32px;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .marquee {
+        gap: 50px;
+        animation: marquee 20s linear infinite;
+    }
+
+    @keyframes marquee {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-32% * 16));
+            /* transform: translateX(-50%); */
+        }
     }
 }
