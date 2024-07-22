@@ -59,4 +59,12 @@ class BusinessController extends Controller
         return view('frontend/pages/business/exportvoucher',compact(['meta']));
     }
 
+    public function webdesign(Request $request): View
+    {
+        $curentURL = $request->path();
+        $meta = MetaTags::where('url', 'LIKE', '%'.$curentURL.'%')->first();
+
+        return view('frontend/pages/business/web_design', compact(['meta']));
+    }
+
 }

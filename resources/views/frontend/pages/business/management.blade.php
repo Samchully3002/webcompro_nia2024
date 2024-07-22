@@ -54,21 +54,21 @@
                                 </div>
                                 <div class="card-wrapper">
                                     <div class="card">
-                                        <img width="18%" src="../frontend/images/icon/ic_samchulypay1.svg" alt="image samchully pay"/>
+                                        <img width="18%" src="../frontend/images/icon/reserv.svg" alt="image samchully pay"/>
                                         <span>{{ __('tnr1') }}</span>
                                         <p>
                                             {{ __('tnr1-content') }}
                                         </p>
                                     </div>
                                     <div class="card">
-                                        <img width="18%" src="../frontend/images/icon/ic_samchulypay2.svg" alt="image samchully pay"/>
+                                        <img width="18%" src="../frontend/images/icon/kiosk.svg" alt="image samchully pay"/>
                                         <span>{{ __('tnr2') }}</span>
                                         <p>
                                             {{ __('tnr2-content') }}
                                         </p>
                                     </div>
                                     <div class="card">
-                                        <img width="18%" src="../frontend/images/icon/ic_samchulypay3.svg" alt="image samchully pay"/>
+                                        <img width="18%" src="../frontend/images/icon/settlement.svg" alt="image samchully pay"/>
                                         <span>{{ __('tnr3') }}</span>
                                         <p>
                                             {{ __('tnr3-content') }}
@@ -114,6 +114,8 @@
                             <div class="content">
                                 <div class="text-wrapper">
                                     <p>{{ __('iba-content') }}</p>
+                                    <button id="downloadButton"><span>PDF</span>&nbsp;&nbsp; <img src="../../frontend/images/icon/download.svg" ></button>
+                                    <a id="downloadLink" href="{{asset('frontend/INABUSAPPS.pdf')}}" download style="display: none;"></a>
                                 </div>
                                 <div class="img-box" style="gap: 0px !important;">
                                     <img class="iba" src="../frontend/images/iba1.png"/>
@@ -253,6 +255,11 @@
             }
             x2[slideIndex-1].style.display = "block";
             }
+
+
+            document.getElementById('downloadButton').addEventListener('click', function() {
+            document.getElementById('downloadLink').click();
+        });
         </script>
 
     </body>

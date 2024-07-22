@@ -4,12 +4,12 @@
                 <div class="col-md-6 col-lg-4">
                   <div class="demo-inline-spacing">
                     <h4 class="py-3 mb-4"><span class="text-muted fw-light">Contact Us / </span> List Message</h4>
-                      </div>  
+                      </div>
                 </div>
               </div>
-  
+
                 <hr class="my-5">
-  
+
                 <!-- Striped Rows -->
                 <div class="card">
                     <div class="card-body">
@@ -19,6 +19,7 @@
                       <thead>
                         <tr>
                           <th>No</th>
+                          <th>Sent Date</th>
                           <th>Sender</th>
                           <th>Email</th>
                           <th>Content</th>
@@ -43,6 +44,10 @@
                           <div class="mb-3">
                         <label for="defaultFormControlInput" class="form-label"> Name</label>
                         <input type="text" class="form-control" id="sender" placeholder="John Doe" aria-describedby="defaultFormControlHelp" disabled>
+                      </div>
+                      <div class="mb-3">
+                        <label for="defaultFormControlInput" class="form-label"> Sent Date</label>
+                        <input type="text" class="form-control" id="sent-date" placeholder="sent date" aria-describedby="defaultFormControlHelp" disabled>
                       </div>
                       <div class="mb-3">
                         <label for="defaultFormControlInput" class="form-label"> Email</label>

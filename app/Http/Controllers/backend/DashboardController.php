@@ -26,7 +26,7 @@ class DashboardController extends Controller
 
      public function index(Request $request)
      {
-        
+
         //Our Team
         $employee  = OurTeam::get(); $countEmp = $employee->count();
 
@@ -37,10 +37,10 @@ class DashboardController extends Controller
         $notice    = Notice::get(); $countNotice = $notice->count();
 
         //Message
-        $message   = ContactUs::get()->where('read',0); $countMess = $message->count();
+        $message   = ContactUs::get()->where('read',0)->orderBy('id','ASC'); $countMess = $message->count();
 
         return  view('backend/pages/dashboard', compact('countEmp','countNews','countNotice','countMess'));
-        
+
      }
 
     /**
@@ -63,8 +63,8 @@ class DashboardController extends Controller
                            }else{
                               $btn = '<button onclick="showMessage('.$row->id.')" class="edit btn btn-success btn-sm" data-bs-toggle="offcanvas" data-bs-target="#offcanvasEnd" aria-controls="offcanvasEnd">Read</a>';
                            }
-                           
-      
+
+
                             return $btn;
                     })
                     ->rawColumns(['action'])
@@ -86,7 +86,8 @@ class DashboardController extends Controller
 
         if($message->read == 0){
             $message->update([
-                'read'      =>1
+                'read'      =>1,
+                'readDate' => date('Y-m-d H:i:s')
             ]);
         }
 

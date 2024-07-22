@@ -4,7 +4,6 @@
    <link rel="stylesheet" href="{{asset('frontend/css/contact.css')}}"/>
    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
    <script src="https://www.google.com/recaptcha/api.js?render={{ env('RECAPTCHA_SITE_KEY') }}"></script>
-
    </head>
    <body>
       <!-- <div data-include="component/header"></div> -->
@@ -58,6 +57,7 @@
                                                     id="sender"
                                                     name="sender"
                                                     type="text"
+                                                    onblur="validate()"
                                                     placeholder="{{__ ('form-name') }}"
                                                 />
                                             </label>
@@ -67,6 +67,7 @@
                                                     id="email"
                                                     name="email"
                                                     type="text"
+                                                    onblur="validate()"
                                                     placeholder="{{__ ('form-email') }}"
                                                 />
                                             </label>
@@ -75,27 +76,12 @@
                                                 <textarea
                                                     id="message"
                                                     name="message"
+                                                    onblur="validate()"
                                                     placeholder="{{__ ('form-msg') }}"
                                                 ></textarea>
                                             </label>
-                                            <label>
-                                                Google Recaptcha
                                                 <div class="g-recaptcha" data-sitekey="6Lc4BhEqAAAAACVcTeYp0Nh6UiXzJGz9vw9UO9cS"></div>
-                                            </label>
-
-                                            <!-- <label class="check-box">
-                                                <input
-                                                    type="checkbox"
-                                                    class="checkbox-type1"
-                                                />
-                                                <em
-                                                    >Saya menyetujui pengumpulan dan
-                                                    penggunaan informasi pribadi.</em
-                                                >
-                                            </label> -->
-
-                                            <br/>
-                                            <button type="button" id="btn_form_message">{{__ ('btn-submit') }}</button>
+                                            <button type="submit" id="btn_form_message" disabled>{{__ ('btn-submit') }}</button>
                                         </form>
                                         <iframe
                                             id="iframe1"
@@ -122,56 +108,119 @@
 
             @include('frontend.includes.footer')
 
-        <script type="text/javascript">
-        function dispNotif(title, message, status){
-            Swal.fire({
-            title: '',
-            text: message,
-            icon: status
-            });
-        }
+        <script>
+            function validate() {
 
-        document.addEventListener('DOMContentLoaded', function() {
-            const appearElements = document.querySelectorAll('.appear');
+                // let valid = true;
+                let valid1 = checkEmpty($("#message"));
+                let valid2 = checkEmpty($("#sender"));
+                let valid3 = checkEmail($("#email"));
+                // document.getElementById("btn_form_message").disabled = true;
+                $("#btn_form_message").attr("disabled", true);
 
-            function appearOnScroll() {
-                appearElements.forEach((element, index) => {
-                    // Jika elemen sudah memiliki class 'active', abaikan
-                    if (element.classList.contains('active')) {
-                        return;
-                    }
+                if((valid1) && (valid2) && (valid3)){
+                    // document.getElementById("btn_form_message").disabled = false;
+                    $("#btn_form_message")
+                        .css("cursor","pointer")
+                        .css("background","rgb(18, 165, 229)")
+                        .attr("disabled",false);
+                }else{
+                    $("#btn_form_message")
+                        .css("cursor","not-allowed")
+                        .css("background","rgb(131, 131, 131)")
+                        .attr("disabled",true);
+                }
+            }
+            function checkEmpty(obj) {
+                var name = $(obj).attr("name");
+                $("."+name+"-validation").html("");
+                $(obj).css("border","");
+                if($(obj).val() == "") {
+                    $(obj).css("border","#FF0000 1px solid");
+                    $("."+name+"-validation").html("Required");
+                    return false;
+                }
 
-                    if (isElementInViewport(element)) {
-                        setTimeout(() => {
-                            element.classList.add('active');
-                        }, index * 200); // Delay munculnya setiap elemen
-                    } else {
-                        // Hapus class 'active' saat elemen keluar dari viewport
-                        element.classList.remove('active');
-                    }
+                return true;
+            }
+
+            function checkEmail(obj) {
+                var result = true;
+
+                var name = $(obj).attr("name");
+                $("."+name+"-validation").html("");
+                $(obj).css("border","");
+
+                result = checkEmpty(obj);
+
+                if(!result) {
+                    $(obj).css("border","#FF0000 1px solid");
+                    $("."+name+"-validation").html("Required");
+                    return false;
+                }
+
+                var email_regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,3})+$/;
+                result = email_regex.test($(obj).val());
+
+                if(!result) {
+                    $(obj).css("border","#FF0000 1px solid");
+                    $("."+name+"-validation").html("Invalid");
+                    return false;
+                }
+
+                return result;
+            }
+
+            function dispNotif(title, message, status){
+                Swal.fire({
+                title: '',
+                text: message,
+                icon: status
                 });
             }
 
-            function isElementInViewport(el) {
-                const rect = el.getBoundingClientRect();
-                return (
-                    rect.top >= 0 &&
-                    rect.left >= 0 &&
-                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-                );
-            }
+            document.addEventListener('DOMContentLoaded', function() {
+                const appearElements = document.querySelectorAll('.appear');
 
-            // Handler untuk event scroll
-            window.addEventListener('scroll', appearOnScroll);
+                function appearOnScroll() {
+                    appearElements.forEach((element, index) => {
+                        // Jika elemen sudah memiliki class 'active', abaikan
+                        if (element.classList.contains('active')) {
+                            return;
+                        }
 
-            // Handler untuk event resize (jika ada perubahan ukuran viewport)
-            window.addEventListener('resize', appearOnScroll);
+                        if (isElementInViewport(element)) {
+                            setTimeout(() => {
+                                element.classList.add('active');
+                            }, index * 200); // Delay munculnya setiap elemen
+                        } else {
+                            // Hapus class 'active' saat elemen keluar dari viewport
+                            element.classList.remove('active');
+                        }
+                    });
+                }
 
-            // Panggil sekali ketika halaman dimuat (jika elemen sudah ada di viewport pada awalnya)
-            appearOnScroll();
+                function isElementInViewport(el) {
+                    const rect = el.getBoundingClientRect();
+                    return (
+                        rect.top >= 0 &&
+                        rect.left >= 0 &&
+                        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                    );
+                }
 
-            $("#btn_form_message").click(function(e) {
+                // Handler untuk event scroll
+                window.addEventListener('scroll', appearOnScroll);
+
+                // Handler untuk event resize (jika ada perubahan ukuran viewport)
+                window.addEventListener('resize', appearOnScroll);
+
+                // Panggil sekali ketika halaman dimuat (jika elemen sudah ada di viewport pada awalnya)
+                appearOnScroll();
+
+                $("#btn_form_message").click(function(e) {
+
                 e.preventDefault();
                 let form = $('#form_message')[0];
 
@@ -187,8 +236,13 @@
                         processData: false,
                         contentType: false,
                         success: function(response) {
-                            $('#form_message')[0].reset();
                             dispNotif('sending message success', response.message, 'success');
+                            $('#form_message')[0].reset();
+                            $("#btn_form_message")
+                            .css("cursor","not-allowed")
+                            .css("background","rgb(131, 131, 131)")
+                            .attr("disabled",true);
+
                         },
                         error: function(xhr, status, error) {
                             dispNotif('', 'error sending message', 'error');

@@ -12,8 +12,8 @@
             <!-- bg-wrapper start -->
             <div class="bg-wrapper bisnis4">
                 <div class="text-box">
-                    <h1 class="appear">{{ __('ev') }}</h1>
-                    <p class="appear">{{ __('ev-head') }}</p>
+                    <h1 class="appear">{{ __('wdd') }}</h1>
+                    <p class="appear">{{ __('wdd-head') }}</p>
                 </div>
             </div>
             <!-- bg-wrapper end -->
@@ -37,14 +37,14 @@
                                 </div>
                                 <div class="card-wrapper">
                                     <div class="card">
-                                        <img width="18%" src="../frontend/images/icon/ic_exportvoucher01-A.svg" alt="image export voucher"/>
+                                        <img width="18%" src="../frontend/images/icon/ic_exportvoucher01-A.svg"/>
                                         <span>{{ __('rnc1') }}</span>
                                         <p>
                                             {{ __('rnc1-content') }}
                                         </p>
                                     </div>
                                     <div class="card">
-                                        <img width="18%" src="../frontend/images/icon/ic_exportvoucher01-B.svg" alt="image export voucher"/>
+                                        <img width="18%" src="../frontend/images/icon/ic_exportvoucher01-B.svg"/>
                                         <span>{{ __('rnc2') }}</span>
                                         <p>
                                             {{ __('rnc2-content') }}
@@ -53,14 +53,14 @@
                                 </div>
                                 <div class="card-wrapper">
                                     <div class="card">
-                                        <img width="18%" src="../frontend/images/icon/ic_exportvoucher01-C.svg" alt="image export voucher"/>
+                                        <img width="18%" src="../frontend/images/icon/ic_exportvoucher01-C.svg"/>
                                         <span>{{ __('rnc3') }}</span>
                                         <p>
                                             {{ __('rnc3-content') }}
                                         </p>
                                     </div>
                                     <div class="card">
-                                        <img width="18%" src="../frontend/images/icon/ic_exportvoucher01-D.svg" alt="image export voucher"/>
+                                        <img width="18%" src="../frontend/images/icon/ic_exportvoucher01-D.svg"/>
                                         <span>{{ __('rnc4') }}</span>
                                         <p>
                                             {{ __('rnc4-content') }}
@@ -69,14 +69,14 @@
                                 </div>
                                 <div class="card-wrapper">
                                     <div class="card">
-                                        <img width="18%" src="../frontend/images/icon/ic_exportvoucher01-E.svg" alt="image export voucher"/>
+                                        <img width="18%" src="../frontend/images/icon/ic_exportvoucher01-E.svg"/>
                                         <span>{{ __('rnc5') }}</span>
                                         <p>
                                             {{ __('rnc5-content') }}
                                         </p>
                                     </div>
                                     <div class="card">
-                                        <img width="18%" src="../frontend/images/icon/ic_exportvoucher01-F.svg" alt="image export voucher"/>
+                                        <img width="18%" src="../frontend/images/icon/ic_exportvoucher01-F.svg"/>
                                         <span>{{ __('rnc6') }}</span>
                                         <p>
                                             {{ __('rnc6-content') }}
@@ -144,21 +144,21 @@
                                 </div>
                                 <div class="card-wrapper">
                                     <div class="card-grey">
-                                        <img width="30%" src="../frontend/images/icon/ic_exportvoucher03-A.svg" alt="image export voucher"/>
+                                        <img width="30%" src="../frontend/images/icon/ic_exportvoucher03-A.svg"/>
                                         <span>{{ __('md1') }}</span>
                                         <p>
                                             {{ __('md1-content') }}
                                         </p>
                                     </div>
                                     <div class="card-grey">
-                                        <img width="30%" src="../frontend/images/icon/ic_exportvoucher03-B.svg" alt="image export voucher"/>
+                                        <img width="30%" src="../frontend/images/icon/ic_exportvoucher03-B.svg"/>
                                         <span>{{ __('md2') }}</span>
                                         <p>
                                             {{ __('md2-content') }}
                                         </p>
                                     </div>
                                     <div class="card-grey">
-                                        <img width="30%" src="../frontend/images/icon/ic_exportvoucher03-C.svg" alt="image export voucher"/>
+                                        <img width="30%" src="../frontend/images/icon/ic_exportvoucher03-C.svg"/>
                                         <span>{{ __('md3') }}</span>
                                         <p>
                                             {{ __('md3-content') }}
@@ -185,14 +185,14 @@
                                 </div>
                                 <div class="card-wrapper">
                                     <div class="card-grey">
-                                        <img width="18%" src="../frontend/images/icon/ic_exportvoucher04-A.svg" alt="image export voucher"/>
+                                        <img width="18%" src="../frontend/images/icon/ic_exportvoucher04-A.svg"/>
                                         <span>{{ __('its1') }}</span>
                                         <p>
                                             {{ __('its1-content') }}
                                         </p>
                                     </div>
                                     <div class="card-grey">
-                                        <img width="18%" src="../frontend/images/icon/ic_exportvoucher04-B.svg" alt="image export voucher"/>
+                                        <img width="18%" src="../frontend/images/icon/ic_exportvoucher04-B.svg"/>
                                         <span>{{ __('its2') }}</span>
                                         <p>
                                             {{ __('its2-content') }}
@@ -201,14 +201,14 @@
                                 </div>
                                 <div class="card-wrapper">
                                     <div class="card-grey">
-                                        <img width="18%" src="../frontend/images/icon/ic_exportvoucher04-C.svg" alt="image export voucher"/>
+                                        <img width="18%" src="../frontend/images/icon/ic_exportvoucher04-C.svg"/>
                                         <span>{{ __('its3') }}</span>
                                         <p>
                                             {{ __('its3-content') }}
                                         </p>
                                     </div>
                                     <div class="card-grey">
-                                        <img width="18%" src="../frontend/images/icon/ic_exportvoucher04-D.svg"/>
+                                        <img width="18%" src="../frontend/images/icon/ic_exportvoucher01-D.svg"/>
                                         <span>{{ __('its4') }}</span>
                                         <p>
                                             {{ __('its4-content') }}

@@ -16,6 +16,7 @@
                             <li><a href="/our-business/digital-healthcare"><em>{{ __('dh') }}</em></a></li>
                             <li><a href="/our-business/system-development-management"><em>{{ __('sdm') }}</em></a></li>
                             <li><a href="/our-business/export-voucher"><em>{{ __('ev') }}</em></a></li>
+                            {{-- <li><a href="/our-business/webDesign"><em>{{ __('wdd') }}</em></a></li> --}}
                         </ul>
                     </li>
                     <li class="first-menu hidden-box"><a href="/about-us">{{ __('navbar-about') }}</a>
@@ -99,6 +100,8 @@
                             <a href="/our-business/system-development-management">{{ __('sdm') }}</a>
                             <br />
                             <a href="/our-business/export-voucher">{{ __('ev') }}</a>
+                            {{-- <br />
+                            <a href="/our-business/webdesign">{{ __('wdd') }}</a> --}}
                         </div>
                     </li>
 

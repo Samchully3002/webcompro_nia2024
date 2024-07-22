@@ -35,6 +35,8 @@
     "sdm-content": "From planning to maintenance, we offer innovative solutions with unique expertise for domestic and global clients.",
     "ev": "Export Voucher",
     "ev-content": "We assist in every step for successful business execution, from analysis to document services and translation for global expansion.",
+    "wdd": "Web Design & Development",
+    "wdd-content": "We assist in every step for successful business execution, from analysis to document services and translation for global expansion.",
     "btn-more": "More",
     "title-client": "Collaborating seamlessly to create value and drive success for our clients.",
     "latest-news": "Latest News",
@@ -83,14 +85,13 @@
     "pis": "Payment Integration System",
     "pis-content": "We support various payment methods including credit cards, QR codes, and mobile payments, offering flexible options for both online and offline transactions, as well as kiosk payments. With our robust and reliable management system, you can easily and quickly process orders, approvals, cancellations, changes, and settlements, while also receiving high-quality settlement reports.",
     "iba": "INA Bus Apps",
-    "iba-content": "Bus drivers often face challenges such as on-time performance, optimal routes, and reporting technical issues. This app is designed to assist drivers by providing relevant information in real time so they can perform their duties more efficiently and safely. This app can scan tickets, count passengers, tracking bus and selling tickets..",
+    "iba-content": "Bus drivers often face challenges such as on-time performance, optimal routes, and reporting technical issues. This app is designed to assist drivers by providing relevant information in real time so they can perform their duties more efficiently and safely. This app can scan tickets, count passengers, tracking bus and selling tickets.",
     "iba1": "Convenience",
     "iba1-content": "Make it easier for drivers to perform their daily tasks by providing integrated tools & Low use of physical tickets.",
     "iba2": "Support",
     "iba2-content": "Ensures drivers can report problems and get help quickly.",
     "iba3": "Effeciency",
     "iba3-content": "Assists drivers in effectively managing their time and routes.",
-
 
     "ev-head": "We collect and analyze country-specific information to optimize data for each target market, offering business feasibility analysis and infrastructure consulting to localize Korea's advanced technology. Additionally, we provide document services, including visas and customs clearance, as well as translation and interpretation support for successful business execution.",
     "rnc": "Research & Consulting",
@@ -133,6 +134,7 @@
     "its3-content": "General business document translation. Translation of general content, website/blog/publication materials, and all types of documents",
     "its4": "Specialized Document Translation",
     "its4-content": "Translation requiring precise terminology and technical understanding, such as patent specifications, transportation/communication/electronics/mechanical/financial/medical documents",
+    "wdd-head": "We assist in every step for successful business execution, from analysis to document services and translation for global expansion.",
 
     "10years": "Years of Proven Experience",
     "10years-content": "With a decade's worth of expertise and top-notch infrastructure, NIA stands as your steadfast ally.",
