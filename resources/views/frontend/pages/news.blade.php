@@ -26,7 +26,7 @@
                         <div class="imx">
                             <a class="item" href="{{$post->source}}">
                                 <div class="img-box">
-                                    <img src="/backend/images/news/{{$post->image}}"/>
+                                    <img src="/backend/images/news/{{$post->image}}" alt="image post {{$post->title}}"/>
                                 </div>
                                 <span class="publisher">{{parse_url($post->source, PHP_URL_HOST);}}</span>
                                 <h3>

@@ -13,7 +13,7 @@
         <div class="banner-wrapper">
             <div class="box">
                 <div class="left-content">
-                    <img src="../frontend/images/icon_10_about.svg">
+                    <img src="../frontend/images/icon_10_about.svg" alt="img icon 10">
                     <span >{{__ ('10years') }}</span>
                 </div>
                 <div class="right-content">
@@ -28,7 +28,7 @@
         <!-- CEO Message start -->
         <div class="ceo_message">
             <div class="img_wrapper">
-                <img src="../frontend/images/CEO_Photo.png"/>
+                <img src="../frontend/images/CEO_Photo.png" alt="image of ceo"/>
             </div>
             <div class="text_wrapper">
 
@@ -53,7 +53,7 @@
                        <!-- Left Content -->
                        <div class="left-box">
                           <div class="container-imageyear">
-                             <img id="year_img" style="border-radius: 20px; box-shadow: 0px 5px 24px 0px rgba(0, 0, 0, 0.2);" src="{{asset('frontend/images/story2024.png')}}"/>
+                             <img alt="year image" id="year_img" style="border-radius: 20px; box-shadow: 0px 5px 24px 0px rgba(0, 0, 0, 0.2);" src="{{asset('frontend/images/story2024.png')}}"/>
                              <h1 id="year_history" style="font-weight: 500; font-size: 40px;">2024</h1>
                           </div>
                        </div>
@@ -373,7 +373,7 @@
                                 <div class="collapsible-content">
                                     <div class="content">
                                         <div class="img-box">
-                                            <img src="../frontend/images/story2024.png"/>
+                                            <img src="../frontend/images/story2024.png" alt="image story 2024"/>
                                         </div>
                                         <div class="text-wrapper">
                                             <h1 >{{__ ('april') }}</h1>
@@ -404,7 +404,7 @@
                                 <div class="collapsible-content">
                                     <div class="content">
                                         <div class="img-box">
-                                            <img src="../frontend/images/story2023.png"/>
+                                            <img src="../frontend/images/story2023.png" alt="image story 2023"/>
                                         </div>
                                         <div class="text-wrapper">
                                             <h1 >{{__ ('november') }}</h1>
@@ -420,7 +420,7 @@
                                         </div>
                                         <div class="text-wrapper">
                                             <h1 >{{__ ('july') }}</h1>
-                                            <p>{{__ ('2023jul')}}</p>  
+                                            <p>{{__ ('2023jul')}}</p>
                                         </div>
                                         <div class="text-wrapper">
                                                 <h1 >{{__ ('january') }}</h1>
@@ -440,7 +440,7 @@
                                 <div class="collapsible-content">
                                     <div class="content">
                                         <div class="img-box">
-                                            <img src="../frontend/images/story2022.png"/>
+                                            <img src="../frontend/images/story2022.png" alt="image story 2022"/>
                                         </div>
                                         <div class="text-wrapper">
                                             <h1 >{{__ ('november') }}</h1>
@@ -464,7 +464,7 @@
                                 <div class="collapsible-content">
                                     <div class="content">
                                         <div class="img-box">
-                                            <img src="../frontend/images/story2021.png"/>
+                                            <img src="../frontend/images/story2021.png" alt="image story 2021"/>
                                         </div>
                                         <div class="text-wrapper">
                                             <h1 >{{__ ('december') }}</h1>
@@ -498,7 +498,7 @@
                                 <div class="collapsible-content">
                                     <div class="content">
                                         <div class="img-box">
-                                            <img src="../frontend/images/story2020.png"/>
+                                            <img src="../frontend/images/story2020.png" alt="image story 2020"/>
                                         </div>
                                         <div class="text-wrapper">
                                             <h1 >{{__ ('december') }}</h1>
@@ -531,7 +531,7 @@
                                 <div class="collapsible-content">
                                     <div class="content">
                                         <div class="img-box">
-                                            <img src="../frontend/images/story2019.png"/>
+                                            <img src="../frontend/images/story2019.png" alt="image story 2019"/>
                                         </div>
                                         <div class="text-wrapper">
                                             <h1 >{{__ ('july') }}</h1>
@@ -563,7 +563,7 @@
                                 <div class="collapsible-content">
                                     <div class="content">
                                         <div class="img-box">
-                                            <img src="../frontend/images/story2018.png"/>
+                                            <img src="../frontend/images/story2018.png" alt="image story 2018"/>
                                         </div>
                                         <div class="text-wrapper">
                                             <h1 >{{__ ('september') }}</h1>
@@ -591,7 +591,7 @@
                                 <div class="collapsible-content">
                                     <div class="content">
                                         <div class="img-box">
-                                            <img src="../frontend/images/story2017.png"/>
+                                            <img src="../frontend/images/story2017.png" alt="image story 2017"/>
                                         </div>
                                         <div class="text-wrapper">
                                             <h1 >{{__ ('january') }}</h1>
@@ -611,7 +611,7 @@
                                 <div class="collapsible-content">
                                     <div class="content">
                                         <div class="img-box">
-                                            <img src="../frontend/images/story2016.png"/>
+                                            <img src="../frontend/images/story2016.png" alt="image story 2016"/>
                                         </div>
                                         <div class="text-wrapper">
                                             <h1 >{{__ ('october') }}</h1>
@@ -635,7 +635,7 @@
                                 <div class="collapsible-content">
                                     <div class="content">
                                         <div class="img-box">
-                                            <img src="../frontend/images/story2015.png"/>
+                                            <img src="../frontend/images/story2015.png" alt="image story 2015"/>
                                         </div>
                                         <div class="text-wrapper">
                                             <h1 >{{__ ('may') }}</h1>
@@ -659,7 +659,7 @@
                                 <div class="collapsible-content">
                                     <div class="content">
                                         <div class="img-box">
-                                            <img src="../frontend/images/story2014.png"/>
+                                            <img src="../frontend/images/story2014.png" alt="image story 2014"/>
                                         </div>
                                         <div class="text-wrapper">
                                             <h1 >{{__ ('october') }}</h1>
@@ -685,25 +685,25 @@
             <!-- Core Text -->
             <div class="core-text">
                 <div class=core-img>
-                    <img src="../frontend/images/icon/ic_core_C.svg"/>
+                    <img src="../frontend/images/icon/ic_core_C.svg" alt="image icon core-text"/>
                 </div>
                 <div class=core-img>
-                    <img src="../frontend/images/icon/ic_core_O.svg"/>
+                    <img src="../frontend/images/icon/ic_core_O.svg" alt="image icon core-text"/>
                 </div>
                 <div class=core-img>
-                    <img src="../frontend/images/icon/ic_core_N.svg"/>
+                    <img src="../frontend/images/icon/ic_core_N.svg" alt="image icon core-text"/>
                 </div>
                 <div class=core-img>
-                    <img src="../frontend/images/icon/ic_core_N2.svg"/>
+                    <img src="../frontend/images/icon/ic_core_N2.svg" alt="image icon core-text"/>
                 </div>
                 <div class=core-img>
-                    <img src="../frontend/images/icon/ic_core_E.svg"/>
+                    <img src="../frontend/images/icon/ic_core_E.svg" alt="image icon core-text"/>
                 </div>
                 <div class=core-img>
-                    <img src="../frontend/images/icon/ic_core_C2.svg"/>
+                    <img src="../frontend/images/icon/ic_core_C2.svg" alt="image icon core-text"/>
                 </div>
                 <div class=core-img>
-                    <img src="../frontend/images/icon/ic_core_T.svg"/>
+                    <img src="../frontend/images/icon/ic_core_T.svg" alt="image icon core-text"/>
                 </div>
             </div>
             <!-- Core Text -->
@@ -783,7 +783,7 @@
                                 <div class="wrap">
                                     <div class="item">
                                         <div class="foto-box">
-                                            <img src="../frontend/images/tm_mr_son.png">
+                                            <img src="../frontend/images/tm_mr_son.png" alt="image ceo">
                                         </div>
                                     </div>
                                     <div class="text-item">
@@ -811,7 +811,7 @@
                                 <div class="wrap">
                                     <div class="item">
                                         <div class="foto-box">
-                                            <img src="../frontend/images/tm_miss_kim.png">
+                                            <img src="../frontend/images/tm_miss_kim.png" alt="image deputy manager">
                                         </div>
                                     </div>
                                     <div class="text-item">
@@ -845,7 +845,7 @@
                         <div class="wrap">
                             <div class="item">
                                 <div class="foto-box">
-                                    <img src="{{asset('backend/images/employee/'.$item['image'])}}">
+                                    <img src="{{asset('backend/images/employee/'.$item['image'])}}" alt="image employee {{$item['fullname']}}"/>
                                 </div>
                             </div>
                             <div class="text-item">
@@ -879,50 +879,50 @@
             <div class="wrapper">
                 <section class="wrap-content">
                     <div class="marquee">
-                        <img src="../frontend/images/office1.png"/>
-                        <img src="../frontend/images/office2.png"/>
-                        <img src="../frontend/images/office3.png"/>
-                        <img src="../frontend/images/office4.png"/>
-                        <img src="../frontend/images/office5.png"/>
-                        <img src="../frontend/images/office6.png"/>
+                        <img src="../frontend/images/office1.png" alt="image office"/>
+                        <img src="../frontend/images/office2.png" alt="image office"/>
+                        <img src="../frontend/images/office3.png" alt="image office"/>
+                        <img src="../frontend/images/office4.png" alt="image office"/>
+                        <img src="../frontend/images/office5.png" alt="image office"/>
+                        <img src="../frontend/images/office6.png" alt="image office"/>
 
-                        <img src="../frontend/images/office1.png"/>
-                        <img src="../frontend/images/office2.png"/>
-                        <img src="../frontend/images/office3.png"/>
-                        <img src="../frontend/images/office4.png"/>
-                        <img src="../frontend/images/office5.png"/>
-                        <img src="../frontend/images/office6.png"/>
+                        <img src="../frontend/images/office1.png" alt="image office"/>
+                        <img src="../frontend/images/office2.png" alt="image office"/>
+                        <img src="../frontend/images/office3.png" alt="image office"/>
+                        <img src="../frontend/images/office4.png" alt="image office"/>
+                        <img src="../frontend/images/office5.png" alt="image office"/>
+                        <img src="../frontend/images/office6.png" alt="image office"/>
 
-                        <img src="../frontend/images/office1.png"/>
-                        <img src="../frontend/images/office2.png"/>
-                        <img src="../frontend/images/office3.png"/>
-                        <img src="../frontend/images/office4.png"/>
-                        <img src="../frontend/images/office5.png"/>
-                        <img src="../frontend/images/office6.png"/>
+                        <img src="../frontend/images/office1.png" alt="image office"/>
+                        <img src="../frontend/images/office2.png" alt="image office"/>
+                        <img src="../frontend/images/office3.png" alt="image office"/>
+                        <img src="../frontend/images/office4.png" alt="image office"/>
+                        <img src="../frontend/images/office5.png" alt="image office"/>
+                        <img src="../frontend/images/office6.png" alt="image office"/>
 
-                        <img src="../frontend/images/office1.png"/>
-                        <img src="../frontend/images/office2.png"/>
-                        <img src="../frontend/images/office3.png"/>
-                        <img src="../frontend/images/office4.png"/>
-                        <img src="../frontend/images/office5.png"/>
-                        <img src="../frontend/images/office6.png"/>
+                        <img src="../frontend/images/office1.png" alt="image office"/>
+                        <img src="../frontend/images/office2.png" alt="image office"/>
+                        <img src="../frontend/images/office3.png" alt="image office"/>
+                        <img src="../frontend/images/office4.png" alt="image office"/>
+                        <img src="../frontend/images/office5.png" alt="image office"/>
+                        <img src="../frontend/images/office6.png" alt="image office"/>
 
                     {{-- <marquee>
                     <ul class="list-content">
                         <li class="contents">
-                            <img src="../frontend/images/office_foto_1.svg"/>
+                            <img src="../frontend/images/office_foto_1.svg" alt="image office"/>
                         </li>
                         <li class="contents">
-                            <img src="../frontend/images/office_foto_2.svg"/>
+                            <img src="../frontend/images/office_foto_2.svg" alt="image office"/>
                         </li>
                         <li class="contents">
-                            <img src="../frontend/images/office_foto_3.svg"/>
+                            <img src="../frontend/images/office_foto_3.svg" alt="image office"/>
                         </li>
                         <li class="contents">
-                            <img src="../frontend/images/office_foto_4.svg"/>
+                            <img src="../frontend/images/office_foto_4.svg" alt="image office"/>
                         </li>
                         <li class="contents">
-                            <img src="../frontend/images/office_foto_5.svg"/>
+                            <img src="../frontend/images/office_foto_5.svg" alt="image office"/>
                         </li>
                     </ul>
                 </marquee> --}}
@@ -933,7 +933,7 @@
         <div class="office-maps">
             <div class="box">
                 <div class="img-wrapper">
-                    <img src="../frontend/images/office_loc_map.png"/>
+                    <img src="../frontend/images/office_loc_map.png" alt="image office map"/>
                 </div>
                 <div class="container-card-maps">
                         <div class="card-maps">

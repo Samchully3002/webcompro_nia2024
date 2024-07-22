@@ -10,9 +10,11 @@
     <title>{{ $meta->title ? $meta->title : 'Networks Indonesia Aku' }}</title>
     <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=2, minimum-scale=1, width=device-width" />
     <meta charset="utf-8">
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="googlebot" content="noindex">
-    <meta name="bingbot" content="nofollow">
+
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+
     <meta name="description" content="{{ $meta->desc ? $meta->desc : '' }}"></meta>
     <meta name="keywords" content="{{ $meta->keyword ? $meta->keyword : '' }}"></meta>
     <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=2, minimum-scale=1, width=device-width" />
@@ -34,6 +36,7 @@
                 document.getElementsByTagName("body")[0].style.fontFamily = 'Pretendard';
             //   alert('korea');
         }
+
             let url = $(location).attr('href');
             const visited = url.substring(url.lastIndexOf('/') + 1);
             $.getJSON("https://ipinfo.io",
@@ -61,23 +64,28 @@
             }, "jsonp");
           });
     </script>
-    <script type="application/ld+json">
+    <!-- <script type="application/ld+json">
     {
-      "@context" : "https://schema.org",
-      "@type" : "WebSite",
-      "name" : "Networks Indonesia Aku",
-      "alternateName" : ["NIA", "pt nia", "nia"],
-      "url" : "https://nia.co.id/",
+   
+      "@context": "https://schema.org",
+   
+      "@type": "WebSite",
+   
+      "url": "https://www.nia.co.id/",
+   
       "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://query.google.com/search?q={'networks indonesia aku'}"
-        },
-        "query-input": "required name=networks indonesia aku"
-      }
-    }
-  </script>
+   
+      "@type": "SearchAction",
+   
+      "target": "https://query.nia.co.id/search?q={search_term_string}",
+   
+      "query-input": "required name=search_term_string"
+   
+     }
+   
+   }
+   
+</script> -->
 
 
 

@@ -23,7 +23,7 @@
           <div class="product-box">
             <div class="product-wrapper">
                 {{-- <div class="img-backdrop">
-                    <img src="../frontend/images/business-backdrop.png"/>
+                    <img src="../frontend/images/business-backdrop.png" alt="business backdrop image"/>
                 </div> --}}
                 <div class="colls-wrapper">
                     <div class="wrap-collabsible">
@@ -39,34 +39,34 @@
                                     <p>{{ __('samchullypay-content') }}</p>
                                 </div>
                                 <div class="img-box">
-                                    <img src="../frontend/images/bs-samchulypay1.svg"/>
-                                    <img src="../frontend/images/bs-samchulypay2.svg"/>
-                                    <img src="../frontend/images/bs-samchulypay3.svg"/>
+                                    <img src="../frontend/images/bs-samchulypay1.svg" alt="image samchully pay"/>
+                                    <img src="../frontend/images/bs-samchulypay2.svg" alt="image samchully pay"/>
+                                    <img src="../frontend/images/bs-samchulypay3.svg" alt="image samchully pay"/>
                                 </div>
                                 <div class="img-box-mobile">
                                     <button class="btn_prev_img" onclick="plusDivs(-1)">&#8249;</button>
 
-                                    <img class="mySlides1" src="../frontend/images/bs-samchulypay1.svg"/>
-                                    <img class="mySlides1" src="../frontend/images/bs-samchulypay2.svg"/>
-                                    <img class="mySlides1" src="../frontend/images/bs-samchulypay3.svg"/>
+                                    <img class="mySlides1" src="../frontend/images/bs-samchulypay1.svg" alt="image samchully pay"/>
+                                    <img class="mySlides1" src="../frontend/images/bs-samchulypay2.svg" alt="image samchully pay"/>
+                                    <img class="mySlides1" src="../frontend/images/bs-samchulypay3.svg" alt="image samchully pay"/>
 
                                     <button class="btn_next_img" onclick="plusDivs(1)">&#8250;</button>
                                 </div>
                                 <div class="card-wrapper">
                                     <div class="card">
-                                        <img width="18%" src="../frontend/images/icon/ic_samchulypay1.svg"/>
+                                        <img width="18%" src="../frontend/images/icon/ic_samchulypay1.svg" alt="image samchully pay"/>
                                         <span>{{ __('samchullypay1') }}</span>
                                         <p> {{ __('samchullypay1-content') }}
                                         </p>
                                     </div>
                                     <div class="card">
-                                        <img width="18%" src="../frontend/images/icon/ic_samchulypay2.svg"/>
+                                        <img width="18%" src="../frontend/images/icon/ic_samchulypay2.svg" alt="image samchully pay"/>
                                         <span>{{ __('samchullypay2') }}</span>
                                         <p> {{ __('samchullypay2-content') }}
                                         </p>
                                     </div>
                                     <div class="card">
-                                        <img width="18%" src="../frontend/images/icon/ic_samchulypay3.svg"/>
+                                        <img width="18%" src="../frontend/images/icon/ic_samchulypay3.svg" alt="image samchully pay"/>
                                         <span>{{ __('samchullypay3') }}</span>
                                         <p> {{ __('samchullypay2-content') }}
                                         </p>
@@ -91,36 +91,36 @@
                                     <p>{{ __('olligo-content') }}</p>
                                 </div>
                                 <div class="img-box">
-                                    <img src="../frontend/images/bs-olligo1.svg"/>
-                                    <img src="../frontend/images/bs-olligo2.svg"/>
-                                    <img src="../frontend/images/bs-olligo3.svg"/>
+                                    <img src="../frontend/images/bs-olligo1.svg" alt="image olligo"/>
+                                    <img src="../frontend/images/bs-olligo2.svg" alt="image olligo"/>
+                                    <img src="../frontend/images/bs-olligo3.svg" alt="image olligo"/>
                                 </div>
                                 <div class="img-box-mobile">
                                     <button class="btn_prev_img" onclick="plusDivs(-1)">&#8249;</button>
 
-                                    <img class="mySlides2" src="../frontend/images/bs-olligo1.svg"/>
-                                    <img class="mySlides2" src="../frontend/images/bs-olligo2.svg"/>
-                                    <img class="mySlides2" src="../frontend/images/bs-olligo3.svg"/>
+                                    <img class="mySlides2" src="../frontend/images/bs-olligo1.svg" alt="image olligo"/>
+                                    <img class="mySlides2" src="../frontend/images/bs-olligo2.svg" alt="image olligo"/>
+                                    <img class="mySlides2" src="../frontend/images/bs-olligo3.svg" alt="image olligo"/>
 
                                     <button class="btn_next_img" onclick="plusDivs(1)">&#8250;</button>
                                 </div>
                                 <div class="card-wrapper">
                                     <div class="card">
-                                        <img width="18%" src="../frontend/images/icon/ic_olligo1.svg"/>
+                                        <img width="18%" src="../frontend/images/icon/ic_olligo1.svg" alt="image olligo"/>
                                         <span>{{ __('olligo1') }}</span>
                                         <p>
                                             {{ __('olligo1-content') }}
                                         </p>
                                     </div>
                                     <div class="card">
-                                        <img width="18%" src="../frontend/images/icon/ic_olligo2.svg"/>
+                                        <img width="18%" src="../frontend/images/icon/ic_olligo2.svg" alt="image olligo"/>
                                         <span>{{ __('olligo2') }}</span>
                                         <p>
                                             {{ __('olligo2-content') }}
                                         </p>
                                     </div>
                                     <div class="card">
-                                        <img width="18%" src="../frontend/images/icon/ic_olligo3.svg"/>
+                                        <img width="18%" src="../frontend/images/icon/ic_olligo3.svg" alt="image olligo"/>
                                         <span>{{ __('olligo3') }}</span>
                                         <p>
                                             {{ __('olligo3-content') }}
@@ -146,18 +146,18 @@
                                     <p>{{ __('chaonda-content') }}</p>
                                 </div>
                                 <div class="img-box">
-                                    <img src="../frontend/images/bs-chaonda1.svg"/>
-                                    <img src="../frontend/images/bs-chaonda2.svg"/>
-                                    <img src="../frontend/images/bs-chaonda3.svg"/>
-                                    <img src="../frontend/images/bs-chaonda4.svg"/>
+                                    <img src="../frontend/images/bs-chaonda1.svg" alt="image chaonda"/>
+                                    <img src="../frontend/images/bs-chaonda2.svg" alt="image chaonda"/>
+                                    <img src="../frontend/images/bs-chaonda3.svg" alt="image chaonda"/>
+                                    <img src="../frontend/images/bs-chaonda4.svg" alt="image chaonda"/>
                                 </div>
                                 <div class="img-box-mobile">
                                     <button class="btn_prev_img" onclick="plusDivs(-1)">&#8249;</button>
 
-                                    <img class="mySlides3" src="../frontend/images/bs-chaonda1.svg"/>
-                                    <img class="mySlides3" src="../frontend/images/bs-chaonda2.svg"/>
-                                    <img class="mySlides3" src="../frontend/images/bs-chaonda3.svg"/>
-                                    <img class="mySlides3" src="../frontend/images/bs-chaonda4.svg"/>
+                                    <img class="mySlides3" src="../frontend/images/bs-chaonda1.svg" alt="image chaonda"/>
+                                    <img class="mySlides3" src="../frontend/images/bs-chaonda2.svg" alt="image chaonda"/>
+                                    <img class="mySlides3" src="../frontend/images/bs-chaonda3.svg" alt="image chaonda"/>
+                                    <img class="mySlides3" src="../frontend/images/bs-chaonda4.svg" alt="image chaonda"/>
 
                                     <button class="btn_next_img" onclick="plusDivs(1)">&#8250;</button>
                                 </div>
@@ -180,18 +180,18 @@
                                     <p>{{ __('commuterbus-content') }}</p>
                                 </div>
                                 <div class="img-box">
-                                    <img src="../frontend/images/bs-commuter1.svg"/>
-                                    <img src="../frontend/images/bs-commuter2.svg"/>
-                                    <img src="../frontend/images/bs-commuter3.svg"/>
-                                    <img src="../frontend/images/bs-commuter4.svg"/>
+                                    <img src="../frontend/images/bs-commuter1.svg" alt="image commuter"/>
+                                    <img src="../frontend/images/bs-commuter2.svg" alt="image commuter"/>
+                                    <img src="../frontend/images/bs-commuter3.svg" alt="image commuter"/>
+                                    <img src="../frontend/images/bs-commuter4.svg" alt="image commuter"/>
                                 </div>
                                 <div class="img-box-mobile">
                                     <button class="btn_prev_img" onclick="plusDivs(-1)">&#8249;</button>
 
-                                    <img class="mySlides4" src="../frontend/images/bs-commuter1.svg"/>
-                                    <img class="mySlides4" src="../frontend/images/bs-commuter2.svg"/>
-                                    <img class="mySlides4" src="../frontend/images/bs-commuter3.svg"/>
-                                    <img class="mySlides4" src="../frontend/images/bs-commuter4.svg"/>
+                                    <img class="mySlides4" src="../frontend/images/bs-commuter1.svg" alt="image commuter"/>
+                                    <img class="mySlides4" src="../frontend/images/bs-commuter2.svg" alt="image commuter"/>
+                                    <img class="mySlides4" src="../frontend/images/bs-commuter3.svg" alt="image commuter"/>
+                                    <img class="mySlides4" src="../frontend/images/bs-commuter4.svg" alt="image commuter"/>
 
                                     <button class="btn_next_img" onclick="plusDivs(1)">&#8250;</button>
                                 </div>
