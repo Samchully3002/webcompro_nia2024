@@ -19,7 +19,7 @@
                       <thead>
                         <tr>
                           <th>No</th>
-                          <th>Sent Date</th>
+                          {{-- <th>Sent Date</th> --}}
                           <th>Sender</th>
                           <th>Email</th>
                           <th>Content</th>
@@ -45,10 +45,10 @@
                         <label for="defaultFormControlInput" class="form-label"> Name</label>
                         <input type="text" class="form-control" id="sender" placeholder="John Doe" aria-describedby="defaultFormControlHelp" disabled>
                       </div>
-                      <div class="mb-3">
+                      {{-- <div class="mb-3">
                         <label for="defaultFormControlInput" class="form-label"> Sent Date</label>
                         <input type="text" class="form-control" id="sent-date" placeholder="sent date" aria-describedby="defaultFormControlHelp" disabled>
-                      </div>
+                      </div> --}}
                       <div class="mb-3">
                         <label for="defaultFormControlInput" class="form-label"> Email</label>
                         <input type="text" class="form-control" id="email" placeholder="John Doe" aria-describedby="defaultFormControlHelp" disabled>

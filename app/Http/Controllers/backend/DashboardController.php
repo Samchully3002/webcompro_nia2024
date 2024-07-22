@@ -37,7 +37,7 @@ class DashboardController extends Controller
         $notice    = Notice::get(); $countNotice = $notice->count();
 
         //Message
-        $message   = ContactUs::get()->where('read',0)->orderBy('id','ASC'); $countMess = $message->count();
+        $message   = ContactUs::get()->where('read',0); $countMess = $message->count();
 
         return  view('backend/pages/dashboard', compact('countEmp','countNews','countNotice','countMess'));
 
@@ -87,7 +87,7 @@ class DashboardController extends Controller
         if($message->read == 0){
             $message->update([
                 'read'      =>1,
-                'readDate' => date('Y-m-d H:i:s')
+                // 'readDate' => date('Y-m-d H:i:s')
             ]);
         }
 

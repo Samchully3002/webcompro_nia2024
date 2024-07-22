@@ -207,7 +207,7 @@ Swal.fire("Changes are not saved", "", "info");
             dataType: 'json',
             success: function(response) {
                 var mess = response.message;
-                $("#sent-date").val(mess.sentDate);
+                // $("#sent-date").val(mess.sentDate);
                 $("#sender").val(mess.sender);
                 $("#email").val(mess.email);
                 $("#content-message").html(mess.message);
@@ -392,7 +392,7 @@ Swal.fire("Changes are not saved", "", "info");
           ajax: "{{ route('dashboard.list.message') }}",
           columns: [
               {data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false},
-              {data: 'sentDate', name:'sentDate'},
+            //   {data: 'sentDate', name:'sentDate'},
               {data: 'sender', name:'sender'},
               {data: 'email', name:'email'},
               {data: 'message', name:'message'},

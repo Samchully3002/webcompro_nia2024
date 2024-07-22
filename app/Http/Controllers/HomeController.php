@@ -111,7 +111,7 @@ class HomeController extends Controller
             $mess = ContactUs::create([
                 'sender'     => $request->sender,
                 'email'     => $request->email,
-                'sentDate'    => date('Y-m-d H:i'),
+                // 'sentDate'    => date('Y-m-d H:i'),
                 'message'    => $request->message,
                 'read'      => 0
             ]);
