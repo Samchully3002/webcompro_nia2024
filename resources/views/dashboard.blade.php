@@ -201,7 +201,7 @@ $.ajax({
     data: {id:id},
     dataType: 'json',
     success: function(response) {
-      dispNotif('Deleting Data Success', response.message, 'success');
+      dispNotif('admin data deleted', response.message, 'success');
       tableAdmin.ajax.reload();
     },
     error: function(xhr, status, error) {
