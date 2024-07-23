@@ -28,13 +28,13 @@
                 <div data-i18n="Dashboards">Dashboards</div>
               </a>
             </li>
-            <!-- <li class="menu-item">
+            <li class="menu-item">
               <a
-                href="{{url('dashboard/list-business')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-buildings"></i>
-                <div data-i18n="our-business">Our Business</div>
+                href="{{url('dashboard/list-admins')}}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-user-voice"></i>
+                <div data-i18n="our-business">Admin(s)</div>
               </a>
-            </li>    -->
+            </li>   
 
             <li class="menu-header small text-uppercase">
               <span class="menu-header-text">Front Pages</span>

@@ -120,7 +120,13 @@ Route::group([
          Route::post('/post-tags', [App\Http\Controllers\backend\MetaController::class, 'store'])->name('post.tags');
          Route::get('/delete-tags', [App\Http\Controllers\backend\MetaController::class, 'destroy'])->name('delete.tags');
          Route::get('/show-tags', [App\Http\Controllers\backend\MetaController::class, 'show'])->name('show.tags');
+         
+         //Admin
+         Route::get('/list-admins', [App\Http\Controllers\backend\AdminController::class, 'index'])->name('list.admins');
+         Route::get('/show-admin', [App\Http\Controllers\backend\AdminController::class, 'show'])->name('show.admin');
+         Route::post('/post-admin', [App\Http\Controllers\backend\AdminController::class, 'store'])->name('post.admin');
 
+         
       }
 )->middleware(['auth', 'verified'])->name('dashboard');
 
