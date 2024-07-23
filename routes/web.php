@@ -145,7 +145,7 @@ Route::group([
          Route::get('/list-admins', [App\Http\Controllers\backend\AdminController::class, 'index'])->name('list.admins');
          Route::get('/show-admin', [App\Http\Controllers\backend\AdminController::class, 'show'])->name('show.admin');
          Route::post('/post-admin', [App\Http\Controllers\backend\AdminController::class, 'store'])->name('post.admin');
-
+         Route::get('/delete-admin', [App\Http\Controllers\backend\AdminController::class, 'destroy'])->name('delete.admin');
          
       }
 )->middleware(['auth', 'verified'])->name('dashboard');

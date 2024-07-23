@@ -184,10 +184,43 @@ Swal.fire("Changes are not saved", "", "info");
 });
 }
 
+      //== Delete Admins By Id == //
+      function deleteAdmin(id){
+Swal.fire({
+text: "You will delete admin data",
+showCancelButton: true,
+confirmButtonText: "Delete",
+}).then((result) => {
+  /* Read more about isConfirmed, isDenied below */
+if (result.isConfirmed) {
+            let userId = id;
+
+$.ajax({
+    url: "{{ route('dashboard.delete.admin')}}",
+    type: 'GET',
+    data: {id:id},
+    dataType: 'json',
+    success: function(response) {
+      dispNotif('Deleting Data Success', response.message, 'success');
+      tableAdmin.ajax.reload();
+    },
+    error: function(xhr, status, error) {
+      dispNotif('', 'error saving data', 'error');
+    }
+});
+  } else if (result.isDenied) {
+Swal.fire("Changes are not saved", "", "info");
+}
+
+
+
+});
+}
+
+
 
       //== Delete News By Id == //
-      function deleteNews(id){
-
+function deleteNews(id){
 Swal.fire({
 text: "You will delete news data",
 showCancelButton: true,
