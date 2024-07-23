@@ -93,27 +93,6 @@ class HomeController extends Controller
     {
         if($request->ajax()){
 
-            $recaptcha_response = $request->input('g-recaptcha-response');
-
-            if (is_null($recaptcha_response)) {
-                return response()->json([
-                    'success' => false,
-                    'message' => 'Please Complete the Recaptcha to proceed',
-                    'data'    => ''
-                ]);
-            }
-
-            $url = "https://www.google.com/recaptcha/api/siteverify";
-
-            $body = [
-                'secret' => config('services.recaptcha.secret'),
-                'response' => $recaptcha_response,
-                'remoteip' => IpUtils::anonymize($request->ip()) //anonymize the ip to be GDPR compliant. Otherwise just pass the default ip address
-            ];
-
-            $response = Http::asForm()->post($url, $body);
-            $result = json_decode($response);
-
             //define validation rules
              $validator = Validator::make($request->all(), [
                 'sender'     => 'required',
@@ -128,34 +107,22 @@ class HomeController extends Controller
                 return response()->json($validator->errors(), 422);
             }
 
-            if ($response->successful() && $result->success == true) {
-
-                //inser media news data
-                $mess = ContactUs::create([
-                    'sender'     => $request->sender,
-                    'email'     => $request->email,
-                    'message'    => $request->message,
-                    'read'      => 0
-                ]);
+            //inser media news data
+            $mess = ContactUs::create([
+                'sender'     => $request->sender,
+                'email'     => $request->email,
+                // 'sentDate'    => date('Y-m-d H:i'),
+                'message'    => $request->message,
+                'read'      => 0
+            ]);
 
                 //return response
-                return response()->json([
-                    'success' => true,
-                    'message' => 'Success sending message!',
-                    'data'    => $mess
-                ]);
-
-            } else {
-
-                return response()->json([
-                    'success' => false,
-                    'message' => 'Please Complete the Recaptcha Again to proceed',
-                    'data'    => ''
-                ]);
-            }
-
+            return response()->json([
+                'success' => true,
+                'message' => 'Success sending message!',
+                'data'    => $mess
+            ]);
         }
-
     }
 
     /**

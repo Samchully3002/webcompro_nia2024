@@ -68,7 +68,7 @@
                                     <div class="card">
                                         <img width="18%" src="../frontend/images/icon/ic_samchulypay3.svg" alt="image samchully pay"/>
                                         <span>{{ __('samchullypay3') }}</span>
-                                        <p> {{ __('samchullypay2-content') }}
+                                        <p> {{ __('samchullypay3-content') }}
                                         </p>
                                     </div>
                                 </div>

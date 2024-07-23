@@ -26,7 +26,7 @@
 
       <!-- Overlay -->
       <div class="layout-overlay layout-menu-toggle"></div>
-    </div>  
+    </div>
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
 
@@ -143,13 +143,13 @@
         Swal.fire("Changes are not saved", "", "info");
   }
 
-  
-  
+
+
 });
       }
 
 
-      
+
       //== Delete Notice By Id == //
       function deleteNotice(id){
 
@@ -184,7 +184,7 @@ Swal.fire("Changes are not saved", "", "info");
 });
 }
 
-      
+
       //== Delete News By Id == //
       function deleteNews(id){
 
@@ -228,6 +228,7 @@ Swal.fire("Changes are not saved", "", "info");
             dataType: 'json',
             success: function(response) {
                 var mess = response.message;
+                // $("#sent-date").val(mess.sentDate);
                 $("#sender").val(mess.sender);
                 $("#email").val(mess.email);
                 $("#content-message").html(mess.message);
@@ -404,23 +405,24 @@ Swal.fire("Changes are not saved", "", "info");
       // TEAM END
 
 
-      // MESSAGE 
+      // MESSAGE
       tableMess = $('.message-table').DataTable({
           fixedColumns: true,
           processing: true,
           serverSide: true,
           ajax: "{{ route('dashboard.list.message') }}",
           columns: [
-              {data: 'id', name: 'id'},
+              {data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false},
+            //   {data: 'sentDate', name:'sentDate'},
               {data: 'sender', name:'sender'},
               {data: 'email', name:'email'},
               {data: 'message', name:'message'},
               {data: 'action', name: 'action', orderable: false, searchable: false},
-          ]
+          ],
       });
 
 
-      // TAG 
+      // TAG
       tableTag = $('.tags-table').DataTable({
           fixedColumns: true,
           processing: true,
@@ -468,7 +470,7 @@ Swal.fire("Changes are not saved", "", "info");
             dispNotif('Saving Data Success', response.message, 'success');
             tableTag.ajax.reload();
             $('#form_tags')[0].reset();
-            
+
         },
           error: function() {
             dispNotif('', 'error updating tags data', 'error');
@@ -534,9 +536,9 @@ Swal.fire("Changes are not saved", "", "info");
       });
 
 
-        
 
-          
+
+
     });
 </script>
     </body>

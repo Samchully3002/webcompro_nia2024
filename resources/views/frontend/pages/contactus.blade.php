@@ -80,10 +80,7 @@
                                                     placeholder="{{__ ('form-msg') }}"
                                                 ></textarea>
                                             </label>
-                                            <label>
-                                                Google Recaptcha
                                                 <div class="g-recaptcha" data-sitekey="6Lc4BhEqAAAAACVcTeYp0Nh6UiXzJGz9vw9UO9cS"></div>
-                                            </label>
                                             <button type="submit" id="btn_form_message" disabled>{{__ ('btn-submit') }}</button>
                                         </form>
                                         <iframe
