@@ -162,7 +162,7 @@ class AdminController extends Controller
         return response()->json([
             'success' => true,
             'message' => 'success deleting admin data',
-            'data'    => $tag  
+            'data'    => $user  
         ]);
         }
 
