@@ -420,7 +420,7 @@
                                         </div>
                                         <div class="text-wrapper">
                                             <h1 >{{__ ('july') }}</h1>
-                                            <p>{{__ ('2023jul')}}</p>  
+                                            <p>{{__ ('2023jul')}}</p>
                                         </div>
                                         <div class="text-wrapper">
                                                 <h1 >{{__ ('january') }}</h1>
@@ -736,7 +736,7 @@
                     </div>
                     <div class="item muncul">
                         <p>
-                        <span style="font-weight:bold;color:rgb(49, 107, 27);">E</span>enviroment
+                        <span style="font-weight:bold;color:rgb(49, 107, 27);">E</span>nvironment
                         </p>
                     </div>
                     <div class="item muncul">

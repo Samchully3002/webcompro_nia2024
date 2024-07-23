@@ -41,21 +41,21 @@
                                     </div>
                                     <div class="card-wrapper">
                                         <div class="card">
-                                            <img width="18%" src="../frontend/images/icon/ic_samchulypay1.svg" alt="image healthada"/>
+                                            <img width="18%" src="../frontend/images/icon/user.svg"/>
                                             <span>{{ __('healthyhada1') }}</span>
                                             <p>
                                                 {{ __('healthyhada1-content') }}
                                             </p>
                                         </div>
                                         <div class="card">
-                                            <img width="18%" src="../frontend/images/icon/ic_samchulypay2.svg" alt="image healthada"/>
+                                            <img width="18%" src="../frontend/images/icon/data.svg"/>
                                             <span>{{ __('healthyhada2') }}</span>
                                             <p>
                                                 {{ __('healthyhada2-content') }}
                                             </p>
                                         </div>
                                         <div class="card">
-                                            <img width="18%" src="../frontend/images/icon/ic_samchulypay3.svg" alt="image healthada"/>
+                                            <img width="18%" src="../frontend/images/icon/people.svg"/>
                                             <span>{{ __('healthyhada3') }}</span>
                                             <p>
                                                 {{ __('healthyhada3-content') }}

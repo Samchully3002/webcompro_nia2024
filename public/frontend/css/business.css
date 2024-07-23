@@ -28,6 +28,11 @@
     height: 100vh;
 }
 
+.bisnis5 {
+    background-image: url(../images/WDD.jpg);
+    height: 100vh;
+}
+
 .bg-wrapper .text-box {
     place-content: flex-end space-between;
     align-items: flex-end;
@@ -190,10 +195,27 @@ input[type="checkbox"] {
     padding: 0px 50px 50px 50px;
     position: relative;
     justify-content: center;
-    flex-direction: column;
+    /* flex-direction: column; */
     white-space: pre-wrap;
     word-break: break-word;
     overflow-wrap: break-word;
+    align-items: center;
+    gap: 24px;
+}
+
+.product-wrapper .content .text-wrapper button {
+    padding: 12px 28px;
+    height: fit-content;
+    font-size: 16px;
+    border: #40455c solid 1px;
+    border-radius: 40px;
+    width: fit-content;
+    text-wrap: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-duration: 0.5s;
+    background: transparent;
 }
 
 .product-wrapper .content .img-box {
@@ -205,6 +227,10 @@ input[type="checkbox"] {
     margin-bottom: 50px;
     overflow: visible;
     position: relative;
+}
+
+.product-wrapper .content .img-box .iba {
+    width: 250px !important;
 }
 
 .product-wrapper .content .img-box1 {
@@ -301,6 +327,229 @@ input[type="checkbox"] {
     transition: opacity 0.6s ease, transform 0.8s ease;
 }
 
+.pricing-wrapper {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    padding: 80px 50px;
+}
+
+.pricing-wrapper .card {
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    color: #40455c;
+    border: solid 2px;
+    border-radius: 10px;
+    justify-content: space-between;
+}
+
+.pricing-wrapper .card button {
+    width: 100%;
+    background-color: #40455c;
+    height: 60px;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+}
+
+.pricing-wrapper .card .title {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.pricing-wrapper .card .title span {
+    line-height: normal;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.pricing-wrapper .card .title p {
+    line-height: 1.5;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.pricing-wrapper .card .list {
+    border-top: 1px solid #bbb;
+    padding-top: 30px;
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+}
+
+.pricing-wrapper .card .list p {
+    color: #3f4254;
+    font-weight: 400;
+    display: flex;
+    font-size: 12px;
+    gap: 10px;
+    align-items: center;
+}
+
+.business-wrapper {
+    display: flex;
+    gap: 100px;
+    width: 100%;
+    background-color: #f7f8f9;
+    padding: 80px;
+    flex-direction: column;
+}
+
+.business-wrapper .content {
+    display: flex;
+    gap: 100px;
+}
+
+.business-wrapper .content .box {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+}
+
+.business-wrapper .content .text {
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+}
+
+.business-wrapper .content .text span {
+    font-size: 20px;
+    font-weight: 400;
+    color: #40455c;
+}
+
+.business-wrapper .content .text p {
+    font-size: 16px;
+    font-weight: 300;
+    color: #5c5c5c;
+}
+
+.our-history {
+    place-content: center;
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: column;
+    gap: 100px;
+    overflow: visible;
+    padding: 150px 50px 90px;
+    position: relative;
+    width: 100%;
+}
+
+.our-history .title {
+    display: flex;
+    width: auto;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    opacity: 1;
+    transform: none;
+}
+
+.our-history .title p {
+    font-size: 56px;
+    font-weight: 500;
+    line-height: 30px;
+    color: rgb(64, 66, 80);
+}
+
+.our-history .box {
+    place-content: flex-start space-evenly;
+    align-items: flex-start;
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: row;
+    height: min-content;
+    overflow: visible;
+    padding: 0px;
+    position: relative;
+    width: 100%;
+}
+
+.our-history .box .left-box {
+    position: sticky;
+    top: 280px;
+}
+
+.our-history .box .left-box .container-imageyear h1 {
+    width: 512px;
+    transition: opacity 0.5s ease;
+    font-size: 80px;
+    color: #40455c;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.right-box .wrapper {
+    opacity: 0.2; /* Set opacity to 0.2 when not at scrollPosition */
+    transition: opacity 0.3s ease; /* Tambahkan transisi agar perubahan opacity halus */
+}
+
+.right-box .wrapper.active {
+    opacity: 1; /* Set opacity to 1 when at scrollPosition */
+}
+
+.our-history .box .right-box {
+    place-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: column;
+    gap: 50px;
+    height: min-content;
+    overflow: visible;
+    padding: 100px 0px;
+    position: relative;
+    width: 529px;
+}
+
+.our-history .box .right-box .wrapper {
+    place-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: column;
+    gap: 100px;
+    height: min-content;
+    overflow: visible;
+    padding: 30px;
+    position: relative;
+    width: 100%;
+    background-color: #f7f8f9;
+    border: 1 solid #f0f1f4;
+    border-radius: 20px;
+}
+
+.our-history .box .right-box .wrapper span {
+    font-size: 32px;
+    font-weight: 500;
+    color: #40455c;
+}
+
+.our-history .box .right-box .wrapper .text {
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+}
+
+.our-history .box .right-box .wrapper .text span {
+    font-size: 24px;
+    font-weight: 500;
+    color: #40455c;
+}
+
+.our-history .box .right-box .wrapper .text p {
+    font-size: 16px;
+    font-weight: 300;
+    color: #5c5c5c;
+}
+
 @media screen and (max-width: 1140px) {
     .bg-wrapper .text-box {
         align-items: unset;
@@ -377,11 +626,11 @@ input[type="checkbox"] {
     }
 
     .product-wrapper .content .text-wrapper {
-        padding: unset;
-        padding-bottom: 20px;
+        padding: 0 20px 20px;
     }
 
-    .product-wrapper .content .img-box {
+    .product-wrapper .content .img-box,
+    .product-wrapper .content .img-box2 {
         /* flex-direction: column; */
         display: none !important;
     }
@@ -407,6 +656,11 @@ input[type="checkbox"] {
         height: 500px;
     }
 
+    .product-wrapper .content .img-box-mobile .mySlides2 {
+        height: 400px;
+        left: 3px;
+    }
+
     .img-box-mobile .btn_prev_img {
         border: none;
         display: block;
@@ -415,12 +669,11 @@ input[type="checkbox"] {
         overflow: hidden;
         background: rgba(0, 0, 0, 0.2);
         cursor: pointer;
-        margin: 0 -20px 0 0;
         z-index: 2;
         font-size: 32px;
         padding: 0 16px 4px 16px;
         position: absolute;
-        left: 4px;
+        left: 0px;
         color: white;
         border-radius: 99px;
         pointer-events: auto;
@@ -435,12 +688,11 @@ input[type="checkbox"] {
         overflow: hidden;
         background: rgba(0, 0, 0, 0.2);
         cursor: pointer;
-        margin: 0 0 0 -20px;
         z-index: 2;
         font-size: 32px;
         padding: 0 16px 4px 16px;
         position: absolute;
-        right: 4px;
+        right: 0px;
         color: white;
         border-radius: 50px;
         pointer-events: auto;
@@ -479,4 +731,13 @@ input[type="checkbox"] {
 }
 
 @media screen and (max-width: 780px) {
+    .product-wrapper .content .text-wrapper {
+        padding: unset;
+        margin-bottom: 20px;
+        flex-direction: column;
+    }
+
+    .product-wrapper .content .text-wrapper button {
+        width: 100%;
+    }
 }
