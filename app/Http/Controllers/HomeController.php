@@ -96,7 +96,7 @@ class HomeController extends Controller
             //define validation rules
              $validator = Validator::make($request->all(), [
                 'sender'     => 'required',
-                'email'     => 'required',
+                'email'     => ['required' , 'email'],
                 'message'    => 'required',
                 // Add custom validation rule for reCAPTCHA
                 'gresponse' => 'required'

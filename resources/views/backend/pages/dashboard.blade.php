@@ -65,7 +65,7 @@
 <!--/ Card Border Shadow -->
 <div class="row">
   <!-- Vehicles overview -->
-  <div class="col-xxl-6 mb-4 order-5 order-xxl-0">
+  <div class="col-lg-6 col-xxl-6 mb-4 order-5 order-xxl-0">
     <div class="card h-100">
       <div class="card-header">
         <div class="card-title mb-0">

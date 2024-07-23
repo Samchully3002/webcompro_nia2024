@@ -5,6 +5,23 @@ use App\Http\Controllers\LanguageController;
 use Illuminate\Support\Facades\Route;
 
 
+Route::get('download', function () {
+
+    //get the GET request
+    $path = request('f');
+
+    //look at the extension of the file being requested
+    $extension = pathinfo($path, PATHINFO_EXTENSION);
+
+    //create an array of items to reject being downloaded
+    $blocked = ['php', 'htaccess'];
+
+    //if the requested file is not in the blocked array
+    if (! in_array($extension, $blocked)) {
+        //download the file
+        return response()->download($path);
+    }
+});
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('homepage');
 Route::get('/about-us', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
@@ -13,12 +30,15 @@ Route::get('/community/notice', [App\Http\Controllers\HomeController::class, 'no
 Route::get('/community/notice-detail/{id}', [App\Http\Controllers\HomeController::class, 'noticedetail'])->name('notice-detail/{id}');
 
 Route::get('/contact-us', [App\Http\Controllers\HomeController::class, 'contactus'])->name('contact-us');
-Route::post('/contactus/submit', [App\Http\Controllers\HomeController::class, 'contactsubmit'])->name('contactussubmit');
+
+Route::post('/contact-us/submit', [App\Http\Controllers\HomeController::class, 'contactsubmit'])->name('contactussubmit');
+
 
 Route::get('/our-business/intellegent-integrated-logistic', [App\Http\Controllers\BusinessController::class, 'businesslog'])->name('intelligent-integrated-logistic');
 Route::get('/our-business/digital-healthcare', [App\Http\Controllers\BusinessController::class, 'healthcare'])->name('digital-healthcare');
 Route::get('/our-business/system-development-management', [App\Http\Controllers\BusinessController::class, 'management'])->name('system-development-management');
 Route::get('/our-business/export-voucher', [App\Http\Controllers\BusinessController::class, 'exportvoucher'])->name('export-voucher');
+Route::get('/our-business/webDesign', [App\Http\Controllers\BusinessController::class, 'webdesign'])->name('webDesign');
 
 Route::get('/privacy-policy', [App\Http\Controllers\HomeController::class, 'privacy'])->name('privacy');
 
@@ -120,7 +140,13 @@ Route::group([
          Route::post('/post-tags', [App\Http\Controllers\backend\MetaController::class, 'store'])->name('post.tags');
          Route::get('/delete-tags', [App\Http\Controllers\backend\MetaController::class, 'destroy'])->name('delete.tags');
          Route::get('/show-tags', [App\Http\Controllers\backend\MetaController::class, 'show'])->name('show.tags');
+         
+         //Admin
+         Route::get('/list-admins', [App\Http\Controllers\backend\AdminController::class, 'index'])->name('list.admins');
+         Route::get('/show-admin', [App\Http\Controllers\backend\AdminController::class, 'show'])->name('show.admin');
+         Route::post('/post-admin', [App\Http\Controllers\backend\AdminController::class, 'store'])->name('post.admin');
 
+         
       }
 )->middleware(['auth', 'verified'])->name('dashboard');
 

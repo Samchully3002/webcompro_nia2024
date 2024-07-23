@@ -61,6 +61,7 @@
     var tableNews;
     var tableMess;
     var tableTag;
+    var tableAdmin;
 
       //==== display notif ==== //
       function dispNotif(title, message, status){
@@ -86,6 +87,26 @@
                 $("#quotes").val(user.quotes);
                 $("#sequence").val(user.sequence);
                 $("#landing").val(user.landing);
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+        });
+      }
+
+      // == show admin data ==//
+      function showAdminById(id){
+        $.ajax({
+            url: '{{ route('dashboard.show.admin') }}',
+            type: 'GET',
+            data: {id:id},
+            dataType: 'json',
+            success: function(response) {
+                var user = response.admin;
+                $("#id").val(user.id);
+                $("#name").val(user.name);
+                $("#email").val(user.email);
+
             },
             error: function(xhr, status, error) {
                 console.error(error);
@@ -418,6 +439,21 @@ Swal.fire("Changes are not saved", "", "info");
           ]
       });
 
+      // ADMIN(s) 
+      tableAdmin = $('.admins-table').DataTable({
+          fixedColumns: true,
+          processing: true,
+          serverSide: true,
+          ajax: "{{ route('dashboard.list.admins') }}",
+          columns: [
+              {data: 'id', name: 'id'},
+              {data: 'name', name:'pages'},
+              {data: 'email', name:'email'},
+              // {data: 'password', name:'password'},
+              {data: 'action', name: 'action', orderable: false, searchable: false},
+          ]
+      });
+
       $("#btn_form_tag").click(function(e) {
         e.preventDefault();
         let form = $('#form_tags')[0];
@@ -435,6 +471,33 @@ Swal.fire("Changes are not saved", "", "info");
             tableTag.ajax.reload();
             $('#form_tags')[0].reset();
 
+        },
+          error: function() {
+            dispNotif('', 'error updating tags data', 'error');
+            console.log('error fetch data')
+          }
+
+        });
+
+      });
+
+      // ADMIN
+      $("#btn_form_admin").click(function(e) {
+        e.preventDefault();
+        let form = $('#form_admin')[0];
+        let data = new FormData(form);
+
+        $.ajax({
+          url: "{{ route('dashboard.post.admin') }}",
+          type: "POST",
+          data: data,
+          dataType: "JSON",
+          processData: false,
+          contentType: false,
+          success: function(response) {
+            dispNotif('Saving Data Success', response.message, 'success');
+            tableAdmin.ajax.reload();
+            
         },
           error: function() {
             dispNotif('', 'error updating tags data', 'error');

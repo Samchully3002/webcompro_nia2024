@@ -59,7 +59,7 @@
                     </div>
                     <div class="nav-mobile">
                         <div class="nav-wrapper">
-                            <a class="logo" href="#">
+                            <a class="logo" href="/">
                                 <img style="width: 75%;" src="../../frontend/images/icon/ic_logo.png" alt="icon"/>
                             </a>
                             <div class="right-mobile">
