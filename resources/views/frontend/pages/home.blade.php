@@ -5,7 +5,7 @@
 <!-- dev -->
 <!-- <link rel="stylesheet" href="{{asset('frontend/css/home.css')}}"/> -->
  <!-- production -->
-<link rel="stylesheet" href="{{asset('frontend/css/minify/home.min.css')}}"/> 
+<link rel="stylesheet" href="{{asset('frontend/css/minify/home.min.css')}}"/>
 </head>
 <body>
 <!-- <div data-include="component/header"></div> -->
@@ -100,23 +100,23 @@
                 </a>
             </div>
         </div>
-        <div class="item">
+        {{-- <div class="item">
             <div class="image-container">
                 <a href="/export-voucher">
                     <img src="../../frontend/images/WDD.jpg" alt="export voucher image banner">
-                        <div class="image-overlay">
+                    <div class="image-overlay">
                         <div class="ic-bisnis">
                             <img src="../../frontend/images/icon/global.svg" alt="icon arrow">
-                            </div><br>
-                            <p >{{ __('wdd') }}</p><br>
-                            <span>{{ __('wdd-content') }}</span><br>
-                            <div class="btn-more">{{ __('btn-more') }}&nbsp;&nbsp;&nbsp;
-                                <img src="../../frontend/images/icon/arrow.png" alt="icon arrow">
-                            </div>
+                        </div><br>
+                        <p >{{ __('wdd') }}</p><br>
+                        <span>{{ __('wdd-content') }}</span><br>
+                        <div class="btn-more">{{ __('btn-more') }}&nbsp;&nbsp;&nbsp;
+                            <img src="../../frontend/images/icon/arrow.png" alt="icon arrow">
                         </div>
+                    </div>
                 </a>
             </div>
-        </div>
+        </div> --}}
 
 
         <div class="clientSection">
