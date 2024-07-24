@@ -121,10 +121,22 @@
 </div>
 <script>
    // ==== custom editor ===//
-   const quill = new Quill('.txt-content', {
+   const quill = new Quill('#content', {
    theme: 'snow'
    });
    
-   quill.setContents('{"ops":[{"insert":"Headline"},{"attributes":{"headline":true},"insert":"\n"},{"insert":"\n\ncontent"},{"attributes":{"content":true},"insert":"\n"}]}')
+   quill.setContents('{"ops":[{"insert":"Headline"},{"attributes":{"headline":true},"insert":"\n"},{"insert":"\n\ncontent"},{"attributes":{"content":true},"insert":"\n"}]}');
+
+   const quill1 = new Quill('#content_kr', {
+   theme: 'snow'
+   });
+   
+   quill1.setContents('{"ops":[{"insert":"Headline"},{"attributes":{"headline":true},"insert":"\n"},{"insert":"\n\ncontent"},{"attributes":{"content":true},"insert":"\n"}]}');
+
+   const quill2 = new Quill('#content_id', {
+   theme: 'snow'
+   });
+   
+   quill2.setContents('{"ops":[{"insert":"Headline"},{"attributes":{"headline":true},"insert":"\n"},{"insert":"\n\ncontent"},{"attributes":{"content":true},"insert":"\n"}]}');
 </script>
 @stop

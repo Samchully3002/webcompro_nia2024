@@ -144,13 +144,13 @@
                                 </div>
                                 <div class="card-wrapper">
                                     <div class="card-grey">
-                                        <img width="30%" src="../frontend/images/icon/ic_exportvoucher03-A.svg" alt="image export voucher"/>
+                                        <img width="18%" src="../frontend/images/icon/ic_exportvoucher03-A.svg" alt="image export voucher"/>
                                         <span>{{ __('md1') }}</span>
                                         <p>
                                             {{ __('md1-content') }}
                                         </p>
                                     </div>
-                                    <div class="card-grey">
+                                    {{-- <div class="card-grey">
                                         <img width="30%" src="../frontend/images/icon/ic_exportvoucher03-B.svg" alt="image export voucher"/>
                                         <span>{{ __('md2') }}</span>
                                         <p>
@@ -162,6 +162,13 @@
                                         <span>{{ __('md3') }}</span>
                                         <p>
                                             {{ __('md3-content') }}
+                                        </p>
+                                    </div> --}}
+                                    <div class="card-grey">
+                                        <img width="18%" src="../frontend/images/icon/designtools.svg" alt="image export voucher"/>
+                                        <span>{{ __('md4') }}</span>
+                                        <p>
+                                            {{ __('md4-content') }}
                                         </p>
                                     </div>
                                 </div>
