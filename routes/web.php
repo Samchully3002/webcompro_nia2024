@@ -101,8 +101,10 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::group([
-      'prefix'=>'/dashboard',
+      'middleware' => 'auth',
+      'prefix'=>'dashboard/',
       'as' => 'dashboard.',
+      
       ],
       function () {
         // Dashboard Routes
@@ -150,6 +152,6 @@ Route::group([
          Route::get('/delete-admin', [App\Http\Controllers\backend\AdminController::class, 'destroy'])->name('delete.admin');
 
       }
-)->middleware(['auth', 'verified'])->name('dashboard');
+   );
 
 require __DIR__.'/auth.php';
