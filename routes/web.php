@@ -38,7 +38,8 @@ Route::get('/our-business/intellegent-integrated-logistic', [App\Http\Controller
 Route::get('/our-business/digital-healthcare', [App\Http\Controllers\BusinessController::class, 'healthcare'])->name('digital-healthcare');
 Route::get('/our-business/system-development-management', [App\Http\Controllers\BusinessController::class, 'management'])->name('system-development-management');
 Route::get('/our-business/export-voucher', [App\Http\Controllers\BusinessController::class, 'exportvoucher'])->name('export-voucher');
-Route::get('/our-business/webdesign', [App\Http\Controllers\BusinessController::class, 'webdesign'])->name('webdesign');
+Route::get('/our-business/web-design', [App\Http\Controllers\BusinessController::class, 'webdesign'])->name('web-design');
+Route::get('/our-business/creative-solutions', [App\Http\Controllers\BusinessController::class, 'creativesolutions'])->name('creative-solutions');
 
 Route::get('/privacy-policy', [App\Http\Controllers\HomeController::class, 'privacy'])->name('privacy');
 
@@ -74,6 +75,12 @@ Route::get('/system-development-management', function () {
 });
 Route::get('/export-voucher', function () {
    return redirect('/our-business/export-voucher');
+});
+Route::get('/web-design', function () {
+   return redirect('/our-business/web-design');
+});
+Route::get('/creative-solutions', function () {
+   return redirect('/our-business/creative-solutions');
 });
 
 // Route::get('/lang',[LanguageController::class , 'change'])->name('user.lang');
