@@ -102,11 +102,28 @@
         </div>
         <div class="item">
             <div class="image-container">
-                <a href="/export-voucher">
+                <a href="/web-design">
                     <img src="../../frontend/images/WDD.jpg" alt="export voucher image banner">
                         <div class="image-overlay">
                         <div class="ic-bisnis">
                             <img src="../../frontend/images/icon/global.svg" alt="icon arrow">
+                            </div><br>
+                            <p >{{ __('wdd') }}</p><br>
+                            <span>{{ __('wdd-content') }}</span><br>
+                            <div class="btn-more">{{ __('btn-more') }}&nbsp;&nbsp;&nbsp;
+                                <img src="../../frontend/images/icon/arrow.png" alt="icon arrow">
+                            </div>
+                        </div>
+                </a>
+            </div>
+        </div>
+        <div class="item">
+            <div class="image-container">
+                <a href="/creative-solutions">
+                    <img src="../../frontend/images/CS.jpg" alt="export voucher image banner">
+                        <div class="image-overlay">
+                        <div class="ic-bisnis">
+                            <img src="../../frontend/images/icon/designtools.svg" alt="icon arrow">
                             </div><br>
                             <p >{{ __('wdd') }}</p><br>
                             <span>{{ __('wdd-content') }}</span><br>

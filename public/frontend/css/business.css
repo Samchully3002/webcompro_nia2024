@@ -33,6 +33,11 @@
     height: 100vh;
 }
 
+.bisnis6 {
+    background-image: url(../images/CS.jpg);
+    height: 100vh;
+}
+
 .bg-wrapper .text-box {
     place-content: flex-end space-between;
     align-items: flex-end;
@@ -791,4 +796,3 @@ input[type="checkbox"] {
         width: 100%;
     }
 }
-

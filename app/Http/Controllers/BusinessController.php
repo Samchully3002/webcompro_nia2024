@@ -66,6 +66,13 @@ class BusinessController extends Controller
 
         return view('frontend/pages/business/web_design', compact(['meta']));
     }
+    public function creativesolutions(Request $request): View
+    {
+        $curentURL = $request->path();
+        $meta = MetaTags::where('url', 'LIKE', '%'.$curentURL.'%')->first();
+
+        return view('frontend/pages/business/creative_solutions', compact(['meta']));
+    }
 
     public function webflip(Request $request): View
     {
