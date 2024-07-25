@@ -39,6 +39,7 @@ Route::get('/our-business/digital-healthcare', [App\Http\Controllers\BusinessCon
 Route::get('/our-business/system-development-management', [App\Http\Controllers\BusinessController::class, 'management'])->name('system-development-management');
 Route::get('/our-business/export-voucher', [App\Http\Controllers\BusinessController::class, 'exportvoucher'])->name('export-voucher');
 Route::get('/our-business/webdesign', [App\Http\Controllers\BusinessController::class, 'webdesign'])->name('webdesign');
+Route::get('/our-business/webflip', [App\Http\Controllers\BusinessController::class, 'webflip'])->name('webflip');
 
 Route::get('/privacy-policy', [App\Http\Controllers\HomeController::class, 'privacy'])->name('privacy');
 
@@ -104,7 +105,7 @@ Route::group([
       'middleware' => 'auth',
       'prefix'=>'dashboard/',
       'as' => 'dashboard.',
-      
+
       ],
       function () {
         // Dashboard Routes
