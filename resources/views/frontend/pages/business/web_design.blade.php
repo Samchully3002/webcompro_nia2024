@@ -33,7 +33,7 @@
                         <p><img src="../frontend/images/icon/greencheck.svg"/>{{ __('compro5') }}</p>
                         <p><img src="../frontend/images/icon/greencheck.svg"/>{{ __('compro6') }}</p>
                     </div>
-                    <button>{{ __('btn-contact') }}</button>
+                    <button onclick="sendCompro()">{{ __('btn-contact') }}</button>
                 </div>
                 <div class="card">
                     <div class="title">
@@ -48,7 +48,7 @@
                         <p><img src="../frontend/images/icon/greencheck.svg"/>{{ __('media5') }}</p>
                         <p><img src="../frontend/images/icon/greencheck.svg"/>{{ __('media6') }}</p>
                     </div>
-                    <button>{{ __('btn-contact') }}</button>
+                    <button onclick="sendMedia()">{{ __('btn-contact') }}</button>
                 </div>
                 <div class="card">
                     <div class="title">
@@ -63,7 +63,7 @@
                         <p><img src="../frontend/images/icon/greencheck.svg"/>{{ __('ecommerce5') }}</p>
                         <p><img src="../frontend/images/icon/greencheck.svg"/>{{ __('ecommerce6') }}</p>
                     </div>
-                    <button>{{ __('btn-contact') }}</button>
+                    <button onclick="sendEcommerce()">{{ __('btn-contact') }}</button>
                 </div>
             </div>
             <!-- section-wrapper end -->
@@ -170,7 +170,7 @@
                 </div>
             </div>
              </div>
-            
+
             <div class="mobile-streamlined">
                 <div class="our-history mobile">
                 <div class="box">
@@ -229,7 +229,7 @@
                 </div>
             </div>
             </div>
-            
+
              <!-- section-streamlined end -->
         </div>
 
@@ -263,7 +263,7 @@
                         rect.top >= 0 &&
                         rect.left >= 0 &&
                         rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                        rect01.right <= (window.innerWidth || document.documentElement.clientWidth)
                     );
                 }
 
@@ -278,14 +278,44 @@
             });
         </script>
         <script>
+             function sendCompro() {
+                var sendTo = "info@nia.co.id";
+                var subject= "Quotation Company Profile";
+                const body = `Hello NIA! \n\n I want to ask quotation about website design and development for company profile.\n\n Thank you NIA`;
+                // Construct the mailto link
+                var mailtoLink = 'mailto:'+sendTo+'?subject='+subject+'&body='+body;
+
+                window.open(mailtoLink, '_blank');
+            }
+
+            function sendMedia() {
+                var sendTo = "info@nia.co.id";
+                var subject= "Quotation Media News Website";
+                const body = `Hello NIA! \n\n I want to ask quotation about media news website design and development.\n\n Thank you NIA`;
+                // Construct the mailto link
+                var mailtoLink = 'mailto:'+sendTo+'?subject='+subject+'&body='+body;
+
+                window.open(mailtoLink, '_blank');
+            }
+
+            function sendEcommerce() {
+                var sendTo = "info@nia.co.id";
+                var subject= "Quotation Ecommerce Website";
+                const body = `Hello NIA! \n\n I want to ask quotation about eCommerce website design and development.\n\n Thank you NIA`;
+                // Construct the mailto link
+                var mailtoLink = 'mailto:'+sendTo+'?subject='+subject+'&body='+body;
+
+                window.open(mailtoLink, '_blank');
+            }
+
             $(document).ready(function () {
             $(document).on("scroll", function () {
                 var windowHeight = $(window).height(); // Tinggi jendela browser
                 var scrollPosition = $(document).scrollTop() + windowHeight / 2; // Scroll position di tengah jendela browser
-        
+
                 $(".wrapper").each(function () {
                     let elementOffsetTop = $(this).offset().top;
-        
+
                     if (elementOffsetTop <= scrollPosition) {
                         // Tambahkan kelas 'active' untuk mengatur opacity ke 1
                         $(this).addClass("active");

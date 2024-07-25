@@ -38,7 +38,7 @@ Route::get('/our-business/intellegent-integrated-logistic', [App\Http\Controller
 Route::get('/our-business/digital-healthcare', [App\Http\Controllers\BusinessController::class, 'healthcare'])->name('digital-healthcare');
 Route::get('/our-business/system-development-management', [App\Http\Controllers\BusinessController::class, 'management'])->name('system-development-management');
 Route::get('/our-business/export-voucher', [App\Http\Controllers\BusinessController::class, 'exportvoucher'])->name('export-voucher');
-Route::get('/our-business/webDesign', [App\Http\Controllers\BusinessController::class, 'webdesign'])->name('webDesign');
+Route::get('/our-business/webdesign', [App\Http\Controllers\BusinessController::class, 'webdesign'])->name('webdesign');
 
 Route::get('/privacy-policy', [App\Http\Controllers\HomeController::class, 'privacy'])->name('privacy');
 
@@ -96,6 +96,8 @@ Route::middleware('auth')->group(function () {
    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+   Route::get('/dashboard', [App\Http\Controllers\backend\DashboardController::class, 'index'])->name('dashboard');
 });
 
 Route::group([
@@ -140,13 +142,13 @@ Route::group([
          Route::post('/post-tags', [App\Http\Controllers\backend\MetaController::class, 'store'])->name('post.tags');
          Route::get('/delete-tags', [App\Http\Controllers\backend\MetaController::class, 'destroy'])->name('delete.tags');
          Route::get('/show-tags', [App\Http\Controllers\backend\MetaController::class, 'show'])->name('show.tags');
-         
+
          //Admin
          Route::get('/list-admins', [App\Http\Controllers\backend\AdminController::class, 'index'])->name('list.admins');
          Route::get('/show-admin', [App\Http\Controllers\backend\AdminController::class, 'show'])->name('show.admin');
          Route::post('/post-admin', [App\Http\Controllers\backend\AdminController::class, 'store'])->name('post.admin');
          Route::get('/delete-admin', [App\Http\Controllers\backend\AdminController::class, 'destroy'])->name('delete.admin');
-         
+
       }
 )->middleware(['auth', 'verified'])->name('dashboard');
 
