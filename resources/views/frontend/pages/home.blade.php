@@ -125,8 +125,8 @@
                         <div class="ic-bisnis">
                             <img src="../../frontend/images/icon/designtools.svg" alt="icon arrow">
                             </div><br>
-                            <p >{{ __('wdd') }}</p><br>
-                            <span>{{ __('wdd-content') }}</span><br>
+                            <p >{{ __('cs') }}</p><br>
+                            <span>{{ __('cs-content') }}</span><br>
                             <div class="btn-more">{{ __('btn-more') }}&nbsp;&nbsp;&nbsp;
                                 <img src="../../frontend/images/icon/arrow.png" alt="icon arrow">
                             </div>

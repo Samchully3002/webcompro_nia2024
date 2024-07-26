@@ -166,52 +166,32 @@
                         <div class="wrapper">
                             <span>01</span>
                             <div class="text">
-                                <span>{{ __('pro') }}</span>
-                                <p>{{ __('pro-content') }}</p>
+                                <span>{{ __('pb') }}</span>
+                                <p>{{ __('pb-content') }}</p>
                             </div>
                         </div>
                         <div class="wrapper">
                             <span>02</span>
                             <div class="text">
-                                <span>{{ __('str') }}</span>
-                                <p>{{ __('str-content') }}</p>
+                                <span>{{ __('cre') }}</span>
+                                <p>{{ __('cre-content') }}</p>
                             </div>
                         </div>
                         <div class="wrapper">
                             <span>03</span>
                             <div class="text">
-                                <span>{{ __('des') }}</span>
-                                <p>{{ __('des-content') }}</p>
+                                <span>{{ __('pro') }}</span>
+                                <p>{{ __('pro-content') }}</p>
                             </div>
                         </div>
                         <div class="wrapper">
                             <span>04</span>
                             <div class="text">
-                                <span>{{ __('dev') }}</span>
-                                <p>{{ __('dev-content') }}</p>
+                                <span>{{ __('pp') }}</span>
+                                <p>{{ __('pp-content') }}</p>
                             </div>
                         </div>
-                        <div class="wrapper">
-                            <span>05</span>
-                            <div class="text">
-                                <span>{{ __('qa') }}</span>
-                                <p>{{ __('qa-content') }}</p>
-                            </div>
-                        </div>
-                        <div class="wrapper">
-                            <span>06</span>
-                            <div class="text">
-                                <span>{{ __('lau') }}</span>
-                                <p>{{ __('lau-content') }}</p>
-                            </div>
-                        </div>
-                        <div class="wrapper">
-                            <span>07</span>
-                            <div class="text">
-                                <span>{{ __('as') }}</span>
-                                <p>{{ __('as-content') }}</p>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
