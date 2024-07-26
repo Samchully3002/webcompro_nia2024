@@ -70,38 +70,22 @@
 
             <!-- section-business start -->
             <div class="business-wrapper">
-                <div class="content">
-                    <div class="box">
-                        <img src="../frontend/images/icon/design.svg"/>
-                        <div class="text">
-                            <span>{{ __('prodesign') }}</span>
-                            <p>{{ __('prodesign-content') }}</p>
+                {{-- <div class="flipbook-viewport"> --}}
+                    <div class="container">
+                        <div class="flipbook">
+                        @foreach($content as $page)
+                            <div style="background-image:url({{ asset($page) }})"></div>
+                        @endforeach
                         </div>
                     </div>
-                    <div class="box">
-                        <img src="../frontend/images/icon/responsive.svg"/>
-                        <div class="text">
-                            <span>{{ __('responsive') }}</span>
-                            <p>{{ __('responsive-content') }}</p>
-                        </div>
+                    <div style="display:flex;place-content:center flex-between;gap:30px;">
+                        <img src="{{ asset('frontend/images/icon/fb_fullscreen.svg') }}"/>
+                        <img src="{{ asset('frontend/images/icon/fb_zoom_in.svg') }}"/>
+                        <img src="{{ asset('frontend/images/icon/fb_zoom_out.svg') }}"/>
+                        <img src="{{ asset('frontend/images/icon/fb_print.svg') }}"/>
+                        <img src="{{ asset('frontend/images/icon/fb_download.svg') }}"/>
                     </div>
-                </div>
-                <div class="content">
-                    <div class="box">
-                        <img src="../frontend/images/icon/seo.svg"/>
-                        <div class="text">
-                            <span>{{ __('seo') }}</span>
-                            <p>{{ __('seo-content') }}</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <img src="../frontend/images/icon/fast.svg"/>
-                        <div class="text">
-                            <span>{{ __('fast') }}</span>
-                            <p>{{ __('fast-content') }}</p>
-                        </div>
-                    </div>
-                </div>
+                {{-- </div> --}}
             </div>
             <!-- section-business end -->
 
@@ -234,8 +218,26 @@
         </div>
 
         @include('frontend.includes.footer')
-
+        <script type="text/javascript" src="{{ asset('frontend/extras/modernizr.2.5.3.min.js') }}"></script>
         <script>
+            function loadApp() {
+                $('.flipbook').turn({
+                    aspectRatio:16/9,
+                    width:1400,
+                    height:400,
+                    elevation: 50,
+                    gradients: true,
+                    autoCenter: true
+                });
+            }
+            yepnope({
+                test : Modernizr.csstransforms,
+                yep: ['{{ asset('frontend/lib/turn.js') }}'],
+                nope: ['{{ asset('frontend/lib/turn.html4.min.js') }}'],
+                both: ['{{ asset('frontend/css/basic.css') }}'],
+                complete: loadApp
+            });
+
             document.addEventListener('DOMContentLoaded', function() {
                 const appearElements = document.querySelectorAll('.appear');
 
@@ -276,8 +278,7 @@
                 // Panggil sekali ketika halaman dimuat (jika elemen sudah ada di viewport pada awalnya)
                 appearOnScroll();
             });
-        </script>
-        <script>
+
              function sendCompro() {
                 var sendTo = "info@nia.co.id";
                 var subject= "Quotation Company Profile";
