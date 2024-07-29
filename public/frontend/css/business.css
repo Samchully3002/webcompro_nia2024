@@ -421,69 +421,69 @@ input[type="checkbox"] {
 
 .business-wrapper {
     display: flex;
-    width: 100%;
     background-color: #f7f8f9;
-    padding: 80px;
+    padding: 80px 50px;
 }
 
-.business-wrapper .flipbook-view{
-	/* overflow:hidden; */
+.business-wrapper .flipbook-view {
+    /* overflow:hidden; */
     display: flex;
-	width:100%;
-	height:100%;
+    width: 100%;
+    flex-direction: column;
+    gap: 50px;
 }
 
-.business-wrapper .flipbook-view .container{
-	position:absolute;
-	top:50%;
-	left:50%;
-	margin:auto;
+.business-wrapper .flipbook-view .container {
+    display: flex;
+    justify-content: center;
 }
 
-.business-wrapper .flipbook-view .flipbook{
-	width:1280px;
-	height:720px;
-	left:-461px;
-	top:-300px;
+.business-wrapper .flipbook-view .flipbook {
+    transition: all 0.5s;
 }
 
-.business-wrapper .flipbook-view .page{
-	width:1280px;
-	height:720px;
-	background-color:rgb(233, 4, 4);
-	background-repeat:no-repeat;
-	background-size:100% 100%;
+.business-wrapper .flipbook-view .btn-flipbook {
+    display: flex;
+    place-content: center;
+    gap: 30px;
 }
 
-.business-wrapper .flipbook .page{
-	-webkit-box-shadow:0 0 20px rgba(0,0,0,0.2);
-	-moz-box-shadow:0 0 20px rgba(0,0,0,0.2);
-	-ms-box-shadow:0 0 20px rgba(0,0,0,0.2);
-	-o-box-shadow:0 0 20px rgba(0,0,0,0.2);
-	box-shadow:0 0 20px rgba(0,0,0,0.2);
+.business-wrapper .flipbook-view .page {
+    display: flex;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
-.business-wrapper .flipbook-view .page img{
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	margin:0;
+.business-wrapper .flipbook .page {
+    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    -ms-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    -o-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
-.business-wrapper .flipbook-view .shadow{
-	-webkit-transition: -webkit-box-shadow 0.5s;
-	-moz-transition: -moz-box-shadow 0.5s;
-	-o-transition: -webkit-box-shadow 0.5s;
-	-ms-transition: -ms-box-shadow 0.5s;
+.business-wrapper .flipbook-view .page img {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 0;
+}
 
-	-webkit-box-shadow:0 0 20px #ccc;
-	-moz-box-shadow:0 0 20px #ccc;
-	-o-box-shadow:0 0 20px #ccc;
-	-ms-box-shadow:0 0 20px #ccc;
-	box-shadow:0 0 20px #ccc;
+.business-wrapper .flipbook-view .shadow {
+    -webkit-transition: -webkit-box-shadow 0.5s;
+    -moz-transition: -moz-box-shadow 0.5s;
+    -o-transition: -webkit-box-shadow 0.5s;
+    -ms-transition: -ms-box-shadow 0.5s;
+
+    -webkit-box-shadow: 0 0 20px #ccc;
+    -moz-box-shadow: 0 0 20px #ccc;
+    -o-box-shadow: 0 0 20px #ccc;
+    -ms-box-shadow: 0 0 20px #ccc;
+    box-shadow: 0 0 20px #ccc;
 }
 
 .business-wrapper .content {

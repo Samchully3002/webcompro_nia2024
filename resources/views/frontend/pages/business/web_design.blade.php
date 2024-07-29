@@ -18,6 +18,27 @@
             </div>
             <!-- bg-wrapper end -->
 
+            <!-- section-business start -->
+            <div class="business-wrapper">
+                <div class="flipbook-view">
+                    <div class="container">
+                        <div class="flipbook">
+                        @foreach($content as $page)
+                            <div style="background-image:url({{ asset($page) }})"></div>
+                        @endforeach
+                        </div>
+                    </div>
+                    <div class="btn-flipbook">
+                        <img src="{{ asset('frontend/images/icon/fb_fullscreen.svg') }}"/>
+                        <img src="{{ asset('frontend/images/icon/fb_zoom_in.svg') }}"/>
+                        <img src="{{ asset('frontend/images/icon/fb_zoom_out.svg') }}"/>
+                        <img src="{{ asset('frontend/images/icon/fb_print.svg') }}"/>
+                        <img src="{{ asset('frontend/images/icon/fb_download.svg') }}"/>
+                    </div>
+                </div>
+            </div>
+            <!-- section-business end -->
+
             <!-- section-wrapper start -->
             <div class="pricing-wrapper">
                 <div class="card">
@@ -68,29 +89,10 @@
             </div>
             <!-- section-wrapper end -->
 
-            <!-- section-business start -->
-            <div class="business-wrapper">
-                <div class="flipbook-view">
-                    <div class="container">
-                        <div class="flipbook">
-                        @foreach($content as $page)
-                            <div style="background-image:url({{ asset($page) }})"></div>
-                        @endforeach
-                        </div>
-                    </div>
-                    <div style="display:flex;place-content:center flex-between;gap:30px;">
-                        <img src="{{ asset('frontend/images/icon/fb_fullscreen.svg') }}"/>
-                        <img src="{{ asset('frontend/images/icon/fb_zoom_in.svg') }}"/>
-                        <img src="{{ asset('frontend/images/icon/fb_zoom_out.svg') }}"/>
-                        <img src="{{ asset('frontend/images/icon/fb_print.svg') }}"/>
-                        <img src="{{ asset('frontend/images/icon/fb_download.svg') }}"/>
-                    </div>
-                </div>
-            </div>
-            <!-- section-business end -->
+            
 
-             <!-- section-streamlined start -->
-             <div class="dekstop-streamlined">
+            <!-- section-streamlined start -->
+            {{-- <div class="dekstop-streamlined">
                 <div class="our-history dekstop">
                 <div class="box">
                     <!-- Left Content -->
@@ -212,7 +214,7 @@
                     </div>
                 </div>
             </div>
-            </div>
+            </div> --}}
 
              <!-- section-streamlined end -->
         </div>
