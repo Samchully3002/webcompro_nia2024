@@ -70,7 +70,7 @@
 
             <!-- section-business start -->
             <div class="business-wrapper">
-                {{-- <div class="flipbook-viewport"> --}}
+                <div class="flipbook-view">
                     <div class="container">
                         <div class="flipbook">
                         @foreach($content as $page)
@@ -85,7 +85,7 @@
                         <img src="{{ asset('frontend/images/icon/fb_print.svg') }}"/>
                         <img src="{{ asset('frontend/images/icon/fb_download.svg') }}"/>
                     </div>
-                {{-- </div> --}}
+                </div>
             </div>
             <!-- section-business end -->
 
@@ -234,7 +234,7 @@
                 test : Modernizr.csstransforms,
                 yep: ['{{ asset('frontend/lib/turn.js') }}'],
                 nope: ['{{ asset('frontend/lib/turn.html4.min.js') }}'],
-                both: ['{{ asset('frontend/css/basic.css') }}'],
+                both: ['{{ asset('frontend/css/business.css') }}'],
                 complete: loadApp
             });
 
