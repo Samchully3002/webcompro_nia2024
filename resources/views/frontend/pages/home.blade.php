@@ -5,7 +5,7 @@
 <!-- dev -->
 <!-- <link rel="stylesheet" href="{{asset('frontend/css/home.css')}}"/> -->
  <!-- production -->
-<link rel="stylesheet" href="{{asset('frontend/css/minify/home.min.css')}}"/> 
+<link rel="stylesheet" href="{{asset('frontend/css/home.css')}}"/>
 </head>
 <body>
 <!-- <div data-include="component/header"></div> -->
