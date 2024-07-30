@@ -647,11 +647,7 @@ input[type="checkbox"] {
 
 @media screen and (max-width: 1140px) {
     .bg-wrapper .text-box {
-        align-items: unset;
-        padding: 50px 20px;
-        flex-direction: column;
-        justify-content: flex-end;
-        gap: 20px;
+        gap: 50px;
     }
 
     .bg-wrapper .text-box p {
@@ -692,14 +688,6 @@ input[type="checkbox"] {
         content: url("../images/icon/open-icon-white-mini.png");
     }
 
-    .product-wrapper .content .card-wrapper {
-        gap: 20px;
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
-        margin-bottom: 20px;
-    }
-
     .product-wrapper .collapsible span {
         font-size: 24px;
     }
@@ -728,9 +716,6 @@ input[type="checkbox"] {
     .product-wrapper .content .img-box2 {
         /* flex-direction: column; */
         display: none !important;
-    }
-    .product-wrapper .content .img-box1 {
-        flex-direction: column;
     }
 
     .product-wrapper .content .img-box-mobile {
@@ -824,11 +809,6 @@ input[type="checkbox"] {
         font-size: 40px;
     }
 
-    .pricing-wrapper {
-        flex-direction: column;
-        padding: 50px 20px;
-    }
-
     .business-wrapper .content {
         flex-direction: column;
         gap: 50px;
@@ -865,9 +845,24 @@ input[type="checkbox"] {
         line-height: normal;
         text-align: center;
     }
+    .product-wrapper .content .card-wrapper {
+        gap: 30px;
+    }
+
+    .product-wrapper .content .img-box1 img {
+        width: 50%;
+    }
 }
 
 @media screen and (max-width: 780px) {
+    .bg-wrapper .text-box {
+        align-items: unset;
+        padding: 50px 20px;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: 20px;
+    }
+
     .product-wrapper .content .text-wrapper {
         padding: unset;
         margin-bottom: 20px;
@@ -876,5 +871,24 @@ input[type="checkbox"] {
 
     .product-wrapper .content .text-wrapper button {
         width: 100%;
+    }
+
+    .product-wrapper .content .card-wrapper {
+        gap: 20px;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+    .product-wrapper .content .img-box1 {
+        flex-direction: column;
+    }
+    .product-wrapper .content .img-box1 img {
+        width: 100%;
+    }
+
+    .pricing-wrapper {
+        flex-direction: column;
+        padding: 50px 20px;
     }
 }
