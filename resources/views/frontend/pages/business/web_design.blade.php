@@ -22,18 +22,21 @@
             <div class="business-wrapper">
                 <div class="flipbook-view">
                     <div class="container">
-                        <div class="flipbook">
+                        <button onclick="prevFlip()">Prev</button>
+                        <div id="flipbook" class="flipbook">
                         @foreach($content as $page)
                             <div style="background-image:url({{ asset($page) }})"></div>
                         @endforeach
                         </div>
+                        <button onclick="nextFlip()">Next</button>
                     </div>
                     <div class="btn-flipbook">
-                        <img src="{{ asset('frontend/images/icon/fb_fullscreen.svg') }}"/>
+                        <button onclick="openFullscreen()"><img src="{{ asset('frontend/images/icon/fb_fullscreen.svg') }}"/></button>
                         <img src="{{ asset('frontend/images/icon/fb_zoom_in.svg') }}"/>
                         <img src="{{ asset('frontend/images/icon/fb_zoom_out.svg') }}"/>
                         <img src="{{ asset('frontend/images/icon/fb_print.svg') }}"/>
-                        <img src="{{ asset('frontend/images/icon/fb_download.svg') }}"/>
+                        <button id="downloadButton"><img src="{{ asset('frontend/images/icon/fb_download.svg') }}"/>
+                        <a id="downloadLink" href="{{asset('frontend/INABUSAPPS.pdf')}}" download style="display: none;"></a>
                     </div>
                 </div>
             </div>
@@ -89,7 +92,7 @@
             </div>
             <!-- section-wrapper end -->
 
-            
+
 
             <!-- section-streamlined start -->
             {{-- <div class="dekstop-streamlined">
@@ -222,6 +225,15 @@
         @include('frontend.includes.footer')
         <script type="text/javascript" src="{{ asset('frontend/extras/modernizr.2.5.3.min.js') }}"></script>
         <script>
+            document.getElementById('downloadButton').addEventListener('click', function() {
+                document.getElementById('downloadLink').click();
+            });
+            function prevFlip(){
+                $('#flipbook').turn('previous');
+            };
+            function nextFlip(){
+                $('#flipbook').turn('next');
+            };
             function loadApp() {
                 $('.flipbook').turn({
                     aspectRatio:16/9,
@@ -229,8 +241,93 @@
                     height:400,
                     elevation: 50,
                     gradients: true,
-                    autoCenter: true
+                    autoCenter: true,
+                    when:{
+                        missing: function (e, pages) {
+                            for (var i = 0; i < pages.length; i++) {
+                                $('.flipbook').turn('addPage',page[pages[i]],pages[i]);
+                            }
+                        }
+                    }
                 });
+                $(window).bind('keydown', function(e){
+                    if (e.keyCode==37)
+                        $('#flipbook').turn('previous');
+                    else if (e.keyCode==39)
+                        $('#flipbook').turn('next');
+                });
+
+            //Initialize the zoom viewport
+                $('.flipbook-view').zoom({
+                        flipbook: $('.flipbook')
+                });
+
+                //Binds the single tap event to the zoom function
+                $('.flipbook-view').bind('zoom.tap', zoomTo);
+
+                //Optional, calls the resize function when the window changes, useful when viewing on tablet or mobile phones
+                $(window).resize(function() {
+                    resizeViewport();
+                }).bind('orientationchange', function() {
+                    resizeViewport();
+                });
+
+                //Must be called initially to setup the size
+                resizeViewport();
+            }
+
+            function page(num){
+                var elem = $('<div />',{}).html('<div><img src="book_'+num+'.jpg></div>');
+                return elem;
+            }
+
+            function zoomTo(event) {
+                setTimeout(function() {
+                    if ($('.flipbook-view').data().regionClicked) {
+                        $('.flipbook-view').data().regionClicked = false;
+                    } else {
+                        if ($('.flipbook-view').zoom('value')==1) {
+                            $('.flipbook-view').zoom('zoomIn', event);
+                        } else {
+                            $('.flipbook-view').zoom('zoomOut');
+                        }
+                    }
+                }, 1);
+            }
+
+            var elem = document.getElementById("flipbook");
+
+            function openFullscreen() {
+
+            if (elem.requestFullscreen) {
+                // elem.requestFullscreen();
+                e.preventDefault();
+                $("#flipbook").turn("zoom", 1.5);
+
+            } else if (elem.mozRequestFullScreen) { /* Firefox */
+                // elem.mozRequestFullScreen();
+                e.preventDefault();
+                $("#flipbook").turn("zoom", 1.5);
+            } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+                // elem.webkitRequestFullscreen();
+                e.preventDefault();
+                $("#flipbook").turn("zoom", 1.5);
+            } else if (elem.msRequestFullscreen) { /* IE/Edge */
+                // elem.msRequestFullscreen();
+                e.preventDefault();
+                $("#flipbook").turn("zoom", 1.5);
+            }
+            }
+
+            function resizeViewport() {
+                var width = $(window).width(),
+                    height = $(window).height(),
+                    options = $('.flipbook').turn('options');
+
+                $('.flipbook-view').css({
+                    width: width,
+                    height: height
+                }).zoom('resize');
             }
             yepnope({
                 test : Modernizr.csstransforms,
