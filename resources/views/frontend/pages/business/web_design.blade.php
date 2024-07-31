@@ -29,14 +29,18 @@
                         @endforeach
                         </div>
                         <button onclick="nextFlip()">Next</button>
+                        <iframe
+                            src="{{asset('frontend/WebDevProposalPricelist.pdf')}}" id="myFrame"
+                            style="position: absolute;width:0;height:0;border:0;">
+                        </iframe>
                     </div>
                     <div class="btn-flipbook">
-                        <button onclick="openFullscreen()"><img src="{{ asset('frontend/images/icon/fb_fullscreen.svg') }}"/></button>
+                        <button onclick="fullView()"><img src="{{ asset('frontend/images/icon/fb_fullscreen.svg') }}"/></button>
                         <img src="{{ asset('frontend/images/icon/fb_zoom_in.svg') }}"/>
                         <img src="{{ asset('frontend/images/icon/fb_zoom_out.svg') }}"/>
-                        <img src="{{ asset('frontend/images/icon/fb_print.svg') }}"/>
+                        <button onclick="print()"><img src="{{ asset('frontend/images/icon/fb_print.svg') }}"/></button>
                         <button id="downloadButton"><img src="{{ asset('frontend/images/icon/fb_download.svg') }}"/>
-                        <a id="downloadLink" href="{{asset('frontend/INABUSAPPS.pdf')}}" download style="display: none;"></a>
+                        <a id="downloadLink" href="{{asset('frontend/WebDevProposalPricelist.pdf')}}" download style="display: none;"></a>
                     </div>
                 </div>
             </div>
@@ -225,9 +229,17 @@
         @include('frontend.includes.footer')
         <script type="text/javascript" src="{{ asset('frontend/extras/modernizr.2.5.3.min.js') }}"></script>
         <script>
+            let print = () => {
+                let objFra = document.getElementById('myFrame');
+                objFra.contentWindow.focus();
+                objFra.contentWindow.print();
+            }
             document.getElementById('downloadButton').addEventListener('click', function() {
                 document.getElementById('downloadLink').click();
             });
+            function fullView(){
+                $('#myDiv').toggleClass('fullscreen');
+            };
             function prevFlip(){
                 $('#flipbook').turn('previous');
             };
@@ -257,6 +269,13 @@
                         $('#flipbook').turn('next');
                 });
 
+                $('.flipbook').click(function(e) {
+                    var pos = {
+                        x: e.pageX - $(this).offset().left,
+                        y: e.pageY - $(this).offset().top
+                    };
+                    $('.flipbook').zoom('zoomIn', pos);
+                });
             //Initialize the zoom viewport
                 $('.flipbook-view').zoom({
                         flipbook: $('.flipbook')
@@ -298,25 +317,15 @@
             var elem = document.getElementById("flipbook");
 
             function openFullscreen() {
-
-            if (elem.requestFullscreen) {
-                // elem.requestFullscreen();
-                e.preventDefault();
-                $("#flipbook").turn("zoom", 1.5);
-
-            } else if (elem.mozRequestFullScreen) { /* Firefox */
-                // elem.mozRequestFullScreen();
-                e.preventDefault();
-                $("#flipbook").turn("zoom", 1.5);
-            } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
-                // elem.webkitRequestFullscreen();
-                e.preventDefault();
-                $("#flipbook").turn("zoom", 1.5);
-            } else if (elem.msRequestFullscreen) { /* IE/Edge */
-                // elem.msRequestFullscreen();
-                e.preventDefault();
-                $("#flipbook").turn("zoom", 1.5);
-            }
+                if (elem.requestFullscreen) {
+                    elem.requestFullscreen();
+                } else if (elem.mozRequestFullScreen) { /* Firefox */
+                    elem.mozRequestFullScreen();
+                } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+                    elem.webkitRequestFullscreen();
+                } else if (elem.msRequestFullscreen) { /* IE/Edge */
+                    elem.msRequestFullscreen();
+                }
             }
 
             function resizeViewport() {
