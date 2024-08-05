@@ -99,7 +99,7 @@
                      <div class="row mb-3">
                         <label class="col-sm-2 col-form-label" for="basic-default-name">Title [id]</label>
                           <div class="col-sm-10">
-                            <input type="text" name="title_id" class="form-control" id="title_id" placeholder="" require="" value="{{$notice->titile_id}}">
+                            <input type="text" name="title_id" class="form-control" id="title_id" placeholder="" require="" value="{{$notice->title_id}}">
                           </div>
                       </div>
                       <div class="row mb-3">
