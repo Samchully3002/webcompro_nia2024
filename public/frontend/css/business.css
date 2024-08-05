@@ -382,6 +382,8 @@ input[type="checkbox"] {
     border-radius: 6px;
     border: none;
     color: #fff;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 .pricing-wrapper .card .title {
@@ -392,13 +394,13 @@ input[type="checkbox"] {
 
 .pricing-wrapper .card .title span {
     line-height: normal;
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 500;
 }
 
 .pricing-wrapper .card .title p {
     line-height: 1.5;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
 }
 
@@ -410,11 +412,15 @@ input[type="checkbox"] {
     flex-direction: column;
 }
 
+.pricing-wrapper .card .list img {
+    width: 20px;
+}
+
 .pricing-wrapper .card .list p {
     color: #3f4254;
     font-weight: 400;
     display: flex;
-    font-size: 12px;
+    font-size: 16px;
     gap: 10px;
     align-items: center;
 }
@@ -428,9 +434,11 @@ input[type="checkbox"] {
 .business-wrapper .flipbook-view {
     /* overflow:hidden; */
     display: flex;
-    width: 100%;
+    width: 100% !important;
     flex-direction: column;
     gap: 50px;
+    height: 100% !important;
+    justify-content: space-between;
 }
 
 .business-wrapper .flipbook-view .fullDisplay {
@@ -445,14 +453,19 @@ input[type="checkbox"] {
 
 .business-wrapper .flipbook-view .container {
     display: flex;
-    justify-content: center;
+    width: 100% !important;
+    justify-content: space-between;
+}
+
+.business-wrapper .flipbook-view .container button {
+    border: none;
+    background: none;
+    padding: 0 20px;
 }
 
 .business-wrapper .flipbook-view .container .flipbook {
     transition: all 0.5s;
 }
-
-
 
 .business-wrapper .flipbook-view .btn-flipbook {
     display: flex;
