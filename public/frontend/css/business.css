@@ -433,14 +433,26 @@ input[type="checkbox"] {
     gap: 50px;
 }
 
+.business-wrapper .flipbook-view .fullDisplay {
+    transition: all 0.5s;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
 .business-wrapper .flipbook-view .container {
     display: flex;
     justify-content: center;
 }
 
-.business-wrapper .flipbook-view .flipbook {
+.business-wrapper .flipbook-view .container .flipbook {
     transition: all 0.5s;
 }
+
+
 
 .business-wrapper .flipbook-view .btn-flipbook {
     display: flex;

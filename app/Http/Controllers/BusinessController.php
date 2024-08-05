@@ -75,10 +75,10 @@ class BusinessController extends Controller
         $curentURL = $request->path();
         $meta = MetaTags::where('url', 'LIKE', '%'.$curentURL.'%')->first();
 
-        // $flipbook = DB::table('flipbook')->where('id', '2')->get()[0];
-        // $content = explode(",",$flipbook->content);
+        $flipbook = DB::table('flipbook')->where('id', '2')->get()[0];
+        $content = explode(",",$flipbook->content);
 
-        return view('frontend/pages/business/creative_solutions', compact(['meta']));
-        // return view('frontend/pages/business/creative_solutions', compact(['meta'],'flipbook','content'));
+        // return view('frontend/pages/business/creative_solutions', compact(['meta']));
+        return view('frontend/pages/business/creative_solutions', compact(['meta'],'flipbook','content'));
     }
 }

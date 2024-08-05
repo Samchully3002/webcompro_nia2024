@@ -19,9 +19,9 @@
             <!-- bg-wrapper end -->
 
             <!-- section-business start -->
-            <div class="business-wrapper">
-                <div class="flipbook-view">
-                    <div class="container">
+            <div id="flipbook-view" class="business-wrapper">
+                <div  class="flipbook-view">
+                    <div id="flipContainer" class="container">
                         <button onclick="prevFlip()">Prev</button>
                         <div id="flipbook" class="flipbook">
                         @foreach($content as $page)
@@ -229,6 +229,7 @@
         @include('frontend.includes.footer')
         <script type="text/javascript" src="{{ asset('frontend/extras/modernizr.2.5.3.min.js') }}"></script>
         <script>
+            var elem = document.getElementById("flipbook-view");
             let print = () => {
                 let objFra = document.getElementById('myFrame');
                 objFra.contentWindow.focus();
@@ -237,8 +238,21 @@
             document.getElementById('downloadButton').addEventListener('click', function() {
                 document.getElementById('downloadLink').click();
             });
+
             function fullView(){
-                $('#myDiv').toggleClass('fullscreen');
+                if (elem.requestFullscreen) {
+                    elem.requestFullscreen();
+                    elem.classList.add("fullDisplay");
+                } else if (elem.mozRequestFullScreen) { /* Firefox */
+                    elem.mozRequestFullScreen();
+                    elem.classList.add("fullDisplay");
+                } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+                    elem.webkitRequestFullscreen();
+                    elem.classList.add("fullDisplay");
+                } else if (elem.msRequestFullscreen) { /* IE/Edge */
+                    elem.msRequestFullscreen();
+                    elem.classList.add("fullDisplay");
+                }
             };
             function prevFlip(){
                 $('#flipbook').turn('previous');
@@ -269,20 +283,8 @@
                         $('#flipbook').turn('next');
                 });
 
-                $('.flipbook').click(function(e) {
-                    var pos = {
-                        x: e.pageX - $(this).offset().left,
-                        y: e.pageY - $(this).offset().top
-                    };
-                    $('.flipbook').zoom('zoomIn', pos);
-                });
-            //Initialize the zoom viewport
-                $('.flipbook-view').zoom({
-                        flipbook: $('.flipbook')
-                });
-
                 //Binds the single tap event to the zoom function
-                $('.flipbook-view').bind('zoom.tap', zoomTo);
+                // $('.flipbook-view').bind('zoom.tap', zoomTo);
 
                 //Optional, calls the resize function when the window changes, useful when viewing on tablet or mobile phones
                 $(window).resize(function() {
@@ -300,33 +302,19 @@
                 return elem;
             }
 
-            function zoomTo(event) {
-                setTimeout(function() {
-                    if ($('.flipbook-view').data().regionClicked) {
-                        $('.flipbook-view').data().regionClicked = false;
-                    } else {
-                        if ($('.flipbook-view').zoom('value')==1) {
-                            $('.flipbook-view').zoom('zoomIn', event);
-                        } else {
-                            $('.flipbook-view').zoom('zoomOut');
-                        }
-                    }
-                }, 1);
-            }
-
-            var elem = document.getElementById("flipbook");
-
-            function openFullscreen() {
-                if (elem.requestFullscreen) {
-                    elem.requestFullscreen();
-                } else if (elem.mozRequestFullScreen) { /* Firefox */
-                    elem.mozRequestFullScreen();
-                } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
-                    elem.webkitRequestFullscreen();
-                } else if (elem.msRequestFullscreen) { /* IE/Edge */
-                    elem.msRequestFullscreen();
-                }
-            }
+            // function zoomTo(event) {
+            //     setTimeout(function() {
+            //         if ($('.flipbook-view').data().regionClicked) {
+            //             $('.flipbook-view').data().regionClicked = false;
+            //         } else {
+            //             if ($('.flipbook-view').zoom('value')==1) {
+            //                 $('.flipbook-view').zoom('zoomIn', event);
+            //             } else {
+            //                 $('.flipbook-view').zoom('zoomOut');
+            //             }
+            //         }
+            //     }, 1);
+            // }
 
             function resizeViewport() {
                 var width = $(window).width(),
