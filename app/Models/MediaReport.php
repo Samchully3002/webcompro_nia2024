@@ -19,7 +19,10 @@ class MediaReport extends Model
     protected $fillable = [
         'title',
         'image',
-        'source'
+        'source',
+        'title_kr',
+        'title_id',
+        'news_lang'
 
     ];
 }

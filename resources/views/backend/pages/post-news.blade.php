@@ -14,19 +14,41 @@
           <form id="form_news" name="form_news" method="POST" onsubmit="return false">
           @csrf
             <div class="row mb-3">
-              <label class="col-sm-2 col-form-label" for="basic-default-name">News Title</label>
+              <label class="col-sm-2 col-form-label" for="basic-default-name">News Title [en]</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="basic-default-name" placeholder="" id="title" name="title">
               </div>
             </div>
             <div class="row mb-3">
-              <label class="col-sm-2 col-form-label" for="basic-default-message">Source</label>
+              <label class="col-sm-2 col-form-label" for="basic-default-name">News Title [kr]</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="basic-default-name" placeholder="" id="title_kr" name="title_kr">
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-2 col-form-label" for="basic-default-name">News Title [id]</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="basic-default-name" placeholder="" id="title_id" name="title_id">
+              </div>
+            </div>
+            <div class="row mb-3">
+            <label for="firstName" class="col-sm-2 col-form-label">News Language</label>
+                <div class="col-sm-10">
+                <select id="news_lang" name="news_lang" class="select2 form-select">
+                <option value="English">English</option>
+                              <option value="Indonesia">Indonesia</option>
+                              <option value="Korea">Korea</option>
+                            </select>
+                </div>        
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-2 col-form-label" for="basic-default-message">News Source</label>
               <div class="col-sm-10">
                 <textarea id="source" name="source" class="form-control" placeholder="" aria-label="" aria-describedby="basic-icon-default-message2"></textarea>
               </div>
             </div>
             <div class="row mb-3">
-              <label for="formFile" class="col-sm-2 col-form-label">Images</label>
+              <label for="formFile" class="col-sm-2 col-form-label">Images banner</label>
               <div class="col-sm-10">
                   <input class="form-control" type="file" id="image" name="image">
               </div> 
