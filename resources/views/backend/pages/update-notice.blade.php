@@ -121,10 +121,4 @@
       </div>
     </div>
   </div>
-  <script>
-   tinymce.init({
-  selector: 'textarea.content'
-});
-
-</script>
     @stop
