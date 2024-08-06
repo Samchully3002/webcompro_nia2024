@@ -44,4 +44,9 @@
 
     <!-- import tinymce -->
     <script src="{{asset('backend/tinymce/tinymce.min.js')}}"></script>
+    <script>
+        tinymce.init({
+            selector: 'textarea.content'
+      });
+    </script>
 
