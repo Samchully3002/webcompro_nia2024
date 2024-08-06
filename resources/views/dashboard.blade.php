@@ -372,6 +372,9 @@ Swal.fire("Changes are not saved", "", "info");
         e.preventDefault();
         let form = $('#notice_form')[0];
         let data = new FormData(form);
+        data.content = tinymce.get('content').getContent();
+        data.content_kr = tinymce.get('content_kr').getContent();
+        data.content_id = tinymce.get('content_id').getContent();
 
         $.ajax({
           url: "{{ route('dashboard.post.notice.ajax') }}",
