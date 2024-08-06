@@ -21,6 +21,9 @@
             <!-- section-business start -->
             <div id="flipbook-view" class="business-wrapper">
                 <div  class="flipbook-view">
+                    <div class="btn-flipbook">
+                        <img src="{{ asset('frontend/images/icon/close-circle.svg') }}"/>
+                    </div>
                     <div id="flipContainer" class="container">
                         <button onclick="prevFlip()"><img src="{{ asset('frontend/images/icon/arrow-left.svg') }}"/></button>
                         <div id="flipbook" class="flipbook">

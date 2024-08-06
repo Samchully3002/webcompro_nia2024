@@ -412,10 +412,6 @@ input[type="checkbox"] {
     flex-direction: column;
 }
 
-.pricing-wrapper .card .list img {
-    width: 20px;
-}
-
 .pricing-wrapper .card .list p {
     color: #3f4254;
     font-weight: 400;
