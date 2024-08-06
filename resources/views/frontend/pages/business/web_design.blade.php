@@ -21,14 +21,17 @@
             <!-- section-business start -->
             <div id="flipbook-view" class="business-wrapper">
                 <div  class="flipbook-view">
+                    <div class="btn-flipbook">
+                        <img src="{{ asset('frontend/images/icon/close-circle.svg') }}"/>
+                    </div>
                     <div id="flipContainer" class="container">
-                        <button onclick="prevFlip()">Prev</button>
+                        <button onclick="prevFlip()"><img src="{{ asset('frontend/images/icon/arrow-left.svg') }}"/></button>
                         <div id="flipbook" class="flipbook">
                         @foreach($content as $page)
                             <div style="background-image:url({{ asset($page) }})"></div>
                         @endforeach
                         </div>
-                        <button onclick="nextFlip()">Next</button>
+                        <button onclick="nextFlip()"><img src="{{ asset('frontend/images/icon/arrow-right.svg') }}"/></button>
                         <iframe
                             src="{{asset('frontend/WebDevProposalPricelist.pdf')}}" id="myFrame"
                             style="position: absolute;width:0;height:0;border:0;">
