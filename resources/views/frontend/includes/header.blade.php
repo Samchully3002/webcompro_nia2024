@@ -18,7 +18,7 @@
                             <li><a href="/our-business/system-development-management"><em>{{ __('sdm') }}</em></a></li>
                             <li><a href="/our-business/export-voucher"><em>{{ __('ev') }}</em></a></li>
                             <li><a href="/our-business/web-design"><em>{{ __('wdd') }}</em></a></li>
-                            <li><a href="/our-business/creative-solutions"><em>Creative Sollutions</em></a></li>
+                            <li><a href="/our-business/creative-solutions"><em>{{ __('cs') }}</em></a></li>
                         </ul>
                     </li>
                     <li class="first-menu hidden-box"><a href="/about-us">{{ __('navbar-about') }}</a>
@@ -66,7 +66,7 @@
                                 <img style="width: 75%;" src="../../frontend/images/icon/ic_logo.png" alt="icon"/>
                             </a>
                             <div class="right-mobile">
-                                <a href="https://www.youtube.com/channel/UCk4YWCZF81paAh_rzwwiKxQ" class="btn-video-mobile">Our Video&nbsp;&nbsp;&nbsp;
+                                <a href="https://www.youtube.com/channel/UCk4YWCZF81paAh_rzwwiKxQ" class="btn-video-mobile">{{ __('navbar-video') }}&nbsp;&nbsp;&nbsp;
                                     <img style="width: 12%;" src="../../frontend/images/icon/polygon.png" alt="icon"/>
                                 </a>
                             </div>
@@ -106,7 +106,7 @@
                             <br />
                             <a href="/our-business/web-design">{{ __('wdd') }}</a>
                             <br />
-                            <a href="/our-business/creative-solutions">Creative Solutions</a>
+                            <a href="/our-business/creative-solutions">{{ __('cs') }}</a>
                         </div>
                     </li>
 
