@@ -77,7 +77,7 @@
                       <div class="row mb-3">
                         <label class="col-sm-2 col-form-label" for="basic-default-message">Content [en]</label>
                           <div class="col-sm-10">
-                            <textarea id="content" name="content" class="form-control txt-content" placeholder="" aria-label="">{{$notice->content}}"</textarea>
+                            <textarea id="content" name="content" class="content form-control txt-content" placeholder="" aria-label="">{{$notice->content}}"</textarea>
                           </div>
                       </div>
                      </div>
@@ -91,7 +91,7 @@
                       <div class="row mb-3">
                         <label class="col-sm-2 col-form-label" for="basic-default-message">Content [kr]</label>
                           <div class="col-sm-10">
-                            <textarea id="content_kr" name="content_kr" class="form-control txt-content" placeholder="" aria-label="">{{$notice->content_kr}}</textarea>
+                            <textarea id="content_kr" name="content_kr" class="content form-control txt-content" placeholder="" aria-label="">{{$notice->content_kr}}</textarea>
                           </div>
                       </div>
                      </div>
@@ -99,13 +99,13 @@
                      <div class="row mb-3">
                         <label class="col-sm-2 col-form-label" for="basic-default-name">Title [id]</label>
                           <div class="col-sm-10">
-                            <input type="text" name="title_id" class="form-control" id="title_id" placeholder="" require="" value="{{$notice->titile_id}}">
+                            <input type="text" name="title_id" class="form-control" id="title_id" placeholder="" require="" value="{{$notice->title_id}}">
                           </div>
                       </div>
                       <div class="row mb-3">
                         <label class="col-sm-2 col-form-label" for="basic-default-message">Content [id]</label>
                           <div class="col-sm-10">
-                            <textarea id="content_id" name="content_id" class="form-control txt-content" placeholder="" aria-label="">{{$notice->content_id}}</textarea>
+                            <textarea id="content_id" name="content_id" class="content form-control txt-content" placeholder="" aria-label="">{{$notice->content_id}}</textarea>
                           </div>
                       </div>
                      </div>
@@ -121,11 +121,10 @@
       </div>
     </div>
   </div>
-  <!-- <script>
-          // ==== custom editor ===//
-      const quill = new Quill('#content', {
-          theme: 'snow',
-          text : "{{$notice->content}}"
-      });
-    </script> -->
+  <script>
+   tinymce.init({
+  selector: 'textarea.content'
+});
+
+</script>
     @stop

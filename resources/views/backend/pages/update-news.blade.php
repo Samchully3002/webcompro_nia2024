@@ -1,6 +1,6 @@
 @extends('dashboard')
     @section('content')
-    <h4 class="py-3 mb-4"><span class="text-muted fw-light">News /</span> Post News</h4>
+    <h4 class="py-3 mb-4"><span class="text-muted fw-light">News /</span> Update News</h4>
 
   <!-- Form Post New Business -->
   <div class="row">
@@ -14,7 +14,7 @@
           <form id="form_news" name="form_news" method="POST" onsubmit="return false">
           @csrf
             <div class="row mb-3">
-              <label class="col-sm-2 col-form-label" for="basic-default-name">News Title</label>
+              <label class="col-sm-2 col-form-label" for="basic-default-name">News Title [en]</label>
               <div class="col-sm-10">
                 <input type="text" value="{{$news->title}}" class="form-control" id="basic-default-name" placeholder="" id="title" name="title">
                 <input type="hidden" name="id" id="id" placeholder="" value="{{$news->id}}">
