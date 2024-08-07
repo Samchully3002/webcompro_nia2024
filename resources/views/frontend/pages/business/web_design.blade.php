@@ -19,17 +19,18 @@
             <!-- bg-wrapper end -->
 
             <!-- section-business start -->
-            <div id="flipbook-view" class="business-wrapper">
+            <div id="flipbookWrapper" class="business-wrapper">
                 <div  class="flipbook-view">
-                    <div class="btn-flipbook">
+                    <div class="btn-flipbook" style="visibility: hidden;">
                         <img src="{{ asset('frontend/images/icon/close-circle.svg') }}"/>
                     </div>
                     <div id="flipContainer" class="container">
                         <button onclick="prevFlip()"><img src="{{ asset('frontend/images/icon/arrow-left.svg') }}"/></button>
                         <div id="flipbook" class="flipbook">
-                        @foreach($content as $page)
-                            <div style="background-image:url({{ asset($page) }})"></div>
-                        @endforeach
+                            @foreach($content as $page)
+                                <div id="img_flip" style="background-image:url({{ asset($page) }}); width:100%; height:100%;"></div>
+                                {{-- <div <img src="{{ asset($page) }}"/> --}}
+                            @endforeach
                         </div>
                         <button onclick="nextFlip()"><img src="{{ asset('frontend/images/icon/arrow-right.svg') }}"/></button>
                         <iframe
@@ -38,11 +39,11 @@
                         </iframe>
                     </div>
                     <div class="btn-flipbook">
-                        <button onclick="fullView()"><img src="{{ asset('frontend/images/icon/fb_fullscreen.svg') }}"/></button>
-                        <img src="{{ asset('frontend/images/icon/fb_zoom_in.svg') }}"/>
+                        <img onclick="fullView()" style="cursor: pointer" src="{{ asset('frontend/images/icon/fb_fullscreen.svg') }}"/>
+                        <img onclick="zoomIn()" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_zoom_in.svg') }}"/>
                         <img src="{{ asset('frontend/images/icon/fb_zoom_out.svg') }}"/>
-                        <button onclick="print()"><img src="{{ asset('frontend/images/icon/fb_print.svg') }}"/></button>
-                        <button id="downloadButton"><img src="{{ asset('frontend/images/icon/fb_download.svg') }}"/>
+                        <img onclick="print()" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_print.svg') }}"/>
+                        <img id="downloadButton" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_download.svg') }}"/>
                         <a id="downloadLink" href="{{asset('frontend/WebDevProposalPricelist.pdf')}}" download style="display: none;"></a>
                     </div>
                 </div>
@@ -232,7 +233,7 @@
         @include('frontend.includes.footer')
         <script type="text/javascript" src="{{ asset('frontend/extras/modernizr.2.5.3.min.js') }}"></script>
         <script>
-            var elem = document.getElementById("flipbook-view");
+            var elem = document.getElementById("flipbookWrapper");
             let print = () => {
                 let objFra = document.getElementById('myFrame');
                 objFra.contentWindow.focus();
@@ -242,10 +243,20 @@
                 document.getElementById('downloadLink').click();
             });
 
+            function zoomIn() {
+                // $('#flipbook').turn('zoom', 0.5, 0);
+                var f = document.getElementById('flipbook');
+                var pos = {
+                    x: f.pageX - $(this).offset().left,
+                    y: f.pageY - $(this).offset().top
+                };
+                $('#flipbook').zoom('zoomIn', pos);
+            }
+
             function fullView(){
                 if (elem.requestFullscreen) {
                     elem.requestFullscreen();
-                    elem.classList.add("fullDisplay");
+                    $('#flipbook').turn('size', 2200, 600);
                 } else if (elem.mozRequestFullScreen) { /* Firefox */
                     elem.mozRequestFullScreen();
                     elem.classList.add("fullDisplay");
@@ -257,6 +268,18 @@
                     elem.classList.add("fullDisplay");
                 }
             };
+            function exitFullscreen() {
+                if(elem.exitFullscreen) {
+                    elem.exitFullscreen();
+                    $('#flipbook').turn('size', 1400, 400);
+                } else if(elem.mozCancelFullScreen) {
+                    elem.mozCancelFullScreen();
+                    $('#flipbook').turn('size', 1400, 400);
+                } else if(elem.webkitExitFullscreen) {
+                    elem.webkitExitFullscreen();
+                    $('#flipbook').turn('size', 1400, 400);
+                }
+            }
             function prevFlip(){
                 $('#flipbook').turn('previous');
             };
@@ -271,13 +294,6 @@
                     elevation: 50,
                     gradients: true,
                     autoCenter: true,
-                    when:{
-                        missing: function (e, pages) {
-                            for (var i = 0; i < pages.length; i++) {
-                                $('.flipbook').turn('addPage',page[pages[i]],pages[i]);
-                            }
-                        }
-                    }
                 });
                 $(window).bind('keydown', function(e){
                     if (e.keyCode==37)
@@ -290,45 +306,40 @@
                 // $('.flipbook-view').bind('zoom.tap', zoomTo);
 
                 //Optional, calls the resize function when the window changes, useful when viewing on tablet or mobile phones
-                $(window).resize(function() {
-                    resizeViewport();
-                }).bind('orientationchange', function() {
-                    resizeViewport();
-                });
+                // $(window).resize(function() {
+                //     resizeViewport();
+                // }).bind('orientationchange', function() {
+                //     resizeViewport();
+                // });
 
                 //Must be called initially to setup the size
-                resizeViewport();
+                // resizeViewport();
             }
 
-            function page(num){
-                var elem = $('<div />',{}).html('<div><img src="book_'+num+'.jpg></div>');
-                return elem;
+            function zoomTo(event) {
+                setTimeout(function() {
+                    if ($('#flipbook').data().regionClicked) {
+                        $('#flipbook').data().regionClicked = false;
+                    } else {
+                        if ($('#flipbook').zoom('value')==1) {
+                            $('#flipbook').zoom('zoomIn', event);
+                        } else {
+                            $('#flipbook').zoom('zoomOut');
+                        }
+                    }
+                }, 1);
             }
 
-            // function zoomTo(event) {
-            //     setTimeout(function() {
-            //         if ($('.flipbook-view').data().regionClicked) {
-            //             $('.flipbook-view').data().regionClicked = false;
-            //         } else {
-            //             if ($('.flipbook-view').zoom('value')==1) {
-            //                 $('.flipbook-view').zoom('zoomIn', event);
-            //             } else {
-            //                 $('.flipbook-view').zoom('zoomOut');
-            //             }
-            //         }
-            //     }, 1);
+            // function resizeViewport() {
+            //     var width = $(window).width(),
+            //         height = $(window).height(),
+            //         options = $('#flipbook').turn('options');
+
+            //     $('#flipbook').css({
+            //         width: width,
+            //         height: height
+            //     }).zoom('resize');
             // }
-
-            function resizeViewport() {
-                var width = $(window).width(),
-                    height = $(window).height(),
-                    options = $('.flipbook').turn('options');
-
-                $('.flipbook-view').css({
-                    width: width,
-                    height: height
-                }).zoom('resize');
-            }
             yepnope({
                 test : Modernizr.csstransforms,
                 yep: ['{{ asset('frontend/lib/turn.js') }}'],
