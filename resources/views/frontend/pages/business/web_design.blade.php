@@ -28,7 +28,7 @@
                         <button onclick="prevFlip()"><img src="{{ asset('frontend/images/icon/arrow-left.svg') }}"/></button>
                         <div id="flipbook" class="flipbook">
                             @foreach($content as $page)
-                                <div id="img_flip" style="background-image:url({{ asset($page) }}); width:100%; height:100%;"></div>
+                                <div id="img_flip" style="background-image:url({{ asset($page) }});"></div>
                                 {{-- <div <img src="{{ asset($page) }}"/> --}}
                             @endforeach
                         </div>
@@ -234,10 +234,12 @@
         <script type="text/javascript" src="{{ asset('frontend/extras/modernizr.2.5.3.min.js') }}"></script>
         <script>
             var elem = document.getElementById("flipbookWrapper");
+            var imgFlip = document.getElementById("img_flip");
             var zoom_el = document.getElementById("flipbook");
             var zom1= true;
             var zom2= true;
             var zom3= true;
+
             let print = () => {
                 let objFra = document.getElementById('myFrame');
                 objFra.contentWindow.focus();
@@ -311,39 +313,61 @@
                 }
             }
 
-            function fullView(){
-                if (elem.requestFullscreen) {
-                    elem.requestFullscreen();
-                    $('#flipbook').turn('size', 2200, 600);
-                } else if (elem.mozRequestFullScreen) { /* Firefox */
-                    elem.mozRequestFullScreen();
-                    elem.classList.add("fullDisplay");
-                } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
-                    elem.webkitRequestFullscreen();
-                    elem.classList.add("fullDisplay");
-                } else if (elem.msRequestFullscreen) { /* IE/Edge */
-                    elem.msRequestFullscreen();
-                    elem.classList.add("fullDisplay");
-                }
-            };
-            function exitFullscreen() {
-                if(elem.exitFullscreen) {
-                    elem.exitFullscreen();
-                    $('#flipbook').turn('size', 1400, 400);
-                } else if(elem.mozCancelFullScreen) {
-                    elem.mozCancelFullScreen();
-                    $('#flipbook').turn('size', 1400, 400);
-                } else if(elem.webkitExitFullscreen) {
-                    elem.webkitExitFullscreen();
-                    $('#flipbook').turn('size', 1400, 400);
+            function canToggleFullscreen() {
+                return !!(document.fullscreenEnabled || document.webkitFullscreenEnabled || document.msFullscreenEnabled);
+            }
+            /** return true if fullScreenElement exists, indicating the document is in full screen mode. */
+            function isFullscreen() {
+                return !!(document.fullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement);
+            }
+
+            function getStatusFS() {
+                return document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
+            }
+
+            function isFullscreenEnable(elem) {
+                return getStatusFS() === elem;
+            }
+
+            /** If the browser is capable, requests to be in full screen mode. */
+            function enterFullscreen() {
+                // var page = document.documentElement
+                const fullScreenFn = elem.requestFullscreen || elem.webkitRequestFullscreen || elem.msRequestFullscreen;
+                if (fullScreenFn) {
+                    fullScreenFn.apply(elem);
                 }
             }
-            function prevFlip(){
-                $('#flipbook').turn('previous');
-            };
-            function nextFlip(){
-                $('#flipbook').turn('next');
-            };
+
+            /** If the browser is capable, exits full screen mode */
+            function exitFullscreen() {
+                const exitFullScreenFn = document.exitFullScreen || document.webkitExitFullscreen || document.msExitFullscreen;
+                if (exitFullScreenFn) {
+                    exitFullScreenFn.apply(document);
+                }
+            }
+
+            /** Toggles between full screen modes.  The changing of inner text */
+            function fullView() {
+                if (!canToggleFullscreen()) {
+                    console.log("unvaible");
+                }
+                if (!isFullscreen()) {
+                    enterFullscreen();
+                    console.log("cancel");
+                    zoom_el.style.zoom = 1.1;
+                    zoom_el.style.MozTransform = 'scale(1.1)';
+                    zoom_el.style.WebkitTransform = 'scale(1.1)';
+                    autoCenter: true
+                } else {
+                    exitFullscreen();
+                    console.log("enter");
+                    zoom_el.style.zoom = 1;
+                    zoom_el.style.MozTransform = 'scale(1)';
+                    zoom_el.style.WebkitTransform = 'scale(1)';
+                    autoCenter: true
+                }
+            }
+
             function loadApp() {
                 $('.flipbook').turn({
                     aspectRatio:16/9,
@@ -353,6 +377,7 @@
                     gradients: true,
                     autoCenter: true,
                 });
+
                 $(window).bind('keydown', function(e){
                     if (e.keyCode==37)
                         $('#flipbook').turn('previous');
@@ -373,6 +398,13 @@
                 //Must be called initially to setup the size
                 // resizeViewport();
             }
+
+            function prevFlip(){
+                $('#flipbook').turn('previous');
+            };
+            function nextFlip(){
+                $('#flipbook').turn('next');
+            };
 
             function zoomTo(event) {
                 setTimeout(function() {
