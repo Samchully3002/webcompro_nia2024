@@ -441,7 +441,7 @@
     }
 
     .vision_text {
-        font-size: 24px;
+        font-size: 32px;
         padding: 0 20px;
     }
 
@@ -485,6 +485,10 @@
 }
 
 @media screen and (max-width: 780px) {
+    .vision_text {
+        font-size: 24px;
+    }
+
     .marquee {
         gap: 50px;
         animation: marquee 20s linear infinite;

@@ -18,6 +18,38 @@
             </div>
             <!-- bg-wrapper end -->
 
+            <!-- section-business start -->
+            <div id="flipbookWrapper" class="business-wrapper">
+                <div  class="flipbook-view">
+                    <div class="btn-flipbook" style="visibility: hidden;">
+                        <img src="{{ asset('frontend/images/icon/close-circle.svg') }}"/>
+                    </div>
+                    <div id="flipContainer" class="container">
+                        <button onclick="prevFlip()"><img src="{{ asset('frontend/images/icon/arrow-left.svg') }}"/></button>
+                        <div id="flipbook" class="flipbook">
+                            @foreach($content as $page)
+                                <div id="img_flip" style="background-image:url({{ asset($page) }}); width:100%; height:100%;"></div>
+                                {{-- <div <img src="{{ asset($page) }}"/> --}}
+                            @endforeach
+                        </div>
+                        <button onclick="nextFlip()"><img src="{{ asset('frontend/images/icon/arrow-right.svg') }}"/></button>
+                        <iframe
+                            src="{{asset('frontend/WebDevProposalPricelist.pdf')}}" id="myFrame"
+                            style="position: absolute;width:0;height:0;border:0;">
+                        </iframe>
+                    </div>
+                    <div class="btn-flipbook">
+                        <img onclick="fullView()" style="cursor: pointer" src="{{ asset('frontend/images/icon/fb_fullscreen.svg') }}"/>
+                        <img id="btn_zoomIn" onclick="zoomIn()" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_zoom_in.svg') }}"/>
+                        <img id="btn_zoomOut" onclick="zoomOut()" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_zoom_out.svg') }}"/>
+                        <img onclick="print()" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_print.svg') }}"/>
+                        <img id="downloadButton" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_download.svg') }}"/>
+                        <a id="downloadLink" href="{{asset('frontend/WebDevProposalPricelist.pdf')}}" download style="display: none;"></a>
+                    </div>
+                </div>
+            </div>
+            <!-- section-business end -->
+
             <!-- section-wrapper start -->
             <div class="pricing-wrapper">
                 <div class="card">
@@ -33,7 +65,7 @@
                         <p><img src="../frontend/images/icon/greencheck.svg"/>{{ __('compro5') }}</p>
                         <p><img src="../frontend/images/icon/greencheck.svg"/>{{ __('compro6') }}</p>
                     </div>
-                    <button>{{ __('btn-contact') }}</button>
+                    <button onclick="sendCompro()">{{ __('btn-contact') }}</button>
                 </div>
                 <div class="card">
                     <div class="title">
@@ -48,7 +80,7 @@
                         <p><img src="../frontend/images/icon/greencheck.svg"/>{{ __('media5') }}</p>
                         <p><img src="../frontend/images/icon/greencheck.svg"/>{{ __('media6') }}</p>
                     </div>
-                    <button>{{ __('btn-contact') }}</button>
+                    <button onclick="sendMedia()">{{ __('btn-contact') }}</button>
                 </div>
                 <div class="card">
                     <div class="title">
@@ -63,50 +95,15 @@
                         <p><img src="../frontend/images/icon/greencheck.svg"/>{{ __('ecommerce5') }}</p>
                         <p><img src="../frontend/images/icon/greencheck.svg"/>{{ __('ecommerce6') }}</p>
                     </div>
-                    <button>{{ __('btn-contact') }}</button>
+                    <button onclick="sendEcommerce()">{{ __('btn-contact') }}</button>
                 </div>
             </div>
             <!-- section-wrapper end -->
 
-            <!-- section-business start -->
-            <div class="business-wrapper">
-                <div class="content">
-                    <div class="box">
-                        <img src="../frontend/images/icon/design.svg"/>
-                        <div class="text">
-                            <span>{{ __('prodesign') }}</span>
-                            <p>{{ __('prodesign-content') }}</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <img src="../frontend/images/icon/responsive.svg"/>
-                        <div class="text">
-                            <span>{{ __('responsive') }}</span>
-                            <p>{{ __('responsive-content') }}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="content">
-                    <div class="box">
-                        <img src="../frontend/images/icon/seo.svg"/>
-                        <div class="text">
-                            <span>{{ __('seo') }}</span>
-                            <p>{{ __('seo-content') }}</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <img src="../frontend/images/icon/fast.svg"/>
-                        <div class="text">
-                            <span>{{ __('fast') }}</span>
-                            <p>{{ __('fast-content') }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- section-business end -->
 
-             <!-- section-streamlined start -->
-             <div class="dekstop-streamlined">
+
+            <!-- section-streamlined start -->
+            {{-- <div class="dekstop-streamlined">
                 <div class="our-history dekstop">
                 <div class="box">
                     <!-- Left Content -->
@@ -170,7 +167,7 @@
                 </div>
             </div>
              </div>
-            
+
             <div class="mobile-streamlined">
                 <div class="our-history mobile">
                 <div class="box">
@@ -228,14 +225,187 @@
                     </div>
                 </div>
             </div>
-            </div>
-            
+            </div> --}}
+
              <!-- section-streamlined end -->
         </div>
 
         @include('frontend.includes.footer')
-
+        <script type="text/javascript" src="{{ asset('frontend/extras/modernizr.2.5.3.min.js') }}"></script>
         <script>
+            var elem = document.getElementById("flipbookWrapper");
+            var zoom_el = document.getElementById("flipbook");
+            var zom1= true;
+            var zom2= true;
+            var zom3= true;
+            let print = () => {
+                let objFra = document.getElementById('myFrame');
+                objFra.contentWindow.focus();
+                objFra.contentWindow.print();
+            }
+            document.getElementById('downloadButton').addEventListener('click', function() {
+                document.getElementById('downloadLink').click();
+            });
+
+            function zoomIn() {
+                // $('#flipbook').turn('zoom', 0.5, 0);
+
+                if (zom1 == true) {
+                    zoom_el.style.zoom = 1.2;
+                    zoom_el.style.MozTransform = 'scale(1.2)';
+                    zoom_el.style.WebkitTransform = 'scale(1.2)';
+                    autoCenter: true
+                    zom1 = false
+                    zom2 = true
+                    zom3 = true
+                } else if (zom2 == true){
+                    zoom_el.style.zoom= 1.5;
+                    zoom_el.style.MozTransform = 'scale(1.5)';
+                    zoom_el.style.WebkitTransform = 'scale(1.5)';
+                    autoCenter: true
+                    zom1 = false
+                    zom2 = false
+                    zom3 = true
+                } else if (zom3 == true){
+                    zoom_el.style.zoom= 2;
+                    zoom_el.style.MozTransform = 'scale(2)';
+                    zoom_el.style.WebkitTransform = 'scale(2)';
+                    autoCenter: true
+                    zom1 = false
+                    zom2 = false
+                    zom3 = false
+                } else {
+                    document.getElementById("btn_zoomIn").disabled = true;
+                }
+            }
+
+            function zoomOut() {
+                // $('#flipbook').turn('zoom', 0.5, 0);
+
+                if (zom3 == false) {
+                    zoom_el.style.zoom = 1.5;
+                    zoom_el.style.MozTransform = 'scale(1.5)';
+                    zoom_el.style.WebkitTransform = 'scale(1.5)';
+                    autoCenter: true
+                    zom1 = false
+                    zom2 = false
+                    zom3 = true
+                } else if (zom2 == false){
+                    zoom_el.style.zoom= 1.2;
+                    zoom_el.style.MozTransform = 'scale(1.2)';
+                    zoom_el.style.WebkitTransform = 'scale(1.2)';
+                    autoCenter: true
+                    zom1 = false
+                    zom2 = false
+                    zom3 = true
+                } else if (zom3 == true){
+                    zoom_el.style.zoom= 1.5;
+                    zoom_el.style.MozTransform = 'scale(1.5)';
+                    zoom_el.style.WebkitTransform = 'scale(1.5)';
+                    autoCenter: true
+                    zom1 = false
+                    zom2 = false
+                    zom3 = false
+                } else {
+                    document.getElementById("btn_zoomIn").disabled = true;
+                }
+            }
+
+            function fullView(){
+                if (elem.requestFullscreen) {
+                    elem.requestFullscreen();
+                    $('#flipbook').turn('size', 2200, 600);
+                } else if (elem.mozRequestFullScreen) { /* Firefox */
+                    elem.mozRequestFullScreen();
+                    elem.classList.add("fullDisplay");
+                } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+                    elem.webkitRequestFullscreen();
+                    elem.classList.add("fullDisplay");
+                } else if (elem.msRequestFullscreen) { /* IE/Edge */
+                    elem.msRequestFullscreen();
+                    elem.classList.add("fullDisplay");
+                }
+            };
+            function exitFullscreen() {
+                if(elem.exitFullscreen) {
+                    elem.exitFullscreen();
+                    $('#flipbook').turn('size', 1400, 400);
+                } else if(elem.mozCancelFullScreen) {
+                    elem.mozCancelFullScreen();
+                    $('#flipbook').turn('size', 1400, 400);
+                } else if(elem.webkitExitFullscreen) {
+                    elem.webkitExitFullscreen();
+                    $('#flipbook').turn('size', 1400, 400);
+                }
+            }
+            function prevFlip(){
+                $('#flipbook').turn('previous');
+            };
+            function nextFlip(){
+                $('#flipbook').turn('next');
+            };
+            function loadApp() {
+                $('.flipbook').turn({
+                    aspectRatio:16/9,
+                    width:1400,
+                    height:400,
+                    elevation: 50,
+                    gradients: true,
+                    autoCenter: true,
+                });
+                $(window).bind('keydown', function(e){
+                    if (e.keyCode==37)
+                        $('#flipbook').turn('previous');
+                    else if (e.keyCode==39)
+                        $('#flipbook').turn('next');
+                });
+
+                //Binds the single tap event to the zoom function
+                // $('.flipbook-view').bind('zoom.tap', zoomTo);
+
+                //Optional, calls the resize function when the window changes, useful when viewing on tablet or mobile phones
+                // $(window).resize(function() {
+                //     resizeViewport();
+                // }).bind('orientationchange', function() {
+                //     resizeViewport();
+                // });
+
+                //Must be called initially to setup the size
+                // resizeViewport();
+            }
+
+            function zoomTo(event) {
+                setTimeout(function() {
+                    if ($('#flipbook').data().regionClicked) {
+                        $('#flipbook').data().regionClicked = false;
+                    } else {
+                        if ($('#flipbook').zoom('value')==1) {
+                            $('#flipbook').zoom('zoomIn', event);
+                        } else {
+                            $('#flipbook').zoom('zoomOut');
+                        }
+                    }
+                }, 1);
+            }
+
+            // function resizeViewport() {
+            //     var width = $(window).width(),
+            //         height = $(window).height(),
+            //         options = $('#flipbook').turn('options');
+
+            //     $('#flipbook').css({
+            //         width: width,
+            //         height: height
+            //     }).zoom('resize');
+            // }
+            yepnope({
+                test : Modernizr.csstransforms,
+                yep: ['{{ asset('frontend/lib/turn.js') }}'],
+                nope: ['{{ asset('frontend/lib/turn.html4.min.js') }}'],
+                both: ['{{ asset('frontend/css/business.css') }}'],
+                complete: loadApp
+            });
+
             document.addEventListener('DOMContentLoaded', function() {
                 const appearElements = document.querySelectorAll('.appear');
 
@@ -276,16 +446,45 @@
                 // Panggil sekali ketika halaman dimuat (jika elemen sudah ada di viewport pada awalnya)
                 appearOnScroll();
             });
-        </script>
-        <script>
+
+             function sendCompro() {
+                var sendTo = "info@nia.co.id";
+                var subject= "Quotation Company Profile";
+                const body = `Hello NIA! \n\n I want to ask quotation about website design and development for company profile.\n\n Thank you NIA`;
+                // Construct the mailto link
+                var mailtoLink = 'mailto:'+sendTo+'?subject='+subject+'&body='+body;
+
+                window.open(mailtoLink, '_blank');
+            }
+
+            function sendMedia() {
+                var sendTo = "info@nia.co.id";
+                var subject= "Quotation Media News Website";
+                const body = `Hello NIA! \n\n I want to ask quotation about media news website design and development.\n\n Thank you NIA`;
+                // Construct the mailto link
+                var mailtoLink = 'mailto:'+sendTo+'?subject='+subject+'&body='+body;
+
+                window.open(mailtoLink, '_blank');
+            }
+
+            function sendEcommerce() {
+                var sendTo = "info@nia.co.id";
+                var subject= "Quotation Ecommerce Website";
+                const body = `Hello NIA! \n\n I want to ask quotation about eCommerce website design and development.\n\n Thank you NIA`;
+                // Construct the mailto link
+                var mailtoLink = 'mailto:'+sendTo+'?subject='+subject+'&body='+body;
+
+                window.open(mailtoLink, '_blank');
+            }
+
             $(document).ready(function () {
             $(document).on("scroll", function () {
                 var windowHeight = $(window).height(); // Tinggi jendela browser
                 var scrollPosition = $(document).scrollTop() + windowHeight / 2; // Scroll position di tengah jendela browser
-        
+
                 $(".wrapper").each(function () {
                     let elementOffsetTop = $(this).offset().top;
-        
+
                     if (elementOffsetTop <= scrollPosition) {
                         // Tambahkan kelas 'active' untuk mengatur opacity ke 1
                         $(this).addClass("active");

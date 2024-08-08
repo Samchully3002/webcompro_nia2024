@@ -38,7 +38,9 @@ Route::get('/our-business/intellegent-integrated-logistic', [App\Http\Controller
 Route::get('/our-business/digital-healthcare', [App\Http\Controllers\BusinessController::class, 'healthcare'])->name('digital-healthcare');
 Route::get('/our-business/system-development-management', [App\Http\Controllers\BusinessController::class, 'management'])->name('system-development-management');
 Route::get('/our-business/export-voucher', [App\Http\Controllers\BusinessController::class, 'exportvoucher'])->name('export-voucher');
-Route::get('/our-business/webdesign', [App\Http\Controllers\BusinessController::class, 'webdesign'])->name('webDesign');
+Route::get('/our-business/webflip', [App\Http\Controllers\BusinessController::class, 'webflip'])->name('webflip');
+Route::get('/our-business/web-design', [App\Http\Controllers\BusinessController::class, 'webdesign'])->name('web-design');
+Route::get('/our-business/creative-solutions', [App\Http\Controllers\BusinessController::class, 'creativesolutions'])->name('creative-solutions');
 
 Route::get('/privacy-policy', [App\Http\Controllers\HomeController::class, 'privacy'])->name('privacy');
 
@@ -75,6 +77,12 @@ Route::get('/system-development-management', function () {
 Route::get('/export-voucher', function () {
    return redirect('/our-business/export-voucher');
 });
+Route::get('/web-design', function () {
+   return redirect('/our-business/web-design');
+});
+Route::get('/creative-solutions', function () {
+   return redirect('/our-business/creative-solutions');
+});
 
 // Route::get('/lang',[LanguageController::class , 'change'])->name('user.lang');
 
@@ -96,13 +104,15 @@ Route::middleware('auth')->group(function () {
    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+   Route::get('/dashboard', [App\Http\Controllers\backend\DashboardController::class, 'index'])->name('dashboard');
 });
 
 Route::group([
       'middleware' => 'auth',
       'prefix'=>'dashboard/',
       'as' => 'dashboard.',
-      
+
       ],
       function () {
         // Dashboard Routes

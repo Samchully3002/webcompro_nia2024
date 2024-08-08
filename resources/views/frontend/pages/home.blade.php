@@ -5,7 +5,11 @@
 <!-- dev -->
 <!-- <link rel="stylesheet" href="{{asset('frontend/css/home.css')}}"/> -->
  <!-- production -->
+<<<<<<< HEAD
 <link rel="stylesheet" href="{{asset('frontend/css/minify/home.min.css')}}"/>
+=======
+<link rel="stylesheet" href="{{asset('frontend/css/home.css')}}"/>
+>>>>>>> 8223ec7db1e2eecc9807d4995f89d4772ee052bc
 </head>
 <body>
 <!-- <div data-include="component/header"></div> -->
@@ -102,7 +106,7 @@
         </div>
         {{-- <div class="item">
             <div class="image-container">
-                <a href="/export-voucher">
+                <a href="/web-design">
                     <img src="../../frontend/images/WDD.jpg" alt="export voucher image banner">
                     <div class="image-overlay">
                         <div class="ic-bisnis">
@@ -116,7 +120,28 @@
                     </div>
                 </a>
             </div>
+<<<<<<< HEAD
         </div> --}}
+=======
+        </div>
+        <div class="item">
+            <div class="image-container">
+                <a href="/creative-solutions">
+                    <img src="../../frontend/images/CS.jpg" alt="export voucher image banner">
+                        <div class="image-overlay">
+                        <div class="ic-bisnis">
+                            <img src="../../frontend/images/icon/designtools.svg" alt="icon arrow">
+                            </div><br>
+                            <p >{{ __('cs') }}</p><br>
+                            <span>{{ __('cs-content') }}</span><br>
+                            <div class="btn-more">{{ __('btn-more') }}&nbsp;&nbsp;&nbsp;
+                                <img src="../../frontend/images/icon/arrow.png" alt="icon arrow">
+                            </div>
+                        </div>
+                </a>
+            </div>
+        </div>
+>>>>>>> 8223ec7db1e2eecc9807d4995f89d4772ee052bc
 
 
         <div class="clientSection">

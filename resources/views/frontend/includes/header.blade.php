@@ -9,21 +9,24 @@
                     </li>
                     <li class="first-menu hidden-box>"><a href="/">{{ __('navbar-home') }}</a></li>
                     <li class="first-menu hidden-box business">
-                        <a class="btn_business" href="/our-business/intellegent-integrated-logistic">{{ __('navbar-business') }}&nbsp;&nbsp;&nbsp;
-                        <img src="../../frontend/images/icon/arrow-down.png" class="language_caret" alt="language caret"/></a>
+                        <div class="btn_business">{{ __('navbar-business') }}&nbsp;&nbsp;&nbsp;
+                            <img src="../../frontend/images/icon/arrow-down.png" class="language_caret" alt="language caret"/>
+                        </div>
                         <ul class="hidden-menu">
                             <li><a href="/our-business/intellegent-integrated-logistic"><em>{{ __('iil') }}</em></a></li>
                             <li><a href="/our-business/digital-healthcare"><em>{{ __('dh') }}</em></a></li>
                             <li><a href="/our-business/system-development-management"><em>{{ __('sdm') }}</em></a></li>
                             <li><a href="/our-business/export-voucher"><em>{{ __('ev') }}</em></a></li>
-                            {{-- <li><a href="/our-business/webDesign"><em>{{ __('wdd') }}</em></a></li> --}}
+                            <li><a href="/our-business/web-design"><em>{{ __('wdd') }}</em></a></li>
+                            <li><a href="/our-business/creative-solutions"><em>{{ __('cs') }}</em></a></li>
                         </ul>
                     </li>
                     <li class="first-menu hidden-box"><a href="/about-us">{{ __('navbar-about') }}</a>
                     </li>
                     <li class="first-menu hidden-box business">
-                        <a class="btn_business" href="/community/notice">{{ __('navbar-community') }}&nbsp;&nbsp;&nbsp;
-                        <img src="../../frontend/images/icon/arrow-down.png" class="language_caret" alt="language caret"/></a>
+                        <div class="btn_business">{{ __('navbar-community') }}&nbsp;&nbsp;&nbsp;
+                            <img src="../../frontend/images/icon/arrow-down.png" class="language_caret" alt="language caret"/>
+                        </div>
                         <ul class="hidden-menu">
                             <li><a href="/community/notice"><em>{{ __('navbar-notice') }}</em></a></li>
                             <li><a href="/community/news"><em>{{ __('navbar-news') }}</em></a></li>
@@ -63,7 +66,7 @@
                                 <img style="width: 75%;" src="../../frontend/images/icon/ic_logo.png" alt="icon"/>
                             </a>
                             <div class="right-mobile">
-                                <a href="https://www.youtube.com/channel/UCk4YWCZF81paAh_rzwwiKxQ" class="btn-video-mobile">Our Video&nbsp;&nbsp;&nbsp;
+                                <a href="https://www.youtube.com/channel/UCk4YWCZF81paAh_rzwwiKxQ" class="btn-video-mobile">{{ __('navbar-video') }}&nbsp;&nbsp;&nbsp;
                                     <img style="width: 12%;" src="../../frontend/images/icon/polygon.png" alt="icon"/>
                                 </a>
                             </div>
@@ -100,8 +103,10 @@
                             <a href="/our-business/system-development-management">{{ __('sdm') }}</a>
                             <br />
                             <a href="/our-business/export-voucher">{{ __('ev') }}</a>
-                            {{-- <br />
-                            <a href="/our-business/webdesign">{{ __('wdd') }}</a> --}}
+                            <br />
+                            <a href="/our-business/web-design">{{ __('wdd') }}</a>
+                            <br />
+                            <a href="/our-business/creative-solutions">{{ __('cs') }}</a>
                         </div>
                     </li>
 

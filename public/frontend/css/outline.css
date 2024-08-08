@@ -684,7 +684,7 @@ h3 {
     transform: scale(1);
 }
 
-/* --- Laptop --- */
+/* --- Tablet --- */
 @media screen and (max-width: 1140px) {
     .nav-wrapper {
         display: flex;
@@ -867,72 +867,13 @@ h3 {
     #header-wrapper .btn_contact_us {
         display: none;
     }
-}
 
-/* --- Tablet --- */
-@media screen and (max-width: 992px) {
-    #footer-wrapper .row {
-        width: calc(100% - 0px);
-    }
-
-    #footer-wrapper .w50 {
-        float: none;
-        width: 100%;
-    }
-
-    #footer-wrapper .location {
-        margin-bottom: 40px;
-    }
-
-    #footer-wrapper .location .address {
-        width: 100%;
-    }
-
-    #footer-wrapper .network .indonesia-branch,
-    #footer-wrapper .network .korea-branch {
-        float: none;
-        width: 215px;
-    }
-
-    #footer-wrapper .network .title {
-        text-align: left;
-    }
-
-    #footer-wrapper .network .indonesia-branch {
-        margin-bottom: 24px;
-    }
-
-    #footer-wrapper .network .indonesia-branch img,
-    #footer-wrapper .network .korea-branch img {
-        float: left;
-        margin-right: 12px;
-    }
-
-    #footer-wrapper .network .indonesia-branch .fr,
-    #footer-wrapper .network .korea-branch .fr {
-        float: left;
-    }
-
-    #footer-wrapper .social-media {
-        justify-content: left;
-    }
-
-    #footer-wrapper .sitemap,
-    #footer-wrapper .copyright {
-        display: block;
-    }
-
-    #footer-wrapper .sitemap {
-        display: block;
-        margin-bottom: 24px;
-    }
-
-    #footer-wrapper .copyright {
-        float: left;
+    #footer-wrapper {
+        padding: 50px 20px 20px 20px;
     }
 }
 
-/* --- Phone --- */
+/* --- Phone potrait --- */
 @media screen and (max-width: 530px) {
     #footer-wrapper .location .address .title {
         width: 80%;
