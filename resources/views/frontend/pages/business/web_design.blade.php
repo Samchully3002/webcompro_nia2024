@@ -40,8 +40,8 @@
                     </div>
                     <div class="btn-flipbook">
                         <img onclick="fullView()" style="cursor: pointer" src="{{ asset('frontend/images/icon/fb_fullscreen.svg') }}"/>
-                        <img onclick="zoomIn()" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_zoom_in.svg') }}"/>
-                        <img src="{{ asset('frontend/images/icon/fb_zoom_out.svg') }}"/>
+                        <img id="btn_zoomIn" onclick="zoomIn()" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_zoom_in.svg') }}"/>
+                        <img id="btn_zoomOut" onclick="zoomOut()" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_zoom_out.svg') }}"/>
                         <img onclick="print()" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_print.svg') }}"/>
                         <img id="downloadButton" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_download.svg') }}"/>
                         <a id="downloadLink" href="{{asset('frontend/WebDevProposalPricelist.pdf')}}" download style="display: none;"></a>
@@ -234,6 +234,10 @@
         <script type="text/javascript" src="{{ asset('frontend/extras/modernizr.2.5.3.min.js') }}"></script>
         <script>
             var elem = document.getElementById("flipbookWrapper");
+            var zoom_el = document.getElementById("flipbook");
+            var zom1= true;
+            var zom2= true;
+            var zom3= true;
             let print = () => {
                 let objFra = document.getElementById('myFrame');
                 objFra.contentWindow.focus();
@@ -245,12 +249,66 @@
 
             function zoomIn() {
                 // $('#flipbook').turn('zoom', 0.5, 0);
-                var f = document.getElementById('flipbook');
-                var pos = {
-                    x: f.pageX - $(this).offset().left,
-                    y: f.pageY - $(this).offset().top
-                };
-                $('#flipbook').zoom('zoomIn', pos);
+
+                if (zom1 == true) {
+                    zoom_el.style.zoom = 1.2;
+                    zoom_el.style.MozTransform = 'scale(1.2)';
+                    zoom_el.style.WebkitTransform = 'scale(1.2)';
+                    autoCenter: true
+                    zom1 = false
+                    zom2 = true
+                    zom3 = true
+                } else if (zom2 == true){
+                    zoom_el.style.zoom= 1.5;
+                    zoom_el.style.MozTransform = 'scale(1.5)';
+                    zoom_el.style.WebkitTransform = 'scale(1.5)';
+                    autoCenter: true
+                    zom1 = false
+                    zom2 = false
+                    zom3 = true
+                } else if (zom3 == true){
+                    zoom_el.style.zoom= 2;
+                    zoom_el.style.MozTransform = 'scale(2)';
+                    zoom_el.style.WebkitTransform = 'scale(2)';
+                    autoCenter: true
+                    zom1 = false
+                    zom2 = false
+                    zom3 = false
+                } else {
+                    document.getElementById("btn_zoomIn").disabled = true;
+                }
+            }
+
+            function zoomOut() {
+                // $('#flipbook').turn('zoom', 0.5, 0);
+
+                if (zom3 == false) {
+                    zoom_el.style.zoom = 1.5;
+                    zoom_el.style.MozTransform = 'scale(1.5)';
+                    zoom_el.style.WebkitTransform = 'scale(1.5)';
+                    autoCenter: true
+                    zom1 = false
+                    zom2 = false
+                    zom3 = true
+                } else if (zom2 == false){
+                    zoom_el.style.zoom= 1.2;
+                    zoom_el.style.MozTransform = 'scale(1.2)';
+                    zoom_el.style.WebkitTransform = 'scale(1.2)';
+                    autoCenter: true
+                    zom1 = false
+                    zom2 = false
+                    zom3 = true
+                } else if (zom3 == true){
+                    zoom_el.style.zoom= 1.5;
+                    zoom_el.style.MozTransform = 'scale(1.5)';
+                    zoom_el.style.WebkitTransform = 'scale(1.5)';
+                    autoCenter: true
+                    zom1 = false
+                    zom2 = false
+                    zom3 = false
+                } else {
+                    document.getElementById("btn_zoomIn").disabled = true;
+                }
             }
 
             function fullView(){
