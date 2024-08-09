@@ -20,7 +20,7 @@
 
             <!-- section-business start -->
             <div id="flipbookWrapper" class="business-wrapper">
-                <div  class="flipbook-view">
+                <div class="flipbook-view">
                     <div class="btn-flipbook" style="visibility: hidden;">
                         <img src="{{ asset('frontend/images/icon/close-circle.svg') }}"/>
                     </div>
@@ -41,7 +41,7 @@
                             style="position: absolute;width:0;height:0;border:0;">
                         </iframe>
                     </div>
-                    <div class="img-box-mobile">
+                    <div class="container-mobile">
                         <button class="btn_prev_img" onclick="plusDivs(-1)">&#8249;</button>
 
                         @foreach($content as $page)

@@ -432,7 +432,7 @@ input[type="checkbox"] {
     display: flex;
     width: 100% !important;
     flex-direction: column;
-    gap: 200px;
+    gap: 50px;
     height: 100% !important;
     justify-content: space-between;
 }
@@ -441,6 +441,10 @@ input[type="checkbox"] {
     display: flex;
     width: 100% !important;
     justify-content: space-between;
+}
+
+.business-wrapper .flipbook-view .container-mobile {
+    display: none;
 }
 
 .business-wrapper .flipbook-view .container button {
@@ -481,8 +485,32 @@ input[type="checkbox"] {
 }
 
 @media screen and (max-width: 760px) {
-    .business-wrapper .flipbook-view .flipbook {
-        display: none !important;
+    .business-wrapper .flipbook-view {
+        gap: 30px;
+    }
+
+    .business-wrapper .flipbook-view .container {
+        display: none;
+    }
+
+    .business-wrapper .flipbook-view .container-mobile {
+        display: flex;
+        width: 100% !important;
+        justify-content: space-between;
+    }
+
+    .business-wrapper .flipbook-view .container-mobile button {
+        border: none;
+        background: none;
+        padding: 0 20px;
+    }
+
+    .business-wrapper {
+        padding: 0;
+        gap: 30px;
+    }
+    .business-wrapper .flipbook-view .btn-flipbook {
+        margin-bottom: 30px;
     }
 }
 
@@ -867,11 +895,6 @@ input[type="checkbox"] {
 
     .business-wrapper .content {
         flex-direction: column;
-        gap: 50px;
-    }
-
-    .business-wrapper {
-        padding: 50px 30px;
         gap: 50px;
     }
 
