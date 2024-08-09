@@ -18,6 +18,68 @@
             </div>
             <!-- bg-wrapper end -->
 
+            <!-- section-business start -->
+            <div id="flipbookWrapper" class="business-wrapper">
+                <div  class="flipbook-view">
+                    <div class="btn-flipbook" style="visibility: hidden;">
+                        <img src="{{ asset('frontend/images/icon/close-circle.svg') }}"/>
+                    </div>
+                    <div id="flipContainer" class="container">
+                        <button onclick="prevFlip()"><img src="{{ asset('frontend/images/icon/arrow-left.svg') }}"/></button>
+                        <div id="flipbook" class="flipbook">
+                            @foreach($content as $page)
+                                {{-- <div id="img_flip" class="img_flip" style="background-image:url({{ asset($page) }});"></div> --}}
+                                <div>
+                                    <img id="flipImg" class="img_flip" src="{{ asset($page) }}"/>
+                                </div>
+
+                            @endforeach
+                        </div>
+                        <button onclick="nextFlip()"><img src="{{ asset('frontend/images/icon/arrow-right.svg') }}"/></button>
+                        <iframe
+                            src="{{asset('frontend/WebDevProposalPricelist.pdf')}}" id="myFrame"
+                            style="position: absolute;width:0;height:0;border:0;">
+                        </iframe>
+                    </div>
+                    <div class="container-mobile">
+                        <button class="btn_prev_img" onclick="plusDivs(-1)">&#8249;</button>
+
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_1.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_2.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_3.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_4.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_5.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_6.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_7.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_8.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_9.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_10.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_11.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_12.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_14.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_16.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_18.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_19.jpg') }}"/>
+{{--
+                        @foreach($content as $page)
+                            <div>
+                                <img id="imgFlip1" class="mySlides5" src="{{ asset($page) }}" alt="image samchully pay"/>
+                            </div>
+                        @endforeach --}}
+                        <button class="btn_next_img" onclick="plusDivs(1)">&#8250;</button>
+                    </div>
+                    <div class="btn-flipbook">
+                        <img onclick="fullView()" style="cursor: pointer" src="{{ asset('frontend/images/icon/fb_fullscreen.svg') }}"/>
+                        {{-- <img id="btn_zoomIn" onclick="zoomIn()" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_zoom_in.svg') }}"/>
+                        <img id="btn_zoomOut" onclick="zoomOut()" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_zoom_out.svg') }}"/> --}}
+                        <img onclick="print()" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_print.svg') }}"/>
+                        <img id="downloadButton" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_download.svg') }}"/>
+                        <a id="downloadLink" href="{{asset('frontend/WebDevProposalPricelist.pdf')}}" download style="display: none;"></a>
+                    </div>
+                </div>
+            </div>
+            <!-- section-business end -->
+
             <!-- section-wrapper start -->
             <div class="pricing-wrapper">
                 <div class="card">
@@ -33,7 +95,7 @@
                         <p><img src="../frontend/images/icon/greencheck.svg"/>{{ __('compro5') }}</p>
                         <p><img src="../frontend/images/icon/greencheck.svg"/>{{ __('compro6') }}</p>
                     </div>
-                    <button>{{ __('btn-contact') }}</button>
+                    <button onclick="sendCompro()">{{ __('btn-contact') }}</button>
                 </div>
                 <div class="card">
                     <div class="title">
@@ -48,7 +110,7 @@
                         <p><img src="../frontend/images/icon/greencheck.svg"/>{{ __('media5') }}</p>
                         <p><img src="../frontend/images/icon/greencheck.svg"/>{{ __('media6') }}</p>
                     </div>
-                    <button>{{ __('btn-contact') }}</button>
+                    <button onclick="sendMedia()">{{ __('btn-contact') }}</button>
                 </div>
                 <div class="card">
                     <div class="title">
@@ -63,50 +125,13 @@
                         <p><img src="../frontend/images/icon/greencheck.svg"/>{{ __('ecommerce5') }}</p>
                         <p><img src="../frontend/images/icon/greencheck.svg"/>{{ __('ecommerce6') }}</p>
                     </div>
-                    <button>{{ __('btn-contact') }}</button>
+                    <button onclick="sendEcommerce()">{{ __('btn-contact') }}</button>
                 </div>
             </div>
             <!-- section-wrapper end -->
 
-            <!-- section-business start -->
-            <div class="business-wrapper">
-                <div class="content">
-                    <div class="box">
-                        <img src="../frontend/images/icon/design.svg"/>
-                        <div class="text">
-                            <span>{{ __('prodesign') }}</span>
-                            <p>{{ __('prodesign-content') }}</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <img src="../frontend/images/icon/responsive.svg"/>
-                        <div class="text">
-                            <span>{{ __('responsive') }}</span>
-                            <p>{{ __('responsive-content') }}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="content">
-                    <div class="box">
-                        <img src="../frontend/images/icon/seo.svg"/>
-                        <div class="text">
-                            <span>{{ __('seo') }}</span>
-                            <p>{{ __('seo-content') }}</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <img src="../frontend/images/icon/fast.svg"/>
-                        <div class="text">
-                            <span>{{ __('fast') }}</span>
-                            <p>{{ __('fast-content') }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- section-business end -->
-
-             <!-- section-streamlined start -->
-             <div class="dekstop-streamlined">
+            <!-- section-streamlined start -->
+            {{-- <div class="dekstop-streamlined">
                 <div class="our-history dekstop">
                 <div class="box">
                     <!-- Left Content -->
@@ -170,7 +195,7 @@
                 </div>
             </div>
              </div>
-            
+
             <div class="mobile-streamlined">
                 <div class="our-history mobile">
                 <div class="box">
@@ -228,14 +253,286 @@
                     </div>
                 </div>
             </div>
-            </div>
-            
+            </div> --}}
+
              <!-- section-streamlined end -->
         </div>
 
         @include('frontend.includes.footer')
-
+        <script type="text/javascript" src="{{ asset('frontend/extras/modernizr.2.5.3.min.js') }}"></script>
+        {{-- <script type="text/javascript" src="{{asset('frontend/js/pages/business.js')}}"></script> --}}
         <script>
+
+            var slideIndex = 1;
+            showDivs(slideIndex);
+
+            function plusDivs(n) {
+            showDivs(slideIndex += n);
+            }
+
+            function showDivs(n) {
+            var i;
+            var x1 = document.getElementsByClassName("mySlides5");
+            if (n > x1.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = x1.length}
+            for (i = 0; i < x1.length; i++) {
+                x1[i].style.display = "none";
+            }
+            x1[slideIndex-1].style.display = "block";
+        }
+
+            function make_element_draggable(id) {
+                const elem = document.getElementById(id);
+                elem.style.position = "absolute";
+                let initX, initY, firstX, firstY, whichDown;
+                window.addEventListener("mouseup", function() {
+                    if(whichDown) {
+                        whichDown.style.zIndex = 0;
+                    }
+                    whichDown = null;
+                }, false);
+                window.addEventListener("mousemove", draggable, false);
+                elem.addEventListener("mousedown", function(e) {
+                    e.preventDefault();
+                    whichDown = this;
+                    initX = this.offsetLeft;
+                    initY = this.offsetTop;
+                    firstX = e.pageX;
+                    firstY = e.pageY;
+                });
+
+                function draggable(e) {
+                    e.preventDefault();
+                    if(!whichDown) return;
+                    whichDown.style.zIndex = 9;
+                    whichDown.style.left = initX + (e.pageX - firstX)/zoom + "px";
+                    whichDown.style.top = initY + (e.pageY - firstY)/zoom + "px";
+                }
+            }
+
+            function page_zoom(container_id) {
+                zoom = 1;
+                zoom_speed = 0.1;
+                const container = document.getElementById(container_id);
+                document.addEventListener("click", function(e) {
+                    if(e.deltaY > 0) {
+                        container.style.transform = `scale(${zoom += zoom_speed})`;
+                    } else {
+                        container.style.transform = `scale(${zoom -= zoom_speed})`;
+                    }
+                });
+            }
+
+            // page_zoom("flipContainer");
+            make_element_draggable("flipbook");
+
+            var elem = document.getElementById("flipbookWrapper");
+            var imgFlip = document.getElementById("flipImg");
+            var zoom_el = document.getElementById("flipContainer");
+            var zom1= true;
+            var zom2= true;
+            var zom3= true;
+
+            let print = () => {
+                let objFra = document.getElementById('myFrame');
+                objFra.contentWindow.focus();
+                objFra.contentWindow.print();
+            }
+            document.getElementById('downloadButton').addEventListener('click', function() {
+                document.getElementById('downloadLink').click();
+            });
+
+            function zoomIn() {
+                // $('#flipbook').turn('zoom', 0.5, 0);
+
+                if (zom1 == true) {
+                    zoom_el.style.zoom = 1.1;
+                    zoom_el.style.MozTransform = 'scale(1.1)';
+                    zoom_el.style.WebkitTransform = 'scale(1.1)';
+                    autoCenter: true
+                    zom1 = false
+                    zom2 = true
+                    zom3 = true
+                } else if (zom2 == true){
+                    zoom_el.style.zoom= 1.3;
+                    zoom_el.style.MozTransform = 'scale(1.3)';
+                    zoom_el.style.WebkitTransform = 'scale(1.3)';
+                    autoCenter: true
+                    zom1 = false
+                    zom2 = false
+                    zom3 = true
+                } else if (zom3 == true){
+                    zoom_el.style.zoom= 1.5;
+                    zoom_el.style.MozTransform = 'scale(1.5)';
+                    zoom_el.style.WebkitTransform = 'scale(1.5)';
+                    autoCenter: true
+                    zom1 = false
+                    zom2 = false
+                    zom3 = false
+                } else {
+                    document.getElementById("btn_zoomIn").disabled = true;
+                }
+            }
+
+            function zoomOut() {
+                // $('#flipbook').turn('zoom', 0.5, 0);
+
+                if (zom3 == false) {
+                    zoom_el.style.zoom = 1.5;
+                    zoom_el.style.MozTransform = 'scale(1.5)';
+                    zoom_el.style.WebkitTransform = 'scale(1.5)';
+                    autoCenter: true
+                    zom1 = false
+                    zom2 = false
+                    zom3 = true
+                } else if (zom2 == false){
+                    zoom_el.style.zoom= 1.2;
+                    zoom_el.style.MozTransform = 'scale(1.2)';
+                    zoom_el.style.WebkitTransform = 'scale(1.2)';
+                    autoCenter: true
+                    zom1 = false
+                    zom2 = true
+                    zom3 = true
+                } else if (zom1 == false){
+                    zoom_el.style.zoom= 1;
+                    zoom_el.style.MozTransform = 'scale(1)';
+                    zoom_el.style.WebkitTransform = 'scale(1)';
+                    autoCenter: true
+                    zom1 = true
+                    zom2 = true
+                    zom3 = true
+                } else {
+                    document.getElementById("btn_zoomOut").disabled = true;
+                }
+            }
+
+            function canToggleFullscreen() {
+                return !!(document.fullscreenEnabled || document.webkitFullscreenEnabled || document.msFullscreenEnabled);
+            }
+            /** return true if fullScreenElement exists, indicating the document is in full screen mode. */
+            function isFullscreen() {
+                return !!(document.fullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement);
+            }
+
+            function getStatusFS() {
+                return document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
+            }
+
+            function isFullscreenEnable(elem) {
+                return getStatusFS() === elem;
+            }
+
+            /** If the browser is capable, requests to be in full screen mode. */
+            function enterFullscreen() {
+                // var page = document.documentElement
+                const fullScreenFn = elem.requestFullscreen || elem.webkitRequestFullscreen || elem.msRequestFullscreen;
+                if (fullScreenFn) {
+                    fullScreenFn.apply(elem);
+                }
+            }
+
+            /** If the browser is capable, exits full screen mode */
+            function exitFullscreen() {
+                const exitFullScreenFn = document.exitFullScreen || document.webkitExitFullscreen || document.msExitFullscreen;
+                if (exitFullScreenFn) {
+                    exitFullScreenFn.apply(document);
+                }
+            }
+
+            /** Toggles between full screen modes.  The changing of inner text */
+            function fullView() {
+                if (!canToggleFullscreen()) {
+                    console.log("unvaible");
+                }
+                if (!isFullscreen()) {
+                    enterFullscreen();
+                    console.log("cancel");
+                    imgFlip.classList.add('fs');
+                    zoom_el.style.width = '2000px';
+                    zoom_el.style.height = '600px';
+                } else {
+                    exitFullscreen();
+                    console.log("enter");
+                    zoom_el.style.width = '1600px';
+                    zoom_el.style.height = '400px';
+                    // imgFlip.style.backgroundSize = '1600px' + ' 400px';
+                    // zoom_el.style.WebkitTransform = 'scale(1)';
+                }
+            }
+
+            function loadApp() {
+                function updateFlipbookSize() {
+                    var width = $('.flipbook').width();
+                    var height = $('.flipbook').height();
+
+                    $('.flipbook').turn('size', width, height);
+                }
+
+                $('.flipbook').turn({
+                    aspectRatio: 16 / 9,
+                    width: $('.flipbook').width(),
+                    height: $('.flipbook').height(),
+                    elevation: 50,
+                    gradients: true,
+                    autoCenter: true,
+                });
+
+                // Update flipbook size on window resize
+                $(window).on('resize', function() {
+                    updateFlipbookSize();
+                });
+
+                // Bind keyboard events for navigation
+                $(window).bind('keydown', function(e) {
+                    if (e.keyCode === 37) {
+                        $('#flipbook').turn('previous');
+                    } else if (e.keyCode === 39) {
+                        $('#flipbook').turn('next');
+                    }
+                });
+
+                // Initial size update
+                updateFlipbookSize();
+            }
+            function prevFlip(){
+                $('#flipbook').turn('previous');
+            };
+            function nextFlip(){
+                $('#flipbook').turn('next');
+            };
+
+            function zoomTo(event) {
+                setTimeout(function() {
+                    if ($('#flipbook').data().regionClicked) {
+                        $('#flipbook').data().regionClicked = false;
+                    } else {
+                        if ($('#flipbook').zoom('value')==1) {
+                            $('#flipbook').zoom('zoomIn', event);
+                        } else {
+                            $('#flipbook').zoom('zoomOut');
+                        }
+                    }
+                }, 1);
+            }
+
+            // function resizeViewport() {
+            //     var width = $(window).width(),
+            //         height = $(window).height(),
+            //         options = $('#flipbook').turn('options');
+
+            //     $('#flipbook').css({
+            //         width: width,
+            //         height: height
+            //     }).zoom('resize');
+            // }
+            yepnope({
+                test : Modernizr.csstransforms,
+                yep: ['{{ asset('frontend/lib/turn.js') }}'],
+                nope: ['{{ asset('frontend/lib/turn.html4.min.js') }}'],
+                both: ['{{ asset('frontend/css/business.css') }}'],
+                complete: loadApp
+            });
+
             document.addEventListener('DOMContentLoaded', function() {
                 const appearElements = document.querySelectorAll('.appear');
 
@@ -276,16 +573,45 @@
                 // Panggil sekali ketika halaman dimuat (jika elemen sudah ada di viewport pada awalnya)
                 appearOnScroll();
             });
-        </script>
-        <script>
+
+             function sendCompro() {
+                var sendTo = "info@nia.co.id";
+                var subject= "Quotation Company Profile";
+                const body = `Hello NIA! \n\n I want to ask quotation about website design and development for company profile.\n\n Thank you NIA`;
+                // Construct the mailto link
+                var mailtoLink = 'mailto:'+sendTo+'?subject='+subject+'&body='+body;
+
+                window.open(mailtoLink, '_blank');
+            }
+
+            function sendMedia() {
+                var sendTo = "info@nia.co.id";
+                var subject= "Quotation Media News Website";
+                const body = `Hello NIA! \n\n I want to ask quotation about media news website design and development.\n\n Thank you NIA`;
+                // Construct the mailto link
+                var mailtoLink = 'mailto:'+sendTo+'?subject='+subject+'&body='+body;
+
+                window.open(mailtoLink, '_blank');
+            }
+
+            function sendEcommerce() {
+                var sendTo = "info@nia.co.id";
+                var subject= "Quotation Ecommerce Website";
+                const body = `Hello NIA! \n\n I want to ask quotation about eCommerce website design and development.\n\n Thank you NIA`;
+                // Construct the mailto link
+                var mailtoLink = 'mailto:'+sendTo+'?subject='+subject+'&body='+body;
+
+                window.open(mailtoLink, '_blank');
+            }
+
             $(document).ready(function () {
             $(document).on("scroll", function () {
                 var windowHeight = $(window).height(); // Tinggi jendela browser
                 var scrollPosition = $(document).scrollTop() + windowHeight / 2; // Scroll position di tengah jendela browser
-        
+
                 $(".wrapper").each(function () {
                     let elementOffsetTop = $(this).offset().top;
-        
+
                     if (elementOffsetTop <= scrollPosition) {
                         // Tambahkan kelas 'active' untuk mengatur opacity ke 1
                         $(this).addClass("active");

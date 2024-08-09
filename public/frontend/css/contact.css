@@ -210,8 +210,7 @@
     border-radius: 8px;
     font-size: 16px;
     margin-bottom: 16px;
-    cursor:not-allowed;
-
+    cursor: not-allowed;
 }
 
 /* .contact-wrapper .form-box button:hover {
@@ -276,20 +275,36 @@
         height: 100%;
     }
 
-    .header-wrapper .box {
-        flex-direction: column;
-        gap: 50px;
-    }
-
     .map-wrapper iframe {
         margin: 20px;
     }
 
+    .header-wrapper .box .left-content {
+        place-content: unset;
+    }
+
     .header-wrapper .box .right-content {
-        width: 100%;
+        width: 50%;
+    }
+
+    .contact-wrapper .form-box {
+        margin: unset;
+        display: flex;
+        align-items: center;
     }
 }
 
 @media screen and (max-width: 780px) {
+    .header-wrapper .box {
+        flex-direction: column;
+        gap: 50px;
+    }
+    .contact-wrapper .form-box {
+        width: 100%;
+        display: unset;
+    }
+    .header-wrapper .box .right-content {
+        width: 100%;
+    }
 }
 /* page 공통 contact-wrapper css end */

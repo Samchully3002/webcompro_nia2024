@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 use App\Models\MetaTags;
+use Illuminate\Support\Facades\DB;
 
 
 class BusinessController extends Controller
@@ -64,7 +65,20 @@ class BusinessController extends Controller
         $curentURL = $request->path();
         $meta = MetaTags::where('url', 'LIKE', '%'.$curentURL.'%')->first();
 
-        return view('frontend/pages/business/web_design', compact(['meta']));
-    }
+        $flipbook = DB::table('flipbook')->where('id', '1')->get()[0];
+        $content = explode(",",$flipbook->content);
 
+        return view('frontend/pages/business/web_design', compact(['meta'],'flipbook','content'));
+    }
+    public function creativesolutions(Request $request): View
+    {
+        $curentURL = $request->path();
+        $meta = MetaTags::where('url', 'LIKE', '%'.$curentURL.'%')->first();
+
+        $flipbook = DB::table('flipbook')->where('id', '2')->get()[0];
+        $content = explode(",",$flipbook->content);
+
+        // return view('frontend/pages/business/creative_solutions', compact(['meta']));
+        return view('frontend/pages/business/creative_solutions', compact(['meta'],'flipbook','content'));
+    }
 }

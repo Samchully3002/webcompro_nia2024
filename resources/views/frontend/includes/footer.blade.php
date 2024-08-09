@@ -32,6 +32,8 @@
                                 <li><a href="/digital-healthcare">{{ __ ('dh')}}</a></li>
                                 <li><a href="/system-development-management">{{ __ ('sdm')}}</a></li>
                                 <li><a href="/export-voucher">{{ __ ('ev')}}</a></li>
+                                <li><a href="/web-design">{{ __ ('wdd')}}</a></li>
+                                <li><a href="/creative-solutions">{{ __ ('cs')}}</a></li>
                             </ul>
                         </div>
                     </div>

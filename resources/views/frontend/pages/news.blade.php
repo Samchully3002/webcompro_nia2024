@@ -24,7 +24,7 @@
                     @foreach($posts as $post)
                     <div class="fl w25">
                         <div class="imx">
-                            <a class="item" href="{{$post->source}}">
+                            <a class="item" href="{{$post->source}}" target="blank">
                                 <div class="img-box">
                                     <img src="/backend/images/news/{{$post->image}}" alt="image post {{$post->title}}"/>
                                 </div>
