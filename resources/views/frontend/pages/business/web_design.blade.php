@@ -44,22 +44,22 @@
                     <div class="container-mobile">
                         <button class="btn_prev_img" onclick="plusDivs(-1)">&#8249;</button>
 
-                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_1.jpg') }}"/>
-                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_2.jpg') }}"/>
-                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_3.jpg') }}"/>
-                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_4.jpg') }}"/>
-                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_5.jpg') }}"/>
-                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_6.jpg') }}"/>
-                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_7.jpg') }}"/>
-                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_8.jpg') }}"/>
-                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_9.jpg') }}"/>
-                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_10.jpg') }}"/>
-                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_11.jpg') }}"/>
-                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_12.jpg') }}"/>
-                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_14.jpg') }}"/>
-                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_16.jpg') }}"/>
-                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_18.jpg') }}"/>
-                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_19.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_1.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_2.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_3.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_4.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_5.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_6.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_7.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_8.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_9.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_10.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_11.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_12.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_14.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_16.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_18.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_19.jpg') }}"/>
 {{--
                         @foreach($content as $page)
                             <div>
