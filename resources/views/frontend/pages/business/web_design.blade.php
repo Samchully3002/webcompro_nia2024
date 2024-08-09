@@ -3,6 +3,8 @@
 
 @include('frontend.includes.head')
     <link rel="stylesheet" href="{{asset('frontend/css/business.css')}}"/>
+    <link rel="stylesheet" href="{{asset('frontend/css/magiczoomplus.css')}}">
+    <script src="{{asset('frontend/js/magiczoomplus.js')}}"></script>
     </head>
 
     <body>
@@ -28,7 +30,12 @@
                         <button onclick="prevFlip()"><img src="{{ asset('frontend/images/icon/arrow-left.svg') }}"/></button>
                         <div id="flipbook" class="flipbook">
                             @foreach($content as $page)
-                                <div id="img_flip" style="background-image:url({{ asset($page) }}); width:100%; height:100%;"></div>
+                           <!-- <div id="img_flip" style="background-image:url({{ asset($page) }}); width:100%; height:100%;"></div> -->
+                           <div id="img_flip" style="width:100%; height:100%;">
+                                <a href="{{asset($page)}}" class="MagicZoom" data-options="zoomOn: click; zoomPosition: inner; lazyZoom: true"> 
+                                    <img src="{{asset($page)}}">
+                                </a>
+                            </div>
                                 {{-- <div <img src="{{ asset($page) }}"/> --}}
                             @endforeach
                         </div>
@@ -40,8 +47,8 @@
                     </div>
                     <div class="btn-flipbook">
                         <img onclick="fullView()" style="cursor: pointer" src="{{ asset('frontend/images/icon/fb_fullscreen.svg') }}"/>
-                        <img id="btn_zoomIn" onclick="zoomIn()" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_zoom_in.svg') }}"/>
-                        <img id="btn_zoomOut" onclick="zoomOut()" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_zoom_out.svg') }}"/>
+                        <!-- <img id="btn_zoomIn" onclick="zoomIn()" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_zoom_in.svg') }}"/>
+                        <img id="btn_zoomOut" onclick="zoomOut()" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_zoom_out.svg') }}"/> -->
                         <img onclick="print()" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_print.svg') }}"/>
                         <img id="downloadButton" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_download.svg') }}"/>
                         <a id="downloadLink" href="{{asset('frontend/WebDevProposalPricelist.pdf')}}" download style="display: none;"></a>
