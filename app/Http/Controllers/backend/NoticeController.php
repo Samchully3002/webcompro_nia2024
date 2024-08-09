@@ -110,7 +110,7 @@ class NoticeController extends Controller
                 'title'         => 'required',
                 'content'       => 'required',
                 'date'          => 'required',
-                'image'         => 'image|mimes:jpeg,png,jpg,gif|max:2048'
+                'image'         => 'image|mimes:jpeg,png,jpg,gif|max:5120'
             ]);
 
             //check if validation fails

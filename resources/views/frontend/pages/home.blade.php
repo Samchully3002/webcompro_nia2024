@@ -5,7 +5,11 @@
 <!-- dev -->
 <!-- <link rel="stylesheet" href="{{asset('frontend/css/home.css')}}"/> -->
  <!-- production -->
+<<<<<<< HEAD
 <link rel="stylesheet" href="{{asset('frontend/css/home.css')}}"/>
+=======
+<link rel="stylesheet" href="{{asset('frontend/css/minify/home.min.css')}}"/>
+>>>>>>> 1c40c8fa17db8cd0a7094e5b0766199b077d2924
 </head>
 <body>
 <!-- <div data-include="component/header"></div> -->
@@ -100,22 +104,23 @@
                 </a>
             </div>
         </div>
-        <div class="item">
+        {{-- <div class="item">
             <div class="image-container">
                 <a href="/web-design">
                     <img src="../../frontend/images/WDD.jpg" alt="export voucher image banner">
-                        <div class="image-overlay">
+                    <div class="image-overlay">
                         <div class="ic-bisnis">
                             <img src="../../frontend/images/icon/global.svg" alt="icon arrow">
-                            </div><br>
-                            <p >{{ __('wdd') }}</p><br>
-                            <span>{{ __('wdd-content') }}</span><br>
-                            <div class="btn-more">{{ __('btn-more') }}&nbsp;&nbsp;&nbsp;
-                                <img src="../../frontend/images/icon/arrow.png" alt="icon arrow">
-                            </div>
+                        </div><br>
+                        <p >{{ __('wdd') }}</p><br>
+                        <span>{{ __('wdd-content') }}</span><br>
+                        <div class="btn-more">{{ __('btn-more') }}&nbsp;&nbsp;&nbsp;
+                            <img src="../../frontend/images/icon/arrow.png" alt="icon arrow">
                         </div>
+                    </div>
                 </a>
             </div>
+<<<<<<< HEAD
         </div>
         <div class="item">
             <div class="image-container">
@@ -134,6 +139,9 @@
                 </a>
             </div>
         </div>
+=======
+        </div> --}}
+>>>>>>> 1c40c8fa17db8cd0a7094e5b0766199b077d2924
 
 
         <div class="clientSection">
