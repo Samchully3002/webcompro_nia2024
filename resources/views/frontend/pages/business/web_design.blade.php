@@ -28,8 +28,11 @@
                         <button onclick="prevFlip()"><img src="{{ asset('frontend/images/icon/arrow-left.svg') }}"/></button>
                         <div id="flipbook" class="flipbook">
                             @foreach($content as $page)
-                                <div id="img_flip" style="background-image:url({{ asset($page) }});"></div>
-                                {{-- <div <img src="{{ asset($page) }}"/> --}}
+                                {{-- <div id="img_flip" class="img_flip" style="background-image:url({{ asset($page) }});"></div> --}}
+                                <div>
+                                    <img id="flipImg" class="img_flip" src="{{ asset($page) }}"/>
+                                </div>
+
                             @endforeach
                         </div>
                         <button onclick="nextFlip()"><img src="{{ asset('frontend/images/icon/arrow-right.svg') }}"/></button>
@@ -37,6 +40,17 @@
                             src="{{asset('frontend/WebDevProposalPricelist.pdf')}}" id="myFrame"
                             style="position: absolute;width:0;height:0;border:0;">
                         </iframe>
+                    </div>
+                    <div class="img-box-mobile">
+                        <button class="btn_prev_img" onclick="plusDivs(-1)">&#8249;</button>
+
+                        @foreach($content as $page)
+                        {{-- <div id="img_flip" class="img_flip" style="background-image:url({{ asset($page) }});"></div> --}}
+                            <div>
+                                <img class="mySlides1" src="{{ asset($page) }}" alt="image samchully pay"/>
+                            </div>
+                        @endforeach
+                        <button class="btn_next_img" onclick="plusDivs(1)">&#8250;</button>
                     </div>
                     <div class="btn-flipbook">
                         <img onclick="fullView()" style="cursor: pointer" src="{{ asset('frontend/images/icon/fb_fullscreen.svg') }}"/>
@@ -99,8 +113,6 @@
                 </div>
             </div>
             <!-- section-wrapper end -->
-
-
 
             <!-- section-streamlined start -->
             {{-- <div class="dekstop-streamlined">
@@ -232,9 +244,10 @@
 
         @include('frontend.includes.footer')
         <script type="text/javascript" src="{{ asset('frontend/extras/modernizr.2.5.3.min.js') }}"></script>
+        <script type="text/javascript" src="{{asset('frontend/js/pages/business.js')}}"></script>
         <script>
             var elem = document.getElementById("flipbookWrapper");
-            var imgFlip = document.getElementById("img_flip");
+            var imgFlip = document.getElementById("flipImg");
             var zoom_el = document.getElementById("flipbook");
             var zom1= true;
             var zom2= true;
@@ -298,18 +311,18 @@
                     zoom_el.style.WebkitTransform = 'scale(1.2)';
                     autoCenter: true
                     zom1 = false
-                    zom2 = false
+                    zom2 = true
                     zom3 = true
-                } else if (zom3 == true){
-                    zoom_el.style.zoom= 1.5;
-                    zoom_el.style.MozTransform = 'scale(1.5)';
-                    zoom_el.style.WebkitTransform = 'scale(1.5)';
+                } else if (zom1 == false){
+                    zoom_el.style.zoom= 1;
+                    zoom_el.style.MozTransform = 'scale(1)';
+                    zoom_el.style.WebkitTransform = 'scale(1)';
                     autoCenter: true
-                    zom1 = false
-                    zom2 = false
-                    zom3 = false
+                    zom1 = true
+                    zom2 = true
+                    zom3 = true
                 } else {
-                    document.getElementById("btn_zoomIn").disabled = true;
+                    document.getElementById("btn_zoomOut").disabled = true;
                 }
             }
 
@@ -354,51 +367,53 @@
                 if (!isFullscreen()) {
                     enterFullscreen();
                     console.log("cancel");
-                    zoom_el.style.zoom = 1.1;
-                    zoom_el.style.MozTransform = 'scale(1.1)';
-                    zoom_el.style.WebkitTransform = 'scale(1.1)';
-                    autoCenter: true
+                    imgFlip.classList.add('fs');
+                    zoom_el.style.width = '2000px';
+                    zoom_el.style.height = '600px';
                 } else {
                     exitFullscreen();
                     console.log("enter");
-                    zoom_el.style.zoom = 1;
-                    zoom_el.style.MozTransform = 'scale(1)';
-                    zoom_el.style.WebkitTransform = 'scale(1)';
-                    autoCenter: true
+                    zoom_el.style.width = '1600px';
+                    zoom_el.style.height = '400px';
+                    // imgFlip.style.backgroundSize = '1600px' + ' 400px';
+                    // zoom_el.style.WebkitTransform = 'scale(1)';
                 }
             }
 
             function loadApp() {
+                function updateFlipbookSize() {
+                    var width = $('.flipbook').width();
+                    var height = $('.flipbook').height();
+
+                    $('.flipbook').turn('size', width, height);
+                }
+
                 $('.flipbook').turn({
-                    aspectRatio:16/9,
-                    width:1400,
-                    height:400,
+                    aspectRatio: 16 / 9,
+                    width: $('.flipbook').width(),
+                    height: $('.flipbook').height(),
                     elevation: 50,
                     gradients: true,
                     autoCenter: true,
                 });
 
-                $(window).bind('keydown', function(e){
-                    if (e.keyCode==37)
-                        $('#flipbook').turn('previous');
-                    else if (e.keyCode==39)
-                        $('#flipbook').turn('next');
+                // Update flipbook size on window resize
+                $(window).on('resize', function() {
+                    updateFlipbookSize();
                 });
 
-                //Binds the single tap event to the zoom function
-                // $('.flipbook-view').bind('zoom.tap', zoomTo);
+                // Bind keyboard events for navigation
+                $(window).bind('keydown', function(e) {
+                    if (e.keyCode === 37) {
+                        $('#flipbook').turn('previous');
+                    } else if (e.keyCode === 39) {
+                        $('#flipbook').turn('next');
+                    }
+                });
 
-                //Optional, calls the resize function when the window changes, useful when viewing on tablet or mobile phones
-                // $(window).resize(function() {
-                //     resizeViewport();
-                // }).bind('orientationchange', function() {
-                //     resizeViewport();
-                // });
-
-                //Must be called initially to setup the size
-                // resizeViewport();
+                // Initial size update
+                updateFlipbookSize();
             }
-
             function prevFlip(){
                 $('#flipbook').turn('previous');
             };
