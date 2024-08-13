@@ -42,15 +42,15 @@
                     <div class="container-mobile">
                         <button class="btn_prev_img" onclick="plusDivs(-1)">&#8249;</button>
 
-                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_1.jpg') }}"/>
-                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_2.jpg') }}"/>
-                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_3.jpg') }}"/>
-                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_4.jpg') }}"/>
-                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_5.jpg') }}"/>
-                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_6.jpg') }}"/>
-                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_7.jpg') }}"/>
-                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_8.jpg') }}"/>
-                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_9.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_1.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_2.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_3.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_4.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_5.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_6.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_7.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_8.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_9.jpg') }}"/>
 {{--
                         @foreach($content as $page)
                             <div>
