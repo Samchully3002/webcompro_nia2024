@@ -145,7 +145,7 @@ class NoticeController extends Controller
                     ]);
         
                     } else {
-        
+
                         //update product without image
                         $note->update([
                             'title'      => $request->title,

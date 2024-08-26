@@ -5,11 +5,11 @@
 <!-- dev -->
 <!-- <link rel="stylesheet" href="{{asset('frontend/css/home.css')}}"/> -->
  <!-- production -->
-<<<<<<< HEAD
+
+<!-- <link rel="stylesheet" href="{{asset('frontend/css/minify/home.min.css')}}"/> -->
+
 <link rel="stylesheet" href="{{asset('frontend/css/home.css')}}"/>
-=======
-<link rel="stylesheet" href="{{asset('frontend/css/minify/home.min.css')}}"/>
->>>>>>> 1c40c8fa17db8cd0a7094e5b0766199b077d2924
+
 </head>
 <body>
 <!-- <div data-include="component/header"></div> -->
@@ -120,7 +120,9 @@
                     </div>
                 </a>
             </div>
-<<<<<<< HEAD
+<<<<<<<<< Temporary merge branch 1
+        </div> --}}
+=========
         </div>
         <div class="item">
             <div class="image-container">
@@ -139,9 +141,7 @@
                 </a>
             </div>
         </div>
-=======
-        </div> --}}
->>>>>>> 1c40c8fa17db8cd0a7094e5b0766199b077d2924
+>>>>>>>>> Temporary merge branch 2
 
 
         <div class="clientSection">

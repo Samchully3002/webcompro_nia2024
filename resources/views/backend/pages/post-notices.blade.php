@@ -1,4 +1,45 @@
 @extends('dashboard')
+@push('headscript')
+<!-- Styles -->
+
+<!-- Scripts -->
+<script type="text/javascript">
+   var tableNotice;
+
+   $( document ).ready(function() {
+      tinymce.init({
+            selector: 'textarea.content'
+         });
+      $("#notice_form_btn").click(function(e) {
+        e.preventDefault();
+
+        let form = $('#notice_form')[0];
+        let data = new FormData(form);
+        //data.content = tinymce.get('content').getContent();
+        //data.content_kr = tinymce.get('content_kr').getContent();
+        //data.content_id = tinymce.get('content_id').getContent();
+
+        $.ajax({
+          url: "{{ route('dashboard.post.notice.ajax') }}",
+          type: "POST",
+          data: data,
+          dataType: "JSON",
+          processData: false,
+          contentType: false,
+          success: function(response) {
+            $('#notice_form')[0].reset();
+            dispNotif('Saving Data Success', response.message, 'success');
+        },
+        error: function(xhr, status, error) {
+          dispNotif('', 'error saving data', 'error');
+          }
+
+        });
+
+      })
+});
+</script>
+@endpush 
 @section('content')
 <h4 class="py-3 mb-4"><span class="text-muted fw-light">Coumunity /</span> Post Notice</h4>
 <!-- Form Post New Business -->
@@ -120,4 +161,6 @@
    </div>
 </div>
 
-@stop
+@endsection
+
+

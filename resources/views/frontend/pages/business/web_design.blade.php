@@ -3,6 +3,8 @@
 
 @include('frontend.includes.head')
     <link rel="stylesheet" href="{{asset('frontend/css/business.css')}}"/>
+    <link rel="stylesheet" href="{{asset('frontend/css/magiczoomplus.css')}}">
+    <script src="{{asset('frontend/js/magiczoomplus.js')}}"></script>
     </head>
 
     <body>

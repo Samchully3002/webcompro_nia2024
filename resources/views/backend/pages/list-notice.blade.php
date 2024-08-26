@@ -1,4 +1,29 @@
 @extends('dashboard')
+@push('headscript')
+<!-- Styles -->
+<!-- <link href="{{ asset('css/pizza.css') }}" rel="stylesheet"> -->
+<!-- Scripts -->
+<script type="text/javascript">
+var tableNotice;
+
+$( document ).ready(function() {
+    tableNotice = $('.notice-table').DataTable({
+        fixedColumns: true,
+        processing: true,
+        serverSide: true,
+        ajax: "{{ route('dashboard.list.notice') }}",
+        columns: [
+            {data: 'id', name: 'id'},
+            {data: 'title', name:'title'},
+            {data: 'content', name:'content'},
+            {data: 'date', name:'date'},
+            {data: 'display', name:'display'},
+            {data: 'action', name: 'action', orderable: false, searchable: false},
+        ]
+    });
+});
+</script>
+@endpush
     @section('content')
     <div class="row gy-3">
                 <div class="col-md-6 col-lg-4">
