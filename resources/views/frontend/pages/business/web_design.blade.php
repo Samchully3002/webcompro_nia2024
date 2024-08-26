@@ -30,13 +30,11 @@
                         <button onclick="prevFlip()"><img src="{{ asset('frontend/images/icon/arrow-left.svg') }}"/></button>
                         <div id="flipbook" class="flipbook">
                             @foreach($content as $page)
-                           <!-- <div id="img_flip" style="background-image:url({{ asset($page) }}); width:100%; height:100%;"></div> -->
-                           <div id="img_flip" style="width:100%; height:100%;">
-                                <a href="{{asset($page)}}" class="MagicZoom" data-options="zoomOn: click; zoomPosition: inner; lazyZoom: true"> 
-                                    <img src="{{asset($page)}}">
-                                </a>
-                            </div>
-                                {{-- <div <img src="{{ asset($page) }}"/> --}}
+                                {{-- <div id="img_flip" class="img_flip" style="background-image:url({{ asset($page) }});"></div> --}}
+                                <div>
+                                    <img id="flipImg" class="img_flip" src="{{ asset($page) }}"/>
+                                </div>
+
                             @endforeach
                         </div>
                         <button onclick="nextFlip()"><img src="{{ asset('frontend/images/icon/arrow-right.svg') }}"/></button>
@@ -45,10 +43,37 @@
                             style="position: absolute;width:0;height:0;border:0;">
                         </iframe>
                     </div>
+                    <div class="container-mobile">
+                        <button class="btn_prev_img" onclick="plusDivs(-1)">&#8249;</button>
+
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_1.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_2.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_3.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_4.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_5.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_6.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_7.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_8.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_9.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_10.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_11.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_12.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_14.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_16.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_18.jpg') }}"/>
+                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_19.jpg') }}"/>
+{{--
+                        @foreach($content as $page)
+                            <div>
+                                <img id="imgFlip1" class="mySlides5" src="{{ asset($page) }}" alt="image samchully pay"/>
+                            </div>
+                        @endforeach --}}
+                        <button class="btn_next_img" onclick="plusDivs(1)">&#8250;</button>
+                    </div>
                     <div class="btn-flipbook">
                         <img onclick="fullView()" style="cursor: pointer" src="{{ asset('frontend/images/icon/fb_fullscreen.svg') }}"/>
-                        <!-- <img id="btn_zoomIn" onclick="zoomIn()" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_zoom_in.svg') }}"/>
-                        <img id="btn_zoomOut" onclick="zoomOut()" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_zoom_out.svg') }}"/> -->
+                        {{-- <img id="btn_zoomIn" onclick="zoomIn()" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_zoom_in.svg') }}"/>
+                        <img id="btn_zoomOut" onclick="zoomOut()" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_zoom_out.svg') }}"/> --}}
                         <img onclick="print()" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_print.svg') }}"/>
                         <img id="downloadButton" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_download.svg') }}"/>
                         <a id="downloadLink" href="{{asset('frontend/WebDevProposalPricelist.pdf')}}" download style="display: none;"></a>
@@ -106,8 +131,6 @@
                 </div>
             </div>
             <!-- section-wrapper end -->
-
-
 
             <!-- section-streamlined start -->
             {{-- <div class="dekstop-streamlined">
@@ -239,12 +262,79 @@
 
         @include('frontend.includes.footer')
         <script type="text/javascript" src="{{ asset('frontend/extras/modernizr.2.5.3.min.js') }}"></script>
+        {{-- <script type="text/javascript" src="{{asset('frontend/js/pages/business.js')}}"></script> --}}
         <script>
+
+            var slideIndex = 1;
+            showDivs(slideIndex);
+
+            function plusDivs(n) {
+            showDivs(slideIndex += n);
+            }
+
+            function showDivs(n) {
+            var i;
+            var x1 = document.getElementsByClassName("mySlides5");
+            if (n > x1.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = x1.length}
+            for (i = 0; i < x1.length; i++) {
+                x1[i].style.display = "none";
+            }
+            x1[slideIndex-1].style.display = "block";
+        }
+
+            function make_element_draggable(id) {
+                const elem = document.getElementById(id);
+                elem.style.position = "absolute";
+                let initX, initY, firstX, firstY, whichDown;
+                window.addEventListener("mouseup", function() {
+                    if(whichDown) {
+                        whichDown.style.zIndex = 0;
+                    }
+                    whichDown = null;
+                }, false);
+                window.addEventListener("mousemove", draggable, false);
+                elem.addEventListener("mousedown", function(e) {
+                    e.preventDefault();
+                    whichDown = this;
+                    initX = this.offsetLeft;
+                    initY = this.offsetTop;
+                    firstX = e.pageX;
+                    firstY = e.pageY;
+                });
+
+                function draggable(e) {
+                    e.preventDefault();
+                    if(!whichDown) return;
+                    whichDown.style.zIndex = 9;
+                    whichDown.style.left = initX + (e.pageX - firstX)/zoom + "px";
+                    whichDown.style.top = initY + (e.pageY - firstY)/zoom + "px";
+                }
+            }
+
+            function page_zoom(container_id) {
+                zoom = 1;
+                zoom_speed = 0.1;
+                const container = document.getElementById(container_id);
+                document.addEventListener("click", function(e) {
+                    if(e.deltaY > 0) {
+                        container.style.transform = `scale(${zoom += zoom_speed})`;
+                    } else {
+                        container.style.transform = `scale(${zoom -= zoom_speed})`;
+                    }
+                });
+            }
+
+            // page_zoom("flipContainer");
+            make_element_draggable("flipbook");
+
             var elem = document.getElementById("flipbookWrapper");
-            var zoom_el = document.getElementById("flipbook");
+            var imgFlip = document.getElementById("flipImg");
+            var zoom_el = document.getElementById("flipContainer");
             var zom1= true;
             var zom2= true;
             var zom3= true;
+
             let print = () => {
                 let objFra = document.getElementById('myFrame');
                 objFra.contentWindow.focus();
@@ -258,25 +348,25 @@
                 // $('#flipbook').turn('zoom', 0.5, 0);
 
                 if (zom1 == true) {
-                    zoom_el.style.zoom = 1.2;
-                    zoom_el.style.MozTransform = 'scale(1.2)';
-                    zoom_el.style.WebkitTransform = 'scale(1.2)';
+                    zoom_el.style.zoom = 1.1;
+                    zoom_el.style.MozTransform = 'scale(1.1)';
+                    zoom_el.style.WebkitTransform = 'scale(1.1)';
                     autoCenter: true
                     zom1 = false
                     zom2 = true
                     zom3 = true
                 } else if (zom2 == true){
-                    zoom_el.style.zoom= 1.5;
-                    zoom_el.style.MozTransform = 'scale(1.5)';
-                    zoom_el.style.WebkitTransform = 'scale(1.5)';
+                    zoom_el.style.zoom= 1.3;
+                    zoom_el.style.MozTransform = 'scale(1.3)';
+                    zoom_el.style.WebkitTransform = 'scale(1.3)';
                     autoCenter: true
                     zom1 = false
                     zom2 = false
                     zom3 = true
                 } else if (zom3 == true){
-                    zoom_el.style.zoom= 2;
-                    zoom_el.style.MozTransform = 'scale(2)';
-                    zoom_el.style.WebkitTransform = 'scale(2)';
+                    zoom_el.style.zoom= 1.5;
+                    zoom_el.style.MozTransform = 'scale(1.5)';
+                    zoom_el.style.WebkitTransform = 'scale(1.5)';
                     autoCenter: true
                     zom1 = false
                     zom2 = false
@@ -303,47 +393,108 @@
                     zoom_el.style.WebkitTransform = 'scale(1.2)';
                     autoCenter: true
                     zom1 = false
-                    zom2 = false
+                    zom2 = true
                     zom3 = true
-                } else if (zom3 == true){
-                    zoom_el.style.zoom= 1.5;
-                    zoom_el.style.MozTransform = 'scale(1.5)';
-                    zoom_el.style.WebkitTransform = 'scale(1.5)';
+                } else if (zom1 == false){
+                    zoom_el.style.zoom= 1;
+                    zoom_el.style.MozTransform = 'scale(1)';
+                    zoom_el.style.WebkitTransform = 'scale(1)';
                     autoCenter: true
-                    zom1 = false
-                    zom2 = false
-                    zom3 = false
+                    zom1 = true
+                    zom2 = true
+                    zom3 = true
                 } else {
-                    document.getElementById("btn_zoomIn").disabled = true;
+                    document.getElementById("btn_zoomOut").disabled = true;
                 }
             }
 
-            function fullView(){
-                if (elem.requestFullscreen) {
-                    elem.requestFullscreen();
-                    $('#flipbook').turn('size', 2200, 600);
-                } else if (elem.mozRequestFullScreen) { /* Firefox */
-                    elem.mozRequestFullScreen();
-                    elem.classList.add("fullDisplay");
-                } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
-                    elem.webkitRequestFullscreen();
-                    elem.classList.add("fullDisplay");
-                } else if (elem.msRequestFullscreen) { /* IE/Edge */
-                    elem.msRequestFullscreen();
-                    elem.classList.add("fullDisplay");
+            function canToggleFullscreen() {
+                return !!(document.fullscreenEnabled || document.webkitFullscreenEnabled || document.msFullscreenEnabled);
+            }
+            /** return true if fullScreenElement exists, indicating the document is in full screen mode. */
+            function isFullscreen() {
+                return !!(document.fullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement);
+            }
+
+            function getStatusFS() {
+                return document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
+            }
+
+            function isFullscreenEnable(elem) {
+                return getStatusFS() === elem;
+            }
+
+            /** If the browser is capable, requests to be in full screen mode. */
+            function enterFullscreen() {
+                // var page = document.documentElement
+                const fullScreenFn = elem.requestFullscreen || elem.webkitRequestFullscreen || elem.msRequestFullscreen;
+                if (fullScreenFn) {
+                    fullScreenFn.apply(elem);
                 }
-            };
+            }
+
+            /** If the browser is capable, exits full screen mode */
             function exitFullscreen() {
-                if(elem.exitFullscreen) {
-                    elem.exitFullscreen();
-                    $('#flipbook').turn('size', 1400, 400);
-                } else if(elem.mozCancelFullScreen) {
-                    elem.mozCancelFullScreen();
-                    $('#flipbook').turn('size', 1400, 400);
-                } else if(elem.webkitExitFullscreen) {
-                    elem.webkitExitFullscreen();
-                    $('#flipbook').turn('size', 1400, 400);
+                const exitFullScreenFn = document.exitFullScreen || document.webkitExitFullscreen || document.msExitFullscreen;
+                if (exitFullScreenFn) {
+                    exitFullScreenFn.apply(document);
                 }
+            }
+
+            /** Toggles between full screen modes.  The changing of inner text */
+            function fullView() {
+                if (!canToggleFullscreen()) {
+                    console.log("unvaible");
+                }
+                if (!isFullscreen()) {
+                    enterFullscreen();
+                    console.log("cancel");
+                    imgFlip.classList.add('fs');
+                    zoom_el.style.width = '2000px';
+                    zoom_el.style.height = '600px';
+                } else {
+                    exitFullscreen();
+                    console.log("enter");
+                    zoom_el.style.width = '1600px';
+                    zoom_el.style.height = '400px';
+                    // imgFlip.style.backgroundSize = '1600px' + ' 400px';
+                    // zoom_el.style.WebkitTransform = 'scale(1)';
+                }
+            }
+
+            function loadApp() {
+                function updateFlipbookSize() {
+                    var width = $('.flipbook').width();
+                    var height = $('.flipbook').height();
+
+                    $('.flipbook').turn('size', width, height);
+                }
+
+                $('.flipbook').turn({
+                    aspectRatio: 16 / 9,
+                    width: $('.flipbook').width(),
+                    height: $('.flipbook').height(),
+                    elevation: 50,
+                    gradients: true,
+                    autoCenter: true,
+                });
+
+                // Update flipbook size on window resize
+                $(window).on('resize', function() {
+                    updateFlipbookSize();
+                });
+
+                // Bind keyboard events for navigation
+                $(window).bind('keydown', function(e) {
+                    if (e.keyCode === 37) {
+                        $('#flipbook').turn('previous');
+                    } else if (e.keyCode === 39) {
+                        $('#flipbook').turn('next');
+                    }
+                });
+
+                // Initial size update
+                updateFlipbookSize();
             }
             function prevFlip(){
                 $('#flipbook').turn('previous');
@@ -351,35 +502,6 @@
             function nextFlip(){
                 $('#flipbook').turn('next');
             };
-            function loadApp() {
-                $('.flipbook').turn({
-                    aspectRatio:16/9,
-                    width:1400,
-                    height:400,
-                    elevation: 50,
-                    gradients: true,
-                    autoCenter: true,
-                });
-                $(window).bind('keydown', function(e){
-                    if (e.keyCode==37)
-                        $('#flipbook').turn('previous');
-                    else if (e.keyCode==39)
-                        $('#flipbook').turn('next');
-                });
-
-                //Binds the single tap event to the zoom function
-                // $('.flipbook-view').bind('zoom.tap', zoomTo);
-
-                //Optional, calls the resize function when the window changes, useful when viewing on tablet or mobile phones
-                // $(window).resize(function() {
-                //     resizeViewport();
-                // }).bind('orientationchange', function() {
-                //     resizeViewport();
-                // });
-
-                //Must be called initially to setup the size
-                // resizeViewport();
-            }
 
             function zoomTo(event) {
                 setTimeout(function() {

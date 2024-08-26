@@ -17,27 +17,54 @@
                 </div>
             </div>
             <!-- bg-wrapper end -->
-            <div id="flipbook-view" class="business-wrapper">
+            <div id="flipbookWrapper" class="business-wrapper">
                 <div  class="flipbook-view">
+                    <div class="btn-flipbook" style="visibility: hidden;">
+                        <img src="{{ asset('frontend/images/icon/close-circle.svg') }}"/>
+                    </div>
                     <div id="flipContainer" class="container">
-                        <button onclick="prevFlip()">Prev</button>
+                        <button onclick="prevFlip()"><img src="{{ asset('frontend/images/icon/arrow-left.svg') }}"/></button>
                         <div id="flipbook" class="flipbook">
-                        @foreach($content as $page)
-                            <div style="background-image:url({{ asset($page) }})"></div>
-                        @endforeach
+                            @foreach($content as $page)
+                                {{-- <div id="img_flip" class="img_flip" style="background-image:url({{ asset($page) }});"></div> --}}
+                                <div>
+                                    <img id="flipImg" class="img_flip" src="{{ asset($page) }}"/>
+                                </div>
+
+                            @endforeach
                         </div>
-                        <button onclick="nextFlip()">Next</button>
+                        <button onclick="nextFlip()"><img src="{{ asset('frontend/images/icon/arrow-right.svg') }}"/></button>
                         <iframe
                             src="{{asset('frontend/CreativeSolutionsRateCard.pdf')}}" id="myFrame"
                             style="position: absolute;width:0;height:0;border:0;">
                         </iframe>
                     </div>
+                    <div class="container-mobile">
+                        <button class="btn_prev_img" onclick="plusDivs(-1)">&#8249;</button>
+
+                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_1.jpg') }}"/>
+                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_2.jpg') }}"/>
+                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_3.jpg') }}"/>
+                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_4.jpg') }}"/>
+                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_5.jpg') }}"/>
+                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_6.jpg') }}"/>
+                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_7.jpg') }}"/>
+                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_8.jpg') }}"/>
+                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_9.jpg') }}"/>
+{{--
+                        @foreach($content as $page)
+                            <div>
+                                <img id="imgFlip1" class="mySlides5" src="{{ asset($page) }}" alt="image samchully pay"/>
+                            </div>
+                        @endforeach --}}
+                        <button class="btn_next_img" onclick="plusDivs(1)">&#8250;</button>
+                    </div>
                     <div class="btn-flipbook">
-                        <button onclick="fullView()"><img src="{{ asset('frontend/images/icon/fb_fullscreen.svg') }}"/></button>
-                        <img src="{{ asset('frontend/images/icon/fb_zoom_in.svg') }}"/>
-                        <img src="{{ asset('frontend/images/icon/fb_zoom_out.svg') }}"/>
-                        <button onclick="print()"><img src="{{ asset('frontend/images/icon/fb_print.svg') }}"/></button>
-                        <button id="downloadButton"><img src="{{ asset('frontend/images/icon/fb_download.svg') }}"/>
+                        <img onclick="fullView()" style="cursor: pointer" src="{{ asset('frontend/images/icon/fb_fullscreen.svg') }}"/>
+                        {{-- <img id="btn_zoomIn" onclick="zoomIn()" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_zoom_in.svg') }}"/>
+                        <img id="btn_zoomOut" onclick="zoomOut()" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_zoom_out.svg') }}"/> --}}
+                        <img onclick="print()" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_print.svg') }}"/>
+                        <img id="downloadButton" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_download.svg') }}"/>
                         <a id="downloadLink" href="{{asset('frontend/CreativeSolutionsRateCard.pdf')}}" download style="display: none;"></a>
                     </div>
                 </div>
@@ -101,7 +128,7 @@
             <!-- section-wrapper end -->
 
             <!-- section-business start -->
-            <div class="business-wrapper">
+            {{-- <div class="business-wrapper">
                 <div class="content">
                     <div class="box">
                         <img src="../frontend/images/icon/ae.svg"/>
@@ -134,21 +161,21 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <!-- section-business end -->
 
              <!-- section-streamlined start -->
-             <div class="dekstop-streamlined">
+             {{-- <div class="dekstop-streamlined">
                 <div class="our-history dekstop">
-                <div class="box">
+                <div class="box"> --}}
                     <!-- Left Content -->
-                    <div class="left-box">
+                    {{-- <div class="left-box">
                         <div class="container-imageyear">
                             <h1>{{__ ('streamlined') }}</h1>
                         </div>
-                    </div>
+                    </div> --}}
                     <!-- Right Content -->
-                    <div class="right-box">
+                    {{-- <div class="right-box">
                         <div class="wrapper">
                             <span>01</span>
                             <div class="text">
@@ -181,9 +208,9 @@
                     </div>
                 </div>
             </div>
-             </div>
+             </div> --}}
 
-            <div class="mobile-streamlined">
+            {{-- <div class="mobile-streamlined">
                 <div class="our-history mobile">
                 <div class="box">
                     <div class="right-box">
@@ -220,7 +247,7 @@
                     </div>
                 </div>
             </div>
-            </div>
+            </div> --}}
 
              <!-- section-streamlined end -->
         </div>
@@ -229,6 +256,28 @@
         <script type="text/javascript" src="{{ asset('frontend/extras/modernizr.2.5.3.min.js') }}"></script>
 
         <script>
+
+var elem = document.getElementById("flipbookWrapper");
+            var imgFlip = document.getElementById("flipImg");
+            var zoom_el = document.getElementById("flipContainer");
+
+        var slideIndex = 1;
+            showDivs(slideIndex);
+
+            function plusDivs(n) {
+            showDivs(slideIndex += n);
+            }
+
+            function showDivs(n) {
+            var i;
+            var x1 = document.getElementsByClassName("mySlides5");
+            if (n > x1.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = x1.length}
+            for (i = 0; i < x1.length; i++) {
+                x1[i].style.display = "none";
+            }
+            x1[slideIndex-1].style.display = "block";
+        }
             function sendCompro() {
                 var sendTo = "info@nia.co.id";
                 var subject= "Quotation Company Profile";
@@ -266,7 +315,6 @@
                 window.open(mailtoLink, '_blank');
             }
 
-            var elem = document.getElementById("flipbook-view");
             let print = () => {
                 let objFra = document.getElementById('myFrame');
                 objFra.contentWindow.focus();
@@ -276,25 +324,60 @@
                 document.getElementById('downloadLink').click();
             });
 
-            function fullView(){
-                if (elem.requestFullscreen) {
-                    elem.requestFullscreen();
-                    $('.flipbook').turn({
-                        aspectRatio:16/9,
-                        width:1200,
-                        height:400,
-                        elevation: 50,
-                        gradients: true,
-                        autoCenter: true,
-                    });
-                } else if (elem.mozRequestFullScreen) { /* Firefox */
-                    elem.mozRequestFullScreen();
-                } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
-                    elem.webkitRequestFullscreen();
-                } else if (elem.msRequestFullscreen) { /* IE/Edge */
-                    elem.msRequestFullscreen();
+            function canToggleFullscreen() {
+                return !!(document.fullscreenEnabled || document.webkitFullscreenEnabled || document.msFullscreenEnabled);
+            }
+            /** return true if fullScreenElement exists, indicating the document is in full screen mode. */
+            function isFullscreen() {
+                return !!(document.fullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement);
+            }
+
+            function getStatusFS() {
+                return document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
+            }
+
+            function isFullscreenEnable(elem) {
+                return getStatusFS() === elem;
+            }
+
+            /** If the browser is capable, requests to be in full screen mode. */
+            function enterFullscreen() {
+                // var page = document.documentElement
+                const fullScreenFn = elem.requestFullscreen || elem.webkitRequestFullscreen || elem.msRequestFullscreen;
+                if (fullScreenFn) {
+                    fullScreenFn.apply(elem);
                 }
-            };
+            }
+
+            /** If the browser is capable, exits full screen mode */
+            function exitFullscreen() {
+                const exitFullScreenFn = document.exitFullScreen || document.webkitExitFullscreen || document.msExitFullscreen;
+                if (exitFullScreenFn) {
+                    exitFullScreenFn.apply(document);
+                }
+            }
+
+            /** Toggles between full screen modes.  The changing of inner text */
+            function fullView() {
+                if (!canToggleFullscreen()) {
+                    console.log("unvaible");
+                }
+                if (!isFullscreen()) {
+                    enterFullscreen();
+                    console.log("cancel");
+                    imgFlip.classList.add('fs');
+                    zoom_el.style.width = '2000px';
+                    zoom_el.style.height = '600px';
+                } else {
+                    exitFullscreen();
+                    console.log("enter");
+                    zoom_el.style.width = '1600px';
+                    zoom_el.style.height = '400px';
+                    // imgFlip.style.backgroundSize = '1600px' + ' 400px';
+                    // zoom_el.style.WebkitTransform = 'scale(1)';
+                }
+            }
+
             function prevFlip(){
                 $('#flipbook').turn('previous');
             };
