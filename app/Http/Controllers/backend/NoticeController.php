@@ -22,7 +22,7 @@ class NoticeController extends Controller
         //get all videos from Models
         if ($request->ajax()) {
 
-            $data = Notice::query();
+            $data = Notice::query()->orderBy('id', 'desc');
 
             return Datatables::of($data)
                     ->addIndexColumn()
@@ -106,7 +106,7 @@ class NoticeController extends Controller
         if($request->ajax()){
 
             //define validation rules
-            //dd($request->content);
+
              $validator = Validator::make($request->all(), [
                 'title'         => 'required',
                 'content'       => 'required',
@@ -114,10 +114,11 @@ class NoticeController extends Controller
                 'image'         => 'image|mimes:jpeg,png,jpg,gif|max:5120'
             ]);
 
+     
             //check if validation fails
-            // if ($validator->fails()) {
-            //     return response()->json($validator->errors(), 422);
-            // }
+            if ($validator->fails()) {
+                return response()->json($validator->errors(), 422);
+            }
 
             if($request->id){
 

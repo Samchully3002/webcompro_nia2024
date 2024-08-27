@@ -3,21 +3,26 @@
 <!-- Styles -->
 
 <!-- Scripts -->
+<!-- import tinymce -->
+<script src="{{asset('backend/tinymce/tinymce.min.js')}}"></script>
 <script type="text/javascript">
-   var tableNotice;
-
-   $( document ).ready(function() {
-      tinymce.init({
-            selector: 'textarea.content'
-         });
-});
-
+tinymce.init({
+    selector: 'textarea.content', // Replace this CSS selector to match the placeholder element for TinyMCE
+    plugins: 'code table lists',
+    toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | indent outdent | bullist numlist | code | table'
+  });
 $("#notice_form_btn").click(function(e) {
         e.preventDefault();
 
         let form = $('#notice_form')[0];
+
+        form.content.value = tinyMCE.get('content').getContent();
+        form.content_kr.value = tinyMCE.get('content_kr').getContent();
+        form.content_id.value = tinyMCE.get('content_id').getContent();
+
         let data = new FormData(form);
-      
+        
+
         $.ajax({
           url: "{{ route('dashboard.post.notice.ajax') }}",
           type: "POST",
