@@ -3,41 +3,24 @@
 <!-- Styles -->
 <!-- <link href="{{ asset('css/pizza.css') }}" rel="stylesheet"> -->
 <!-- Scripts -->
+<script src="{{asset('backend/tinymce/tinymce.min.js')}}"></script>
 <script type="text/javascript">
-   var tableNotice;
-   const parser = new DOMParser();
-   var io = {}
-   io.selector = "textarea[name=content]";
-    io.setup = function(ed){
-     ed.on("init",function(e){       
-          setTimeout(function(){
-                var co = {};
-                co.selector = "textarea[name=content_kr]";
-                co.setup = function(ed){
-                    ed.on("init",function(e){
-                      tinymce.init({
-                      selector: 'textarea#content_id'
-                      });
-                    });                        
-                }
-                tinymce.init(co);
-          },100);              
-     });
-    }
-    tinymce.init(io);
-   $( document ).ready(function() {
-    
+  tinymce.init({
+    selector: 'textarea.content', // Replace this CSS selector to match the placeholder element for TinyMCE
+    plugins: 'code table lists',
+    toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | indent outdent | bullist numlist | code | table'
   });
-
   $("#notice_form_btn").click(function(e) {
         e.preventDefault();
 
         let form = $('#notice_form')[0];
+        
+        form.content.value = tinyMCE.get('content').getContent();
+        form.content_kr.value = tinyMCE.get('content_kr').getContent();
+        form.content_id.value = tinyMCE.get('content_id').getContent();
+        
         let data = new FormData(form);
-        data.content = tinymce.get('content').getContent();
-        data.content_kr = tinymce.get('content_kr').getContent();
-        data.content_id = tinymce.get('content_id').getContent();
-        console.log('data :',data);
+
         $.ajax({
           url: "{{ route('dashboard.post.notice.ajax') }}",
           type: "POST",
@@ -48,7 +31,7 @@
           success: function(response) {
             $('#notice_form')[0].reset();
             dispNotif('Saving Data Success', response.message, 'success');
-            // location.reload(); 
+            window.location.replace("{{ route('dashboard.list.notice') }}");
         },
         error: function(xhr, status, error) {
           dispNotif('', 'error saving data', 'error');

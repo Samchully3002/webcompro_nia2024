@@ -13,7 +13,6 @@ $( document ).ready(function() {
         serverSide: true,
         ajax: "{{ route('dashboard.list.notice') }}",
         columns: [
-            {data: 'id', name: 'id'},
             {data: 'title', name:'title'},
             {data: 'content', name:'content'},
             {data: 'date', name:'date'},
@@ -46,7 +45,6 @@ $( document ).ready(function() {
                     <table class="table table-striped notice-table">
                       <thead>
                         <tr>
-                          <th>No</th>
                           <th>Name</th>
                           <th>Content</th>
                           <th>Date</th>
