@@ -10,15 +10,14 @@
       tinymce.init({
             selector: 'textarea.content'
          });
-      $("#notice_form_btn").click(function(e) {
+});
+
+$("#notice_form_btn").click(function(e) {
         e.preventDefault();
 
         let form = $('#notice_form')[0];
         let data = new FormData(form);
-        //data.content = tinymce.get('content').getContent();
-        //data.content_kr = tinymce.get('content_kr').getContent();
-        //data.content_id = tinymce.get('content_id').getContent();
-
+      
         $.ajax({
           url: "{{ route('dashboard.post.notice.ajax') }}",
           type: "POST",
@@ -36,8 +35,7 @@
 
         });
 
-      })
-});
+      });
 </script>
 @endpush 
 @section('content')

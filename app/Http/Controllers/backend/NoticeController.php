@@ -172,17 +172,17 @@ class NoticeController extends Controller
     
                    //insert our team member
                    $note = Notice::create([
-                        'title'      => $request->title,
-                        'content'    => $request->content,
+                        'title'         => $request->title,
+                        'content'       => $request->content,
                         'title_kr'      => $request->title_kr,
                         'content_kr'    => $request->content_kr,
                         'title_id'      => $request->title_id,
                         'content_id'    => $request->content_id,
-                        'date'       => $request->date,
-                        'image'      => $imageName,
-                        'display'    => 1
+                        'date'          => $request->date,
+                        'image'         => $imageName,
+                        'display'       => 1
                     ]);
-    
+             
                     $note->save();
     
                     //return response

@@ -26,7 +26,10 @@
     }
     tinymce.init(io);
    $( document ).ready(function() {
-    $("#notice_form_btn").click(function(e) {
+    
+  });
+
+  $("#notice_form_btn").click(function(e) {
         e.preventDefault();
 
         let form = $('#notice_form')[0];
@@ -54,7 +57,6 @@
         });
 
       });
-  });
 
 
 </script>
