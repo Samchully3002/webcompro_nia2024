@@ -26,10 +26,7 @@
     }
     tinymce.init(io);
    $( document ).ready(function() {
-    
-  });
-
-  $("#notice_form_btn").click(function(e) {
+    $("#notice_form_btn").click(function(e) {
         e.preventDefault();
 
         let form = $('#notice_form')[0];
@@ -37,7 +34,7 @@
         data.content = tinymce.get('content').getContent();
         data.content_kr = tinymce.get('content_kr').getContent();
         data.content_id = tinymce.get('content_id').getContent();
-
+        console.log('data :',data);
         $.ajax({
           url: "{{ route('dashboard.post.notice.ajax') }}",
           type: "POST",
@@ -48,7 +45,7 @@
           success: function(response) {
             $('#notice_form')[0].reset();
             dispNotif('Saving Data Success', response.message, 'success');
-            location.reload(); 
+            // location.reload(); 
         },
         error: function(xhr, status, error) {
           dispNotif('', 'error saving data', 'error');
@@ -57,6 +54,9 @@
         });
 
       });
+  });
+
+
 </script>
 @endpush 
     @section('content')
