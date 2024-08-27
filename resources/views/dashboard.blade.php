@@ -58,7 +58,6 @@
 
     <script>
     var tableTeam;
-    var tableNotice;
     var tableNews;
     var tableMess;
     var tableTag;
@@ -353,49 +352,7 @@ Swal.fire("Changes are not saved", "", "info");
       });
     }
 
-    //NOTICE
-    //  tableNotice = $('.notice-table').DataTable({
-    //       fixedColumns: true,
-    //       processing: true,
-    //       serverSide: true,
-    //       ajax: "{{ route('dashboard.list.notice') }}",
-    //       columns: [
-    //           {data: 'id', name: 'id'},
-    //           {data: 'title', name:'title'},
-    //           {data: 'content', name:'content'},
-    //           {data: 'date', name:'date'},
-    //           {data: 'display', name:'display'},
-    //           {data: 'action', name: 'action', orderable: false, searchable: false},
-    //       ]
-    //   });
 
-      // $("#notice_form_btn").click(function(e) {
-      //   e.preventDefault();
-      //   let form = $('#notice_form')[0];
-      //   let data = new FormData(form);
-      //   data.content = tinymce.get('content').getContent();
-      //   data.content_kr = tinymce.get('content_kr').getContent();
-      //   data.content_id = tinymce.get('content_id').getContent();
-
-      //   $.ajax({
-      //     url: "{{ route('dashboard.post.notice.ajax') }}",
-      //     type: "POST",
-      //     data: data,
-      //     dataType: "JSON",
-      //     processData: false,
-      //     contentType: false,
-      //     success: function(response) {
-      //       $('#notice_form')[0].reset();
-      //       dispNotif('Saving Data Success', response.message, 'success');
-      //   },
-      //   error: function(xhr, status, error) {
-      //     dispNotif('', 'error saving data', 'error');
-      //     }
-
-      //   });
-
-      // })
-      // NOTICE END
 
       // TEAM
 

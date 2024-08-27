@@ -106,6 +106,7 @@ class NoticeController extends Controller
         if($request->ajax()){
 
             //define validation rules
+            //dd($request->content);
              $validator = Validator::make($request->all(), [
                 'title'         => 'required',
                 'content'       => 'required',
@@ -114,9 +115,9 @@ class NoticeController extends Controller
             ]);
 
             //check if validation fails
-            if ($validator->fails()) {
-                return response()->json($validator->errors(), 422);
-            }
+            // if ($validator->fails()) {
+            //     return response()->json($validator->errors(), 422);
+            // }
 
             if($request->id){
 
@@ -133,29 +134,29 @@ class NoticeController extends Controller
         
                     //update product with new image
                     $note->update([
-                        'title'      => $request->title,
-                        'content'    => $request->content,
+                        'title'         => $request->title,
+                        'content'       => $request->content,
                         'title_kr'      => $request->title_kr,
                         'content_kr'    => $request->content_kr,
                         'title_id'      => $request->title_id,
                         'content_id'    => $request->content_id,
-                        'date'       => $request->date,
-                        'image'      => $imageName,
-                        'display'    => 1
+                        'date'          => $request->date,
+                        'image'         => $imageName,
+                        'display'       => 1
                     ]);
         
                     } else {
 
                         //update product without image
                         $note->update([
-                            'title'      => $request->title,
-                            'content'    => $request->content,
+                            'title'         => $request->title,
+                            'content'       => $request->content,
                             'title_kr'      => $request->title_kr,
                             'content_kr'    => $request->content_kr,
                             'title_id'      => $request->title_id,
                             'content_id'    => $request->content_id,
-                            'date'       => $request->date,
-                            'display'    => 1
+                            'date'          => $request->date,
+                            'display'       => 1
                         ]);
                 }
 
