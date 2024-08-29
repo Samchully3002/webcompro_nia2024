@@ -104,7 +104,7 @@
                 </a>
             </div>
         </div>
-        {{-- <div class="item">
+        <div class="item">
             <div class="image-container">
                 <a href="/web-design">
                     <img src="../../frontend/images/WDD.jpg" alt="export voucher image banner">
@@ -129,13 +129,13 @@
                         <div class="image-overlay">
                         <div class="ic-bisnis">
                             <img src="../../frontend/images/icon/designtools.svg" alt="icon arrow">
-                            </div><br>
-                            <p >{{ __('cs') }}</p><br>
-                            <span>{{ __('cs-content') }}</span><br>
-                            <div class="btn-more">{{ __('btn-more') }}&nbsp;&nbsp;&nbsp;
-                                <img src="../../frontend/images/icon/arrow.png" alt="icon arrow">
-                            </div>
+                        </div><br>
+                        <p >{{ __('cs') }}</p><br>
+                        <span>{{ __('cs-content') }}</span><br>
+                        <div class="btn-more">{{ __('btn-more') }}&nbsp;&nbsp;&nbsp;
+                            <img src="../../frontend/images/icon/arrow.png" alt="icon arrow">
                         </div>
+                    </div>
                 </a>
             </div>
         </div>
