@@ -60,13 +60,13 @@
                         <div class="image-overlay">
                         <div class="ic-bisnis">
                             <img src="../../frontend/images/icon/ic_medical.svg" alt="icon arrow">
-                            </div><br>
-                            <p >{{ __('dh') }}</p><br>
-                            <span>{{ __('dh-content') }}</span><br>
-                            <div class="btn-more">{{ __('btn-more') }}&nbsp;&nbsp;&nbsp;
-                                <img src="../../frontend/images/icon/arrow.png" alt="icon arrow">
-                            </div>
+                        </div><br>
+                        <p >{{ __('dh') }}</p><br>
+                        <span>{{ __('dh-content') }}</span><br>
+                        <div class="btn-more">{{ __('btn-more') }}&nbsp;&nbsp;&nbsp;
+                            <img src="../../frontend/images/icon/arrow.png" alt="icon arrow">
                         </div>
+                    </div>
                 </a>
             </div>
         </div>
@@ -120,9 +120,7 @@
                     </div>
                 </a>
             </div>
-<<<<<<<<< Temporary merge branch 1
-        </div> --}}
-=========
+        </div>
         </div>
         <div class="item">
             <div class="image-container">
@@ -141,8 +139,6 @@
                 </a>
             </div>
         </div>
->>>>>>>>> Temporary merge branch 2
-
 
         <div class="clientSection">
             <div class="client_text">
