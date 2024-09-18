@@ -22,6 +22,29 @@
                 <div class="item-box clear">
 
                     @foreach($posts as $post)
+
+                    <?php
+                    
+                $locale = Session::get('locale');
+
+                if($locale==null){
+                    $locale='en';
+                }
+
+                switch ($locale) {
+                    case 'id':
+                        $post->title = $post->title_id ? $post->title_id : $post->title;
+                    break;
+                    case 'en':
+                        $post->title = $post->title;
+                        break;
+                    case 'kr':
+                        $post->title = $post->title_kr ? $post->title_kr : $post->title;
+                        break;
+                    default:
+                    $post->title = $post->title;
+                }
+                ?>
                     <div class="fl w25">
                         <div class="imx">
                             <a class="item" href="{{$post->source}}" target="blank">

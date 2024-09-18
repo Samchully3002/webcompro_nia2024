@@ -14,6 +14,28 @@
                 </div>
                 @foreach($notice as $note)
 
+                <?php
+                    
+                $locale = Session::get('locale');
+
+                if($locale==null){
+                    $locale='en';
+                }
+
+                switch ($locale) {
+                    case 'id':
+                        $note->title = $note->title_id ? $note->title_id : $note->title;
+                    break;
+                    case 'en':
+                        $note->title = $note->title;
+                        break;
+                    case 'kr':
+                        $note->title = $note->title_kr ? $note->title_kr : $note->title;
+                        break;
+                    default:
+                    $note->title = $note->title;
+                }
+                ?>
                 <a class="notice-list" href="/community/notice-detail/{{$note->id}}">
                     <div class="notice-content">
                         <p>{{$note->title;}}</p>
