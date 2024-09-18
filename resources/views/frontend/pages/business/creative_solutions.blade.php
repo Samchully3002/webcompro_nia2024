@@ -3,6 +3,23 @@
 
 @include('frontend.includes.head')
     <link rel="stylesheet" href="{{asset('frontend/css/business.css')}}"/>
+    {{-- <style>
+        #mydiv {
+            position: absolute;
+            z-index: 9;
+            background-color: #f1f1f1;
+            border: 1px solid #d3d3d3;
+            text-align: center;
+        }
+
+        #mydivheader {
+            padding: 10px;
+            cursor: move;
+            z-index: 10;
+            background-color: #2196F3;
+            color: #fff;
+        }
+    </style> --}}
     </head>
 
     <body>
@@ -18,6 +35,12 @@
             </div>
             <!-- bg-wrapper end -->
             <div id="flipbookWrapper" class="business-wrapper">
+                {{-- <div id="mydiv">
+                    <div id="mydivheader">Click here to move</div>
+                    <p>Move</p>
+                    <p>this</p>
+                    <p>DIV</p>
+                </div> --}}
                 <div  class="flipbook-view">
                     <div class="btn-flipbook" style="visibility: hidden;">
                         <img src="{{ asset('frontend/images/icon/close-circle.svg') }}"/>
@@ -41,22 +64,11 @@
                     </div>
                     <div class="container-mobile">
                         <button class="btn_prev_img" onclick="plusDivs(-1)">&#8249;</button>
-
-                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_1.jpg') }}"/>
-                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_2.jpg') }}"/>
-                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_3.jpg') }}"/>
-                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_4.jpg') }}"/>
-                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_5.jpg') }}"/>
-                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_6.jpg') }}"/>
-                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_7.jpg') }}"/>
-                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_8.jpg') }}"/>
-                        <img class="mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_9.jpg') }}"/>
-{{--
                         @foreach($content as $page)
                             <div>
                                 <img id="imgFlip1" class="mySlides5" src="{{ asset($page) }}" alt="image samchully pay"/>
                             </div>
-                        @endforeach --}}
+                        @endforeach
                         <button class="btn_next_img" onclick="plusDivs(1)">&#8250;</button>
                     </div>
                     <div class="btn-flipbook">
@@ -257,7 +269,7 @@
 
         <script>
 
-var elem = document.getElementById("flipbookWrapper");
+            var elem = document.getElementById("flipbookWrapper");
             var imgFlip = document.getElementById("flipImg");
             var zoom_el = document.getElementById("flipContainer");
 

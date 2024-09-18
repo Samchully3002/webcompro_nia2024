@@ -386,6 +386,17 @@ input[type="checkbox"] {
     font-weight: 600;
 }
 
+.pricing-wrapper .card button:hover {
+    width: 100%;
+    background-color: #bfbfbf;
+    height: 60px;
+    border-radius: 6px;
+    border: none;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 600;
+}
+
 .pricing-wrapper .card .title {
     display: flex;
     flex-direction: column;
@@ -461,8 +472,8 @@ input[type="checkbox"] {
 
 @media screen and (max-width: 1310px) {
     .business-wrapper .flipbook-view .container .flipbook {
-        width: 1090px;
-        height: 320px;
+        width: 1150px;
+        height: 310px;
     }
 }
 
@@ -473,14 +484,14 @@ input[type="checkbox"] {
 
     .business-wrapper .flipbook-view .container .flipbook {
         width: 957px;
-        height: 273px;
+        height: 270px;
     }
 }
 
 @media screen and (max-width: 950px) {
     .business-wrapper .flipbook-view .container .flipbook {
-        width: 753px;
-        height: 215px;
+        width: 750px;
+        height: 210px;
     }
 }
 
@@ -499,9 +510,11 @@ input[type="checkbox"] {
         justify-content: space-between;
     }
 
-    .business-wrapper .flipbook-view .container-mobile .mySlides5 {
+    .business-wrapper .flipbook-view .container-mobile .mySlides5,
+    .business-wrapper .flipbook-view .container-mobile .mySlides6 {
         /* display: flex; */
-        width: 80% !important;
+        width: 100% !important;
+        height: auto;
     }
 
     .prev,

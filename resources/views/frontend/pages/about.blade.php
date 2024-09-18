@@ -35,6 +35,7 @@
                 <span class="muncul">{{__ ('ceo') }}</span><br>
                 <p class="muncul">
                     {{__ ('ceo-msg1') }}
+                </p><p class="muncul">
                     {{__ ('ceo-msg2') }}
                 </p>
             </div>
@@ -860,7 +861,7 @@
                     </div>
                     <div class="back">
                                 <div class="content">
-                                    <p>{{$item['quotes']}}</p>
+                                    <p>"{{$item['quotes']}}"</p>
                                 </div>
                             </div>
                 </div>

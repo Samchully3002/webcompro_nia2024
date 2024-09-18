@@ -88,7 +88,7 @@
                     </div>
                 </div>
 
-                <div class="colls-wrapper">
+                {{-- <div class="colls-wrapper">
                     <div class="wrap-collabsible">
                         <input id="collapsible2" class="toggle" type="checkbox">
                         <label for="collapsible2" class="lbl-toggle">
@@ -127,13 +127,13 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
                 <div class="colls-wrapper">
                     <div class="wrap-collabsible">
                         <input id="collapsible3" class="toggle" type="checkbox">
                         <label for="collapsible3" class="lbl-toggle">
-                            <span>03</span>
+                            <span>02</span>
                             <span>{{ __('md') }}</span>
                             <span class="icon-right">&nbsp;</span>
                         </label>
@@ -189,6 +189,56 @@
                     <div class="wrap-collabsible">
                         <input id="collapsible4" class="toggle" type="checkbox">
                         <label for="collapsible4" class="lbl-toggle">
+                            <span>03</span>
+                            <span>{{ __('eo') }}</span>
+                            <span class="icon-right">&nbsp;</span>
+                        </label>
+                        <div class="collapsible-content">
+                            <div class="content">
+                                <div class="text-wrapper">
+                                    <p>{{ __('eo-content') }}</p>
+                                </div>
+                                <div class="card-wrapper">
+                                    <div class="card-grey">
+                                        <img width="18%" src="../frontend/images/icon/ic_exportvoucher04-A.svg" alt="image export voucher"/>
+                                        <span>{{ __('eo1') }}</span>
+                                        <p>
+                                            {{ __('eo1-content') }}
+                                        </p>
+                                    </div>
+                                    <div class="card-grey">
+                                        <img width="18%" src="../frontend/images/icon/ic_exportvoucher04-B.svg" alt="image export voucher"/>
+                                        <span>{{ __('eo2') }}</span>
+                                        <p>
+                                            {{ __('eo2-content') }}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="card-wrapper">
+                                    <div class="card-grey">
+                                        <img width="18%" src="../frontend/images/icon/ic_exportvoucher04-C.svg" alt="image export voucher"/>
+                                        <span>{{ __('eo3') }}</span>
+                                        <p>
+                                            {{ __('eo3-content') }}
+                                        </p>
+                                    </div>
+                                    <div class="card-grey">
+                                        <img width="18%" src="../frontend/images/icon/ic_exportvoucher04-D.svg"/>
+                                        <span>{{ __('eo4') }}</span>
+                                        <p>
+                                            {{ __('eo4-content') }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- <div class="colls-wrapper">
+                    <div class="wrap-collabsible">
+                        <input id="collapsible4" class="toggle" type="checkbox">
+                        <label for="collapsible4" class="lbl-toggle">
                             <span>04</span>
                             <span>{{ __('its') }}</span>
                             <span class="icon-right">&nbsp;</span>
@@ -233,7 +283,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
           </div>
             <!-- section-wrapper end -->

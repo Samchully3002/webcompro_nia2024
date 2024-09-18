@@ -605,6 +605,14 @@
     width: 30%;
 }
 
+.footer3blok .blok .btn{
+    color:#9a9eae;
+}
+
+.footer3blok .blok .btn:hover{
+    color:#333;
+}
+
 .blok h1,
 h3 {
     font-weight: 500;
@@ -915,6 +923,14 @@ h3 {
 
     .blok {
         width: 100%;
+    }
+
+    .btn{
+        color:#103ce9;
+    }
+
+    .btn:hover{
+        color:#333;
     }
 
     #footer-wrapper .row {
