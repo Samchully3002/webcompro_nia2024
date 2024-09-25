@@ -58,7 +58,7 @@
  .mainWrapper h2.active {
     top: 19%;
     left: 19.5%;
-    line-height: 1.4;
+    line-height: 1;
     font-size: 2em;
 }
 
@@ -95,18 +95,16 @@
 }
 
  .mainWrapper #mainSld .item .textBox p {
+    position: relative;
     font-size: 1.8em;
     line-height: 1.2;
     margin-left: 417px;
-    font-weight: 600;
+    font-weight: 400;
+    padding-right: 200px;
     transition: all 1s;
     -webkit-transition: all 1s;
     -moz-transition: all 1s;
     -o-transition: all 1s;
-}
-
-.mainWrapper #mainSld .item .textBox p{
-    padding-right: 200px;
 }
 
 .mainWrapper #mainSld .item .textBox p br{
@@ -119,16 +117,18 @@
 }
 
  .mainWrapper #mainSld .item .textBox h3 {
+    position: relative;
     font-size: 4.8em;
     color: #fff;
-    font-weight: 600;
+    font-weight: 400;
     line-height: 1;
     opacity: 1;
 }
 .mainWrapper #mainSld .item .textBox h4 {
+    position: relative;
     font-size: 2.2em;
     color: #fff;
-    font-weight: 600;
+    font-weight: 400;
     line-height: 1.1;
     margin-right: 207px;
     opacity: 1;
@@ -244,8 +244,7 @@
 }
 
 .container_text {
-    position: absolute;
-    height: 800px;
+    height: 1000px;
     display: flex;
     position: relative;
     justify-content: center;
@@ -268,50 +267,72 @@
 }
 
 .wrap-box {
+    position: relative;
     height: 50vh;
     display: flex;
+    flex-direction: row;
     justify-content: flex-start;
-    margin: 70px 170px 70px 170px;
+    margin: 0px 140px 70px 140px;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 1px 2px 3px 4px rgba(12,12,12,0.2);
 }
 
 .wrap-box:hover {
-    opacity: 0.3;
+    transform: scale(1.1);
     cursor: pointer;
 }
 
-.wrap-box img {
-    width: 16%;
-    font-size: unset;
-    height: unset;
-    display: unset;
-    object-position: unset;
-    object-fit: unset;
-    image-rendering: unset;
-    bottom: unset;
+.wrap-box .txtbox {
+    padding: 100px 100px 100px 100px;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
-.wrap-box p {
-    font-size: 36px;
+.wrap-box .txtbox img {
+    position: relative;
+    width: 16%;
+}
+
+.wrap-box .txtbox p {
+    position: relative;
+    font-size: 2em;
     font-weight: 600;
     line-height: 120%;
     width: 80%;
 }
 
-.wrap-box span {
-    font-size: 20px;
-    width: 80%;
+.wrap-box .txtbox span {
+    position: relative;
+    font-size: 1em;
+    /* width: 80%; */
 }
 
-.wrap-box .left {
-    width:70%;
-    padding: 100px 100px 100px 100px;
-    display: grid;
-    border-radius: 20px 0px 0px 20px;
+.wrap-box .subImg {
+    position: relative;
+    top: 0px;
+    height: 100%;
+    width: 40%;
     background: #ffffff;
-    box-shadow: 1px 2px 3px 4px rgba(12,12,12,0.2);
-    align-content: center;
-    justify-content: center;
-    flex-direction: column;
+    box-shadow: 5px 5px 10px rgba(0, 0.3, 0, 0.3);
+}
+
+.wrap-box:nth-child(1) .subImg {
+    /* left: 388px; */
+    border-radius: 0px 20px 20px 0px;
+}
+
+.wrap-box:nth-child(3) .subImg {
+    /* left: 417px; */
+    border-radius: 20px 0px 0px 20px;
+}
+
+.wrap-box:nth-child(2) .subImg,
+.wrap-box:nth-child(4) .subImg {
+    /* right: 0px; */
+    border-radius: 0px 20px 20px 0px;
 }
 
 .wrap-box .right {
