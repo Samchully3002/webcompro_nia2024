@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 
-@include('frontend.includes.head')
-    <link rel="stylesheet" href="{{asset('frontend/css/business.css')}}"/>
+        @include('frontend.includes.head')
+        {{-- CSS --}}
+        <link rel="stylesheet" href="{{asset('frontend/css/business.css')}}"/>
+        <link rel="stylesheet" href="{{asset('frontend/lib/swiper-bundle.min.css')}}" />
+        {{-- SCRIPT --}}
+        <script src="{{asset('frontend/lib/swiper-bundle.min.js')}}"></script>
+        <script src="{{asset('frontend/lib/gsap.min.js')}}"></script>
+        <script src="{{asset('frontend/lib/ScrollTrigger.min.js')}}"></script>
+        <script src="{{asset('frontend/lib/ScrollToPlugin.min.js')}}"></script>
+        <script src="{{asset('frontend/lib/CSSRulePlugin.min.js')}}"></script>
     </head>
-
     <body>
     @include('frontend.includes.header')
     <!-- <div data-include="component/header"></div> -->
@@ -17,7 +24,37 @@
                 </div>
             </div>
             <!-- bg-wrapper end -->
-
+            <div class="scrollWrapper">
+                {{-- <div class="row"> --}}
+                    <div class="scrollBox box1">
+                        <ul class="textBox">
+                            <li class="active">
+                                <span>Bridgehead for global expansion</span>
+                                <h3>{{ __('rnc') }}</h3>
+                            </li>
+                            <li>
+                                <span>A reliable overseas business partner</span>
+                                <h3>{{ __('oba') }}</h3>
+                            </li>
+                            <li>
+                                <span>Easy to immerse yourself in local culture</span>
+                                <h3>{{ __('md') }}</h3>
+                            </li>
+                            <li>
+                                <span>High local cultural understanding and expertise</span>
+                                <h3>{{ __('its') }}</h3>
+                            </li>
+                        </ul>
+                        <div class="imgBox"><img width="100%" src="../frontend/images/evLS_1.png" /></div>
+                        <div class="imgBox"><img width="100%" src="../frontend/images/evLS_2.png" /></div>
+                        <div class="imgBox"><img width="100%" src="../frontend/images/evLS_3.png" /></div>
+                        <div class="imgBox"><img width="100%" src="../frontend/images/evLS_4.png" /></div>
+                    </div>
+                    <div class="scrollBox box2"></div>
+                    <div class="scrollBox box3"></div>
+                    <div class="scrollBox box4"></div>
+                {{-- </div> --}}
+            </div>
             <!-- section-wrapper start -->
           <div class="product-box">
             <div class="product-wrapper">
@@ -88,7 +125,7 @@
                     </div>
                 </div>
 
-                {{-- <div class="colls-wrapper">
+                <div class="colls-wrapper">
                     <div class="wrap-collabsible">
                         <input id="collapsible2" class="toggle" type="checkbox">
                         <label for="collapsible2" class="lbl-toggle">
@@ -127,13 +164,13 @@
                             </div>
                         </div>
                     </div>
-                </div> --}}
+                </div>
 
                 <div class="colls-wrapper">
                     <div class="wrap-collabsible">
                         <input id="collapsible3" class="toggle" type="checkbox">
                         <label for="collapsible3" class="lbl-toggle">
-                            <span>02</span>
+                            <span>03</span>
                             <span>{{ __('md') }}</span>
                             <span class="icon-right">&nbsp;</span>
                         </label>
@@ -189,56 +226,6 @@
                     <div class="wrap-collabsible">
                         <input id="collapsible4" class="toggle" type="checkbox">
                         <label for="collapsible4" class="lbl-toggle">
-                            <span>03</span>
-                            <span>{{ __('eo') }}</span>
-                            <span class="icon-right">&nbsp;</span>
-                        </label>
-                        <div class="collapsible-content">
-                            <div class="content">
-                                <div class="text-wrapper">
-                                    <p>{{ __('eo-content') }}</p>
-                                </div>
-                                <div class="card-wrapper">
-                                    <div class="card-grey">
-                                        <img width="18%" src="../frontend/images/icon/ic_exportvoucher04-A.svg" alt="image export voucher"/>
-                                        <span>{{ __('eo1') }}</span>
-                                        <p>
-                                            {{ __('eo1-content') }}
-                                        </p>
-                                    </div>
-                                    <div class="card-grey">
-                                        <img width="18%" src="../frontend/images/icon/ic_exportvoucher04-B.svg" alt="image export voucher"/>
-                                        <span>{{ __('eo2') }}</span>
-                                        <p>
-                                            {{ __('eo2-content') }}
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="card-wrapper">
-                                    <div class="card-grey">
-                                        <img width="18%" src="../frontend/images/icon/ic_exportvoucher04-C.svg" alt="image export voucher"/>
-                                        <span>{{ __('eo3') }}</span>
-                                        <p>
-                                            {{ __('eo3-content') }}
-                                        </p>
-                                    </div>
-                                    <div class="card-grey">
-                                        <img width="18%" src="../frontend/images/icon/ic_exportvoucher04-D.svg"/>
-                                        <span>{{ __('eo4') }}</span>
-                                        <p>
-                                            {{ __('eo4-content') }}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {{-- <div class="colls-wrapper">
-                    <div class="wrap-collabsible">
-                        <input id="collapsible4" class="toggle" type="checkbox">
-                        <label for="collapsible4" class="lbl-toggle">
                             <span>04</span>
                             <span>{{ __('its') }}</span>
                             <span class="icon-right">&nbsp;</span>
@@ -283,16 +270,85 @@
                             </div>
                         </div>
                     </div>
-                </div> --}}
+                </div>
             </div>
-          </div>
-            <!-- section-wrapper end -->
         </div>
 
         <!-- <div data-include="component/footer"></div> -->
         @include('frontend.includes.footer')
         <!-- <script type="text/javascript" src="{{asset('frontend/js/pages/business.js')}}"></script> -->
         <script>
+                        $('document').ready(function(){
+                gsap.registerPlugin(ScrollTrigger);
+
+                gsap.timeline({
+                    onComplete:function(){}
+                })
+                gsap.timeline({
+                    scrollTrigger: {
+                        trigger: '.scrollWrapper',
+                        start: 'top top',
+                        end: 'bottom bottom',
+                        pin: '.scrollWrapper .scrollBox',
+                        pinSpacing: false,
+                        invalidateOnRefresh: true,
+                        scrub: 1,//부드러운 스크러빙
+                    }
+                });
+
+                gsap.timeline({
+                    scrollTrigger: {
+                        trigger: '.scrollWrapper',
+                        start: 'top 30%',
+                        end: 'top bottom',
+                        invalidateOnRefresh: true,
+                        scrub: 0.5,//부드러운 스크러빙
+                        // onComplete: console.log('finish'),
+                        onEnter:function() {
+                            $('.scrollWrapper .box1').addClass('active');
+                            $('.scrollWrapper .box1 .imgBox').addClass('active');
+                        },
+                        onEnterBack:function() {
+                            $('.scrollWrapper .box1').removeClass('active');
+                            $('.scrollWrapper .box1 .imgBox').removeClass('active');
+                        }
+                    }
+                });
+
+                $('.scrollWrapper .scrollBox').each(function(i){
+                    let nowInner = this;
+                    gsap.timeline({
+                        scrollTrigger: {
+                            trigger: $(this),
+                            start: 'top 30%',
+                            end: 'top bottom',
+                            invalidateOnRefresh: true,
+                            onEnter:function() {
+                                if(i === 1){
+                                    $('.box1').css({"transition" : "none", "-moz-transition" : "none", "-o-transition" : "none", "-webkit-transition" : "none"});
+                                }
+                                $('.scrollWrapper .scrollBox .imgBox').css({'display' : 'none'});
+                                $('.scrollWrapper .scrollBox .imgBox').eq(i).css({'display' : 'block'});
+                                $('.scrollWrapper .textBox li').removeClass('active');
+                                $('.scrollWrapper .textBox li').eq(i).addClass('active');
+                            },
+                            onEnterBack:function() {
+                                if(i === 1){
+                                    $('.box1').css({"transition" : "all 0.5s", "-moz-transition" : "all 0.5s", "-o-transition" : "all 0.5s", "-webkit-transition" : "all 0.5s"});
+                                }
+
+                                if(i === 3){
+                                    $('.box1').css({"transition" : "none", "-moz-transition" : "none", "-o-transition" : "none", "-webkit-transition" : "none"});
+                                }
+                                $('.scrollWrapper .scrollBox .imgBox').css({'display' : 'none'});
+                                $('.scrollWrapper .scrollBox .imgBox').eq(i).css({'display' : 'block'});
+                                $('.scrollWrapper .textBox li').removeClass('active');
+                                $('.scrollWrapper .textBox li').eq(i).addClass('active');
+                            }
+                        }
+                    })
+                });
+            });
             document.addEventListener('DOMContentLoaded', function() {
                 const appearElements = document.querySelectorAll('.appear');
 

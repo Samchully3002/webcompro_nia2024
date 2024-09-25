@@ -1,4 +1,3 @@
-
 var slideIndex = 1;
 let myLabels = document.querySelectorAll('.lbl-toggle');
 showDivs(slideIndex);
@@ -10,6 +9,78 @@ var x4 = document.getElementsByClassName("mySlides4");
 var x6 = document.getElementsByClassName("mySlides5");
 
 const appearElements = document.querySelectorAll('.appear');
+
+$('document').ready(function(){
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.timeline({
+        onComplete:function(){}
+    })
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: '.scrollWrapper',
+            start: 'top top',
+            end: 'bottom bottom',
+            pin: '.scrollWrapper .scrollBox',
+            pinSpacing: false,
+            invalidateOnRefresh: true,
+            scrub: 1,//부드러운 스크러빙
+        }
+    });
+
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: '.scrollWrapper',
+            start: 'top 30%',
+            end: 'top bottom',
+            invalidateOnRefresh: true,
+            scrub: 0.5,//부드러운 스크러빙
+            // onComplete: console.log('finish'),
+            onEnter:function() {
+                $('.scrollWrapper .box1').addClass('active');
+                $('.scrollWrapper .box1 .imgBox').addClass('active');
+            },
+            onEnterBack:function() {
+                $('.scrollWrapper .box1').removeClass('active');
+                $('.scrollWrapper .box1 .imgBox').removeClass('active');
+            }
+        }
+    });
+
+    $('.scrollWrapper .scrollBox').each(function(i){
+        let nowInner = this;
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: $(this),
+                start: 'top 30%',
+                end: 'top bottom',
+                invalidateOnRefresh: true,
+                onEnter:function() {
+                    if(i === 1){
+                        $('.box1').css({"transition" : "none", "-moz-transition" : "none", "-o-transition" : "none", "-webkit-transition" : "none"});
+                    }
+                    $('.scrollWrapper .scrollBox .imgBox').css({'display' : 'none'});
+                    $('.scrollWrapper .scrollBox .imgBox').eq(i).css({'display' : 'block'});
+                    $('.scrollWrapper .textBox li').removeClass('active');
+                    $('.scrollWrapper .textBox li').eq(i).addClass('active');
+                },
+                onEnterBack:function() {
+                    if(i === 1){
+                        $('.box1').css({"transition" : "all 0.5s", "-moz-transition" : "all 0.5s", "-o-transition" : "all 0.5s", "-webkit-transition" : "all 0.5s"});
+                    }
+
+                    if(i === 3){
+                        $('.box1').css({"transition" : "none", "-moz-transition" : "none", "-o-transition" : "none", "-webkit-transition" : "none"});
+                    }
+                    $('.scrollWrapper .scrollBox .imgBox').css({'display' : 'none'});
+                    $('.scrollWrapper .scrollBox .imgBox').eq(i).css({'display' : 'block'});
+                    $('.scrollWrapper .textBox li').removeClass('active');
+                    $('.scrollWrapper .textBox li').eq(i).addClass('active');
+                }
+            }
+        })
+    });
+});
 
 function plusDivs(n) {
     showDivs(slideIndex += n);

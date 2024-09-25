@@ -40,5 +40,13 @@
     
     <script src="{{asset('backend/assets/js/pages-account-settings-account.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <!-- Include the Quill library -->
-    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
+
+
+    <!-- import tinymce -->
+    <script src="{{asset('backend/tinymce/tinymce.min.js')}}"></script>
+    <script>
+        tinymce.init({
+            selector: 'textarea.content'
+      });
+    </script>
+

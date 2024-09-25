@@ -1,6 +1,6 @@
 @extends('dashboard')
     @section('content')
-    <h4 class="py-3 mb-4"><span class="text-muted fw-light">News /</span> Post News</h4>
+    <h4 class="py-3 mb-4"><span class="text-muted fw-light">News /</span> Update News</h4>
 
   <!-- Form Post New Business -->
   <div class="row">
@@ -14,11 +14,34 @@
           <form id="form_news" name="form_news" method="POST" onsubmit="return false">
           @csrf
             <div class="row mb-3">
-              <label class="col-sm-2 col-form-label" for="basic-default-name">News Title</label>
+              <label class="col-sm-2 col-form-label" for="basic-default-name">News Title [en]</label>
               <div class="col-sm-10">
                 <input type="text" value="{{$news->title}}" class="form-control" id="basic-default-name" placeholder="" id="title" name="title">
                 <input type="hidden" name="id" id="id" placeholder="" value="{{$news->id}}">
               </div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-2 col-form-label" for="basic-default-name">News Title [kr]</label>
+              <div class="col-sm-10">
+                <input type="text" value="{{$news->title_kr}}" class="form-control" id="basic-default-name" placeholder="" id="title_kr" name="title_kr">
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-2 col-form-label" for="basic-default-name">News Title [id]</label>
+              <div class="col-sm-10">
+                <input type="text" value="{{$news->title_id}}" class="form-control" id="basic-default-name" placeholder="" id="title_id" name="title_id">
+              </div>
+            </div>
+            <div class="row mb-3">
+            <label for="firstName" class="col-sm-2 col-form-label">News Language</label>
+                <div class="col-sm-10">
+                <select id="news_lang" name="news_lang" class="select2 form-select">
+                <option value="{{$news->news_lang}}" selected>{{$news->news_lang}}</option>
+                              <option value="English">English</option>
+                              <option value="Indonesia">Indonesia</option>
+                              <option value="Korea">Korea</option>
+                            </select>
+                </div>        
             </div>
             <div class="row mb-3">
               <label class="col-sm-2 col-form-label" for="basic-default-message">Source</label>

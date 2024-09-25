@@ -54,8 +54,8 @@
                        <!-- Left Content -->
                        <div class="left-box">
                           <div class="container-imageyear">
+                            <h1 id="year_history" style="font-weight: 500; font-size: 60px;">2024</h1>
                              <img alt="year image" id="year_img" style="border-radius: 20px; box-shadow: 0px 5px 24px 0px rgba(0, 0, 0, 0.2);" src="{{asset('frontend/images/story2024.png')}}"/>
-                             <h1 id="year_history" style="font-weight: 500; font-size: 40px;">2024</h1>
                           </div>
                        </div>
                        <!-- Right Content -->
@@ -933,8 +933,16 @@
         {{-- Our office end --}}
         <div class="office-maps">
             <div class="box">
+                <div>
+                    <input id="locIndo" class="toggle" type="checkbox" checked>
+                    <label for="locIndo" class="btn_country" onclick="changeMapIndonesia()">Indonesia</label>
+                    <input id="locMalay" class="toggle" type="checkbox">
+                    <label for="locMalay" class="btn_country" onclick="changeMapMalaysia()">Malaysia</label>
+                    <input id="locKor" class="toggle" type="checkbox">
+                    <label for="locKor" class="btn_country" onclick="changeMapKorea()">Korea</label>
+                </div>
                 <div class="img-wrapper">
-                    <img src="../frontend/images/office_loc_map.png" alt="image office map"/>
+                    <img id="officeLoc" src="../frontend/images/map_indonesia.png" alt="image office map"/>
                 </div>
                 <div class="container-card-maps">
                         <div class="card-maps">

@@ -1,6 +1,219 @@
-.container_video_text {
-    height: 2000px;
+/* CSS FROM WEBSITE SAMCHULLY  */
+.mainWrapper {
+    height: 100vh;
 }
+
+ .mainWrapper h2 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 24.3%;
+    z-index: 10;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 5.5em;
+    color: #fff;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+}
+
+ .mainWrapper .btnBox {
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    transform: translateY(-50%);
+    width: 100%;
+    z-index: 10;
+    height: 64px;
+    padding: 0px 80px;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}
+
+ .mainWrapper .btnBox a {
+    width: 64px;
+    height: 64px;
+    top: auto;
+    left: auto;
+    bottom: auto;
+    right: auto;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+}
+
+ .mainWrapper .btnBox a img.on {
+    display: none;
+}
+
+ .mainWrapper .btnBox a::after,
+ .mainWrapper .btnBox a::before {
+    display: none;
+}
+
+ .mainWrapper h2.active {
+    top: 19%;
+    left: 19.5%;
+    line-height: 1.4;
+    font-size: 2em;
+}
+
+ .mainWrapper #mainSld .item::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+ .mainWrapper #mainSld .item img,
+ .mainWrapper #mainSld .item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 0;
+}
+
+ .mainWrapper #mainSld .item .textBox {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 27.3%;
+    color: #fff;
+    z-index: 2;
+}
+
+ .mainWrapper #mainSld .item .textBox p {
+    font-size: 1.8em;
+    line-height: 1.2;
+    margin-left: 417px;
+    font-weight: 600;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+}
+
+.mainWrapper #mainSld .item .textBox p{
+    padding-right: 200px;
+}
+
+.mainWrapper #mainSld .item .textBox p br{
+    display: none;
+}
+
+ .mainWrapper #mainSld .item .textBox p.active2 {
+    margin-left: 0px;
+    opacity: 0;
+}
+
+ .mainWrapper #mainSld .item .textBox h3 {
+    font-size: 4.8em;
+    color: #fff;
+    font-weight: 600;
+    line-height: 1;
+    opacity: 1;
+}
+.mainWrapper #mainSld .item .textBox h4 {
+    font-size: 2.2em;
+    color: #fff;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-right: 207px;
+    opacity: 1;
+}
+
+/*  .mainWrapper #mainSld .item .textBox h3.active{
+    animation: textEffect 3s ease-out forwards;
+} */
+
+ .mainWrapper .pagination {
+    position: absolute;
+    bottom: 64px;
+    left: 0px;
+    z-index: 10;
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
+    height: 4px !important;
+}
+
+ .mainWrapper .pagination a {
+    width: 80px;
+    height: 4px;
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.5);
+    margin: 0px;
+    padding: 0px;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    border-radius: 0px;
+    margin: 0px 2px;
+    pointer-events: none;
+    text-indent: -99999px;
+}
+
+ .mainWrapper .pagination a::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 0%;
+    height: 100%;
+    background: #fff;
+}
+
+ .mainWrapper .pagination a.swiper-pagination-bullet-active::after {
+    animation: lineEffect 8s forwards;
+}
+
+ .mainWrapper #mainSld .owl-nav {
+    width: 100%;
+    margin: 0px;
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 80px;
+}
+
+ .mainWrapper #mainSld .owl-nav button {
+    margin: 0px;
+    padding: 0px;
+}
+
+.owl-theme .owl-nav [class*=owl-]:hover {
+    background: none;
+    color: inherit;
+}
+
+@keyframes lineEffect {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+/* CSS FROM WEBSITE SAMCHULLY  */
 
 .video-dekstop {
     display: block;
@@ -24,211 +237,7 @@
     height: 100vh;
     z-index: 2;
     transform-origin: center;
-    transition: transform 0.2s ease;
 }
-
-.slideshow-container {
-    position: relative;
-    margin: auto;
-  }
-
-  /* Next & previous buttons */
-  .prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;-
-
-    font-size: 68px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-  }
-
-  /* Position the "next button" to the right */
-  .next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-  }
-
-  /* On hover, add a black background color with a little bit see-through */
-  .prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
-  }
-
-  /* Caption text */
-  .text {
-    color: #f2f2f2;
-    font-size: 15px;
-    padding: 8px 12px;
-    position: absolute;
-    bottom: 8px;
-    width: 100%;
-    text-align: center;
-  }
-
-  /* Number text (1/3 etc) */
-  .numbertext {
-    color: #f2f2f2;
-    font-size: 12px;
-    padding: 8px 12px;
-    position: absolute;
-    top: 0;
-  }
-
-  /* The dots/bullets/indicators */
-  .dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-  }
-
-  .active, .dot:hover {
-    background-color: #717171;
-  }
-
-  /* Fading animation */
-  .fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s;
-  }
-
-  @-webkit-keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
-  }
-
-  @keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
-  }
-
-  /* On smaller screens, decrease text size */
-  @media only screen and (max-width: 300px) {
-    .prev, .next,.text {font-size: 11px}
-  }
-
-
-
-
-  .sliderVideo {
-    margin: 0 auto;
-    max-width: 100%;
-    box-shadow: 0 20px 20px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
-      -webkit-box-shadow: 0 20px 20px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
-      -moz-box-shadow: 0 20px 20px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
-      -ms-box-shadow: 0 20px 20px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
-      -o-box-shadow: 0 20px 20px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
-  }
-
-
-  .slide_group_video {
-    height: 100%;
-    position: relative;
-    width: 100%;
-  }
-
-  .slideVideo {
-    display: block;
-    height: 100vh;
-    position: absolute;
-    width: 100vw;
-    object-fit: cover;
-    perspective: 1200px;
-  }
-
-  /* .slideVideo:first-child {
-    display: block;
-  }
-
-  .slideVideo:nth-of-type(1) {
-  background-color:black;
-
-  }
-
-  .slideVideo:nth-of-type(2) {
-    background-color:black;
-  }
-
-  .slideVideo:nth-of-type(3) {
-     background-color:black;
-  } */
-
-  .directional_nav {
-    height: 340px;
-    margin: 0 auto;
-    max-width: 940px;
-    position: relative;
-    top: -340px;
-  }
-
-  @media only screen and (max-width: 767px) {
-    .previousVideo_btn {
-      left: 10%;
-      text-align: center;
-    }
-    .nextVideo_btn {
-      right: 10%;
-      text-align: center;
-    }
-  }
-
-
-  .play-button {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 4em;
-      height: 3em;
-      margin-top: -1.5em;
-      margin-left: -2em;
-      background: red;
-      border-radius: 1em;
-      cursor: pointer;
-    text-align:center;
-  }
-  .play-button:after {
-      content:"\25b6";
-      font-size: 2em;
-      line-height: 1.4em;
-  }
-  video{
-         max-height: 100%;
-      max-width: 100%;
-      width: 100%;
-      object-fit: cover;
-  }
-
-  .overlay-content {
-      background: rgba(0, 0, 0, 0.7);
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      opacity: 1;
-      transition: 0.4s opacity;
-  }
-
-  .text {
-    display: none;
-  }
-
-  .slideVideo.playing .overlay-content {
-      opacity: 0;
-      visibility: hidden;
-  }
 
 .video-mobile {
     display: none;
@@ -236,7 +245,7 @@
 
 .container_text {
     position: absolute;
-    height: 2000px;
+    height: 800px;
     display: flex;
     position: relative;
     justify-content: center;
@@ -250,24 +259,28 @@
     text-align: center;
     font-weight: 600;
     line-height: normal;
-    transform: scale(0.5); /* Skala awal */
-    transform-origin: center;
-    position: sticky;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    /* transform: scale(0.5); */
     top: 50%; /* Posisi tengah vertikal */
-    height: 100vh;
-    transition: transform 1s ease;
-    margin-bottom: 200px;
+    /* transition: transform 1s ease; */
+    /* margin-bottom: 50px; */
 }
 
 .wrap-box {
-    height: 80vh;
+    height: 50vh;
     display: flex;
     justify-content: flex-start;
+    margin: 70px 170px 70px 170px;
+}
+
+.wrap-box:hover {
+    opacity: 0.3;
+    cursor: pointer;
 }
 
 .wrap-box img {
     width: 16%;
-    margin-bottom: 35px;
     font-size: unset;
     height: unset;
     display: unset;
@@ -292,7 +305,6 @@
 .wrap-box .left {
     width:70%;
     padding: 100px 100px 100px 100px;
-    margin: 0px 0px 100px 200px;
     display: grid;
     border-radius: 20px 0px 0px 20px;
     background: #ffffff;
@@ -304,7 +316,6 @@
 
 .wrap-box .right {
     border-radius:0px 20px 20px 0px;
-    margin: 0px 200px 100px 0px;
     background: #ffffff;
     box-shadow: 5px 5px 10px rgba(0, 0.3, 0, 0.3);
     width:35%;
@@ -312,7 +323,6 @@
 
 .wrap-box .leftInvert {
     border-radius: 20px 0px 0px 20px;
-    margin: 0px 0px 100px 200px;
     background: #ffffff;
     box-shadow: 5px 5px 10px rgba(0, 0.3, 0, 0.3);
     width:35%;
@@ -321,7 +331,6 @@
 .wrap-box .rightInvert {
     width:70%;
     padding: 100px 100px 100px 100px;
-    margin: 0px 200px 100px 0px;
     display: grid;
     border-radius: 0px 20px 20px 0px;
     background: #ffffff;

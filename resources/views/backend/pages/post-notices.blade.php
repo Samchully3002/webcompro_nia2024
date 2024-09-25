@@ -75,7 +75,7 @@
                       <div class="row mb-3">
                         <label class="col-sm-2 col-form-label" for="basic-default-message">Content [en]</label>
                           <div class="col-sm-10">
-                            <textarea id="content" name="content" class="form-control txt-content" placeholder="" aria-label=""></textarea>
+                            <textarea id="content" name="content" class="content form-control txt-content" placeholder="" aria-label=""></textarea>
                           </div>
                       </div>
                      </div>
@@ -89,7 +89,7 @@
                       <div class="row mb-3">
                         <label class="col-sm-2 col-form-label" for="basic-default-message">Content [kr]</label>
                           <div class="col-sm-10">
-                            <textarea id="content_kr" name="content_kr" class="form-control txt-content" placeholder="" aria-label=""></textarea>
+                            <textarea id="content_kr" name="content_kr" class="content form-control txt-content" placeholder="" aria-label=""></textarea>
                           </div>
                       </div>
                      </div>
@@ -103,7 +103,7 @@
                       <div class="row mb-3">
                         <label class="col-sm-2 col-form-label" for="basic-default-message">Content [id]</label>
                           <div class="col-sm-10">
-                            <textarea id="content_id" name="content_id" class="form-control txt-content" placeholder="" aria-label=""></textarea>
+                            <textarea id="content_id" name="content_id" class="content form-control txt-content" placeholder="" aria-label=""></textarea>
                           </div>
                       </div>
                      </div>
@@ -119,24 +119,5 @@
       </div>
    </div>
 </div>
-<script>
-   // ==== custom editor ===//
-   const quill = new Quill('#content', {
-   theme: 'snow'
-   });
-   
-   quill.setContents('{"ops":[{"insert":"Headline"},{"attributes":{"headline":true},"insert":"\n"},{"insert":"\n\ncontent"},{"attributes":{"content":true},"insert":"\n"}]}');
 
-   const quill1 = new Quill('#content_kr', {
-   theme: 'snow'
-   });
-   
-   quill1.setContents('{"ops":[{"insert":"Headline"},{"attributes":{"headline":true},"insert":"\n"},{"insert":"\n\ncontent"},{"attributes":{"content":true},"insert":"\n"}]}');
-
-   const quill2 = new Quill('#content_id', {
-   theme: 'snow'
-   });
-   
-   quill2.setContents('{"ops":[{"insert":"Headline"},{"attributes":{"headline":true},"insert":"\n"},{"insert":"\n\ncontent"},{"attributes":{"content":true},"insert":"\n"}]}');
-</script>
 @stop

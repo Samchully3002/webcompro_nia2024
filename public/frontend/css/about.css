@@ -11,19 +11,25 @@
     }
 }
 
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
 .bounce-img {
-    animation: bounce-out-down 1s ease infinite;
-    animation-fill-mode: forwards;
+    animation: bounce-out-down 0.5s ease-in-out;
   }
   @keyframes bounce-out-down {
     0% { transform: translateY(0); }
     20% {
-      opacity: 1;
-      transform: translateY(-20px);
+        opacity: 0;
+      transform: translateY(100px);
+    }
+    70% {
+        opacity: 1;
     }
     100% {
-      opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(-100px);
     }
   }
 
@@ -139,8 +145,8 @@
     height: 100%;
     background: #454a65;
     align-items: center;
-    place-content: center space-evenly;
-    padding: 50px;
+    place-content: center;
+    padding: 70px 50px 70px 50px;
     overflow: visible;
 }
 
@@ -149,6 +155,7 @@
     justify-content: center;
     position: relative;
     display: inline-block;
+    margin-right: 100px;
 }
 
 .ceo_message .img_wrapper img {
@@ -290,7 +297,7 @@
     place-content: flex-start;
     align-items: center;
     display: flex;
-    flex-flow: row;
+    flex-flow: column;
     gap: 30px;
     height: 240px;
     padding: 0px;
@@ -889,12 +896,36 @@ hr.rounded {
     will-change: var(--framer-will-change-override, transform);
 }
 
+input[type="checkbox"] {
+    display: none;
+}
+
+.office-maps .box .btn_country {
+    margin: 0px 5px 0px 5px;
+    padding: 13px 20px 13px 20px;
+    border: 1px solid #72788C;
+    border-radius: 5px;
+    font-size:16px;
+    cursor: pointer;
+}
+
+.toggle:checked + .btn_country {
+    background-color: #525973;
+    color:white;
+}
+
+.office-maps .box .btn_country:hover {
+    background-color: #525973;
+    color:white;
+}
+
 .office-maps .box .img-wrapper {
     aspect-ratio: 1.99625 / 1;
     flex: 0 0 auto;
     position: relative;
     width: 100%;
     border-radius: inherit;
+    animation: fadeIn 3s;
 }
 
 .office-maps .box .img-wrapper img {

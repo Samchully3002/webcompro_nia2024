@@ -24,6 +24,10 @@
     display: none;
 }
 
+/* #header-wrapper .logo img:hover {
+    transform: scale(1.5);
+} */
+
 #header-wrapper .menu-wrapper {
     display: flex;
     justify-content: space-between;
@@ -625,6 +629,10 @@ h3 {
 
 .gapDiantara > a:not(:last-child) {
     margin-right: 16px; /* Menambahkan jarak kanan antara setiap ikon, kecuali untuk yang terakhir */
+}
+
+.gapDiantara img:hover {
+    transform: scale(1.5);
 }
 
 .fade-in {

@@ -115,8 +115,10 @@ class MediaNewsController extends Controller
             //define validation rules
              $validator = Validator::make($request->all(), [
                 'title'      => 'required',
+                'title_id'      => 'required',
+                'title_kr'      => 'required',
                 'source'        => 'required',
-                'image'         => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+                'image'         => 'image|mimes:jpeg,png,jpg,gif|max:5120',
             ]);
 
             //check if validation fails
@@ -139,9 +141,12 @@ class MediaNewsController extends Controller
         
                     //update product with new image
                     $user->update([
-                        'title'      => $request->title,
+                        'title'           => $request->title,
+                        'title_kr'           => $request->title_kr,
+                        'title_id'           => $request->title_id,
+                        'news_lang'           => $request->news_lang,
                         'source'          => $request->source,
-                        'image'         => $imageName
+                        'image'           => $imageName
                     ]);
         
                     } else {
@@ -149,6 +154,9 @@ class MediaNewsController extends Controller
                         //update product without image
                         $user->update([
                             'title'      => $request->title,
+                            'title_kr'           => $request->title_kr,
+                            'title_id'           => $request->title_id,
+                            'news_lang'           => $request->news_lang,
                             'source'          => $request->source,
                         ]);
                 }
@@ -166,6 +174,9 @@ class MediaNewsController extends Controller
                    //insert our team member
                    $team = MediaReport::create([
                         'title'      => $request->title,
+                        'title_kr'           => $request->title_kr,
+                        'title_id'           => $request->title_id,
+                        'news_lang'           => $request->news_lang,
                         'source'          => $request->source,
                         'image' => $imageName
                     ]);
