@@ -2,6 +2,7 @@
 <html lang="id">
 @include('frontend.includes.head')
     <link rel="stylesheet" href="{{asset('frontend/css/comunity.css')}}"/>
+    <link rel="stylesheet" href="{{asset('frontend/css/custom-pagination.css')}}"/>
 </head>
 <body>
 @include('frontend.includes.header')
@@ -63,7 +64,7 @@
                 </div>
 
 
-                @if($posts->hasPages())
+                <!-- @if($posts->hasPages())
             <div class="imx">
                     <div class="pagination">
 
@@ -72,7 +73,11 @@
                     </div>
                 </div>
             </div>
-            @endif
+            @endif -->
+                                <!-- Custom Pagination -->
+        <div class="pagination-container">
+            {{ $posts->onEachSide(1)->links('components.custom-pagination') }}
+        </div>
             </div>
         </div>
 
