@@ -2,6 +2,7 @@
 <html lang="id">
 @include('frontend.includes.head')
     <link rel="stylesheet" href="{{asset('frontend/css/comunity.css')}}"/>
+    <link rel="stylesheet" href="{{asset('frontend/css/custom-pagination.css')}}"/>
 </head>
 <body>
 @include('frontend.includes.header')
@@ -38,24 +39,14 @@
                     </div>
                     @endforeach
                 </div>
-
-
-                @if($posts->hasPages())
-            <div class="imx">
-                    <div class="pagination">
-
-                        <a href="{{$posts->previousPageUrl()}}" class="arrow">&laquo;</a>
-                        <a href="{{$posts->nextPageUrl()}}" class="arrow">&raquo;</a>
-                    </div>
+                <!-- Custom Pagination -->
+                <div class="pagination-container">
+                    {{ $posts->onEachSide(1)->links('components.custom-pagination') }}
                 </div>
-            </div>
-            @endif
             </div>
         </div>
 
-
-               <!-- <div data-include="component/footer"></div> -->
-               @include('frontend.includes.footer')
+        @include('frontend.includes.footer')
 
         <script>
             document.addEventListener('DOMContentLoaded', function() {

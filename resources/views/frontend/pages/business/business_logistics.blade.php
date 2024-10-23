@@ -56,7 +56,6 @@
             </div>
 
             <!-- section-wrapper start -->
-          <div class="product-box">
             <div class="product-wrapper">
                 {{-- <div class="img-backdrop">
                     <img src="../frontend/images/business-backdrop.png" alt="business backdrop image"/>
@@ -237,7 +236,6 @@
                 </div>
 
             </div>
-          </div>
             <!-- section-wrapper end -->
         </div>
 
@@ -287,10 +285,6 @@
             });
             $('document').ready(function(){
                 gsap.registerPlugin(ScrollTrigger);
-
-                gsap.timeline({
-                    onComplete:function(){}
-                })
                 gsap.timeline({
                     scrollTrigger: {
                         trigger: '.scrollWrapper',
@@ -312,6 +306,7 @@
                         scrub: 0.5,//부드러운 스크러빙
                         // onComplete: console.log('finish'),
                         onEnter:function() {
+                            $("#header-wrapper .menu-wrapper").addClass("hide");
                             $('.scrollWrapper .box1').addClass('active');
                             $('.scrollWrapper .box1 .imgBox').addClass('active');
                         },
@@ -332,8 +327,12 @@
                             invalidateOnRefresh: true,
                             onEnter:function() {
                                 if(i === 1){
+                                    $("#header-wrapper .menu-wrapper").addClass("hide");
                                     $('.box1').css({"transition" : "none", "-moz-transition" : "none", "-o-transition" : "none", "-webkit-transition" : "none"});
                                 }
+
+                                $("#header-wrapper .menu-wrapper").addClass("hide");
+                                // $('.menu-wrapper').css({'display' : 'flex'});
                                 $('.scrollWrapper .scrollBox .imgBox').css({'display' : 'none'});
                                 $('.scrollWrapper .scrollBox .imgBox').eq(i).css({'display' : 'block'});
                                 $('.scrollWrapper .textBox li').removeClass('active');
@@ -347,6 +346,7 @@
                                 if(i === 3){
                                     $('.box1').css({"transition" : "none", "-moz-transition" : "none", "-o-transition" : "none", "-webkit-transition" : "none"});
                                 }
+                                $('.menu-wrapper').removeClass('hide');
                                 $('.scrollWrapper .scrollBox .imgBox').css({'display' : 'none'});
                                 $('.scrollWrapper .scrollBox .imgBox').eq(i).css({'display' : 'block'});
                                 $('.scrollWrapper .textBox li').removeClass('active');

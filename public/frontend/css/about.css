@@ -183,15 +183,15 @@
 }
 
 .ceo_message .text_wrapper {
-    width: 504px;
-    font-size: 16px;
+    width: 620px;
+    font-size: 1em;
     color: white;
     align-items: center;
     justify-content: center;
 }
 
 .ceo_message .text_wrapper span {
-    font-size: 32px;
+    font-size: 2.6em;
     font-weight: 400;
 }
 
@@ -285,11 +285,11 @@
 
 .our-history .box .left-box {
     flex: 0 0 auto;
-    height: 257px;
+    height: fit-content;
     position: sticky;
-    top: 280px;
+    top: 240px;
     margin: 0 30px 0 0;
-    width: 512px;
+    width: fit-content;
     z-index: 1;
 }
 
@@ -298,21 +298,24 @@
     align-items: center;
     display: flex;
     flex-flow: column;
-    gap: 30px;
-    height: 240px;
+    /* gap: 100px; */
+    /* height: 240px; */
     padding: 0px;
     position: relative;
-    margin: 20px;
-    width: 512px;
+    margin: 20px 60px 0 0;
+    /* width: 512px; */
 }
 
-.right-box .wrapper ul {
-    opacity: 0.2; /* Set opacity to 0.2 when not at scrollPosition */
-    transition: opacity 0.3s ease; /* Tambahkan transisi agar perubahan opacity halus */
+.our-history .box .left-box .container-imageyear h1 {
+    font-weight: 500;
+    font-size: 4em;
+    margin-bottom:50px;
+    color: rgb(64, 66, 80);
 }
 
-.right-box .wrapper ul.active {
-    opacity: 1; /* Set opacity to 1 when at scrollPosition */
+.our-history .box .left-box .container-imageyear .img_year {
+    border-radius: 20px;
+    box-shadow: 0px 5px 24px 0px rgba(0, 0, 0, 0.2);
 }
 
 .our-history .box .right-box {
@@ -326,7 +329,7 @@
     overflow: visible;
     padding: 100px 0px;
     position: relative;
-    width: 529px;
+    width: 600px;
 }
 
 .our-history .box .right-box .wrapper {
@@ -347,6 +350,15 @@
     display: flex;
     gap: 20px;
     flex-direction: column;
+}
+
+.right-box .wrapper ul {
+    opacity: 0.2; /* Set opacity to 0.2 when not at scrollPosition */
+    transition: opacity 0.3s ease; /* Tambahkan transisi agar perubahan opacity halus */
+}
+
+.right-box .wrapper ul.active {
+    opacity: 1; /* Set opacity to 1 when at scrollPosition */
 }
 
 .our-history .box .right-box .wrapper .row {
@@ -570,6 +582,7 @@ hr.rounded {
 .team-member .wrapper {
     place-content: center;
     align-items: center;
+    margin-bottom: 20px;
     display: flex;
     flex: 0 0 auto;
     flex-flow: column;
@@ -645,7 +658,6 @@ hr.rounded {
     overflow: visible;
     padding: 10px;
     position: relative;
-    width: min-content;
 }
 
 .team-member .list .row .item {
@@ -656,8 +668,12 @@ hr.rounded {
     width: 350px;
     perspective: 2000px;
 }
+.team-member .list .row .t_item {
+    display: none;
+}
 
-.team-member .list .row .item .item-wrap {
+.team-member .list .row .item .item-wrap,
+.team-member .list .row .t_item .item-wrap{
     width: 100%;
     height: 100%;
     position: absolute;
@@ -665,9 +681,12 @@ hr.rounded {
     transform-style: preserve-3d;
     transition: transform 1s ease-in-out;
     will-change: transform;
+    cursor: default;
+    backface-visibility: hidden;
 }
 
-.team-member .list .row .item .item-wrap .box .wrap {
+.team-member .list .row .item .item-wrap .box .wrap,
+.team-member .list .row .t_item .item-wrap .box .wrap {
     width: 100%;
     opacity: 1;
     place-content: center flex-start;
@@ -683,7 +702,8 @@ hr.rounded {
     position: relative;
 }
 
-.team-member .list .row .item .item-wrap .box .wrap .item {
+.team-member .list .row .item .item-wrap .box .wrap .item,
+.team-member .list .row .t_item .item-wrap .box .wrap .t_item {
     place-content: center flex-start;
     align-items: center;
     border-radius: 15px;
@@ -698,13 +718,15 @@ hr.rounded {
     width: 308px;
 }
 
-.team-member .list .row .item .item-wrap .box .wrap .item .foto-box {
+.team-member .list .row .item .item-wrap .box .wrap .item .foto-box,
+.team-member .list .row .t_item .item-wrap .box .wrap .t_item .foto-box {
     position: absolute;
     border-radius: inherit;
     inset: 0px;
 }
 
-.team-member .list .row .item .item-wrap .box .wrap .item .foto-box img {
+.team-member .list .row .item .item-wrap .box .wrap .item .foto-box img,
+.team-member .list .row .t_item .item-wrap .box .wrap .t_item .foto-box img {
     display: block;
     width: 100%;
     height: 100%;
@@ -713,7 +735,8 @@ hr.rounded {
     object-fit: fill;
 }
 
-.team-member .list .row .item .item-wrap .box .wrap .text-item {
+.team-member .list .row .item .item-wrap .box .wrap .text-item,
+.team-member .list .row .t_item .item-wrap .box .wrap .text-item {
     place-content: center flex-start;
     align-items: center;
     display: flex;
@@ -726,7 +749,8 @@ hr.rounded {
     position: relative;
 }
 
-.team-member .list .row .item .item-wrap .box .wrap .text-item .title {
+.team-member .list .row .item .item-wrap .box .wrap .text-item .title,
+.team-member .list .row .t_item .item-wrap .box .wrap .text-item .title {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -734,31 +758,25 @@ hr.rounded {
     font-size: 32px;
 }
 
-.team-member .list .row .item .item-wrap .box .wrap .text-item .subtitle {
+.team-member .list .row .item .item-wrap .box .wrap .text-item .subtitle,
+.team-member .list .row .t_item .item-wrap .box .wrap .text-item .subtitle {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     text-align: center;
 }
 
-.team-member .list .row .item .item-wrap {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    transition: transform 1s ease;
-    transform-style: preserve-3d;
-    cursor: default;
-    backface-visibility: hidden; /* Pastikan backface-visibility diatur dengan benar */
-}
-
-.team-member .list .row .item .item-wrap:hover {
+.team-member .list .row .item .item-wrap:hover,
+.team-member .list .row .t_item .item-wrap:hover {
     transform: rotateY(180deg); /* Ubah nilai rotateY ke -180deg */
     -webkit-transform: rotateY(180deg); /* Vendor prefix untuk WebKit */
     pointer-events: auto;
 }
 
 .team-member .list .row .item .item-wrap .box,
-.team-member .list .row .item .item-wrap .back {
+.team-member .list .row .t_item .item-wrap .box ,
+.team-member .list .row .item .item-wrap .back,
+.team-member .list .row .t_item .item-wrap .back {
     width: 100%;
     height: 100%;
     display: flex;
@@ -771,14 +789,16 @@ hr.rounded {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px 0px;
 }
 
-.team-member .list .row .item .item-wrap .box {
+.team-member .list .row .item .item-wrap .box,
+.team-member .list .row .t_item .item-wrap .box {
     transform: rotateY(0deg);
     background-color: white;
     padding: 20px;
     box-sizing: border-box;
 }
 
-.team-member .list .row .item .item-wrap .back {
+.team-member .list .row .item .item-wrap .back,
+.team-member .list .row .t_item .item-wrap .back {
     transform: rotateY(180deg);
     background: radial-gradient(
         50% 50% at 50% 50%,
@@ -792,7 +812,8 @@ hr.rounded {
     pointer-events: none; /* Menonaktifkan interaksi pointer */
 }
 
-.team-member .list .row .item .item-wrap .content {
+.team-member .list .row .item .item-wrap .content,
+.team-member .list .row .t_item .item-wrap .content {
     max-width: 80%;
 }
 
@@ -802,6 +823,7 @@ hr.rounded {
     display: flex;
     flex: 0 0 auto;
     flex-flow: column;
+    margin-top: -3500px;
     gap: 20px;
     height: min-content;
     overflow: visible;
@@ -1073,22 +1095,27 @@ input[type="checkbox"] {
     }
 
     .ceo_message {
-        gap: 50px;
+        gap: 20px;
         align-items: unset;
     }
+    .ceo_message .img_wrapper {
+        margin: 60px 30px 0px 0px;
+    }
     .ceo_message .img_wrapper img {
+        height: auto;
         border-radius: 20px;
     }
 
     .ceo_message .text_wrapper {
-        width: 100%;
+        width: 70%;
+        text-align: justify;
     }
 
     .ceo_message .img_wrapper::after {
         content: "Mr. Son Dong-kwon";
         position: absolute;
-        bottom: 20px;
-        left: 20px;
+        /* left: 20px; */
+        margin: 20px 3px 0px 3px;
         padding: 10px 16px;
         border-radius: 12px;
         background-color: white;
@@ -1097,8 +1124,33 @@ input[type="checkbox"] {
     }
 
     .our-history .title p {
-        font-size: 32px;
+        font-size: 3em;
         font-weight: 400;
+    }
+
+    .our-history .box .left-box {
+        margin: unset;
+    }
+
+    .our-history .box .right-box {
+        gap: unset;
+        padding: 100px 0px;
+        width: 500px;
+    }
+
+    .our-history .box .left-box .container-imageyear {
+        width: 80%;
+        margin: unset;
+        /* padding: 0 80px 0 80px; */
+    }
+
+    .our-history .box .left-box .container-imageyear h1 {
+        font-size: 2.5em;
+    }
+
+    .our-history .box .left-box .container-imageyear .img_year {
+        border-radius: 20px;
+        box-shadow: 0px 5px 24px 0px rgba(0, 0, 0, 0.2);
     }
 
     .core {
@@ -1111,8 +1163,12 @@ input[type="checkbox"] {
     }
 
     .core .core-text .core-img {
-        height: 40px;
-        width: 40px;
+        height: 60px;
+        width: 60px;
+    }
+    .core .full-text .wrapper .item p {
+        font-size: 32px;
+        text-align: center;
     }
 
     .core .full-text {
@@ -1125,45 +1181,40 @@ input[type="checkbox"] {
     }
 
     .core .full-text .wrapper .item p {
-        font-size: 32px;
-    }
-
-    .core .full-text .wrapper {
-        height: unset;
-        flex-direction: column;
+        font-size: 26px;
     }
 
     .core .full-text .wrapper .item {
-        padding: 28px 32px;
+        padding: 22px 28px;
     }
-
-    .team-member {
-        padding: 50px 20px;
+    .team-member .wrapper {
+        margin-bottom: -130px;
     }
-
     .team-member .list .row {
-        height: unset;
         overflow: visible;
-        padding: unset;
-        flex-direction: column;
-        margin-bottom: 20px;
+        margin: 0 0 20px 0;
+        height: unset;
+        position: relative;
     }
-
+    .team-member .list .row .item {
+        display: none !important;
+    }
+    .team-member .list .row .t_item {
+        display: block;
+        flex: 0 0 auto;
+        height: 433px;
+        position: relative;
+        width: 350px;
+        perspective: 2000px;
+    }
     .team-member .wrapper .title {
         font-size: 32px;
         font-weight: 500;
     }
 
-    .team-member .wrapper .subtitle {
-        /* white-space: unset; */
-    }
-
-    .team-member .list .row .item .item-wrap .box {
-        /* width: unset; */
-    }
-
     .our-office {
         padding: 20px;
+        margin-top: unset;
     }
     .marquee img {
         height: 300px;
@@ -1179,19 +1230,12 @@ input[type="checkbox"] {
 
     .office-maps .box {
         padding: 20px;
+        gap: 40px;
     }
 
     .our-history {
         gap: 50px;
         padding: 50px 20px;
-    }
-
-    .dekstop-history {
-        display: none;
-    }
-
-    .mobile-history {
-        display: block;
     }
 
     input[type="checkbox"] {
@@ -1313,13 +1357,85 @@ input[type="checkbox"] {
     }
 }
 
-@media screen and (max-width: 780px) {
-    .ceo_message {
-        padding: 20px;
-        flex-direction: column;
-        gap: 32px;
+@media screen and (max-width: 800px) {
+
+    .dekstop-history {
+        display: none;
     }
 
+    .mobile-history {
+        display: block;
+    }
+    .core .core-text .core-img {
+        height: 40px;
+        width: 40px;
+    }
+    .core .full-text .wrapper {
+        height: unset;
+        flex-direction: column;
+    }
+    .office-maps {
+        margin: unset;
+        padding: unset;
+        gap: unset;
+    }
+
+    .office-maps .box {
+        gap: 20px;
+    }
+
+    .office-maps .box .btn_country {
+        margin: 5px 5px 5px 5px;
+        padding: 5px;
+        border: 1px solid #72788C;
+        border-radius: 5px;
+        font-size:16px;
+        cursor: pointer;
+    }
+    .ceo_message {
+        padding: 50px 20px 50px 20px;
+        flex-direction: column;
+        place-content: center space-evenly;
+        gap: 30px;
+    }
+
+    .ceo_message .img_wrapper {
+        margin: unset;
+        padding: 10px;
+    }
+
+    .ceo_message .img_wrapper img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        object-position: center;
+        object-fit: cover;
+        image-rendering: auto;
+    }
+
+    .ceo_message .text_wrapper {
+        width: fit-content;
+        text-align: justify;
+    }
+    .team-member .list .row {
+        overflow: visible;
+        margin: 0 0 20px 0;
+        height: unset;
+        position: relative;
+        flex-direction: column;
+    }
+    .team-member .list .row .item {
+        display: none !important;
+    }
+    .team-member .list .row .t_item {
+        display: block;
+        flex: 0 0 auto;
+        height: 433px;
+        position: relative;
+        width: 350px;
+        perspective: 2000px;
+    }
     .collapsible-content {
         padding: unset;
     }

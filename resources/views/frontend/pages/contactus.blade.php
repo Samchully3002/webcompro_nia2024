@@ -10,15 +10,13 @@
       <!-- <div data-include="component/header"></div> -->
       @include('frontend.includes.header')
             <!-- Banner top -->
-            <div class="header-wrapper">
-                <div class="box">
-                    <div class="left-content">
+        <div class="header-wrapper">
+            <div class="box">
+                <div class="left-content">
                     <div class="text-box">
-                    <div class="appear">
-                        <span>{{__ ('contact') }}</span>
-                    </div>
-
-
+                        <div class="appear">
+                            <span>{{__ ('contact') }}</span>
+                        </div>
                         <div class="appear">
                             <h3>{{__ ('address') }}</h3>
                             <p>{{__ ('address1') }}</p>
@@ -35,65 +33,57 @@
                             <p><a href="mailto:info@nia.co.id" target="_blank" rel="noopener">{{__ ('email2') }}</a></p>
                         </div>
                         <div class="appear">
-                            <a href="https://instagram.com/networksindonesiaaku" target="_blank"><img src='../../frontend/images/icon/ig.png' alt="image icon" /></a>
-                            <a href="https://www.tiktok.com/@networksindonesiaaku" target="_blank"><img src='../../frontend/images/icon/tk.png' alt="image icon" /></a>
-                            <a href="https://www.facebook.com/profile.php?id=100086498050992" target="_blank"><img src='../../frontend/images/icon/fb.png' alt="image icon"/></a>
-                            <a href="https://www.youtube.com/@networksindonesiaaku4258?themeRefresh=1" target="_blank"><img src='../../frontend/images/icon/yt.png' alt="image icon"/></a>
+                            <a href="https://instagram.com/networksindonesiaaku" target="_blank"><img class="icon_sosmed" src='../../frontend/images/icon/ig.png' alt="image icon" /></a>
+                            <a href="https://www.tiktok.com/@networksindonesiaaku" target="_blank"><img class="icon_sosmed" src='../../frontend/images/icon/tk.png' alt="image icon" /></a>
+                            <a href="https://www.facebook.com/profile.php?id=100086498050992" target="_blank"><img class="icon_sosmed" src='../../frontend/images/icon/fb.png' alt="image icon"/></a>
+                            <a href="https://www.youtube.com/@networksindonesiaaku4258?themeRefresh=1" target="_blank"><img class="icon_sosmed" src='../../frontend/images/icon/yt.png' alt="image icon"/></a>
                         </div>
-                    </div>
-                    </div>
-                    <div class="right-content">
-                        <!-- contact-wrapper start -->
-                        <div class="contact-wrapper">
-                            <div class="">
-                                <div class="">
-                                    <div class="form-box">
-                                    <form id="form_message" name="form_message" method="POST" onsubmit="return false">
-                                    @csrf
-                                            <label>
-                                                <input
-                                                    id="sender"
-                                                    name="sender"
-                                                    type="text"
-                                                    onblur="validate()"
-                                                    placeholder="{{__ ('form-name') }}"
-                                                />
-                                            </label>
-
-                                            <label>
-                                                <input
-                                                    id="email"
-                                                    name="email"
-                                                    type="text"
-                                                    onblur="validate()"
-                                                    placeholder="{{__ ('form-email') }}"
-                                                />
-                                            </label>
-
-                                            <label>
-                                                <textarea
-                                                    id="message"
-                                                    name="message"
-                                                    onblur="validate()"
-                                                    placeholder="{{__ ('form-msg') }}"
-                                                ></textarea>
-                                            </label>
-                                                <div class="g-recaptcha" data-sitekey="6Lc4BhEqAAAAACVcTeYp0Nh6UiXzJGz9vw9UO9cS"></div>
-                                            <button type="submit" id="btn_form_message" disabled>{{__ ('btn-submit') }}</button>
-                                        </form>
-                                        <iframe
-                                            id="iframe1"
-                                            name="iframe1"
-                                            style="display: none"
-                                        ></iframe>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- contact-wrapper end -->
                     </div>
                 </div>
+                <div class="right-content">
+                    <!-- contact-wrapper start -->
+                    <div class="contact-wrapper">
+                        <div class="form-box">
+                            <form id="form_message" name="form_message" method="POST" onsubmit="return false">
+                            @csrf
+                                <label>
+                                    <input
+                                        id="sender"
+                                        name="sender"
+                                        type="text"
+                                        onblur="validate()"
+                                        placeholder="{{__ ('form-name') }}"
+                                    />
+                                </label>
+
+                                <label>
+                                    <input
+                                        id="email"
+                                        name="email"
+                                        type="text"
+                                        onblur="validate()"
+                                        placeholder="{{__ ('form-email') }}"
+                                    />
+                                </label>
+
+                                <label>
+                                    <textarea
+                                        id="message"
+                                        name="message"
+                                        onblur="validate()"
+                                        placeholder="{{__ ('form-msg') }}"
+                                    ></textarea>
+                                </label>
+                                    <div class="g-recaptcha" data-sitekey="6Lc4BhEqAAAAACVcTeYp0Nh6UiXzJGz9vw9UO9cS"></div>
+                                <button type="submit" id="btn_form_message" disabled>{{__ ('btn-submit') }}</button>
+                            </form>
+                            <iframe id="iframe1" name="iframe1" style="display: none"></iframe>
+                        </div>
+                    </div>
+                    <!-- contact-wrapper end -->
+                </div>
             </div>
+        </div>
             <!-- Banner top end -->
 
             <!-- map-wrapper start -->

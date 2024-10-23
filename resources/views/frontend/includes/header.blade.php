@@ -1,16 +1,16 @@
 <div id="header-wrapper">
-    <div id="nav-menu" class="menu-wrapper">
+    <div class="menu-wrapper">
         <ul class="menu-box">
             <li >
-                <a class="logo"  href="/">
-                    <img style="width: 75%;" class="effect-off" src="../../frontend/images/icon/logo_ftr.svg" alt="logo feature"/>
-                    <img style="width: 75%;" class="effect-on" src="../../frontend/images/icon/ic_logo.png" alt="logo feature"/>
+                <a class="logo" href="/">
+                    <img style="width: 75%;" class="effect-off" src="../../frontend/images/icon/ic_logo.png" alt="logo feature"/>
+                    <img style="width: 75%;" class="effect-on" src="../../frontend/images/icon/logo_ftr.svg" alt="logo feature"/>
                 </a>
             </li>
-            <li class="first-menu hidden-box>"><a href="/">{{ __('navbar-home') }}</a></li>
+            <li class="first-menu hidden-box>"><a id="nav" href="/">{{ __('navbar-home') }}</a></li>
             <li class="first-menu hidden-box business">
-                <div class="btn_business">{{ __('navbar-business') }}&nbsp;&nbsp;&nbsp;
-                    <img src="../../frontend/images/icon/arrow-down.png" class="language_caret" alt="language caret"/>
+                <div id="nav1" class="btn_business">{{ __('navbar-business') }}&nbsp;&nbsp;&nbsp;
+                    <img width="13pt" src="../../frontend/images/icon/ic_arrow_white.png" class="language_caret" alt="language caret"/>
                 </div>
                 <ul class="hidden-menu">
                     <li><a href="/our-business/intellegent-integrated-logistic"><em>{{ __('iil') }}</em></a></li>
@@ -21,11 +21,11 @@
                     <li><a href="/our-business/creative-solutions"><em>{{ __('cs') }}</em></a></li>
                 </ul>
             </li>
-            <li class="first-menu hidden-box"><a href="/about-us">{{ __('navbar-about') }}</a>
+            <li class="first-menu hidden-box"><a id="nav2" href="/about-us">{{ __('navbar-about') }}</a>
             </li>
             <li class="first-menu hidden-box business">
-                <div class="btn_business">{{ __('navbar-community') }}&nbsp;&nbsp;&nbsp;
-                    <img src="../../frontend/images/icon/arrow-down.png" class="language_caret" alt="language caret"/>
+                <div id="nav3" class="btn_business">{{ __('navbar-community') }}&nbsp;&nbsp;&nbsp;
+                    <img width="13pt" src="../../frontend/images/icon/ic_arrow_white.png" class="language_caret" alt="language caret"/>
                 </div>
                 <ul class="hidden-menu">
                     <li><a href="/community/notice"><em>{{ __('navbar-notice') }}</em></a></li>
@@ -35,8 +35,8 @@
         </ul>
 
         <div class="content-right">
-            <a target="blank" href="https://www.youtube.com/channel/UCk4YWCZF81paAh_rzwwiKxQ" class="btn_contact_us">{{ __('navbar-video') }}&nbsp;&nbsp;&nbsp; <img src="../../frontend/images/icon/polygon.png"  alt="icon youtube"/></a>
-            <a href="/contact-us" class="btn_contact_us">{{ __('navbar-contact') }}&nbsp;&nbsp;&nbsp; <img src="../../frontend/images/icon/arrow.png" class="language_flag" alt="icon arrow"/></a>
+            <a id="nav4" target="blank" href="https://www.youtube.com/channel/UCk4YWCZF81paAh_rzwwiKxQ" class="btn_youtube">{{ __('navbar-video') }}&nbsp;&nbsp;&nbsp; <img src="../../frontend/images/icon/polygon.png"  alt="icon youtube"/></a>
+            <a id="nav5" href="/contact-us" class="btn_contact_us">{{ __('navbar-contact') }}&nbsp;&nbsp;&nbsp; <img src="../../frontend/images/icon/arrow.png" alt="icon arrow"/></a>
 
             <div class="right-box language">
                 <div class="lang-box hidden-box bahasa">
@@ -45,7 +45,7 @@
                     <a id="choseLang" class="lang-btn">
                         <img src="../../frontend/images/icon/language.png" class="language_flag" alt="icon lang flag"/>
                         <span>{{ $locale_name }}</span>
-                        <img src="../../frontend/images/icon/arrow-down.png" class="language_caret" alt="icon lang caret"/>
+                        <img width="10pt" src="../../frontend/images/icon/ic_arrow_white.png" class="language_caret" alt="icon lang caret"/>
                     </a>
                     @else
                     <ul class="lang-menu hidden-menu">
@@ -63,10 +63,12 @@
             <div class="nav-mobile">
                 <div class="nav-wrapper">
                     <a class="logo" href="/">
-                        <img style="width: 75%;" src="../../frontend/images/icon/ic_logo.png" alt="icon"/>
+                        <img style="width: 75%;" class="effect-off" src="../../frontend/images/icon/ic_logo.png" alt="logo feature"/>
+                        <img style="width: 75%;" class="effect-on" src="../../frontend/images/icon/logo_ftr.svg" alt="logo feature"/>
+                        {{-- <img style="width: 75%;" src="../../frontend/images/icon/ic_logo.png" alt="icon"/> --}}
                     </a>
                     <div class="right-mobile">
-                        <a target="blank" href="https://www.youtube.com/channel/UCk4YWCZF81paAh_rzwwiKxQ" class="btn-video-mobile">{{ __('navbar-video') }}&nbsp;&nbsp;&nbsp;
+                        <a id="btn1" target="blank" href="https://www.youtube.com/channel/UCk4YWCZF81paAh_rzwwiKxQ" class="btn-video-mobile">{{ __('navbar-video') }}&nbsp;&nbsp;&nbsp;
                             <img style="width: 12%;" src="../../frontend/images/icon/polygon.png" alt="icon"/>
                         </a>
                     </div>
@@ -74,9 +76,9 @@
             </div>
             <div class="ham-wrapper">
                 <a class="mobile-ham hambuger-menu" href="javascript:void(0)">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <span id="spn1"></span>
+                    <span id="spn2"></span>
+                    <span id="spn3"></span>
                 </a>
             </div>
         </div>
@@ -94,7 +96,8 @@
                 </li>
 
                 <li>
-                    <a class="first-menu">{{ __('navbar-business') }}</a>
+                    <a class="first-menu">{{ __('navbar-business') }}&nbsp;&nbsp;&nbsp;
+                        <img width="13pt" src="../../frontend/images/icon/ic_arrow_black.png" class="language_caret" alt="language caret"/></a>
                     <div class="second-menu">
                         <a href="/our-business/intellegent-integrated-logistic">{{ __('iil') }}</a>
                         <br />
@@ -113,9 +116,9 @@
                 <li>
                     <a class="first-menu" href="/about-us">{{ __('navbar-about') }}</a>
                 </li>
-
                 <li>
-                    <a class="first-menu">{{ __('navbar-community') }}</a>
+                    <a class="first-menu">{{ __('navbar-community') }}&nbsp;&nbsp;&nbsp;
+                        <img width="13pt" src="../../frontend/images/icon/ic_arrow_black.png" class="language_caret" alt="language caret"/></a>
                     <div class="second-menu">
                         <a href="/community/notice">{{ __('navbar-notice') }}</a>
                         <br>
@@ -163,8 +166,35 @@
     $(window).scroll(function(){
         if($(document).scrollTop() > 200){
             $("#header-wrapper").addClass("color-effect");
+            $("#nav1").addClass("color-effect");
+            $("#choseLang").addClass("color-effect");
+            $("#nav5").addClass("color-effect");
+            $("#nav").css("color", "#444");
+            $("#nav1").css("color", "#444");
+            $("#nav2").css("color", "#444");
+            $("#nav3").css("color", "#444");
+            $("#nav4").css("color", "#444");
+            $("#nav5").css("color", "#444");
+            $("#choseLang").css("color", "#444");
+            $("#btn1").addClass("color-effect");
+            $("#spn1").addClass("add");
+            $("#spn2").addClass("add");
+            $("#spn3").addClass("add");
         } else{
             $("#header-wrapper").removeClass("color-effect");
+            $("#nav1").removeClass("color-effect");
+            $("#choseLang").removeClass("color-effect");
+            $("#nav").css("color", "#ffffff");
+            $("#nav1").css("color", "#ffffff");
+            $("#nav2").css("color", "#ffffff");
+            $("#nav3").css("color", "#ffffff");
+            $("#nav4").css("color", "#ffffff");
+            $("#nav5").css("color", "#ffffff");
+            $("#choseLang").css("color", "#ffffff");
+            $("#btn1").removeClass("color-effect");
+            $("#spn1").removeClass("add");
+            $("#spn2").removeClass("add");
+            $("#spn3").removeClass("add");
         }
     });
 

@@ -12,39 +12,39 @@
 <!-- <div data-include="component/header"></div> -->
 @include('frontend.includes.header')
 {{-- ================================================ VIDEO SLIDER FROM SAMCHULLY ================================================ --}}
-    <section class="mainWrapper swiper">
-        <h2>{{__('txt-vid1')}}<br>{{__('txt-vid2')}}<br>{{__('txt-vid3')}}</h2>
-        <div id="mainSld" class="swiper-wrapper">
-            <a class="swiper-button-prev"></a>
-            <div class="item swiper-slide">
-                <!-- <img src="./assets/images/main-img01.jpg" /> -->
-                <video id="video1" src="../frontend/video/company_profile.mp4" autoplay muted loop playsinline></video>
-                <div class="textBox">
-                    <p>{{ __('header-video1') }}</p>
-                </div>
+<section class="mainWrapper swiper">
+    <h2>{{__('txt-vid1')}}<br>{{__('txt-vid2')}}<br>{{__('txt-vid3')}}</h2>
+    <div id="mainSld" class="swiper-wrapper">
+        <a class="swiper-button-prev"></a>
+        <div class="item swiper-slide">
+            <!-- <img src="./assets/images/main-img01.jpg" /> -->
+            <video id="video1" src="../frontend/video/header_video1.mp4" autoplay muted loop playsinline></video>
+            <div class="textBox">
+                <p>{{ __('header-video1') }}</p>
             </div>
-            <div class="item swiper-slide">
-                <!-- <img src="./assets/images/main-img12.png" /> -->
-                <video id="video2" src="../frontend/video/main-video02.mp4" autoplay muted loop playsinline></video>
-                <div class="textBox">
-                    <div data-swiper-parallax="-100">
-                        <h4>{{ __('header-video2') }}</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="item swiper-slide">
-                <!-- <img src="./assets/images/main-img13.png" /> -->
-                <video id="video3" src="../frontend/video/main-video03.mp4" autoplay muted loop playsinline></video>
-                <div class="textBox">
-                    <div data-swiper-parallax="-100">
-                        <h4>{{ __('header-video3') }}</h4>
-                    </div>
-                </div>
-            </div>
-            <a class="swiper-button-next"></a>
         </div>
-        <div class="pagination"></div>
-    </section>
+        <div class="item swiper-slide">
+            <!-- <img src="./assets/images/main-img12.png" /> -->
+            <video id="video2" src="../frontend/video/header_video2.mp4" autoplay muted loop playsinline></video>
+            <div class="textBox">
+                <div data-swiper-parallax="-100">
+                    <h4>{{ __('header-video2') }}</h4>
+                </div>
+            </div>
+        </div>
+        <div class="item swiper-slide">
+            <!-- <img src="./assets/images/main-img13.png" /> -->
+            <video id="video3" src="../frontend/video/header_video3.mp4" autoplay muted loop playsinline></video>
+            <div class="textBox">
+                <div data-swiper-parallax="-100">
+                    <h4>{{ __('header-video3') }}</h4>
+                </div>
+            </div>
+        </div>
+        <a class="swiper-button-next"></a>
+    </div>
+    <div class="pagination"></div>
+</section>
 {{-- ================================================ VIDEO SLIDER FROM SAMCHULLY ================================================ --}}
     {{-- <div class="container_text"> --}}
         <div class="vision_text">
@@ -56,68 +56,72 @@
 
     <div class=row>
       {{-- 01 --}}
-      <div class="item">
+      <div class="item1">
         <a href="/intellegent-integrated-logistic" class="wrap-box">
+            <img class="subImg" src="../../frontend/images/IIL.jpg"/>
             <div class="txtbox">
                 <img src="../../frontend/images/icon/ic_homeLogistic.svg" alt="icon arrow">
-                <p >{{ __('iil') }}</p><br>
+                <p >{{ __('iil') }}</p>
                 <span>{{ __('iil-content') }}</span><br>
             </div>
-            <img class="subImg" src="../../frontend/images/IIL.jpg"/>
+            <span class="border border-top"></span>
+            <span class="border border-right"></span>
+            <span class="border border-bottom"></span>
+            <span class="border border-left"></span>
         </a>
       </div>
       {{-- 02 --}}
-      <div class="item">
+      <div class="item1">
         <a href="/digital-healthcare" class="wrap-box">
             <img class="subImg" src="../../frontend/images/DHC.jpg"/>
             <div class="txtbox">
                 <img src="../../frontend/images/icon/ic_medical.svg" alt="icon arrow">
-                <p >{{ __('dh') }}</p><br>
-                <span>{{ __('dh-content') }}</span><br>
+                <p >{{ __('dh') }}</p>
+                <span>{{ __('dh-content') }}</span>
             </div>
         </a>
       </div>
       {{-- 03 --}}
-      <div class="item">
+      <div class="item1">
         <a href="/system-development-management" class="wrap-box">
+            <img class="subImg" src="../../frontend/images/SDM.jpg"/>
             <div class="txtbox">
                 <img src="../../frontend/images/icon/ic_code.svg" alt="icon arrow">
-                <p >{{ __('sdm') }}</p><br>
-                <span>{{ __('sdm-content') }}</span><br>
+                <p >{{ __('sdm') }}</p>
+                <span>{{ __('sdm-content') }}</span>
             </div>
-            <img class="subImg" src="../../frontend/images/SDM.jpg"/>
         </a>
       </div>
       {{-- 04 --}}
-      <div class="item">
+      <div class="item1">
         <a href="/export-voucher" class="wrap-box">
             <img class="subImg" src="../../frontend/images/EV.jpg"/>
             <div class="txtbox">
-                <img src="../../frontend/images/icon/ic_building.svg" alt="icon arrow">
-                <p >{{ __('ev') }}</p><br>
-                <span>{{ __('ev-content') }}</span><br>
+                <img src="../../frontend/images/icon/global.svg" alt="icon arrow">
+                <p >{{ __('ev') }}</p>
+                <span>{{ __('ev-content') }}</span>
             </div>
         </a>
       </div>
       {{-- 05 --}}
-      <div class="item">
+      <div class="item1">
         <a href="/web-design" class="wrap-box">
-            <div class="txtbox">
-                <img src="../../frontend/images/icon/global.svg" alt="icon arrow">
-                <p >{{ __('wdd') }}</p><br>
-                <span>{{ __('wdd-content') }}</span><br>
-            </div>
             <img class="subImg" src="../../frontend/images/WDD.jpg"/>
+            <div class="txtbox">
+                <img src="../../frontend/images/icon/ic_monitor.svg" alt="icon arrow">
+                <p >{{ __('wdd') }}</p>
+                <span>{{ __('wdd-content') }}</span>
+            </div>
         </a>
       </div>
       {{-- 06 --}}
-      <div class="item">
+      <div class="item1">
         <a href="/creative-solutions" class="wrap-box">
             <img class="subImg" src="../../frontend/images/CS.jpg"/>
             <div class="txtbox">
                 <img src="../../frontend/images/icon/designtools.svg" alt="icon arrow">
-                <p >{{ __('cs') }}</p><br>
-                <span>{{ __('cs-content') }}</span><br>
+                <p >{{ __('cs') }}</p>
+                <span>{{ __('cs-content') }}</span>
             </div>
         </a>
       </div>
@@ -193,7 +197,7 @@
     <script src="../frontend/js/wow.min.js"></script>
     <script src="../frontend/lib/swiper-bundle.min.js"></script>
     <script>
-        $(document).ready(function(){
+$(document).ready(function(){
             /* main sld event start */
             const swiper = new Swiper('.swiper', {
                 // loopAdditionalSlides:1,
@@ -303,7 +307,7 @@
         // });
 
         document.addEventListener("DOMContentLoaded", function() {
-            const elements = document.querySelectorAll('.item');
+            const elements = document.querySelectorAll('.item1');
 
             function checkVisibility() {
                 elements.forEach(element => {

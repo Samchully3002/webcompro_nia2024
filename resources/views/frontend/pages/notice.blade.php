@@ -26,16 +26,10 @@
 
                 @endforeach
             </div>
-            @if($notice->hasPages())
-            <div class="imx">
-                    <div class="pagination">
-
-                        <a href="{{$notice->previousPageUrl()}}" class="arrow">&laquo;</a>
-                        <a href="{{$notice->nextPageUrl()}}" class="arrow">&raquo;</a>
-                    </div>
-                </div>
+            <!-- Custom Pagination -->
+            <div class="pagination-container">
+                {{ $notice->onEachSide(1)->links('components.custom-pagination') }}
             </div>
-            @endif
         </div>
 
                <!-- <div data-include="component/footer"></div> -->

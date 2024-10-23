@@ -16,6 +16,7 @@ use App\Models\Monitoring;
 use App\Models\MetaTags;
 
 use App\Rules\RecaptchaV3Rule;
+use Psy\Readline\Hoa\Console;
 
 class HomeController extends Controller
 {
@@ -31,6 +32,17 @@ class HomeController extends Controller
         $posts = MediaReport::latest()->take(4)->get();
 
         return view('frontend/pages/home', compact('posts','meta'));
+    }
+
+    public function home2(Request $request): View
+    {
+        //get posts
+        $curentURL = $request->path();
+        $curentURL ? $curentURL :'/';
+        $meta = MetaTags::where('url', 'LIKE', '%'.$curentURL.'%')->first();
+        $posts = MediaReport::latest()->take(4)->get();
+
+        return view('frontend/pages/home2', compact('posts','meta'));
     }
 
     /**
@@ -52,14 +64,19 @@ class HomeController extends Controller
         }
 
         $list = [];
+        $l_tablet = [];
 
         foreach($users as $item){
             array_push($list, $item);
         }
+        foreach($users as $item){
+            array_push($l_tablet, $item);
+        }
         $list = array_chunk($list,3);
-
+        $l_tablet = array_chunk($l_tablet,2);
         return view('frontend/pages/about')->with([
             'list' => $list,
+            'l_tablet' => $l_tablet,
             'meta' => $meta
         ]);
     }
@@ -219,6 +236,4 @@ class HomeController extends Controller
         }
 
     }
-
-
 }

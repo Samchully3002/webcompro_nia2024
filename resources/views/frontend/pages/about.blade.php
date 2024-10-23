@@ -48,14 +48,13 @@
                     <p>{{__ ('story') }}</p>
                 </div>
 
-
                 <div class="dekstop-history">
                     <div class="box">
                        <!-- Left Content -->
                        <div class="left-box">
                           <div class="container-imageyear">
-                            <h1 id="year_history" style="font-weight: 500; font-size: 60px;">2024</h1>
-                             <img alt="year image" id="year_img" style="border-radius: 20px; box-shadow: 0px 5px 24px 0px rgba(0, 0, 0, 0.2);" src="{{asset('frontend/images/story2024.png')}}"/>
+                            <h1 id="year_history">2024</h1>
+                             <img alt="year image" id="year_img" class="img_year" src="{{asset('frontend/images/story2024.png')}}"/>
                           </div>
                        </div>
                        <!-- Right Content -->
@@ -770,7 +769,7 @@
                     <p>{{__ ('team') }}</p>
                 </div>
                 <div class="subtitle">
-                    <p">{{__ ('team-sub') }}</p>
+                    <p>{{__ ('team-sub') }}</p>
                 </div>
             </div>
             <!-- Title Line -->
@@ -836,41 +835,132 @@
                 </div>
                 <!-- line 2 -->
                <!-- return data employee -->
-            @foreach($list as $group)
-            <div class="row">
-            <!-- photo 1 galang -->
-             @foreach($group as $item)
-             <div class="item">
-                <div class="item-wrap">
-                    <div class="box">
-                        <div class="wrap">
-                            <div class="item">
-                                <div class="foto-box">
-                                    <img src="{{asset('backend/images/employee/'.$item['image'])}}" alt="image employee {{$item['fullname']}}"/>
+    {{-- Desktop layout --}}
+              @foreach($list as $group)
+                <div class="row">
+                  @foreach($group as $item)
+                    <div class="item">
+                        <div class="item-wrap">
+                            <div class="box">
+                                <div class="wrap">
+                                    <div class="item">
+                                        <div class="foto-box">
+                                            <img src="{{asset('backend/images/employee/'.$item['image'])}}" alt="image employee {{$item['fullname']}}"/>
+                                        </div>
+                                    </div>
+                                    <div class="text-item">
+                                        <div class="title">
+                                            <p>{{$item['fullname']}}</p>
+                                        </div>
+                                        <div class="subtitle">
+                                            <p>{{$item['role']}}</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="text-item">
-                                <div class="title">
-                                    <p>{{$item['fullname']}}</p>
-                                </div>
-                                <div class="subtitle">
-                                    <p>{{$item['role']}}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="back">
+                            <div class="back">
                                 <div class="content">
                                     <p>"{{$item['quotes']}}"</p>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                  @endforeach
                 </div>
-            </div>
-             @endforeach
-            <!-- photo 1 galang -->
-        </div>
-            @endforeach
-    </div>
+              @endforeach
+        {{-- Desktop Layout --}}
+
+        {{-- Tablet Layout --}}
+                <div class="row">
+                    <!-- photo 1 ceo -->
+                    <div class="t_item">
+                        <div class="item-wrap">
+                            <div class="box">
+                                <div class="wrap">
+                                    <div class="t_item">
+                                        <div class="foto-box">
+                                            <img src="../frontend/images/tm_mr_son.png" alt="image ceo">
+                                        </div>
+                                    </div>
+                                    <div class="text-item">
+                                        <div class="title">
+                                            <p>Mr. Son</p>
+                                        </div>
+                                        <div class="subtitle">
+                                            <p>President of Indonesia Branch office</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div class="content">
+                                    <p>"There is no such a small success to be celebrated."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- photo 1 ceo -->
+                    <!-- photo 2 general -->
+                    <div class="t_item">
+                        <div class="item-wrap">
+                            <div class="box">
+                                <div class="wrap">
+                                    <div class="t_item">
+                                        <div class="foto-box">
+                                            <img src="../frontend/images/tm_miss_kim.png" alt="image deputy manager">
+                                        </div>
+                                    </div>
+                                    <div class="text-item">
+                                        <div class="title">
+                                            <p>Ms. Kim</p>
+                                        </div>
+                                        <div class="subtitle">
+                                            <p>Deputy General Manager</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div class="content">
+                                    <p>"Every difficulty is an opportunity to grow and learn."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- photo 2 general -->
+                </div>
+              @foreach($l_tablet as $group)
+                <div class="row">
+                  @foreach($group as $t_item)
+                    <div class="t_item">
+                        <div class="item-wrap">
+                            <div class="box">
+                                <div class="wrap">
+                                    <div class="t_item">
+                                        <div class="foto-box">
+                                            <img src="{{asset('backend/images/employee/'.$t_item['image'])}}" alt="image employee {{$t_item['fullname']}}"/>
+                                        </div>
+                                    </div>
+                                    <div class="text-item">
+                                        <div class="title">
+                                            <p>{{$t_item['fullname']}}</p>
+                                        </div>
+                                        <div class="subtitle">
+                                            <p>{{$t_item['role']}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div class="content">
+                                    <p>"{{$t_item['quotes']}}"</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  @endforeach
+                </div>
+              @endforeach
             </div>
         </div>
         {{-- Team Member end --}}

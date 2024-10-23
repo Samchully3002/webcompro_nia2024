@@ -205,52 +205,52 @@ $(document).ready(function () {
 
             switch (year) {
                 case "2024":
-                    $('.container-imageyear').toggleClass('bounce-img');
+                    $('.container-imageyear')
                     image.attr("src", "../frontend/images/story2024.png");
                     yearname.text("2024");
                     break;
                 case "2023":
-                    $('.container-imageyear').toggleClass('bounce-img');
+                    $('.container-imageyear')
                     image.attr("src", "../frontend/images/story2023.png");
                     yearname.text("2023");
                     break;
                 case "2022":
-                    $('.container-imageyear').toggleClass('bounce-img');
+                    $('.container-imageyear')
                     image.attr("src", "../frontend/images/story2022.png");
                     yearname.text("2022");
                     break;
                 case "2021":
-                    $('.container-imageyear').toggleClass('bounce-img');
+                    $('.container-imageyear')
                     image.attr("src", "../frontend/images/story2021.png");
                     yearname.text("2021");
                     break;
                 case "2020":
-                    $('.container-imageyear').toggleClass('bounce-img');
+                    $('.container-imageyear')
                     image.attr("src", "../frontend/images/story2020.png");
                     yearname.text("2020");
                     break;
                 case "2019":
-                    $('.container-imageyear').toggleClass('bounce-img');
+                    $('.container-imageyear')
                     image.attr("src", "../frontend/images/story2019.png");
                     yearname.text("2019");
                     break;
                 case "2018":
-                    $('.container-imageyear').toggleClass('bounce-img');
+                    $('.container-imageyear')
                     image.attr("src", "../frontend/images/story2018.png");
                     yearname.text("2018");
                     break;
                 case "2017":
-                    $('.container-imageyear').toggleClass('bounce-img');
+                    $('.container-imageyear')
                     image.attr("src", "../frontend/images/story2017.png");
                     yearname.text("2017");
                     break;
                 case "2016":
-                    $('.container-imageyear').toggleClass('bounce-img');
+                    $('.container-imageyear')
                     image.attr("src", "../frontend/images/story2016.png");
                     yearname.text("2016");
                     break;
                 case "2015":
-                    $('.container-imageyear').toggleClass('bounce-img');
+                    $('.container-imageyear')
                     image.attr("src", "../frontend/images/story2015.png");
                     yearname.text("2015");
                     break;

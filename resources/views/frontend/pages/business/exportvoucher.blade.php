@@ -29,19 +29,19 @@
                     <div class="scrollBox box1">
                         <ul class="textBox">
                             <li class="active">
-                                <span>Bridgehead for global expansion</span>
+                                <span>{{ __('evLS1') }}</span>
                                 <h3>{{ __('rnc') }}</h3>
                             </li>
                             <li>
-                                <span>A reliable overseas business partner</span>
+                                <span>{{ __('evLS2') }}</span>
                                 <h3>{{ __('oba') }}</h3>
                             </li>
                             <li>
-                                <span>Easy to immerse yourself in local culture</span>
+                                <span>{{ __('evLS3') }}</span>
                                 <h3>{{ __('md') }}</h3>
                             </li>
                             <li>
-                                <span>High local cultural understanding and expertise</span>
+                                <span>{{ __('evLS4') }}</span>
                                 <h3>{{ __('its') }}</h3>
                             </li>
                         </ul>

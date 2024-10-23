@@ -28,9 +28,9 @@ class MediaNewsController extends Controller
             return Datatables::of($data)
                     ->addIndexColumn()
                     ->addColumn('action', function($row){
-       
+
                             $btn = '<a href="update-news/'.$row->id.'" class="edit btn btn-primary btn-sm">View</a><br/><a href="javascript:void(0)" class="delete btn btn-danger btn-sm " onclick="deleteNews('.$row->id.')">Delete</a>';
-      
+
                             return $btn;
                     })
                     ->rawColumns(['action'])
@@ -44,7 +44,7 @@ class MediaNewsController extends Controller
     /**
      * store media video
      *
-     * @param  mixed $request 
+     * @param  mixed $request
      * @return void
      */
 
@@ -70,7 +70,7 @@ class MediaNewsController extends Controller
 
             //inser media news data
             $news = MediaReport::create([
-                'title'     => $request->title, 
+                'title'     => $request->title,
                 'image'     => $imageName,
                 'source'    => $request->source
             ]);
@@ -79,7 +79,7 @@ class MediaNewsController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => 'Success saving media news data!',
-                'data'    => $news  
+                'data'    => $news
             ]);
 
         }
@@ -88,7 +88,7 @@ class MediaNewsController extends Controller
     /**
      * store community notice
      *
-     * @param  mixed $request 
+     * @param  mixed $request
      * @return void
      */
 
@@ -103,7 +103,7 @@ class MediaNewsController extends Controller
          /**
      * store our team
      *
-     * @param  mixed $request 
+     * @param  mixed $request
      * @return void
      */
 
@@ -135,10 +135,10 @@ class MediaNewsController extends Controller
                     //upload new image
                     $imageName = time().'.'.$request->image->extension();
                     $request->image->move(public_path('backend/images/news/'), $imageName);
-        
+
                     //delete old image
                     Storage::delete('backend/images/news/'.$user->image);
-        
+
                     //update product with new image
                     $user->update([
                         'title'           => $request->title,
@@ -148,9 +148,9 @@ class MediaNewsController extends Controller
                         'source'          => $request->source,
                         'image'           => $imageName
                     ]);
-        
+
                     } else {
-        
+
                         //update product without image
                         $user->update([
                             'title'      => $request->title,
@@ -164,13 +164,13 @@ class MediaNewsController extends Controller
                 return response()->json([
                     'success' => true,
                     'message' => 'Success saving data',
-                    'data'    => $user  
+                    'data'    => $user
                 ]);
 
                 }else{
                     $imageName = time().'.'.$request->image->extension();
                     $request->image->move(public_path('backend/images/news/'), $imageName);
-    
+
                    //insert our team member
                    $team = MediaReport::create([
                         'title'      => $request->title,
@@ -180,14 +180,14 @@ class MediaNewsController extends Controller
                         'source'          => $request->source,
                         'image' => $imageName
                     ]);
-    
+
                     $team->save();
-    
+
                     //return response
                     return response()->json([
                         'success' => true,
                         'message' => 'Success saving data',
-                        'data'    => $team  
+                        'data'    => $team
                     ]);
             }
 
@@ -216,7 +216,7 @@ class MediaNewsController extends Controller
         return response()->json([
             'success' => true,
             'message' => 'Success deleting news data',
-            'data'    => $team  
+            'data'    => $team
         ]);
         }
 

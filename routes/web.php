@@ -24,6 +24,7 @@ Route::get('download', function () {
 });
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('homepage');
+Route::get('/home2', [App\Http\Controllers\HomeController::class, 'home2'])->name('home2');
 Route::get('/about-us', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
 Route::get('/community/news', [App\Http\Controllers\HomeController::class, 'news'])->name('news');
 Route::get('/community/notice', [App\Http\Controllers\HomeController::class, 'notice'])->name('notice');

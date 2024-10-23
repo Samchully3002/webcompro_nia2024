@@ -43,11 +43,11 @@
                     <div class="colls-wrapper">
                         <div class="wrap-collabsible">
                             <input id="collapsible2" class="toggle" type="checkbox" checked="">
-                                <label for="collapsible2" class="lbl-toggle">
-                                    <span>01</span>
-                                    <span>{{ __('healthyhada') }}</span>
-                                    <span class="icon-right">&nbsp;</span>
-                                </label>
+                            <label for="collapsible2" class="lbl-toggle">
+                                <span>01</span>
+                                <span>{{ __('healthyhada') }}</span>
+                                <span class="icon-right">&nbsp;</span>
+                            </label>
                             <div class="collapsible-content">
                                 <div class="content">
                                     <div class="text-wrapper">
@@ -80,14 +80,14 @@
                                             </p>
                                         </div>
                                     </div>
+                                </div>
                             </div>
-                            {{-- </div> --}}
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- section-wrapper end -->
         </div>
+            <!-- section-wrapper end -->
 
         <!-- <div data-include="component/footer"></div> -->
         @include('frontend.includes.footer')
