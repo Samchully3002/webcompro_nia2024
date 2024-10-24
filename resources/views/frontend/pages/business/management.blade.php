@@ -69,9 +69,9 @@
                                     <p>{{ __('tnr-content') }}</p>
                                 </div>
                                 <div class="img-box">
-                                    <img src="../frontend/images/bs-ticketing1.svg" alt="image ticketing"/>
-                                    <img src="../frontend/images/bs-ticketing2.svg" alt="image ticketing"/>
-                                    <img src="../frontend/images/bs-ticketing3.svg" alt="image ticketing"/>
+                                    <img class="lebar" src="../frontend/images/bs-ticketing1.svg" alt="image ticketing"/>
+                                    <img class="lebar" src="../frontend/images/bs-ticketing2.svg" alt="image ticketing"/>
+                                    <img class="lebar" src="../frontend/images/bs-ticketing3.svg" alt="image ticketing"/>
                                 </div>
                                 <div class="img-box-mobile">
 
@@ -146,14 +146,14 @@
                             <div class="content">
                                 <div class="text-wrapper">
                                     <p>{{ __('iba-content') }}</p>
-                                    <button id="downloadButton"><span>PDF</span>&nbsp;&nbsp; <img src="../../frontend/images/icon/download.svg" ></button>
+                                    <button id="downloadButton">PDF&nbsp;&nbsp;<img src="../../frontend/images/icon/download.svg" /></button>
                                     <a id="downloadLink" href="{{asset('frontend/INABUSAPPS.pdf')}}" download style="display: none;"></a>
                                 </div>
                                 <div class="img-box" style="gap: 0px !important;">
-                                    <img class="iba" src="../frontend/images/iba1.png"/>
-                                    <img class="iba" src="../frontend/images/iba2.png"/>
-                                    <img class="iba" src="../frontend/images/iba3.png"/>
-                                    <img class="iba" src="../frontend/images/iba4.png"/>
+                                    <img class="lebar" src="../frontend/images/iba1.png"/>
+                                    <img class="lebar" src="../frontend/images/iba2.png"/>
+                                    <img class="lebar" src="../frontend/images/iba3.png"/>
+                                    <img class="lebar" src="../frontend/images/iba4.png"/>
                                 </div>
                                 <div class="img-box-mobile">
 
