@@ -52,8 +52,8 @@
                     </div>
                     <div class="btn-flipbook">
                         <img onclick="fullView()" style="cursor: pointer" src="{{ asset('frontend/images/icon/fb_fullscreen.svg') }}"/>
-                        <img id="btn_zoomIn" onclick="zoomIn()" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_zoom_in.svg') }}"/>
-                        <img id="btn_zoomOut" onclick="zoomOut()" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_zoom_out.svg') }}"/>
+                        {{-- <img id="btn_zoomIn" onclick="zoomIn()" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_zoom_in.svg') }}"/>
+                        <img id="btn_zoomOut" onclick="zoomOut()" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_zoom_out.svg') }}"/> --}}
                         <img onclick="print()" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_print.svg') }}"/>
                         <img id="downloadButton" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_download.svg') }}"/>
                         <a id="downloadLink" href="{{asset('frontend/WebDevProposalPricelist.pdf')}}" download style="display: none;"></a>
@@ -374,8 +374,8 @@
                     enterFullscreen();
                     console.log("cancel");
                     imgFlip.classList.add('fs');
-                    zoom_el.style.width = '2000px';
-                    zoom_el.style.height = '600px';
+                    // zoom_el.style.width = '2000px';
+                    // zoom_el.style.height = '600px';
                 } else {
                     exitFullscreen();
                     console.log("enter");

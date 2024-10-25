@@ -197,6 +197,11 @@ body {
     width: 80%;
 }
 
+.notice-wrapper .notice-list:hover {
+    transform: translateY(-3px);
+    color: lighten(rgb(70, 71, 76), 50%);
+}
+
 .notice-wrapper .notice-list .notice-date {
     display: flex;
     gap: 30px;

@@ -7,7 +7,7 @@
                     <img style="width: 75%;" class="effect-on" src="../../frontend/images/icon/logo_ftr.svg" alt="logo feature"/>
                 </a>
             </li>
-            <li class="first-menu hidden-box>"><a id="nav" href="/">{{ __('navbar-home') }}</a></li>
+            <li class="first-menu hidden-box"><a id="nav" href="/">{{ __('navbar-home') }}</a></li>
             <li class="first-menu hidden-box business">
                 <div id="nav1" class="btn_business">{{ __('navbar-business') }}&nbsp;&nbsp;&nbsp;
                     <img width="13pt" src="../../frontend/images/icon/ic_arrow_white.png" class="language_caret" alt="language caret"/>
@@ -45,7 +45,7 @@
                     <a id="choseLang" class="lang-btn">
                         <img src="../../frontend/images/icon/language.png" class="language_flag" alt="icon lang flag"/>
                         <span>{{ $locale_name }}</span>
-                        <img width="10pt" src="../../frontend/images/icon/ic_arrow_white.png" class="language_caret" alt="icon lang caret"/>
+                        <img src="../../frontend/images/icon/ic_arrow_white.png" class="language_caret" alt="icon lang caret"/>
                     </a>
                     @else
                     <ul class="lang-menu hidden-menu">

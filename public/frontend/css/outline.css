@@ -1,10 +1,9 @@
 /* ----------------
   HEADER SECTION
 ---------------- */
-
 #header-wrapper {
     width: 100%;
-    height: 90px;
+    height: 80px;
     position: fixed;
     left: 0px;
     top: 0px;
@@ -93,6 +92,61 @@
     justify-content: center;
     align-items: center;
 }
+/* #header-wrapper .menu-box .first-menu {
+    transition: all 0.3s ease;
+    color: #ffffff;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 8px;
+    position: relative;
+  } */
+  /* #header-wrapper .hidden-menu li a::after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: -4px;
+    left: 0px;
+    width: 0px;
+    height: 3px;
+    border-radius: 1.5px;
+    background: linear-gradient(45deg, #ff7432 25%, #439cd6);
+    transition: all 0.3s;
+}
+
+#header-wrapper .hidden-menu li a:hover::after {
+    width: 50%;
+} */
+  #header-wrapper .menu-box .first-menu::after,
+  #header-wrapper .hidden-menu li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    background-color: rgba(243, 233, 233, 0.4);
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -0.25em;
+    height: 2px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  #header-wrapper .menu-box .first-menu:hover::after,
+  #header-wrapper .hidden-menu li a:hover::after {
+    width: 100%;
+    animation: pulse11 1s;
+    box-shadow: 0 0 0 1em transparent;
+  }
+
+  @keyframes pulse11 {
+    0% {
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+    }
+    100% {
+      box-shadow: 0 0 0 1em transparent;
+    }
+  }
+
 
 #header-wrapper .menu-box .first-menu .pc-hidden {
     position: absolute;
@@ -195,9 +249,9 @@
 }
 
 #header-wrapper .lang-box .lang-btn {
-    padding: 12px 40px;
+    padding: 8px 30px;
     color: rgb(255, 255, 255);
-    font-size: 16px;
+    font-size: 1em;
     /* font-family: 'Outfit', sans-serif; */
     border: white solid 1px;
     border-radius: 40px;
@@ -219,9 +273,9 @@
 }
 
 #header-wrapper .btn_contact_us {
-    padding: 12px 28px;
+    padding: 8px 20px;
     color: #FFFFFF;
-    font-size: 16px;
+    font-size: 1em;
     /* font-family: 'Outfit', sans-serif; */
     border: white solid 1px;
     border-radius: 40px;
@@ -239,15 +293,15 @@
     width: 12px;
 }
 
-#header-wrapper .btn_contact_us:hover {
+/* #header-wrapper .btn_contact_us:hover {
     background-color: #40455c;
     border: #40455c solid 1px;
-}
+} */
 
 #header-wrapper .btn_youtube {
-    padding: 12px 28px;
+    padding: 8px 20px;
     color: rgb(255, 255, 255);
-    font-size: 16px;
+    font-size: 1em;
     /* font-family: 'Outfit', sans-serif; */
     border: white solid 1px;
     border-radius: 40px;
@@ -334,23 +388,6 @@
 
 #header-wrapper .hidden-menu li:last-child {
     margin-bottom: 0px;
-}
-
-#header-wrapper .hidden-menu li a::after {
-    content: "";
-    position: absolute;
-    display: block;
-    bottom: -4px;
-    left: 0px;
-    width: 0px;
-    height: 3px;
-    border-radius: 1.5px;
-    background: linear-gradient(45deg, #ff7432 25%, #439cd6);
-    transition: all 0.3s;
-}
-
-#header-wrapper .hidden-menu li a:hover::after {
-    width: 50%;
 }
 
 #header-wrapper .hambuger-menu.mobile-ham {

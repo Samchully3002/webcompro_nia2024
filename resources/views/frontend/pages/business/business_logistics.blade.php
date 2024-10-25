@@ -300,17 +300,18 @@
                 gsap.timeline({
                     scrollTrigger: {
                         trigger: '.scrollWrapper',
-                        start: 'top 30%',
+                        start: 'top',
                         end: 'top bottom',
                         invalidateOnRefresh: true,
                         scrub: 0.5,//부드러운 스크러빙
                         // onComplete: console.log('finish'),
                         onEnter:function() {
-                            $("#header-wrapper .menu-wrapper").addClass("hide");
+                            $("#header-wrapper").css({'display' : 'none'});
                             $('.scrollWrapper .box1').addClass('active');
                             $('.scrollWrapper .box1 .imgBox').addClass('active');
                         },
                         onEnterBack:function() {
+                            $("#header-wrapper").css({'display' : 'unset'});
                             $('.scrollWrapper .box1').removeClass('active');
                             $('.scrollWrapper .box1 .imgBox').removeClass('active');
                         }
@@ -322,16 +323,15 @@
                     gsap.timeline({
                         scrollTrigger: {
                             trigger: $(this),
-                            start: 'top 30%',
+                            start: 'top',
                             end: 'top bottom',
                             invalidateOnRefresh: true,
                             onEnter:function() {
+                                $("#header-wrapper").css({'display' : 'none'});
                                 if(i === 1){
-                                    $("#header-wrapper .menu-wrapper").addClass("hide");
                                     $('.box1').css({"transition" : "none", "-moz-transition" : "none", "-o-transition" : "none", "-webkit-transition" : "none"});
                                 }
 
-                                $("#header-wrapper .menu-wrapper").addClass("hide");
                                 // $('.menu-wrapper').css({'display' : 'flex'});
                                 $('.scrollWrapper .scrollBox .imgBox').css({'display' : 'none'});
                                 $('.scrollWrapper .scrollBox .imgBox').eq(i).css({'display' : 'block'});
@@ -339,6 +339,7 @@
                                 $('.scrollWrapper .textBox li').eq(i).addClass('active');
                             },
                             onEnterBack:function() {
+                                $("#header-wrapper").css({'display' : 'unset'});
                                 if(i === 1){
                                     $('.box1').css({"transition" : "all 0.5s", "-moz-transition" : "all 0.5s", "-o-transition" : "all 0.5s", "-webkit-transition" : "all 0.5s"});
                                 }
@@ -346,7 +347,6 @@
                                 if(i === 3){
                                     $('.box1').css({"transition" : "none", "-moz-transition" : "none", "-o-transition" : "none", "-webkit-transition" : "none"});
                                 }
-                                $('.menu-wrapper').removeClass('hide');
                                 $('.scrollWrapper .scrollBox .imgBox').css({'display' : 'none'});
                                 $('.scrollWrapper .scrollBox .imgBox').eq(i).css({'display' : 'block'});
                                 $('.scrollWrapper .textBox li').removeClass('active');
@@ -354,6 +354,22 @@
                             }
                         }
                     })
+                });
+                gsap.timeline({
+                    scrollTrigger: {
+                        trigger: '.product-wrapper',
+                        start: 'top',
+                        end: 'top bottom',
+                        invalidateOnRefresh: true,
+                        scrub: 0.5,//부드러운 스크러빙
+                        // onComplete: console.log('finish'),
+                        onEnter:function() {
+                            $("#header-wrapper").css({'display' : 'unset'});
+                        },
+                        onEnterBack:function() {
+                            $("#header-wrapper").css({'display' : 'none'});
+                        }
+                    }
                 });
             });
             var slideIndex = 1;

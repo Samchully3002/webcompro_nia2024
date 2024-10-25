@@ -289,6 +289,7 @@ input[type="checkbox"] {
 
 .product-wrapper .content .text-wrapper {
     place-content: flex-start center;
+    color: #40455c;
     display: flex;
     font-size: 1.6em;
     line-height: 1.2;
@@ -347,7 +348,7 @@ input[type="checkbox"] {
 
 .product-wrapper .content .text-wrapper button:hover {
   background: #F6F9FE;
-  color: #174ea6;
+  color: #40455c;
 }
 
 .product-wrapper .content .text-wrapper button:active {
@@ -357,7 +358,7 @@ input[type="checkbox"] {
 
 .product-wrapper .content .text-wrapper button:focus {
   outline: none;
-  border: 2px solid #4285f4;
+  border: 2px solid #40455c;
 }
 
 .product-wrapper .content .text-wrapper button:not(:disabled) {
@@ -373,7 +374,7 @@ input[type="checkbox"] {
 }
 
 .product-wrapper .content .text-wrapper button:not(:disabled):active {
-  box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+  box-shadow: rgba(9, 12, 14, 0.3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
 }
 
 .product-wrapper .content .text-wrapper button:disabled {
@@ -556,17 +557,12 @@ input[type="checkbox"] {
     color: #fff;
     font-size: 16px;
     font-weight: 600;
+    transition: 0.5s ease-in-out
 }
 
 .pricing-wrapper .card button:hover {
-    width: 100%;
-    background-color: #bfbfbf;
-    height: 60px;
-    border-radius: 6px;
-    border: none;
-    color: #000000;
-    font-size: 16px;
-    font-weight: 600;
+    /* height: 55px; */
+    box-shadow: 0px 0px 0px 2.5px white inset, 0px 0px 0px 5px #40455c;
 }
 
 .pricing-wrapper .card .title {

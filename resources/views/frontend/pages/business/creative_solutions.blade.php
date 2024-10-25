@@ -65,21 +65,12 @@
                     <div class="container-mobile">
                         <button class="btn_prev_img" onclick="plusDivs(-1)">&#8249;</button>
 
-                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_1.jpg') }}"/>
-                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_2.jpg') }}"/>
-                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_3.jpg') }}"/>
-                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_4.jpg') }}"/>
-                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_5.jpg') }}"/>
-                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_6.jpg') }}"/>
-                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_7.jpg') }}"/>
-                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_8.jpg') }}"/>
-                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722843204_9.jpg') }}"/>
-{{--
-                        @foreach($content as $page)
-                            <div>
-                                <img id="imgFlip1" class="mySlides5" src="{{ asset($page) }}" alt="image samchully pay"/>
-                            </div>
-                        @endforeach
+                            @foreach($content as $page)
+                                <div>
+                                    <img id="imgFlip1" class="mySlides5" src="{{ asset($page) }}" alt="image samchully pay"/>
+                                </div>
+                            @endforeach
+
                         <button class="btn_next_img" onclick="plusDivs(1)">&#8250;</button>
                     </div>
                     <div class="btn-flipbook">
@@ -88,7 +79,7 @@
                         <img id="btn_zoomOut" onclick="zoomOut()" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_zoom_out.svg') }}"/> --}}
                         <img onclick="print()" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_print.svg') }}"/>
                         <img id="downloadButton" style="cursor: pointer;" src="{{ asset('frontend/images/icon/fb_download.svg') }}"/>
-                        <a id="downloadLink" href="{{asset('frontend/CreativeSolutionsRateCard.pdf')}}" download style="display: none;"></a>
+                        <a id="downloadLink" href="{{asset('frontend/WebDevProposalPricelist.pdf')}}" download style="display: none;"></a>
                     </div>
                 </div>
             </div>

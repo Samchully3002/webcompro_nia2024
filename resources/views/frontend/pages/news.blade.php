@@ -19,7 +19,6 @@
             <!-- bg-wrapper end -->
 
             <div class="row list-wrapper">
-
                 <div class="item-box clear">
 
                     @foreach($posts as $post)
@@ -38,6 +37,7 @@
                         </div>
                     </div>
                     @endforeach
+
                 </div>
                 <!-- Custom Pagination -->
                 <div class="pagination-container">

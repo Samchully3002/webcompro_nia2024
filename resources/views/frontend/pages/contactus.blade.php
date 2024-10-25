@@ -111,7 +111,7 @@
                     // document.getElementById("btn_form_message").disabled = false;
                     $("#btn_form_message")
                         .css("cursor","pointer")
-                        .css("background","rgb(18, 165, 229)")
+                        .css("background","#40455c")
                         .attr("disabled",false);
                 }else{
                     $("#btn_form_message")
@@ -242,79 +242,6 @@
                 })
                 });
             });
-
-            $(document).ready(function(){
-                /* main sld event start */
-                const swiper = new Swiper('.swiper', {
-                    // loopAdditionalSlides:1,
-                    direction: 'horizontal',
-                    parallax: true, // 패럴랙스 활성화
-                    speed: 1500, // 패럴랙스 스피드 (옵션)
-                    initialSlide: 0 ,
-                    slidesPerView:"auto",
-                    allowTouchMove : true,
-                    effect : 'fade',
-                    fadeEffect: { crossFade: true },
-                    allowTouchMove:false,
-                    observer: true,
-                    observeParents: true,
-                    autoplayDisableOnInteraction:true,
-                    loop:true,
-                    loopedSlides:1,
-                    autoplay:{
-                        delay: 4300,
-                        disableOnInteraction: false,
-                    },
-                    navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev',
-                    },
-                    pagination : {   // 페이저 버튼 사용자 설정
-                        el : '.pagination',  // 페이저 버튼을 담을 태그 설정
-                        clickable : false,  // 버튼 클릭 여부
-                        type : 'bullets', // 버튼 모양 결정 "bullets", "fraction"
-                        renderBullet : function (index, className) {  // className이 기본값이 들어가게 필수 설정
-                            return '<a href="#" class="' + className + '">' + (index + 1) + '</a>'
-                        },
-                        renderFraction: function (currentClass, totalClass) { // type이 fraction일 때 사용
-                            return '<span class="' + currentClass + '"></span>' + '<span class="' + totalClass + '"></span>';
-                        }
-                    },
-                    a11y: { // 웹접근성
-                        enabled: true,
-                        prevSlideMessage: 'previous slide',
-                        nextSlideMessage: 'next slide',
-                        slideLabelMessage: 'This is slide',
-                    },
-                    on: {
-                        slideChange: function(swiper){
-                            let i = swiper.realIndex;
-                            let video1 = $('#video1').get(0);
-                            let video2 = $('#video2').get(0);
-                            let video3 = $('#video3').get(0);
-                            $(".mainWrapper h3").removeClass('active');
-
-                            video1.currentTime = 0;
-                            $('#video1').get(0).pause();
-                            video2.currentTime = 0;
-                            $('#video2').get(0).pause();
-                            video3.currentTime = 0;
-                            $('#video3').get(0).pause();
-
-                            $('#video'+(i+1)).get(0).play();
-
-                            if(i !== 0){
-                                $('.mainWrapper h2').addClass('active');
-                                $(".mainWrapper p").addClass('active2');
-                            } else{
-                                $('.mainWrapper h2').removeClass('active');
-                                $(".mainWrapper p").removeClass('active2');
-                            }
-                        },
-                    },
-                });
-            });
-
         </script>
 
     </body>

@@ -225,16 +225,18 @@
                 gsap.timeline({
                     scrollTrigger: {
                         trigger: '.scrollWrapper',
-                        start: 'top 30%',
+                        start: 'top',
                         end: 'top bottom',
                         invalidateOnRefresh: true,
                         scrub: 0.5,//부드러운 스크러빙
                         // onComplete: console.log('finish'),
                         onEnter:function() {
+                            $("#header-wrapper").css({'display' : 'none'});
                             $('.scrollWrapper .box1').addClass('active');
                             $('.scrollWrapper .box1 .imgBox').addClass('active');
                         },
                         onEnterBack:function() {
+                            $("#header-wrapper").css({'display' : 'unset'});
                             $('.scrollWrapper .box1').removeClass('active');
                             $('.scrollWrapper .box1 .imgBox').removeClass('active');
                         }
@@ -246,10 +248,11 @@
                     gsap.timeline({
                         scrollTrigger: {
                             trigger: $(this),
-                            start: 'top 30%',
+                            start: 'top',
                             end: 'top bottom',
                             invalidateOnRefresh: true,
                             onEnter:function() {
+                                $("#header-wrapper").css({'display' : 'none'});
                                 if(i === 1){
                                     $('.box1').css({"transition" : "none", "-moz-transition" : "none", "-o-transition" : "none", "-webkit-transition" : "none"});
                                 }
@@ -273,6 +276,23 @@
                             }
                         }
                     })
+                });
+
+                gsap.timeline({
+                    scrollTrigger: {
+                        trigger: '.product-wrapper',
+                        start: 'top',
+                        end: 'top bottom',
+                        invalidateOnRefresh: true,
+                        scrub: 0.5,//부드러운 스크러빙
+                        // onComplete: console.log('finish'),
+                        onEnter:function() {
+                            $("#header-wrapper").css({'display' : 'unset'});
+                        },
+                        onEnterBack:function() {
+                            $("#header-wrapper").css({'display' : 'none'});
+                        }
+                    }
                 });
             });
 
