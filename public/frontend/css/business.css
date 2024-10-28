@@ -1022,8 +1022,12 @@ input[type="checkbox"] {
         /* padding: 0px 180px 50px 100px; */
         gap: unset;
     }
-
-
+    .product-wrapper .content .card-wrapper .card p {
+        font-size: 14px;
+    }
+    .product-wrapper .content .card-wrapper .card img {
+        width: 14%;
+    }
     .product-wrapper{
         margin: 0px 20px 0px 20px;
     }
@@ -1092,6 +1096,11 @@ input[type="checkbox"] {
         border-radius: 50px;
         pointer-events: auto;
         transform: none;
+    }
+    .product-wrapper .content .card-wrapper .card,
+    .product-wrapper .content .card-wrapper .card-grey span {
+        font-weight: 400;
+        font-size: 1.2em;
     }
     .product-wrapper .content .text-wrapper {
         padding: unset;

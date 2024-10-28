@@ -544,9 +544,9 @@
     word-break: keep-all;
 }
 
-#footer-wrapper .footer-top {
+/* #footer-wrapper .footer-top {
     margin-bottom: 40px;
-}
+} */
 
 #footer-wrapper .logo-footer {
     margin-bottom: 28px;
@@ -1003,12 +1003,12 @@ h3 {
     }
 
     #footer-wrapper {
-        padding: 50px 20px 20px 20px;
+        padding:unset;
     }
 }
 
 /* --- Phone potrait --- */
-@media screen and (max-width: 530px) {
+@media screen and (max-width: 780px) {
     #footer-wrapper .location .address .title {
         width: 80%;
         font-size: 15px !important;
@@ -1080,7 +1080,7 @@ h3 {
     #footer-wrapper .sitemap {
         display: flex;
         justify-content: flex-start;
-        margin-bottom: 24px;
+        margin-bottom: 10px;
         gap: 20px;
     }
 }

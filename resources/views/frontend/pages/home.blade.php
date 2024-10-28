@@ -18,14 +18,16 @@
         <a class="swiper-button-prev"></a>
         <div class="item swiper-slide">
             <!-- <img src="./assets/images/main-img01.jpg" /> -->
-            <video id="video1" src="../frontend/video/header_video1.mp4" autoplay muted loop playsinline></video>
+            <video class="vid_desktop" id="video1" src="../frontend/video/header_video1.mp4" autoplay muted loop playsinline></video>
+            <video class="vid_mobile" id="video1" src="../frontend/video/mobile_header1.mp4" autoplay muted loop playsinline></video>
             <div class="textBox">
                 <p>{{ __('header-video1') }}</p>
             </div>
         </div>
         <div class="item swiper-slide">
             <!-- <img src="./assets/images/main-img12.png" /> -->
-            <video id="video2" src="../frontend/video/header_video2.mp4" autoplay muted loop playsinline></video>
+            <video class="vid_desktop" id="video2" src="../frontend/video/header_video2.mp4" autoplay muted loop playsinline></video>
+            <video class="vid_mobile" id="video2" src="../frontend/video/mobile_header2.mp4" autoplay muted loop playsinline></video>
             <div class="textBox">
                 <div data-swiper-parallax="-100">
                     <h4>{{ __('header-video2') }}</h4>
@@ -34,7 +36,8 @@
         </div>
         <div class="item swiper-slide">
             <!-- <img src="./assets/images/main-img13.png" /> -->
-            <video id="video3" src="../frontend/video/header_video3.mp4" autoplay muted loop playsinline></video>
+            <video class="vid_desktop" id="video3" src="../frontend/video/header_video3.mp4" autoplay muted loop playsinline></video>
+            <video class="vid_mobile" id="video3" src="../frontend/video/mobile_header3.mp4" autoplay muted loop playsinline></video>
             <div class="textBox">
                 <div data-swiper-parallax="-100">
                     <h4>{{ __('header-video3') }}</h4>
@@ -268,44 +271,6 @@ $(document).ready(function(){
                 },
             });
         });
-
-        // new WOW().init();
-        // // Ambil elemen video
-        // const videoD = document.querySelector('.video-dekstop');
-        // const videoM = document.querySelector('.video-mobile');
-        // // Ambil elemen kontainer video
-        // const container = document.querySelector('.container_video_text');
-
-        // // Hitung tinggi kontainer video
-        // const containerHeight = container.offsetHeight;
-
-        // // Tentukan posisi tengah layar vertikal
-        // const middleOfScreen = window.innerHeight / 1;
-
-        // // Tentukan kapan scaling harus dimulai (misalnya pada 1999px dari atas kontainer)
-        // const startScalingAt = container.offsetTop + containerHeight - middleOfScreen;
-
-        // // Faktor penurunan kecepatan scaling
-        // const scaleSlowFactor = 0.5; // Sesuaikan nilai ini untuk kecepatan scaling yang diinginkan
-
-        // // Tambahkan event listener untuk mendeteksi scroll mouse
-        // window.addEventListener('scroll', function() {
-        //     // Dapatkan posisi scroll vertikal saat ini
-        //     let scrollPosition = window.scrollY + middleOfScreen;
-
-        //     // Hitung nilai scale berdasarkan posisi scroll
-        //     let scaleValue = 1;
-        //     if (scrollPosition >= startScalingAt) {
-        //         scaleValue = 1 - (scrollPosition - startScalingAt) * scaleSlowFactor / (containerHeight - middleOfScreen);
-        //         // Pastikan scaleValue tidak kurang dari 0
-        //         scaleValue = Math.max(scaleValue, 0);
-        //     }
-
-        //     // Terapkan transformasi pada video tanpa rotasi
-        //     videoD.style.transform = `scale(${scaleValue})`;
-        //     videoM.style.transform = `scale(${scaleValue})`;
-        // });
-
         document.addEventListener("DOMContentLoaded", function() {
             const elements = document.querySelectorAll('.item1');
 
