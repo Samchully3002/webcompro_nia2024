@@ -871,13 +871,13 @@
         {{-- Desktop Layout --}}
 
         {{-- Tablet Layout --}}
-                <div class="row">
+                <div class="t_row">
                     <!-- photo 1 ceo -->
-                    <div class="t_item">
+                    <div class="item">
                         <div class="item-wrap">
                             <div class="box">
                                 <div class="wrap">
-                                    <div class="t_item">
+                                    <div class="item">
                                         <div class="foto-box">
                                             <img src="../frontend/images/tm_mr_son.png" alt="image ceo">
                                         </div>
@@ -901,11 +901,11 @@
                     </div>
                     <!-- photo 1 ceo -->
                     <!-- photo 2 general -->
-                    <div class="t_item">
+                    <div class="item">
                         <div class="item-wrap">
                             <div class="box">
                                 <div class="wrap">
-                                    <div class="t_item">
+                                    <div class="item">
                                         <div class="foto-box">
                                             <img src="../frontend/images/tm_miss_kim.png" alt="image deputy manager">
                                         </div>
@@ -930,13 +930,13 @@
                     <!-- photo 2 general -->
                 </div>
               @foreach($l_tablet as $group)
-                <div class="row">
+                <div class="t_row">
                   @foreach($group as $t_item)
-                    <div class="t_item">
+                    <div class="item">
                         <div class="item-wrap">
                             <div class="box">
                                 <div class="wrap">
-                                    <div class="t_item">
+                                    <div class="item">
                                         <div class="foto-box">
                                             <img src="{{asset('backend/images/employee/'.$t_item['image'])}}" alt="image employee {{$t_item['fullname']}}"/>
                                         </div>

@@ -92,6 +92,30 @@
     justify-content: center;
     align-items: center;
 }
+#header-wrapper .hidden-menu img {
+    margin-right: 8px;
+}
+
+#header-wrapper .hidden-menu li:last-child {
+    margin-bottom: 0px;
+}
+
+#header-wrapper .hidden-menu li a::after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: -4px;
+    left: 0px;
+    width: 0px;
+    height: 3px;
+    border-radius: 1.5px;
+    background: linear-gradient(45deg, #ff7432 25%, #439cd6);
+    transition: all 0.3s;
+}
+
+#header-wrapper .hidden-menu li a:hover::after {
+    width: 50%;
+}
 /* #header-wrapper .menu-box .first-menu {
     transition: all 0.3s ease;
     color: #ffffff;
@@ -118,7 +142,7 @@
 #header-wrapper .hidden-menu li a:hover::after {
     width: 50%;
 } */
-  #header-wrapper .menu-box .first-menu::after,
+  /* #header-wrapper .menu-box .first-menu::after,
   #header-wrapper .hidden-menu li a::after {
     content: "";
     position: absolute;
@@ -136,7 +160,7 @@
     width: 100%;
     animation: pulse11 1s;
     box-shadow: 0 0 0 1em transparent;
-  }
+  } */
 
   @keyframes pulse11 {
     0% {
@@ -147,6 +171,11 @@
     }
   }
 
+  #header-wrapper .menu-box .first-menu:hover,
+  #header-wrapper .menu-box .first-menu:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em (hue-rotate(#73768b, 45deg));
+  transform: translateY(-0.25em);
+}
 
 #header-wrapper .menu-box .first-menu .pc-hidden {
     position: absolute;
@@ -268,8 +297,10 @@
 }
 
 #header-wrapper .lang-box .lang-btn:hover {
-    background-color: #40455c;
-    border: #40455c solid 1px;
+    /* background-color: #40455c;
+    border: #40455c solid 1px; */
+    box-shadow: 0 0 1.1rem 8px #40455c;
+    transform: translateY(-0.3rem);
 }
 
 #header-wrapper .btn_contact_us {
@@ -293,10 +324,12 @@
     width: 12px;
 }
 
-/* #header-wrapper .btn_contact_us:hover {
-    background-color: #40455c;
-    border: #40455c solid 1px;
-} */
+#header-wrapper .btn_contact_us:hover {
+    /* background-color: #40455c;
+    border: #40455c solid 1px; */
+    box-shadow: 0 0 1.1rem 8px #40455c;
+    transform: translateY(-0.3rem);
+}
 
 #header-wrapper .btn_youtube {
     padding: 8px 20px;
@@ -320,8 +353,10 @@
 }
 
 #header-wrapper .btn_youtube:hover {
-    background-color: #40455c;
-    border: #40455c solid 1px;
+    /* background-color: #40455c;
+    border: #40455c solid 1px; */
+    box-shadow: 0 0 1.1rem 8px #40455c;
+    transform: translateY(-0.3rem);
 }
 
 #header-wrapper .btn_business {
@@ -1001,14 +1036,10 @@ h3 {
     #header-wrapper .btn_contact_us {
         display: none;
     }
-
-    #footer-wrapper {
-        padding:unset;
-    }
 }
 
 /* --- Phone potrait --- */
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 800px) {
     #footer-wrapper .location .address .title {
         width: 80%;
         font-size: 15px !important;

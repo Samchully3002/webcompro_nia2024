@@ -22,7 +22,7 @@
                 <div class="item-box clear">
 
                     @foreach($posts as $post)
-                    <div class="fl w25">
+                    <div class="float">
                         <div class="imx">
                             <a class="item" href="{{$post->source}}" target="blank">
                                 <div class="img-box">
