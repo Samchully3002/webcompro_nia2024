@@ -5,9 +5,8 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
-        gtag('config', 'G-Z49W0Z4LVG');
 
-        gtag('config', 'GA_MEASUREMENT_ID', {
+        gtag('config', 'G-Z49W0Z4LVG', {
             'cookie_domain': 'auto'  // Ensures it uses the appropriate domain
         });
     </script>
