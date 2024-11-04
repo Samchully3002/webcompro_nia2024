@@ -3,8 +3,6 @@
 
 @include('frontend.includes.head')
     <link rel="stylesheet" href="{{asset('frontend/css/business.css')}}"/>
-    <link rel="stylesheet" href="{{asset('frontend/css/magiczoomplus.css')}}">
-    <script src="{{asset('frontend/js/magiczoomplus.js')}}"></script>
     </head>
 
     <body>
@@ -44,31 +42,13 @@
                         </iframe>
                     </div>
                     <div class="container-mobile">
-                        <button class="btn_prev_img" onclick="plusDivs(-1)">&#8249;</button>
-
-                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_1.jpg') }}"/>
-                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_2.jpg') }}"/>
-                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_3.jpg') }}"/>
-                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_4.jpg') }}"/>
-                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_5.jpg') }}"/>
-                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_6.jpg') }}"/>
-                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_7.jpg') }}"/>
-                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_8.jpg') }}"/>
-                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_9.jpg') }}"/>
-                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_10.jpg') }}"/>
-                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_11.jpg') }}"/>
-                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_12.jpg') }}"/>
-                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_14.jpg') }}"/>
-                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_16.jpg') }}"/>
-                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_18.jpg') }}"/>
-                        <img class="fade mySlides5" src="{{ ('../frontend/images/flipbook/1722841017_19.jpg') }}"/>
-{{--
+                        <button class="btn_prev_img" onclick="plusFlip(-1)">&#8249;</button>
                         @foreach($content as $page)
                             <div>
-                                <img id="imgFlip1" class="mySlides5" src="{{ asset($page) }}" alt="image samchully pay"/>
+                                <img id="imgFlip1" class="fade mySlides5" src="{{ asset($page) }}" alt="image samchully pay"/>
                             </div>
-                        @endforeach --}}
-                        <button class="btn_next_img" onclick="plusDivs(1)">&#8250;</button>
+                        @endforeach
+                        <button class="btn_next_img" onclick="plusFlip(1)">&#8250;</button>
                     </div>
                     <div class="btn-flipbook">
                         <img onclick="fullView()" style="cursor: pointer" src="{{ asset('frontend/images/icon/fb_fullscreen.svg') }}"/>
@@ -261,18 +241,27 @@
         </div>
 
         @include('frontend.includes.footer')
-        <script type="text/javascript" src="{{ asset('frontend/extras/modernizr.2.5.3.min.js') }}"></script>
-        {{-- <script type="text/javascript" src="{{asset('frontend/js/pages/business.js')}}"></script> --}}
+        <script type="text/javascript" src="{{ asset('frontend/js/modernizr.2.5.3.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('frontend/js/flipbook/turn.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('frontend/js/flipbook/turn.html4.min.js') }}"></script>
+        <script type="text/javascript" src="{{asset('frontend/js/pages/business.js')}}"></script>
         <script>
 
-            var slideIndex = 1;
-            showDivs(slideIndex);
+            var elem = document.getElementById("flipbookWrapper");
+            var imgFlip = document.getElementById("flipImg");
+            var zoom_el = document.getElementById("flipContainer");
+            var zom1= true;
+            var zom2= true;
+            var zom3= true;
 
-            function plusDivs(n) {
-            showDivs(slideIndex += n);
+            var slideIndex = 1;
+            showFlip(slideIndex);
+
+            function plusFlip(n) {
+                showFlip(slideIndex += n);
             }
 
-            function showDivs(n) {
+            function showFlip(n) {
             var i;
             var x1 = document.getElementsByClassName("mySlides5");
             if (n > x1.length) {slideIndex = 1}
@@ -283,91 +272,26 @@
             x1[slideIndex-1].style.display = "block";
         }
 
-            function make_element_draggable(id) {
-                const elem = document.getElementById(id);
-                elem.style.position = "absolute";
-                let initX, initY, firstX, firstY, whichDown;
-                window.addEventListener("mouseup", function() {
-                    if(whichDown) {
-                        whichDown.style.zIndex = 0;
-                    }
-                    whichDown = null;
-                }, false);
-                window.addEventListener("mousemove", draggable, false);
-                elem.addEventListener("mousedown", function(e) {
-                    e.preventDefault();
-                    whichDown = this;
-                    initX = this.offsetLeft;
-                    initY = this.offsetTop;
-                    firstX = e.pageX;
-                    firstY = e.pageY;
-                });
-
-                function draggable(e) {
-                    e.preventDefault();
-                    if(!whichDown) return;
-                    whichDown.style.zIndex = 9;
-                    whichDown.style.left = initX + (e.pageX - firstX)/zoom + "px";
-                    whichDown.style.top = initY + (e.pageY - firstY)/zoom + "px";
-                }
-            }
-
-            function page_zoom(container_id) {
-                zoom = 1;
-                zoom_speed = 0.1;
-                const container = document.getElementById(container_id);
-                document.addEventListener("click", function(e) {
-                    if(e.deltaY > 0) {
-                        container.style.transform = `scale(${zoom += zoom_speed})`;
-                    } else {
-                        container.style.transform = `scale(${zoom -= zoom_speed})`;
-                    }
-                });
-            }
-
-            // page_zoom("flipContainer");
-            make_element_draggable("flipbook");
-
-            var elem = document.getElementById("flipbookWrapper");
-            var imgFlip = document.getElementById("flipImg");
-            var zoom_el = document.getElementById("flipContainer");
-            var zom1= true;
-            var zom2= true;
-            var zom3= true;
-
-            let print = () => {
-                let objFra = document.getElementById('myFrame');
-                objFra.contentWindow.focus();
-                objFra.contentWindow.print();
-            }
-            document.getElementById('downloadButton').addEventListener('click', function() {
-                document.getElementById('downloadLink').click();
-            });
-
             function zoomIn() {
-                // $('#flipbook').turn('zoom', 0.5, 0);
 
                 if (zom1 == true) {
-                    zoom_el.style.zoom = 1.1;
-                    zoom_el.style.MozTransform = 'scale(1.1)';
-                    zoom_el.style.WebkitTransform = 'scale(1.1)';
-                    autoCenter: true
+                    let currWidth = zoom_el.clientWidth;
+                    zoom_el.style.MozTransform = (currWidth + 100) + "px";
+                    zoom_el.style.WebkitTransform = (currWidth + 100) + "px";
                     zom1 = false
                     zom2 = true
                     zom3 = true
                 } else if (zom2 == true){
-                    zoom_el.style.zoom= 1.3;
-                    zoom_el.style.MozTransform = 'scale(1.3)';
-                    zoom_el.style.WebkitTransform = 'scale(1.3)';
-                    autoCenter: true
+                    let currWidth = zoom_el.clientWidth;
+                    zoom_el.style.MozTransform = (currWidth + 100) + "px";
+                    zoom_el.style.WebkitTransform = (currWidth + 100) + "px";
                     zom1 = false
                     zom2 = false
                     zom3 = true
                 } else if (zom3 == true){
-                    zoom_el.style.zoom= 1.5;
-                    zoom_el.style.MozTransform = 'scale(1.5)';
-                    zoom_el.style.WebkitTransform = 'scale(1.5)';
-                    autoCenter: true
+                    let currWidth = zoom_el.clientWidth;
+                    zoom_el.style.MozTransform = (currWidth + 100) + "px";
+                    zoom_el.style.WebkitTransform = (currWidth + 100) + "px";
                     zom1 = false
                     zom2 = false
                     zom3 = false
@@ -450,8 +374,8 @@
                     enterFullscreen();
                     console.log("cancel");
                     imgFlip.classList.add('fs');
-                    zoom_el.style.width = '2000px';
-                    zoom_el.style.height = '600px';
+                    // zoom_el.style.width = '2000px';
+                    // zoom_el.style.height = '600px';
                 } else {
                     exitFullscreen();
                     console.log("enter");
@@ -575,36 +499,6 @@
                 // Panggil sekali ketika halaman dimuat (jika elemen sudah ada di viewport pada awalnya)
                 appearOnScroll();
             });
-
-             function sendCompro() {
-                var sendTo = "info@nia.co.id";
-                var subject= "Quotation Company Profile";
-                const body = `Hello NIA! \n\n I want to ask quotation about website design and development for company profile.\n\n Thank you NIA`;
-                // Construct the mailto link
-                var mailtoLink = 'mailto:'+sendTo+'?subject='+subject+'&body='+body;
-
-                window.open(mailtoLink, '_blank');
-            }
-
-            function sendMedia() {
-                var sendTo = "info@nia.co.id";
-                var subject= "Quotation Media News Website";
-                const body = `Hello NIA! \n\n I want to ask quotation about media news website design and development.\n\n Thank you NIA`;
-                // Construct the mailto link
-                var mailtoLink = 'mailto:'+sendTo+'?subject='+subject+'&body='+body;
-
-                window.open(mailtoLink, '_blank');
-            }
-
-            function sendEcommerce() {
-                var sendTo = "info@nia.co.id";
-                var subject= "Quotation Ecommerce Website";
-                const body = `Hello NIA! \n\n I want to ask quotation about eCommerce website design and development.\n\n Thank you NIA`;
-                // Construct the mailto link
-                var mailtoLink = 'mailto:'+sendTo+'?subject='+subject+'&body='+body;
-
-                window.open(mailtoLink, '_blank');
-            }
 
             $(document).ready(function () {
             $(document).on("scroll", function () {
