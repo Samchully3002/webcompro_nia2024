@@ -5,7 +5,10 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
-        gtag('config', 'G-Z49W0Z4LVG');
+
+        gtag('config', 'G-Z49W0Z4LVG', {
+            'cookie_domain': 'auto'  // Ensures it uses the appropriate domain
+        });
     </script>
     <title>{{ $meta->title ? $meta->title : 'Networks Indonesia Aku' }}</title>
     <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=2, minimum-scale=1, width=device-width" />
