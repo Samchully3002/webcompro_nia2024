@@ -15,7 +15,7 @@
                     <img class="appear" src="/backend/images/notice/{{$notice->image}}"/>
                 </div>
                 <div class="notice-details-content">
-                    <p>{{$notice->content}}</p>
+                   {!! $notice->content; !!}
                 </div>
             </div>
             <div class="btn-nav-wrapper">
