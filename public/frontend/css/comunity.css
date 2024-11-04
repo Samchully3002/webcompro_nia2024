@@ -331,11 +331,11 @@ body {
 @media screen and (max-width: 1140px) {
 
     .bg-img {
-       height: 35vh;
+       height: 50vh;
        background-size: cover;
     }
     .bg-wrapper .text-box {
-        height: 35vh;
+        height: 50vh;
         width: 85%;
         align-items: flex-start;
         padding: 50px 20px;
