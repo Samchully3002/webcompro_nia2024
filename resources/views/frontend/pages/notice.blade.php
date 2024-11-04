@@ -2,6 +2,7 @@
 <html lang="id">
 @include('frontend.includes.head')
     <link rel="stylesheet" href="{{asset('frontend/css/comunity.css')}}"/>
+    <link rel="stylesheet" href="{{asset('frontend/css/custom-pagination.css')}}"/>
 </head>
 <body>
 @include('frontend.includes.header')
@@ -14,6 +15,28 @@
                 </div>
                 @foreach($notice as $note)
 
+                <?php
+                    
+                $locale = Session::get('locale');
+
+                if($locale==null){
+                    $locale='en';
+                }
+
+                switch ($locale) {
+                    case 'id':
+                        $note->title = $note->title_id ? $note->title_id : $note->title;
+                    break;
+                    case 'en':
+                        $note->title = $note->title;
+                        break;
+                    case 'kr':
+                        $note->title = $note->title_kr ? $note->title_kr : $note->title;
+                        break;
+                    default:
+                    $note->title = $note->title;
+                }
+                ?>
                 <a class="notice-list" href="/community/notice-detail/{{$note->id}}">
                     <div class="notice-content">
                         <p>{{$note->title;}}</p>
@@ -26,10 +49,20 @@
 
                 @endforeach
             </div>
-            <!-- Custom Pagination -->
-            <div class="pagination-container">
-                {{ $notice->onEachSide(1)->links('components.custom-pagination') }}
+            <!-- @if($notice->hasPages())
+            <div class="imx">
+                    <div class="pagination">
+
+                        <a href="{{$notice->previousPageUrl()}}" class="arrow">&laquo;</a>
+                        <a href="{{$notice->nextPageUrl()}}" class="arrow">&raquo;</a>
+                    </div>
+                </div>
             </div>
+            @endif -->
+                    <!-- Custom Pagination -->
+        <div class="pagination-container">
+            {{ $notice->onEachSide(1)->links('components.custom-pagination') }}
+        </div>
         </div>
 
                <!-- <div data-include="component/footer"></div> -->

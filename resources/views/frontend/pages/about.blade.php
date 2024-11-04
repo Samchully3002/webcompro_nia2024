@@ -35,7 +35,6 @@
                 <span class="muncul">{{__ ('ceo') }}</span><br>
                 <p class="muncul">
                     {{__ ('ceo-msg1') }}
-                </p><p class="muncul">
                     {{__ ('ceo-msg2') }}
                 </p>
             </div>
@@ -48,13 +47,14 @@
                     <p>{{__ ('story') }}</p>
                 </div>
 
+
                 <div class="dekstop-history">
                     <div class="box">
                        <!-- Left Content -->
                        <div class="left-box">
                           <div class="container-imageyear">
-                            <h1 id="year_history">2024</h1>
-                             <img alt="year image" id="year_img" class="img_year" src="{{asset('frontend/images/story2024.png')}}"/>
+                             <img alt="year image" id="year_img" style="border-radius: 20px; box-shadow: 0px 5px 24px 0px rgba(0, 0, 0, 0.2);" src="{{asset('frontend/images/story2024.png')}}"/>
+                             <h1 id="year_history" style="font-weight: 500; font-size: 40px;">2024</h1>
                           </div>
                        </div>
                        <!-- Right Content -->
@@ -769,7 +769,7 @@
                     <p>{{__ ('team') }}</p>
                 </div>
                 <div class="subtitle">
-                    <p>{{__ ('team-sub') }}</p>
+                    <p">{{__ ('team-sub') }}</p>
                 </div>
             </div>
             <!-- Title Line -->
@@ -835,132 +835,41 @@
                 </div>
                 <!-- line 2 -->
                <!-- return data employee -->
-    {{-- Desktop layout --}}
-              @foreach($list as $group)
-                <div class="row">
-                  @foreach($group as $item)
-                    <div class="item">
-                        <div class="item-wrap">
-                            <div class="box">
-                                <div class="wrap">
-                                    <div class="item">
-                                        <div class="foto-box">
-                                            <img src="{{asset('backend/images/employee/'.$item['image'])}}" alt="image employee {{$item['fullname']}}"/>
-                                        </div>
-                                    </div>
-                                    <div class="text-item">
-                                        <div class="title">
-                                            <p>{{$item['fullname']}}</p>
-                                        </div>
-                                        <div class="subtitle">
-                                            <p>{{$item['role']}}</p>
-                                        </div>
-                                    </div>
+            @foreach($list as $group)
+            <div class="row">
+            <!-- photo 1 galang -->
+             @foreach($group as $item)
+             <div class="item">
+                <div class="item-wrap">
+                    <div class="box">
+                        <div class="wrap">
+                            <div class="item">
+                                <div class="foto-box">
+                                    <img src="{{asset('backend/images/employee/'.$item['image'])}}" alt="image employee {{$item['fullname']}}"/>
                                 </div>
                             </div>
-                            <div class="back">
-                                <div class="content">
-                                    <p>"{{$item['quotes']}}"</p>
+                            <div class="text-item">
+                                <div class="title">
+                                    <p>{{$item['fullname']}}</p>
+                                </div>
+                                <div class="subtitle">
+                                    <p>{{$item['role']}}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                  @endforeach
+                    <div class="back">
+                                <div class="content">
+                                    <p>{{$item['quotes']}}</p>
+                                </div>
+                            </div>
                 </div>
-              @endforeach
-        {{-- Desktop Layout --}}
-
-        {{-- Tablet Layout --}}
-                <div class="t_row">
-                    <!-- photo 1 ceo -->
-                    <div class="item">
-                        <div class="item-wrap">
-                            <div class="box">
-                                <div class="wrap">
-                                    <div class="item">
-                                        <div class="foto-box">
-                                            <img src="../frontend/images/tm_mr_son.png" alt="image ceo">
-                                        </div>
-                                    </div>
-                                    <div class="text-item">
-                                        <div class="title">
-                                            <p>Mr. Son</p>
-                                        </div>
-                                        <div class="subtitle">
-                                            <p>President of Indonesia Branch office</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="back">
-                                <div class="content">
-                                    <p>"There is no such a small success to be celebrated."</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- photo 1 ceo -->
-                    <!-- photo 2 general -->
-                    <div class="item">
-                        <div class="item-wrap">
-                            <div class="box">
-                                <div class="wrap">
-                                    <div class="item">
-                                        <div class="foto-box">
-                                            <img src="../frontend/images/tm_miss_kim.png" alt="image deputy manager">
-                                        </div>
-                                    </div>
-                                    <div class="text-item">
-                                        <div class="title">
-                                            <p>Ms. Kim</p>
-                                        </div>
-                                        <div class="subtitle">
-                                            <p>Deputy General Manager</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="back">
-                                <div class="content">
-                                    <p>"Every difficulty is an opportunity to grow and learn."</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- photo 2 general -->
-                </div>
-              @foreach($l_tablet as $group)
-                <div class="t_row">
-                  @foreach($group as $t_item)
-                    <div class="item">
-                        <div class="item-wrap">
-                            <div class="box">
-                                <div class="wrap">
-                                    <div class="item">
-                                        <div class="foto-box">
-                                            <img src="{{asset('backend/images/employee/'.$t_item['image'])}}" alt="image employee {{$t_item['fullname']}}"/>
-                                        </div>
-                                    </div>
-                                    <div class="text-item">
-                                        <div class="title">
-                                            <p>{{$t_item['fullname']}}</p>
-                                        </div>
-                                        <div class="subtitle">
-                                            <p>{{$t_item['role']}}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="back">
-                                <div class="content">
-                                    <p>"{{$t_item['quotes']}}"</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                  @endforeach
-                </div>
-              @endforeach
+            </div>
+             @endforeach
+            <!-- photo 1 galang -->
+        </div>
+            @endforeach
+    </div>
             </div>
         </div>
         {{-- Team Member end --}}
@@ -1023,16 +932,8 @@
         {{-- Our office end --}}
         <div class="office-maps">
             <div class="box">
-                <div>
-                    <input id="locIndo" class="toggle" type="checkbox" checked>
-                    <label for="locIndo" class="btn_country" onclick="changeMapIndonesia()">Indonesia</label>
-                    <input id="locMalay" class="toggle" type="checkbox">
-                    <label for="locMalay" class="btn_country" onclick="changeMapMalaysia()">Malaysia</label>
-                    <input id="locKor" class="toggle" type="checkbox">
-                    <label for="locKor" class="btn_country" onclick="changeMapKorea()">Korea</label>
-                </div>
                 <div class="img-wrapper">
-                    <img id="officeLoc" src="../frontend/images/map_indonesia.png" alt="image office map"/>
+                    <img src="../frontend/images/office_loc_map.png" alt="image office map"/>
                 </div>
                 <div class="container-card-maps">
                         <div class="card-maps">

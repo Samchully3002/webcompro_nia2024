@@ -59,19 +59,8 @@
 }
 
 .header-wrapper .box .left-content h3 {
-    font-size: 1.2em;
+    font-size: 16px;
     font-weight: 500;
-}
-.header-wrapper .box .left-content p {
-    font-size: 1em;
-    font-weight: 500;
-    color:#9a9eae;
-}
-.header-wrapper .box .left-content p a:hover {
-    color:#40455c;
-}
-.icon_sosmed:hover {
-    transform: scale(1.1);
 }
 
 .header-wrapper .box .right-content {
@@ -212,7 +201,7 @@
     color: #fff;
     border: none;
     outline: none;
-    background: #40455c;
+    background: rgb(131, 131, 131);
     display: block;
     width: 100%;
     padding: 15px;
@@ -223,12 +212,7 @@
     margin-bottom: 16px;
     cursor: not-allowed;
 }
-.contact-wrapper .form-box button:disabled:hover{
-    box-shadow: 0px 0px 0px 2.5px white inset, 0px 0px 0px 5px rgb(131, 131, 131);
-}
-.contact-wrapper .form-box button:hover{
-    box-shadow: 0px 0px 0px 2.5px white inset, 0px 0px 0px 5px #40455c;
-}
+
 /* .contact-wrapper .form-box button:hover {
     opacity: 0.8;
 } */

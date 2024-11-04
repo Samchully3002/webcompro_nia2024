@@ -19,10 +19,34 @@
             <!-- bg-wrapper end -->
 
             <div class="row list-wrapper">
+
                 <div class="item-box clear">
 
                     @foreach($posts as $post)
-                    <div class="float">
+
+                    <?php
+                    
+                $locale = Session::get('locale');
+
+                if($locale==null){
+                    $locale='en';
+                }
+
+                switch ($locale) {
+                    case 'id':
+                        $post->title = $post->title_id ? $post->title_id : $post->title;
+                    break;
+                    case 'en':
+                        $post->title = $post->title;
+                        break;
+                    case 'kr':
+                        $post->title = $post->title_kr ? $post->title_kr : $post->title;
+                        break;
+                    default:
+                    $post->title = $post->title;
+                }
+                ?>
+                    <div class="fl w25">
                         <div class="imx">
                             <a class="item" href="{{$post->source}}" target="blank">
                                 <div class="img-box">
@@ -37,16 +61,29 @@
                         </div>
                     </div>
                     @endforeach
+                </div>
 
+
+                <!-- @if($posts->hasPages())
+            <div class="imx">
+                    <div class="pagination">
+
+                        <a href="{{$posts->previousPageUrl()}}" class="arrow">&laquo;</a>
+                        <a href="{{$posts->nextPageUrl()}}" class="arrow">&raquo;</a>
+                    </div>
                 </div>
-                <!-- Custom Pagination -->
-                <div class="pagination-container">
-                    {{ $posts->onEachSide(1)->links('components.custom-pagination') }}
-                </div>
+            </div>
+            @endif -->
+                                <!-- Custom Pagination -->
+        <div class="pagination-container">
+            {{ $posts->onEachSide(1)->links('components.custom-pagination') }}
+        </div>
             </div>
         </div>
 
-        @include('frontend.includes.footer')
+
+               <!-- <div data-include="component/footer"></div> -->
+               @include('frontend.includes.footer')
 
         <script>
             document.addEventListener('DOMContentLoaded', function() {
