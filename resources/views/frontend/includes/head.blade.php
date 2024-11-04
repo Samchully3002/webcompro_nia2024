@@ -59,7 +59,7 @@
                         processData: false,
                         contentType: false,
                         success: function(response) {
-                            // console.log('success record data');
+                            console.log('success record data');
                         },
                         error: function() {
                             // console.log('error record data');
