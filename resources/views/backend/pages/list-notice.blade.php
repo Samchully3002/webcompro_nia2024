@@ -1,7 +1,7 @@
 @extends('dashboard')
 @push('headscript')
 <!-- Styles -->
-<!-- <link href="{{ asset('css/pizza.css') }}" rel="stylesheet"> -->
+
 <!-- Scripts -->
 <script type="text/javascript">
 var tableNotice;
@@ -18,7 +18,14 @@ $( document ).ready(function() {
             {data: 'date', name:'date'},
             {data: 'display', name:'display'},
             {data: 'action', name: 'action', orderable: false, searchable: false},
-        ]
+        ],
+        'columnDefs': [
+            {
+            "targets": 4,
+            "width": "20%",
+            "className": "text-center",
+            }
+          ]
     });
 });
 </script>
@@ -43,7 +50,7 @@ $( document ).ready(function() {
                     <div class="table-responsive">
                     <div class="table">
                     <table class="table table-striped notice-table">
-                      <thead>
+                      <thead class="text-center">
                         <tr>
                           <th>Name</th>
                           <th>Content</th>

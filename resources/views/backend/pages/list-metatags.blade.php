@@ -1,4 +1,38 @@
 @extends('dashboard')
+@push('headscript')
+<!-- Styles -->
+
+<!-- Scripts -->
+<script type="text/javascript">
+var tableTag;
+
+$( document ).ready(function() {
+
+  tableTag = $('.tags-table').DataTable({
+          fixedColumns: true,
+          processing: true,
+          serverSide: true,
+          ajax: "{{ route('dashboard.list.tags') }}",
+          columns: [
+              {data: 'pages', name:'pages'},
+              {data: 'url', name:'url'},
+              {data: 'title', name:'title'},
+              {data: 'desc', name:'desc'},
+              {data: 'keyword', name:'keyword'},
+              {data: 'action', name: 'action', orderable: false, searchable: false},
+          ],
+        'columnDefs': [
+            {
+            "targets": 5,
+            "width": "20%",
+            "className": "text-center",
+            }
+          ]
+      });
+    
+});
+</script>
+@endpush
     @section('content')
     <div class="row gy-3">
                 <div class="col-md-6 col-lg-4">
@@ -17,9 +51,8 @@
                     <div class="table-responsive">
                     <div class="table">
                     <table class="table table-striped tags-table">
-                      <thead>
+                      <thead class="text-center">
                         <tr>
-                          <th>No</th>
                           <th>Page Name</th>
                           <th>URL</th>
                           <th>Title</th>
