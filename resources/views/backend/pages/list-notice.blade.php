@@ -1,4 +1,35 @@
 @extends('dashboard')
+@push('headscript')
+<!-- Styles -->
+
+<!-- Scripts -->
+<script type="text/javascript">
+var tableNotice;
+
+$( document ).ready(function() {
+    tableNotice = $('.notice-table').DataTable({
+        fixedColumns: true,
+        processing: true,
+        serverSide: true,
+        ajax: "{{ route('dashboard.list.notice') }}",
+        columns: [
+            {data: 'title', name:'title'},
+            {data: 'content', name:'content'},
+            {data: 'date', name:'date'},
+            {data: 'display', name:'display'},
+            {data: 'action', name: 'action', orderable: false, searchable: false},
+        ],
+        'columnDefs': [
+            {
+            "targets": 4,
+            "width": "20%",
+            "className": "text-center",
+            }
+          ]
+    });
+});
+</script>
+@endpush
     @section('content')
     <div class="row gy-3">
                 <div class="col-md-6 col-lg-4">
@@ -19,9 +50,8 @@
                     <div class="table-responsive">
                     <div class="table">
                     <table class="table table-striped notice-table">
-                      <thead>
+                      <thead class="text-center">
                         <tr>
-                          <th>No</th>
                           <th>Name</th>
                           <th>Content</th>
                           <th>Date</th>

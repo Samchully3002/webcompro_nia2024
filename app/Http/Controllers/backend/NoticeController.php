@@ -22,7 +22,7 @@ class NoticeController extends Controller
         //get all videos from Models
         if ($request->ajax()) {
 
-            $data = Notice::query();
+            $data = Notice::query()->orderBy('id', 'desc');
 
             return Datatables::of($data)
                     ->addIndexColumn()
@@ -106,6 +106,7 @@ class NoticeController extends Controller
         if($request->ajax()){
 
             //define validation rules
+
              $validator = Validator::make($request->all(), [
                 'title'         => 'required',
                 'content'       => 'required',
@@ -113,6 +114,7 @@ class NoticeController extends Controller
                 'image'         => 'image|mimes:jpeg,png,jpg,gif|max:5120'
             ]);
 
+     
             //check if validation fails
             if ($validator->fails()) {
                 return response()->json($validator->errors(), 422);
@@ -133,29 +135,29 @@ class NoticeController extends Controller
         
                     //update product with new image
                     $note->update([
-                        'title'      => $request->title,
-                        'content'    => $request->content,
+                        'title'         => $request->title,
+                        'content'       => $request->content,
                         'title_kr'      => $request->title_kr,
                         'content_kr'    => $request->content_kr,
                         'title_id'      => $request->title_id,
                         'content_id'    => $request->content_id,
-                        'date'       => $request->date,
-                        'image'      => $imageName,
-                        'display'    => 1
+                        'date'          => $request->date,
+                        'image'         => $imageName,
+                        'display'       => 1
                     ]);
         
                     } else {
-        
+
                         //update product without image
                         $note->update([
-                            'title'      => $request->title,
-                            'content'    => $request->content,
+                            'title'         => $request->title,
+                            'content'       => $request->content,
                             'title_kr'      => $request->title_kr,
                             'content_kr'    => $request->content_kr,
                             'title_id'      => $request->title_id,
                             'content_id'    => $request->content_id,
-                            'date'       => $request->date,
-                            'display'    => 1
+                            'date'          => $request->date,
+                            'display'       => 1
                         ]);
                 }
 
@@ -171,17 +173,17 @@ class NoticeController extends Controller
     
                    //insert our team member
                    $note = Notice::create([
-                        'title'      => $request->title,
-                        'content'    => $request->content,
+                        'title'         => $request->title,
+                        'content'       => $request->content,
                         'title_kr'      => $request->title_kr,
                         'content_kr'    => $request->content_kr,
                         'title_id'      => $request->title_id,
                         'content_id'    => $request->content_id,
-                        'date'       => $request->date,
-                        'image'      => $imageName,
-                        'display'    => 1
+                        'date'          => $request->date,
+                        'image'         => $imageName,
+                        'display'       => 1
                     ]);
-    
+             
                     $note->save();
     
                     //return response

@@ -42,11 +42,3 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
-    <!-- import tinymce -->
-    <script src="{{asset('backend/tinymce/tinymce.min.js')}}"></script>
-    <script>
-        tinymce.init({
-            selector: 'textarea.content'
-      });
-    </script>
-

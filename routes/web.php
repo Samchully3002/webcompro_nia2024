@@ -30,6 +30,8 @@ Route::get('/community/news', [App\Http\Controllers\HomeController::class, 'news
 Route::get('/community/notice', [App\Http\Controllers\HomeController::class, 'notice'])->name('notice');
 Route::get('/community/notice-detail/{id}', [App\Http\Controllers\HomeController::class, 'noticedetail'])->name('notice-detail/{id}');
 
+Route::get('/news/filter', [App\Http\Controllers\HomeController::class, 'filter_news'])->name('news.filter');
+
 Route::get('/contact-us', [App\Http\Controllers\HomeController::class, 'contactus'])->name('contact-us');
 
 Route::post('/contact-us/submit', [App\Http\Controllers\HomeController::class, 'contactsubmit'])->name('contactussubmit');

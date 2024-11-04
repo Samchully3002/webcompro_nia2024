@@ -1,4 +1,48 @@
 @extends('dashboard')
+@push('headscript')
+<!-- Styles -->
+
+<!-- Scripts -->
+<!-- import tinymce -->
+<script src="{{asset('backend/tinymce/tinymce.min.js')}}"></script>
+<script type="text/javascript">
+tinymce.init({
+    selector: 'textarea.content', // Replace this CSS selector to match the placeholder element for TinyMCE
+    plugins: 'code table lists',
+    toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | indent outdent | bullist numlist | code | table'
+  });
+$("#notice_form_btn").click(function(e) {
+        e.preventDefault();
+
+        let form = $('#notice_form')[0];
+
+        form.content.value = tinyMCE.get('content').getContent();
+        form.content_kr.value = tinyMCE.get('content_kr').getContent();
+        form.content_id.value = tinyMCE.get('content_id').getContent();
+
+        let data = new FormData(form);
+        
+
+        $.ajax({
+          url: "{{ route('dashboard.post.notice.ajax') }}",
+          type: "POST",
+          data: data,
+          dataType: "JSON",
+          processData: false,
+          contentType: false,
+          success: function(response) {
+            $('#notice_form')[0].reset();
+            dispNotif('Saving Data Success', response.message, 'success');
+        },
+        error: function(xhr, status, error) {
+          dispNotif('', 'error saving data', 'error');
+          }
+
+        });
+
+      });
+</script>
+@endpush 
 @section('content')
 <h4 class="py-3 mb-4"><span class="text-muted fw-light">Coumunity /</span> Post Notice</h4>
 <!-- Form Post New Business -->
@@ -120,4 +164,6 @@
    </div>
 </div>
 
-@stop
+@endsection
+
+

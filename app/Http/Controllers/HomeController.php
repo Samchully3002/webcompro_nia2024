@@ -82,7 +82,7 @@ class HomeController extends Controller
     }
 
     /**
-     * Display about news.
+     * Display news.
      */
     public function news(Request $request): View
     {
@@ -94,7 +94,27 @@ class HomeController extends Controller
     }
 
     /**
-     * Display about news.
+    * Query Search News
+    */
+
+    public function filter_news(Request $request){
+        //if($request->ajax()){
+            $query = $request->get('filter');
+            $news;
+            if($query) {
+                $news = MediaReport::where('title', 'LIKE', "%{$query}%")
+                        ->orWhere('title_kr', 'LIKE', "%{$query}%")
+                        ->orWhere('title_id', 'LIKE', "%{$query}%")
+                        ->get();
+            } else {
+                $news = MediaReport::all();
+            }
+            return response()->json($news);
+        // }
+    }
+
+    /**
+     * Display contact us.
      */
     public function contactus(Request $request)
     {

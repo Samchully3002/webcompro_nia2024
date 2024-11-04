@@ -23,7 +23,7 @@ class OurTeamController extends Controller
         //get all videos from Models
         if ($request->ajax()) {
 
-            $data = OurTeam::query();
+            $data = OurTeam::query()->orderBy('sequence', 'asc');
 
             return Datatables::of($data)
                     ->addIndexColumn()

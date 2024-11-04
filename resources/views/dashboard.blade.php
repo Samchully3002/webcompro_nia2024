@@ -54,10 +54,10 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap5.min.js"></script>
+    @stack('headscript')
 
     <script>
     var tableTeam;
-    var tableNotice;
     var tableNews;
     var tableMess;
     var tableTag;
@@ -151,7 +151,7 @@
 
 
       //== Delete Notice By Id == //
-      function deleteNotice(id){
+function deleteNotice(id){
 
 Swal.fire({
 text: "You will delete notice data",
@@ -335,79 +335,7 @@ Swal.fire("Changes are not saved", "", "info");
 
     $( document ).ready(function() {
     //=====================================================//
-    if (window.location.href.indexOf("list-news") > -1) {
-      tableNews = $('.news-table').DataTable({
-        fixedColumns: true,
-         autoWidth: false,
-          processing: true,
-          serverSide: true,
-          ajax: "{{ route('dashboard.list.news') }}",
-          columns: [
-              {data: 'id', name: 'id'},
-              {data: 'title', name:'title'},
-              {data: 'source', name:'source'},
-              {data: 'image', name:'image'},
-              {data: 'action', name: 'action', orderable: false, searchable: false},
-          ]
-      });
-    }
 
-    //NOTICE
-     tableNotice = $('.notice-table').DataTable({
-          fixedColumns: true,
-          processing: true,
-          serverSide: true,
-          ajax: "{{ route('dashboard.list.notice') }}",
-          columns: [
-              {data: 'id', name: 'id'},
-              {data: 'title', name:'title'},
-              {data: 'content', name:'content'},
-              {data: 'date', name:'date'},
-              {data: 'display', name:'display'},
-              {data: 'action', name: 'action', orderable: false, searchable: false},
-          ]
-      });
-
-      $("#notice_form_btn").click(function(e) {
-        e.preventDefault();
-        let form = $('#notice_form')[0];
-        let data = new FormData(form);
-        data.content = tinymce.get('content').getContent();
-        data.content_kr = tinymce.get('content_kr').getContent();
-        data.content_id = tinymce.get('content_id').getContent();
-
-        $.ajax({
-          url: "{{ route('dashboard.post.notice.ajax') }}",
-          type: "POST",
-          data: data,
-          dataType: "JSON",
-          processData: false,
-          contentType: false,
-          success: function(response) {
-            $('#notice_form')[0].reset();
-            dispNotif('Saving Data Success', response.message, 'success');
-        },
-        error: function(xhr, status, error) {
-          dispNotif('', 'error saving data', 'error');
-          }
-
-        });
-
-      })
-      // NOTICE END
-
-      // TEAM
-
-     tableTeam = $('.team-table').DataTable({
-          processing: true,
-          serverSide: true,
-          ajax: "{{ route('dashboard.list.team') }}",
-          columns: [
-              {data: 'id', name: 'id'},
-              {data: 'fullname', name: 'fullname'},
-              {data: 'action', name: 'action', orderable: false, searchable: false},
-          ]
-      });
 
       $("#team_form_btn").click(function(e) {
         e.preventDefault();
@@ -457,23 +385,6 @@ Swal.fire("Changes are not saved", "", "info");
           ],
       });
 
-
-      // TAG
-      tableTag = $('.tags-table').DataTable({
-          fixedColumns: true,
-          processing: true,
-          serverSide: true,
-          ajax: "{{ route('dashboard.list.tags') }}",
-          columns: [
-              {data: 'id', name: 'id'},
-              {data: 'pages', name:'pages'},
-              {data: 'url', name:'url'},
-              {data: 'title', name:'title'},
-              {data: 'desc', name:'desc'},
-              {data: 'keyword', name:'keyword'},
-              {data: 'action', name: 'action', orderable: false, searchable: false},
-          ]
-      });
 
       // ADMIN(s) 
       tableAdmin = $('.admins-table').DataTable({
