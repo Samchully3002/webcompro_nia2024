@@ -52,7 +52,7 @@
 </section>
 {{-- ================================================ VIDEO SLIDER FROM SAMCHULLY ================================================ --}}
     {{-- <div class="container_text"> --}}
-        <div class="vision_text">
+        <div class="visi_text">
             <label>ONE - STOP</label><label style="color:#40455C;">&nbsp;IT SOLUTION FOR YOUR BUSINESS</label>
         </div>
     {{-- </div> --}}

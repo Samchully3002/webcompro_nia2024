@@ -1,5 +1,5 @@
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z49W0Z4LVG"></script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z49W0Z4LVG"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -9,7 +9,7 @@
         gtag('config', 'G-Z49W0Z4LVG', {
             'cookie_domain': 'auto'  // Ensures it uses the appropriate domain
         });
-    </script>
+    </script> -->
     <title>{{ $meta->title ? $meta->title : 'Networks Indonesia Aku' }}</title>
     <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=2, minimum-scale=1, width=device-width" />
     <meta charset="utf-8">
@@ -20,8 +20,7 @@
 
     <meta name="description" content="{{ $meta->desc ? $meta->desc : '' }}"></meta>
     <meta name="keywords" content="{{ $meta->keyword ? $meta->keyword : '' }}"></meta>
-    <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=2, minimum-scale=1, width=device-width" />
-    <meta name="google-site-verification" content="3qoJgp8b08_UcEGyt5AuOh2HfQJl1J-_XdhLz_cDstg" />
+    <!-- <meta name="google-site-verification" content="3qoJgp8b08_UcEGyt5AuOh2HfQJl1J-_XdhLz_cDstg" /> -->
     <link rel="shortcut icon" href="{{asset('frontend/images/icon/favicon.ico')}}">
     <!-- {{asset('frontend/css/outline.css')}} -->
     <link rel="stylesheet" href="{{asset('frontend/css/default.css')}}"/>
@@ -41,31 +40,31 @@
             //   alert('korea');
         }
 
-            let url = $(location).attr('href');
-            const visited = url.substring(url.lastIndexOf('/') + 1);
-            $.getJSON("https://ipinfo.io",
-            function (response) {
-                let ip = response.ip;
-                $("#visited").val(visited);
-                $("#ip").val(ip);
+            // let url = $(location).attr('href');
+            // const visited = url.substring(url.lastIndexOf('/') + 1);
+            // $.getJSON("https://ipinfo.io",
+            // function (response) {
+            //     let ip = response.ip;
+            //     $("#visited").val(visited);
+            //     $("#ip").val(ip);
 
-                let form = $('#form_visitor')[0];
-                let data = new FormData(form);
-                    $.ajax({
-                        url: "{{route('visitor.record') }}",
-                        type: "POST",
-                        data: data,
-                        dataType: "JSON",
-                        processData: false,
-                        contentType: false,
-                        success: function(response) {
-                            console.log('success record data');
-                        },
-                        error: function() {
-                            // console.log('error record data');
-                        }
-                    });
-            }, "jsonp");
+            //     let form = $('#form_visitor')[0];
+            //     let data = new FormData(form);
+            //         $.ajax({
+            //             url: "{{route('visitor.record') }}",
+            //             type: "POST",
+            //             data: data,
+            //             dataType: "JSON",
+            //             processData: false,
+            //             contentType: false,
+            //             success: function(response) {
+            //                 console.log('success record data');
+            //             },
+            //             error: function() {
+            //                 // console.log('error record data');
+            //             }
+            //         });
+            // }, "jsonp");
           });
     </script>
     <!-- <script type="application/ld+json">
