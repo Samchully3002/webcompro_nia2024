@@ -3,9 +3,7 @@
         @include('frontend.includes.head')
         {{-- CSS --}}
         <link rel="stylesheet" href="{{asset('frontend/css/business.css')}}"/>
-        <link rel="stylesheet" href="{{asset('frontend/lib/swiper-bundle.min.css')}}" />
         {{-- SCRIPT --}}
-        <script src="{{asset('frontend/lib/swiper-bundle.min.js')}}"></script>
         <script src="{{asset('frontend/lib/gsap.min.js')}}"></script>
         <script src="{{asset('frontend/lib/ScrollTrigger.min.js')}}"></script>
         <script src="{{asset('frontend/lib/ScrollToPlugin.min.js')}}"></script>

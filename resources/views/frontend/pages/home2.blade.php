@@ -190,8 +190,6 @@
 
     @include('frontend.includes.footer')
 
-    <script src="../frontend/js/wow.min.js"></script>
-    <script src="../frontend/lib/swiper-bundle.min.js"></script>
     <script>
 $(document).ready(function(){
             /* main sld event start */
