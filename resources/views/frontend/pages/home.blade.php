@@ -7,6 +7,8 @@
 <link rel="stylesheet" href="{{asset('frontend/lib/swiper-bundle.min.css')}}" />
  <!-- production -->
 {{-- <link rel="stylesheet" href="{{asset('frontend/css/minify/home.min.css')}}"/> --}}
+<script src="{{asset('frontend/lib/swiper-bundle.min.js')}}"></script>
+<script src="{{asset('frontend/js/wow.min.js')}}"></script>
 </head>
 <body>
 <!-- <div data-include="component/header"></div> -->
@@ -198,9 +200,6 @@
 
 
     @include('frontend.includes.footer')
-
-    <script src="../frontend/js/wow.min.js"></script>
-    <script src="../frontend/lib/swiper-bundle.min.js"></script>
     <script>
 $(document).ready(function(){
             /* main sld event start */

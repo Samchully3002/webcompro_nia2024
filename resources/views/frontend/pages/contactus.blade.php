@@ -4,7 +4,6 @@
    <link rel="stylesheet" href="{{asset('frontend/css/contact.css')}}"/>
    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
    <script src="https://www.google.com/recaptcha/api.js?render={{ env('RECAPTCHA_SITE_KEY') }}"></script>
-   <link rel="stylesheet" href="{{asset('frontend/lib/swiper-bundle.min.css')}}" />
    </head>
    <body>
       <!-- <div data-include="component/header"></div> -->
@@ -96,7 +95,6 @@
 
             @include('frontend.includes.footer')
 
-        <script src="../frontend/lib/swiper-bundle.min.js"></script>
         <script>
             function validate() {
 
