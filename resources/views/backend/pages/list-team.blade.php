@@ -1,4 +1,30 @@
 @extends('dashboard')
+@push('headscript')
+<!-- Styles -->
+
+<!-- Scripts -->
+<script type="text/javascript">
+var tableTeam;
+
+$( document ).ready(function() {
+    tableTeam = $('.team-table').DataTable({
+          processing: true,
+          serverSide: true,
+          ajax: "{{ route('dashboard.list.team') }}",
+          columns: [
+              {data: 'fullname', name: 'fullname'},
+              {data: 'action', name: 'action', orderable: false, searchable: false},
+          ],
+          'columnDefs': [
+            {
+            "targets": 1,
+            "className": "text-center",
+            }
+          ]
+      });
+});
+</script>
+@endpush
     @section('content')
 <h4 class="py-3 mb-4"><span class="text-muted fw-light">Front Pages/ About /</span> Our Team</h4>
 
@@ -98,7 +124,6 @@
                     <table class="table table-striped data-table team-table" id="team-table">
                       <thead class="text-center">
                         <tr>
-                          <th>No</th>
                           <th>Full Name</th>
                           <th>Action</th>
                         </tr>

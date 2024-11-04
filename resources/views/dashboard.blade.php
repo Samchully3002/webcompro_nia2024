@@ -151,7 +151,7 @@
 
 
       //== Delete Notice By Id == //
-      function deleteNotice(id){
+function deleteNotice(id){
 
 Swal.fire({
 text: "You will delete notice data",
@@ -335,37 +335,7 @@ Swal.fire("Changes are not saved", "", "info");
 
     $( document ).ready(function() {
     //=====================================================//
-    if (window.location.href.indexOf("list-news") > -1) {
-      tableNews = $('.news-table').DataTable({
-        fixedColumns: true,
-         autoWidth: false,
-          processing: true,
-          serverSide: true,
-          ajax: "{{ route('dashboard.list.news') }}",
-          columns: [
-              {data: 'id', name: 'id'},
-              {data: 'title', name:'title'},
-              {data: 'source', name:'source'},
-              {data: 'image', name:'image'},
-              {data: 'action', name: 'action', orderable: false, searchable: false},
-          ]
-      });
-    }
 
-
-
-      // TEAM
-
-     tableTeam = $('.team-table').DataTable({
-          processing: true,
-          serverSide: true,
-          ajax: "{{ route('dashboard.list.team') }}",
-          columns: [
-              {data: 'id', name: 'id'},
-              {data: 'fullname', name: 'fullname'},
-              {data: 'action', name: 'action', orderable: false, searchable: false},
-          ]
-      });
 
       $("#team_form_btn").click(function(e) {
         e.preventDefault();
@@ -415,23 +385,6 @@ Swal.fire("Changes are not saved", "", "info");
           ],
       });
 
-
-      // TAG
-      tableTag = $('.tags-table').DataTable({
-          fixedColumns: true,
-          processing: true,
-          serverSide: true,
-          ajax: "{{ route('dashboard.list.tags') }}",
-          columns: [
-              {data: 'id', name: 'id'},
-              {data: 'pages', name:'pages'},
-              {data: 'url', name:'url'},
-              {data: 'title', name:'title'},
-              {data: 'desc', name:'desc'},
-              {data: 'keyword', name:'keyword'},
-              {data: 'action', name: 'action', orderable: false, searchable: false},
-          ]
-      });
 
       // ADMIN(s) 
       tableAdmin = $('.admins-table').DataTable({

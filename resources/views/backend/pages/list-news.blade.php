@@ -1,4 +1,30 @@
 @extends('dashboard')
+@push('headscript')
+<!-- Styles -->
+
+<!-- Scripts -->
+<script type="text/javascript">
+var tableNews;
+
+$( document ).ready(function() {
+
+      tableNews = $('.news-table').DataTable({
+        fixedColumns: true,
+         autoWidth: false,
+          processing: true,
+          serverSide: true,
+          ajax: "{{ route('dashboard.list.news') }}",
+          columns: [
+              {data: 'title', name:'title'},
+              {data: 'source', name:'source'},
+              {data: 'image', name:'image'},
+              {data: 'action', name: 'action', orderable: false, searchable: false},
+          ]
+      });
+    
+});
+</script>
+@endpush
     @section('content')
     <div class="row gy-3">
                 <div class="col-md-6 col-lg-4">
@@ -21,7 +47,6 @@
                     <table class="table table-striped news-table">
                       <thead>
                         <tr>
-                          <th>No</th>
                           <th>Title</th>
                           <th>Source</th>
                           <th>Images</th>

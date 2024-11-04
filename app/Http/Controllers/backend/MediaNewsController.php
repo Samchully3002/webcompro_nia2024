@@ -23,7 +23,7 @@ class MediaNewsController extends Controller
         //get all media news
         if ($request->ajax()) {
 
-            $data = MediaReport::query();
+            $data = MediaReport::query()->orderBy('id', 'desc');;
 
             return Datatables::of($data)
                     ->addIndexColumn()

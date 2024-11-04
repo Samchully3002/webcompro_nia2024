@@ -23,7 +23,7 @@ class MetaController extends Controller
         //get all videos from Models
         if ($request->ajax()) {
 
-            $data = MetaTags::query();
+            $data = MetaTags::query()->orderBy('id', 'asc');
 
             return Datatables::of($data)
                     ->addIndexColumn()
