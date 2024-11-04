@@ -52,14 +52,19 @@ class HomeController extends Controller
         }
 
         $list = [];
+        $l_tablet = [];
 
         foreach($users as $item){
             array_push($list, $item);
         }
+        foreach($users as $item){
+            array_push($l_tablet, $item);
+        }
         $list = array_chunk($list,3);
-
+        $l_tablet = array_chunk($l_tablet,2);
         return view('frontend/pages/about')->with([
             'list' => $list,
+            'l_tablet' => $l_tablet,
             'meta' => $meta
         ]);
     }
