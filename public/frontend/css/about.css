@@ -912,7 +912,7 @@ hr.rounded {
     gap: 50px;
     height: min-content;
     overflow: hidden;
-    padding: 30px;
+    padding: 50px;
     position: relative;
     width: 100%;
     will-change: var(--framer-will-change-override, transform);
