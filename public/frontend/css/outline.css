@@ -299,7 +299,7 @@
 #header-wrapper .lang-box .lang-btn:hover {
     /* background-color: #40455c;
     border: #40455c solid 1px; */
-    box-shadow: 0 0 1.1rem 8px #40455c;
+    box-shadow: 0 0 0.5rem 1px #40455c;
     transform: translateY(-0.3rem);
 }
 
@@ -327,7 +327,7 @@
 #header-wrapper .btn_contact_us:hover {
     /* background-color: #40455c;
     border: #40455c solid 1px; */
-    box-shadow: 0 0 1.1rem 8px #40455c;
+    box-shadow: 0 0 0.5rem 1px #40455c;
     transform: translateY(-0.3rem);
 }
 
@@ -355,7 +355,7 @@
 #header-wrapper .btn_youtube:hover {
     /* background-color: #40455c;
     border: #40455c solid 1px; */
-    box-shadow: 0 0 1.1rem 8px #40455c;
+    box-shadow: 0 0 0.5rem 1px #40455c;
     transform: translateY(-0.3rem);
 }
 

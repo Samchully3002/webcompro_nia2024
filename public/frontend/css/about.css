@@ -1416,15 +1416,17 @@ input[type="checkbox"] {
         text-align: justify;
     }
     .team-member .list .row {
+        display: flex;
         overflow: visible;
         margin: 0 0 20px 0;
         height: unset;
         position: relative;
         flex-direction: column;
     }
-    .team-member .list .row .item {
+    .team-member .list .t_row {
         display: none !important;
     }
+
     .team-member .list .row .item {
         display: block;
         flex: 0 0 auto;

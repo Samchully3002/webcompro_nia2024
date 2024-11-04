@@ -672,15 +672,15 @@
     padding: 10px 50px 10px 50px;
     font-size: 1em;
     background-color: transparent;
-    border: 3px solid white;
+    border: 1px solid white;
     border-radius: 50px;
     -webkit-transition: all .15s ease-in-out;
     transition: all .15s ease-in-out;
     color: white;
   }
   .news_box .news_footer button:hover {
-    box-shadow: 0 0 10px 0 white inset, 0 0 20px 2px white;
-    border: 3px solid white;
+    box-shadow: 0 0 1px 0 white inset, 0 0 5px 1px white;
+    border: 1px solid white;
   }
 
  .flex-box img {
@@ -975,7 +975,7 @@
         font-size: 24px;
     }
     .mainWrapper {
-        height: 100vh;
+        height: 91vh;
     }
     .mainWrapper #mainSld .item .vid_mobile{
         display: flex;

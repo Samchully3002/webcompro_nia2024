@@ -19,7 +19,7 @@
         <div class="item swiper-slide">
             <!-- <img src="./assets/images/main-img01.jpg" /> -->
             <video class="vid_desktop" id="video1" src="../frontend/video/header_video1_sml.mp4" autoplay muted loop playsinline></video>
-            {{-- <video class="vid_mobile" id="video1" src="../frontend/video/mobile_header1.mp4" autoplay muted loop playsinline></video> --}}
+            <video class="vid_mobile" id="video1" src="../frontend/video/mobile_header1_sml.mp4" autoplay muted loop playsinline></video>
             <div class="textBox">
                 <p>{{ __('header-video1') }}</p>
             </div>
@@ -27,7 +27,7 @@
         <div class="item swiper-slide">
             <!-- <img src="./assets/images/main-img12.png" /> -->
             <video class="vid_desktop" id="video2" src="../frontend/video/header_video2_sml.mp4" autoplay muted loop playsinline></video>
-            {{-- <video class="vid_mobile" id="video2" src="../frontend/video/mobile_header2.mp4" autoplay muted loop playsinline></video> --}}
+            <video class="vid_mobile" id="video2" src="../frontend/video/mobile_header2_sml.mp4" autoplay muted loop playsinline></video>
             <div class="textBox">
                 <div data-swiper-parallax="-100">
                     <h4>{{ __('header-video2') }}</h4>
@@ -37,7 +37,7 @@
         <div class="item swiper-slide">
             <!-- <img src="./assets/images/main-img13.png" /> -->
             <video class="vid_desktop" id="video3" src="../frontend/video/header_video3_sml.mp4" autoplay muted loop playsinline></video>
-            {{-- <video class="vid_mobile" id="video3" src="../frontend/video/mobile_header3.mp4" autoplay muted loop playsinline></video> --}}
+            <video class="vid_mobile" id="video3" src="../frontend/video/mobile_header3_sml.mp4" autoplay muted loop playsinline></video>
             <div class="textBox">
                 <div data-swiper-parallax="-100">
                     <h4>{{ __('header-video3') }}</h4>

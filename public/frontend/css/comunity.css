@@ -439,11 +439,22 @@ body {
     .bg-wrapper .text-box {
         width: 97%;
     }
+    .news-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: unset;
+    }
     .list-wrapper {
         padding: 40px 0px 60px;
     }
 
-    .list-wrapper .item-box .fl {
+    .list-wrapper .item-box {
+        /* margin-bottom: 20px; */
+        margin: 0 20px 20px 20px;
+    }
+    .list-wrapper .item-box .float {
+        margin: 0 5px 0 5px;
         width: 100%;
     }
 
