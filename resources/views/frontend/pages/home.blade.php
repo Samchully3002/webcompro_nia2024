@@ -190,7 +190,7 @@
                   <a href="{{$post->source}}">
                   <img src="{{asset('backend/images/news/'.$post->image)}}" alt="news post images {{$post->title}}"/>
                   <label>{{$post->title}}</label>
-                  <span class="publisher">{{parse_url($post->source, PHP_URL_HOST);}}</span>
+                  <span style="color:white">{{parse_url($post->source, PHP_URL_HOST);}}</span>
                   <label style="font-size:16px;color:white;">{{date('Y.m.d', strtotime($post->created_at));}}</label>
                   </a>
                </div>
