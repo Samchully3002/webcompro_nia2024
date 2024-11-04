@@ -1,3 +1,23 @@
+var imgMap = document.getElementById('officeLoc');
+var btnloc = document.getElementById('btn_loc');
+function changeMapIndonesia() {
+    imgMap.src = "../frontend/images/map_indonesia.png";
+    // document.getElementById('locIndo').checked = true
+    document.getElementById('locMalay').checked = false
+    document.getElementById('locKor').checked = false
+}
+function changeMapMalaysia() {
+    imgMap.src = "../frontend/images/map_malaysia.png";
+    document.getElementById('locIndo').checked = false
+    // document.getElementById('locMalay').checked = false
+    document.getElementById('locKor').checked = false
+}
+function changeMapKorea() {
+    imgMap.src = "../frontend/images/map_korea.png";
+    document.getElementById('locIndo').checked = false
+    document.getElementById('locMalay').checked = false
+    // document.getElementById('locKor').checked = false
+}
 document.addEventListener("DOMContentLoaded", function () {
     const appearElements = document.querySelectorAll(".muncul");
 
@@ -163,6 +183,7 @@ $(document).ready(function () {
 
         $(".list_history ul").each(function () {
             let elementOffsetTop = $(this).offset().top;
+            let elementOffsetBottom = $(this).offset().down;
 
             if (elementOffsetTop <= scrollPosition) {
                 // Tambahkan kelas 'active' untuk mengatur opacity ke 1
@@ -177,53 +198,64 @@ $(document).ready(function () {
         $(".list_history ul.active").each(function () {
             let liClass = $(this).attr("class"); // Ambil class dari elemen ul
             let year = liClass.match(/\d{4}/)[0]; // Ambil tahun dari class (contoh: hist_2024)
-
+            // $('.container-imageyear img').toggleClass('bounce-img');
             // Ganti gambar dan teks berdasarkan tahun
             let image = $("#year_img");
             let yearname = $("#year_history");
 
             switch (year) {
                 case "2024":
+                    $('.container-imageyear')
                     image.attr("src", "../frontend/images/story2024.png");
                     yearname.text("2024");
                     break;
                 case "2023":
+                    $('.container-imageyear')
                     image.attr("src", "../frontend/images/story2023.png");
                     yearname.text("2023");
                     break;
                 case "2022":
+                    $('.container-imageyear')
                     image.attr("src", "../frontend/images/story2022.png");
                     yearname.text("2022");
                     break;
                 case "2021":
+                    $('.container-imageyear')
                     image.attr("src", "../frontend/images/story2021.png");
                     yearname.text("2021");
                     break;
                 case "2020":
+                    $('.container-imageyear')
                     image.attr("src", "../frontend/images/story2020.png");
                     yearname.text("2020");
                     break;
                 case "2019":
+                    $('.container-imageyear')
                     image.attr("src", "../frontend/images/story2019.png");
                     yearname.text("2019");
                     break;
                 case "2018":
+                    $('.container-imageyear')
                     image.attr("src", "../frontend/images/story2018.png");
                     yearname.text("2018");
                     break;
                 case "2017":
+                    $('.container-imageyear')
                     image.attr("src", "../frontend/images/story2017.png");
                     yearname.text("2017");
                     break;
                 case "2016":
+                    $('.container-imageyear')
                     image.attr("src", "../frontend/images/story2016.png");
                     yearname.text("2016");
                     break;
                 case "2015":
+                    $('.container-imageyear')
                     image.attr("src", "../frontend/images/story2015.png");
                     yearname.text("2015");
                     break;
                 case "2014":
+                    $('.container-imageyear').toggleClass('bounce-img');
                     image.attr("src", "../frontend/images/story2014.png");
                     yearname.text("2014");
                     break;

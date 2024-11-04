@@ -11,6 +11,28 @@
     }
 }
 
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+.bounce-img {
+    animation: bounce-out-down 0.5s ease-in-out;
+  }
+  @keyframes bounce-out-down {
+    0% { transform: translateY(0); }
+    20% {
+        opacity: 0;
+      transform: translateY(100px);
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+      transform: translateY(-100px);
+    }
+  }
+
 .bg-wrapper {
     padding: 50px 0px 50px 0px;
     overflow: auto;
@@ -123,8 +145,8 @@
     height: 100%;
     background: #454a65;
     align-items: center;
-    place-content: center space-evenly;
-    padding: 50px;
+    place-content: center;
+    padding: 70px 50px 70px 50px;
     overflow: visible;
 }
 
@@ -133,6 +155,7 @@
     justify-content: center;
     position: relative;
     display: inline-block;
+    margin-right: 100px;
 }
 
 .ceo_message .img_wrapper img {
@@ -160,15 +183,15 @@
 }
 
 .ceo_message .text_wrapper {
-    width: 504px;
-    font-size: 16px;
+    width: 620px;
+    font-size: 1em;
     color: white;
     align-items: center;
     justify-content: center;
 }
 
 .ceo_message .text_wrapper span {
-    font-size: 32px;
+    font-size: 2.6em;
     font-weight: 400;
 }
 
@@ -262,12 +285,11 @@
 
 .our-history .box .left-box {
     flex: 0 0 auto;
-    height: 257px;
+    height: fit-content;
     position: sticky;
-    top: 280px;
+    top: 240px;
     margin: 0 30px 0 0;
-    width: 512px;
-    will-change: transform;
+    width: fit-content;
     z-index: 1;
 }
 
@@ -275,23 +297,25 @@
     place-content: flex-start;
     align-items: center;
     display: flex;
-    flex-flow: row;
-    gap: 30px;
-    height: 240px;
+    flex-flow: column;
+    /* gap: 100px; */
+    /* height: 240px; */
     padding: 0px;
     position: relative;
-    margin: 20px;
-    width: 512px;
-    transition: opacity 0.5s ease;
+    margin: 20px 60px 0 0;
+    /* width: 512px; */
 }
 
-.right-box .wrapper ul {
-    opacity: 0.2; /* Set opacity to 0.2 when not at scrollPosition */
-    transition: opacity 0.3s ease; /* Tambahkan transisi agar perubahan opacity halus */
+.our-history .box .left-box .container-imageyear h1 {
+    font-weight: 500;
+    font-size: 4em;
+    margin-bottom:50px;
+    color: rgb(64, 66, 80);
 }
 
-.right-box .wrapper ul.active {
-    opacity: 1; /* Set opacity to 1 when at scrollPosition */
+.our-history .box .left-box .container-imageyear .img_year {
+    border-radius: 20px;
+    box-shadow: 0px 5px 24px 0px rgba(0, 0, 0, 0.2);
 }
 
 .our-history .box .right-box {
@@ -305,7 +329,7 @@
     overflow: visible;
     padding: 100px 0px;
     position: relative;
-    width: 529px;
+    width: 600px;
 }
 
 .our-history .box .right-box .wrapper {
@@ -326,6 +350,15 @@
     display: flex;
     gap: 20px;
     flex-direction: column;
+}
+
+.right-box .wrapper ul {
+    opacity: 0.2; /* Set opacity to 0.2 when not at scrollPosition */
+    transition: opacity 0.3s ease; /* Tambahkan transisi agar perubahan opacity halus */
+}
+
+.right-box .wrapper ul.active {
+    opacity: 1; /* Set opacity to 1 when at scrollPosition */
 }
 
 .our-history .box .right-box .wrapper .row {
@@ -549,6 +582,7 @@ hr.rounded {
 .team-member .wrapper {
     place-content: center;
     align-items: center;
+    margin-bottom: 20px;
     display: flex;
     flex: 0 0 auto;
     flex-flow: column;
@@ -624,10 +658,12 @@ hr.rounded {
     overflow: visible;
     padding: 10px;
     position: relative;
-    width: min-content;
 }
-
-.team-member .list .row .item {
+.team-member .list .t_row {
+    display: none;
+}
+.team-member .list .row .item,
+.team-member .list .t_row .item {
     display: block;
     flex: 0 0 auto;
     height: 433px;
@@ -636,7 +672,8 @@ hr.rounded {
     perspective: 2000px;
 }
 
-.team-member .list .row .item .item-wrap {
+.team-member .list .row .item .item-wrap,
+.team-member .list .t_row .item .item-wrap{
     width: 100%;
     height: 100%;
     position: absolute;
@@ -644,9 +681,12 @@ hr.rounded {
     transform-style: preserve-3d;
     transition: transform 1s ease-in-out;
     will-change: transform;
+    cursor: default;
+    backface-visibility: hidden;
 }
 
-.team-member .list .row .item .item-wrap .box .wrap {
+.team-member .list .row .item .item-wrap .box .wrap,
+.team-member .list .t_row .item .item-wrap .box .wrap {
     width: 100%;
     opacity: 1;
     place-content: center flex-start;
@@ -662,7 +702,8 @@ hr.rounded {
     position: relative;
 }
 
-.team-member .list .row .item .item-wrap .box .wrap .item {
+.team-member .list .row .item .item-wrap .box .wrap .item,
+.team-member .list .t_row .item .item-wrap .box .wrap .item {
     place-content: center flex-start;
     align-items: center;
     border-radius: 15px;
@@ -677,13 +718,15 @@ hr.rounded {
     width: 308px;
 }
 
-.team-member .list .row .item .item-wrap .box .wrap .item .foto-box {
+.team-member .list .row .item .item-wrap .box .wrap .item .foto-box,
+.team-member .list .t_row .item .item-wrap .box .wrap .item .foto-box {
     position: absolute;
     border-radius: inherit;
     inset: 0px;
 }
 
-.team-member .list .row .item .item-wrap .box .wrap .item .foto-box img {
+.team-member .list .row .item .item-wrap .box .wrap .item .foto-box img,
+.team-member .list .t_row .item .item-wrap .box .wrap .item .foto-box img {
     display: block;
     width: 100%;
     height: 100%;
@@ -692,7 +735,8 @@ hr.rounded {
     object-fit: fill;
 }
 
-.team-member .list .row .item .item-wrap .box .wrap .text-item {
+.team-member .list .row .item .item-wrap .box .wrap .text-item,
+.team-member .list .t_row .item .item-wrap .box .wrap .text-item {
     place-content: center flex-start;
     align-items: center;
     display: flex;
@@ -705,7 +749,8 @@ hr.rounded {
     position: relative;
 }
 
-.team-member .list .row .item .item-wrap .box .wrap .text-item .title {
+.team-member .list .row .item .item-wrap .box .wrap .text-item .title,
+.team-member .list .t_row .item .item-wrap .box .wrap .text-item .title {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -713,31 +758,25 @@ hr.rounded {
     font-size: 32px;
 }
 
-.team-member .list .row .item .item-wrap .box .wrap .text-item .subtitle {
+.team-member .list .row .item .item-wrap .box .wrap .text-item .subtitle,
+.team-member .list .t_row .item .item-wrap .box .wrap .text-item .subtitle {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     text-align: center;
 }
 
-.team-member .list .row .item .item-wrap {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    transition: transform 1s ease;
-    transform-style: preserve-3d;
-    cursor: default;
-    backface-visibility: hidden; /* Pastikan backface-visibility diatur dengan benar */
-}
-
-.team-member .list .row .item .item-wrap:hover {
+.team-member .list .row .item .item-wrap:hover,
+.team-member .list .t_row .item .item-wrap:hover {
     transform: rotateY(180deg); /* Ubah nilai rotateY ke -180deg */
     -webkit-transform: rotateY(180deg); /* Vendor prefix untuk WebKit */
     pointer-events: auto;
 }
 
 .team-member .list .row .item .item-wrap .box,
-.team-member .list .row .item .item-wrap .back {
+.team-member .list .t_row .item .item-wrap .box ,
+.team-member .list .row .item .item-wrap .back,
+.team-member .list .t_row .item .item-wrap .back {
     width: 100%;
     height: 100%;
     display: flex;
@@ -750,14 +789,16 @@ hr.rounded {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px 0px;
 }
 
-.team-member .list .row .item .item-wrap .box {
+.team-member .list .row .item .item-wrap .box,
+.team-member .list .t_row .item .item-wrap .box {
     transform: rotateY(0deg);
     background-color: white;
     padding: 20px;
     box-sizing: border-box;
 }
 
-.team-member .list .row .item .item-wrap .back {
+.team-member .list .row .item .item-wrap .back,
+.team-member .list .t_row .item .item-wrap .back {
     transform: rotateY(180deg);
     background: radial-gradient(
         50% 50% at 50% 50%,
@@ -771,7 +812,8 @@ hr.rounded {
     pointer-events: none; /* Menonaktifkan interaksi pointer */
 }
 
-.team-member .list .row .item .item-wrap .content {
+.team-member .list .row .item .item-wrap .content,
+.team-member .list .t_row .item .item-wrap .content {
     max-width: 80%;
 }
 
@@ -781,6 +823,7 @@ hr.rounded {
     display: flex;
     flex: 0 0 auto;
     flex-flow: column;
+    /* margin-top: -3500px; */
     gap: 20px;
     height: min-content;
     overflow: visible;
@@ -869,10 +912,33 @@ hr.rounded {
     gap: 50px;
     height: min-content;
     overflow: hidden;
-    padding: 30px;
+    padding: 50px;
     position: relative;
     width: 100%;
     will-change: var(--framer-will-change-override, transform);
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.office-maps .box .btn_country {
+    margin: 0px 5px 0px 5px;
+    padding: 13px 20px 13px 20px;
+    border: 1px solid #72788C;
+    border-radius: 5px;
+    font-size:16px;
+    cursor: pointer;
+}
+
+.toggle:checked + .btn_country {
+    background-color: #525973;
+    color:white;
+}
+
+.office-maps .box .btn_country:hover {
+    background-color: #525973;
+    color:white;
 }
 
 .office-maps .box .img-wrapper {
@@ -881,6 +947,7 @@ hr.rounded {
     position: relative;
     width: 100%;
     border-radius: inherit;
+    animation: fadeIn 3s;
 }
 
 .office-maps .box .img-wrapper img {
@@ -1028,22 +1095,27 @@ hr.rounded {
     }
 
     .ceo_message {
-        gap: 50px;
+        gap: 20px;
         align-items: unset;
     }
+    .ceo_message .img_wrapper {
+        margin: 60px 30px 0px 0px;
+    }
     .ceo_message .img_wrapper img {
+        height: auto;
         border-radius: 20px;
     }
 
     .ceo_message .text_wrapper {
-        width: 100%;
+        width: 70%;
+        text-align: justify;
     }
 
     .ceo_message .img_wrapper::after {
         content: "Mr. Son Dong-kwon";
         position: absolute;
-        bottom: 20px;
-        left: 20px;
+        /* left: 20px; */
+        margin: 20px 3px 0px 3px;
         padding: 10px 16px;
         border-radius: 12px;
         background-color: white;
@@ -1052,8 +1124,33 @@ hr.rounded {
     }
 
     .our-history .title p {
-        font-size: 32px;
+        font-size: 3em;
         font-weight: 400;
+    }
+
+    .our-history .box .left-box {
+        margin: unset;
+    }
+
+    .our-history .box .right-box {
+        gap: unset;
+        padding: 100px 0px;
+        width: 500px;
+    }
+
+    .our-history .box .left-box .container-imageyear {
+        width: 80%;
+        margin: unset;
+        /* padding: 0 80px 0 80px; */
+    }
+
+    .our-history .box .left-box .container-imageyear h1 {
+        font-size: 2.5em;
+    }
+
+    .our-history .box .left-box .container-imageyear .img_year {
+        border-radius: 20px;
+        box-shadow: 0px 5px 24px 0px rgba(0, 0, 0, 0.2);
     }
 
     .core {
@@ -1066,8 +1163,12 @@ hr.rounded {
     }
 
     .core .core-text .core-img {
-        height: 40px;
-        width: 40px;
+        height: 60px;
+        width: 60px;
+    }
+    .core .full-text .wrapper .item p {
+        font-size: 32px;
+        text-align: center;
     }
 
     .core .full-text {
@@ -1080,45 +1181,37 @@ hr.rounded {
     }
 
     .core .full-text .wrapper .item p {
-        font-size: 32px;
-    }
-
-    .core .full-text .wrapper {
-        height: unset;
-        flex-direction: column;
+        font-size: 26px;
     }
 
     .core .full-text .wrapper .item {
-        padding: 28px 32px;
+        padding: 22px 28px;
     }
-
     .team-member {
         padding: 50px 20px;
     }
-
     .team-member .list .row {
-        height: unset;
-        overflow: visible;
-        padding: unset;
-        flex-direction: column;
-        margin-bottom: 20px;
+        display: none;
     }
-
+    .team-member .list .t_row {
+        display: flex;
+        overflow: visible;
+        margin: 10px 0 20px 0;
+        height: unset;
+        padding: unset;
+        position: relative;
+    }
+    .team-member .list .t_row .item {
+        margin: 0 10px 0 10px;
+    }
     .team-member .wrapper .title {
         font-size: 32px;
         font-weight: 500;
     }
 
-    .team-member .wrapper .subtitle {
-        /* white-space: unset; */
-    }
-
-    .team-member .list .row .item .item-wrap .box {
-        /* width: unset; */
-    }
-
     .our-office {
         padding: 20px;
+        margin-top: unset;
     }
     .marquee img {
         height: 300px;
@@ -1127,26 +1220,19 @@ hr.rounded {
     .card-maps {
         width: 100%;
     }
-
     .office-maps {
         padding: 20px;
+        margin: 50px 0 50px 0;
     }
 
     .office-maps .box {
-        padding: 20px;
+        padding: 30px 15px 30px 15px;
+        gap: 40px;
     }
 
     .our-history {
         gap: 50px;
         padding: 50px 20px;
-    }
-
-    .dekstop-history {
-        display: none;
-    }
-
-    .mobile-history {
-        display: block;
     }
 
     input[type="checkbox"] {
@@ -1268,13 +1354,91 @@ hr.rounded {
     }
 }
 
-@media screen and (max-width: 780px) {
-    .ceo_message {
-        padding: 20px;
-        flex-direction: column;
-        gap: 32px;
+@media screen and (max-width: 800px) {
+
+    .dekstop-history {
+        display: none;
     }
 
+    .mobile-history {
+        display: block;
+    }
+    .core .core-text .core-img {
+        height: 40px;
+        width: 40px;
+    }
+    .core .full-text .wrapper {
+        height: unset;
+        flex-direction: column;
+    }
+    .office-maps {
+        margin: unset;
+        padding: unset;
+        gap: unset;
+    }
+
+    .office-maps .box {
+        gap: 20px;
+    }
+
+    .office-maps .box .btn_country {
+        margin: 5px 5px 5px 5px;
+        padding: 5px;
+        border: 1px solid #72788C;
+        border-radius: 5px;
+        font-size:16px;
+        cursor: pointer;
+    }
+    .ceo_message {
+        padding: 30px;
+        flex-direction: column;
+        place-content: center space-evenly;
+        gap: 30px;
+    }
+
+    .ceo_message .img_wrapper {
+        margin: unset;
+        padding: 10px;
+    }
+
+    .ceo_message .img_wrapper::after {
+        margin: -25px 3px 0px 3px;
+    }
+
+    .ceo_message .img_wrapper img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        object-position: center;
+        object-fit: cover;
+        image-rendering: auto;
+    }
+
+    .ceo_message .text_wrapper {
+        width: fit-content;
+        text-align: justify;
+    }
+    .team-member .list .row {
+        display: flex;
+        overflow: visible;
+        margin: 0 0 20px 0;
+        height: unset;
+        position: relative;
+        flex-direction: column;
+    }
+    .team-member .list .t_row {
+        display: none !important;
+    }
+
+    .team-member .list .row .item {
+        display: block;
+        flex: 0 0 auto;
+        height: 433px;
+        position: relative;
+        width: 350px;
+        perspective: 2000px;
+    }
     .collapsible-content {
         padding: unset;
     }
