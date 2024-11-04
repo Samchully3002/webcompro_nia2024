@@ -394,8 +394,18 @@ input[type="checkbox"] {
     transition-duration: 0.5s;
     background: transparent;
 } */
-
 .product-wrapper .content .img-box {
+    place-content: center;
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: row;
+    gap: 20px;
+    margin-bottom: 50px;
+    overflow: visible;
+    position: relative;
+}
+
+.product-wrapper .content .t_img-box {
     place-content: center;
     display: flex;
     flex: 0 0 auto;
@@ -408,7 +418,7 @@ input[type="checkbox"] {
 
 .product-wrapper .content .img-box .lebar,
 .product-wrapper .content .img-box1 .lebar {
-    width: 360px !important;
+    width: 265px !important;
 }
 
 .product-wrapper .content .img-box1 {
@@ -784,15 +794,24 @@ input[type="checkbox"] {
         padding: 0px 50px 50px 50px;
     }
 
+    .product-wrapper .content .t_img-box {
+        place-content: center;
+        display: flex;
+        margin: 0px 15px 15px 15px;
+        gap: unset;
+        position: relative;
+    }
+
     .product-wrapper .content .img-box,
     .product-wrapper .content .img-box1 {
         place-content: flex-start;
-        margin: 0px 15px 0px 15px;
+        margin: 0px 15px 15px 15px;
         gap: unset;
         overflow-x: visible;
         overflow-y: hidden;
     }
 
+    .product-wrapper .content .t_img-box .lebar,
     .product-wrapper .content .img-box .lebar,
     .product-wrapper .content .img-box11 .lebar{
         width: 240px !important;
@@ -1032,6 +1051,7 @@ input[type="checkbox"] {
         margin: 0px 20px 0px 20px;
     }
 
+    .product-wrapper .content .t_img-box,
     .product-wrapper .content .img-box,
     .product-wrapper .content .img-box2 {
         display: none !important;

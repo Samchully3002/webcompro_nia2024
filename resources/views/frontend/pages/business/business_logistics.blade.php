@@ -73,7 +73,7 @@
                                 <div class="text-wrapper">
                                     <p>{{ __('samchullypay-content') }}</p>
                                 </div>
-                                <div class="img-box">
+                                <div class="t_img-box">
                                     <img class="lebar" src="../frontend/images/bs-samchulypay1.svg" alt="image samchully pay"/>
                                     <img class="lebar" src="../frontend/images/bs-samchulypay2.svg" alt="image samchully pay"/>
                                     <img class="lebar" src="../frontend/images/bs-samchulypay3.svg" alt="image samchully pay"/>
@@ -125,7 +125,7 @@
                                 <div class="text-wrapper">
                                     <p>{{ __('olligo-content') }}</p>
                                 </div>
-                                <div class="img-box">
+                                <div class="t_img-box">
                                     <img class="lebar" src="../frontend/images/bs-olligo1.svg" alt="image olligo"/>
                                     <img class="lebar" src="../frontend/images/bs-olligo2.svg" alt="image olligo"/>
                                     <img class="lebar" src="../frontend/images/bs-olligo3.svg" alt="image olligo"/>

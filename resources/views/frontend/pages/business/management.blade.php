@@ -68,7 +68,7 @@
                                 <div class="text-wrapper">
                                     <p>{{ __('tnr-content') }}</p>
                                 </div>
-                                <div class="img-box">
+                                <div class="t_img-box">
                                     <img class="lebar" src="../frontend/images/bs-ticketing1.svg" alt="image ticketing"/>
                                     <img class="lebar" src="../frontend/images/bs-ticketing2.svg" alt="image ticketing"/>
                                     <img class="lebar" src="../frontend/images/bs-ticketing3.svg" alt="image ticketing"/>
