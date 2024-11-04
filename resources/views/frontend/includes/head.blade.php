@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="{{asset('frontend/css/page.css')}}"/>
     <link rel="stylesheet" href="{{asset('frontend/css/animate.css')}}" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
@@ -66,25 +67,25 @@
     </script>
     <!-- <script type="application/ld+json">
     {
-   
+
       "@context": "https://schema.org",
-   
+
       "@type": "WebSite",
-   
+
       "url": "https://www.nia.co.id/",
-   
+
       "potentialAction": {
-   
+
       "@type": "SearchAction",
-   
+
       "target": "https://query.nia.co.id/search?q={search_term_string}",
-   
+
       "query-input": "required name=search_term_string"
-   
+
      }
-   
+
    }
-   
+
 </script> -->
 
 

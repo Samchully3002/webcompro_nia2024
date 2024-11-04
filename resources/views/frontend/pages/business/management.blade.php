@@ -1,8 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 
-@include('frontend.includes.head')
-    <link rel="stylesheet" href="{{asset('frontend/css/business.css')}}"/>
+        @include('frontend.includes.head')
+        {{-- CSS --}}
+        <link rel="stylesheet" href="{{asset('frontend/css/business.css')}}"/>
+        <link rel="stylesheet" href="{{asset('frontend/lib/swiper-bundle.min.css')}}" />
+        {{-- SCRIPT --}}
+        <script src="{{asset('frontend/lib/swiper-bundle.min.js')}}"></script>
+        <script src="{{asset('frontend/lib/gsap.min.js')}}"></script>
+        <script src="{{asset('frontend/lib/ScrollTrigger.min.js')}}"></script>
+        <script src="{{asset('frontend/lib/ScrollToPlugin.min.js')}}"></script>
+        <script src="{{asset('frontend/lib/CSSRulePlugin.min.js')}}"></script>
     </head>
 
     <body>
@@ -18,7 +26,31 @@
                 </div>
             </div>
             <!-- bg-wrapper end -->
-
+            <div class="scrollWrapper">
+                {{-- <div class="row"> --}}
+                    <div class="scrollBox box1">
+                        <ul class="textBox">
+                            <li class="active">
+                                <span>{{ __('sdmLS1') }}</span>
+                                <h3>{{ __('tnr') }}</h3>
+                            </li>
+                            <li>
+                                <span>{{ __('sdmLS2') }}</span>
+                                <h3>{{ __('pis') }}</h3>
+                            </li>
+                            <li>
+                                <span>{{ __('sdmLS3') }}</span>
+                                <h3>{{ __('iba') }}</h3>
+                            </li>
+                        </ul>
+                        <div class="imgBox"><img width="100%" src="../frontend/images/smLS_1.png" /></div>
+                        <div class="imgBox"><img width="100%" src="../frontend/images/smLS_2.png" /></div>
+                        <div class="imgBox"><img width="100%" src="../frontend/images/smLS_3.png" /></div>
+                    </div>
+                    <div class="scrollBox box2"></div>
+                    <div class="scrollBox box3"></div>
+                {{-- </div> --}}
+            </div>
             <!-- section-wrapper start -->
           <div class="product-box">
             <div class="product-wrapper">
@@ -36,10 +68,10 @@
                                 <div class="text-wrapper">
                                     <p>{{ __('tnr-content') }}</p>
                                 </div>
-                                <div class="img-box">
-                                    <img src="../frontend/images/bs-ticketing1.svg" alt="image ticketing"/>
-                                    <img src="../frontend/images/bs-ticketing2.svg" alt="image ticketing"/>
-                                    <img src="../frontend/images/bs-ticketing3.svg" alt="image ticketing"/>
+                                <div class="t_img-box">
+                                    <img class="lebar" src="../frontend/images/bs-ticketing1.svg" alt="image ticketing"/>
+                                    <img class="lebar" src="../frontend/images/bs-ticketing2.svg" alt="image ticketing"/>
+                                    <img class="lebar" src="../frontend/images/bs-ticketing3.svg" alt="image ticketing"/>
                                 </div>
                                 <div class="img-box-mobile">
 
@@ -114,14 +146,14 @@
                             <div class="content">
                                 <div class="text-wrapper">
                                     <p>{{ __('iba-content') }}</p>
-                                    <button id="downloadButton"><span>PDF</span>&nbsp;&nbsp; <img src="../../frontend/images/icon/download.svg" ></button>
+                                    <button id="downloadButton">PDF&nbsp;&nbsp;<img src="../../frontend/images/icon/download.svg" /></button>
                                     <a id="downloadLink" href="{{asset('frontend/INABUSAPPS.pdf')}}" download style="display: none;"></a>
                                 </div>
                                 <div class="img-box" style="gap: 0px !important;">
-                                    <img class="iba" src="../frontend/images/iba1.png"/>
-                                    <img class="iba" src="../frontend/images/iba2.png"/>
-                                    <img class="iba" src="../frontend/images/iba3.png"/>
-                                    <img class="iba" src="../frontend/images/iba4.png"/>
+                                    <img class="lebar" src="../frontend/images/iba1.png"/>
+                                    <img class="lebar" src="../frontend/images/iba2.png"/>
+                                    <img class="lebar" src="../frontend/images/iba3.png"/>
+                                    <img class="lebar" src="../frontend/images/iba4.png"/>
                                 </div>
                                 <div class="img-box-mobile">
 
@@ -172,6 +204,97 @@
         @include('frontend.includes.footer')
         <script>
 
+            $('document').ready(function(){
+                gsap.registerPlugin(ScrollTrigger);
+
+                gsap.timeline({
+                    onComplete:function(){}
+                })
+                gsap.timeline({
+                    scrollTrigger: {
+                        trigger: '.scrollWrapper',
+                        start: 'top top',
+                        end: 'bottom bottom',
+                        pin: '.scrollWrapper .scrollBox',
+                        pinSpacing: false,
+                        invalidateOnRefresh: true,
+                        scrub: 1,//부드러운 스크러빙
+                    }
+                });
+
+                gsap.timeline({
+                    scrollTrigger: {
+                        trigger: '.scrollWrapper',
+                        start: 'top',
+                        end: 'top bottom',
+                        invalidateOnRefresh: true,
+                        scrub: 0.5,//부드러운 스크러빙
+                        // onComplete: console.log('finish'),
+                        onEnter:function() {
+                            $("#header-wrapper").css({'display' : 'none'});
+                            $('.scrollWrapper .box1').addClass('active');
+                            $('.scrollWrapper .box1 .imgBox').addClass('active');
+                        },
+                        onEnterBack:function() {
+                            $("#header-wrapper").css({'display' : 'unset'});
+                            $('.scrollWrapper .box1').removeClass('active');
+                            $('.scrollWrapper .box1 .imgBox').removeClass('active');
+                        }
+                    }
+                });
+
+                $('.scrollWrapper .scrollBox').each(function(i){
+                    let nowInner = this;
+                    gsap.timeline({
+                        scrollTrigger: {
+                            trigger: $(this),
+                            start: 'top',
+                            end: 'top bottom',
+                            invalidateOnRefresh: true,
+                            onEnter:function() {
+                                $("#header-wrapper").css({'display' : 'none'});
+                                if(i === 1){
+                                    $('.box1').css({"transition" : "none", "-moz-transition" : "none", "-o-transition" : "none", "-webkit-transition" : "none"});
+                                }
+                                $('.scrollWrapper .scrollBox .imgBox').css({'display' : 'none'});
+                                $('.scrollWrapper .scrollBox .imgBox').eq(i).css({'display' : 'block'});
+                                $('.scrollWrapper .textBox li').removeClass('active');
+                                $('.scrollWrapper .textBox li').eq(i).addClass('active');
+                            },
+                            onEnterBack:function() {
+                                if(i === 1){
+                                    $('.box1').css({"transition" : "all 0.5s", "-moz-transition" : "all 0.5s", "-o-transition" : "all 0.5s", "-webkit-transition" : "all 0.5s"});
+                                }
+
+                                if(i === 3){
+                                    $('.box1').css({"transition" : "none", "-moz-transition" : "none", "-o-transition" : "none", "-webkit-transition" : "none"});
+                                }
+                                $('.scrollWrapper .scrollBox .imgBox').css({'display' : 'none'});
+                                $('.scrollWrapper .scrollBox .imgBox').eq(i).css({'display' : 'block'});
+                                $('.scrollWrapper .textBox li').removeClass('active');
+                                $('.scrollWrapper .textBox li').eq(i).addClass('active');
+                            }
+                        }
+                    })
+                });
+
+                gsap.timeline({
+                    scrollTrigger: {
+                        trigger: '.product-wrapper',
+                        start: 'top',
+                        end: 'top bottom',
+                        invalidateOnRefresh: true,
+                        scrub: 0.5,//부드러운 스크러빙
+                        // onComplete: console.log('finish'),
+                        onEnter:function() {
+                            $("#header-wrapper").css({'display' : 'unset'});
+                        },
+                        onEnterBack:function() {
+                            $("#header-wrapper").css({'display' : 'none'});
+                        }
+                    }
+                });
+            });
 
             var coll = document.getElementsByClassName("collapsible");
             var i;
